@@ -3,10 +3,10 @@ name: Validate Jekyll build
 on:
   push:
     branches:
-      - chore/update-jekyll-theme
+      - dev
   pull_request:
     branches:
-      - master
+      - dev
 
 permissions:
   contents: read

@@ -17,12 +17,12 @@ pagination:
                   {% endif %}
                   <div class="services-content">
                       <div class="card-title">
-                          <h2 class="blog-title"><a href="{{post.url}}">{{post.title}}</a></h2>
+                          <h2 class="blog-title"><a href="{{ post.url | relative_url }}">{{post.title}}</a></h2>
                       </div>
                       <div class="card-text">
                           <p>{{post.excerpt | strip_html | truncatewords:"30"}}</p>
                       </div>
-                      <a href="{{post.url}}" class="btn">More details</a>
+                      <a href="{{ post.url | relative_url }}" class="btn">More details</a>
                   </div>
               </div>
           </div>

@@ -18,12 +18,12 @@
                     </div>
                     <div class="services-content">
                         <div class="card-title">
-                            <h5><a href="{{feature.url}}">{{feature.title}}</a></h5>
+                            <h5><a href="{{ feature.url | relative_url }}">{{feature.title}}</a></h5>
                         </div>
                         <div class="card-text">
                             <p>{{feature.description}}</p>
                         </div>
-                        <a href="{{feature.url}}" class="btn">More details</a>
+                        <a href="{{ feature.url | relative_url }}" class="btn">More details</a>
                     </div>
                 </div>
             </div>

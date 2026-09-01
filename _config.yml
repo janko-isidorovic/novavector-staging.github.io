@@ -2,8 +2,8 @@ title: "Nova Vector"
 email: "info@novavector.com"
 description: >- # this means to ignore newlines until "baseurl:"
   Nova Vector is cutting edge solutions provider for the business of the future.
-baseurl: "https://www.novavector.com" # the subpath of your site, e.g. /blog
-url: "https://www.novavector.com" # the base hostname & protocol for your site, e.g. http://example.com or  https://tradejk.netlify.com
+baseurl: "/novavector-staging.github.io"
+url: "https://janko-isidorovic.github.io"
 facebook_url: https://www.facebook.com
 twitter_url: https://twitter.com
 github_url: https://github.com
@@ -108,4 +108,3 @@ feed:
   collections:
     posts:
       path: "/index.xml"
-      

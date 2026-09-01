@@ -40,7 +40,7 @@
                 <div class="col-xl-4 col-lg-4 mb-50">
                     <div class="footer-widget">
                         <div class="footer-logo">
-                            <a href="{{site.url}}"><img src="{{site.baseurl}}/assets/img/logo/footer_logo.png" class="img-fluid" alt="{{site.title}}"></a>
+                            <a href="{{ '/' | relative_url }}"><img src="{{ '/assets/img/logo/footer_logo.png' | relative_url }}" class="img-fluid" alt="{{site.title}}"></a>
                         </div>
                         <div class="footer-text">
                             <p>Nova Vector is the solution provider for the business solutions of the future.
@@ -58,11 +58,11 @@
                             <h4>Useful Links</h4>
                         </div>
                         <ul>
-                            <li><a href="{{site.baseurl}}">Home</a></li>
+                            <li><a href="{{ '/' | relative_url }}">Home</a></li>
                             <!-- <li><a href="#">about</a></li> -->
-                            <li><a href="{{site.baseurl}}/pages/services">Services</a></li>
+                            <li><a href="{{ '/pages/services' | relative_url }}">Services</a></li>
                             <!-- <li><a href="#">portfolio</a></li> -->
-                            <li><a href="{{site.baseurl}}/pages/contact">Contact</a></li>
+                            <li><a href="{{ '/pages/contact' | relative_url }}">Contact</a></li>
                             <!-- <li><a href="#">About us</a></li>
                             <li><a href="#">Our Services</a></li>
                             <li><a href="#">Expert Team</a></li>
@@ -98,7 +98,7 @@
                         <ul>
                             {% for link in site.data.footer_links %}                             
                              <li>
-                                 <a href="{{link.url}}">{{link.text}}</a>
+                                 <a href="{{ link.url | relative_url }}">{{link.text}}</a>
                             </li>
                             {% endfor %}
                         </ul>

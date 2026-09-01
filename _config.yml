@@ -1,20 +1,18 @@
 title: "Nova Vector"
 email: "info@novavector.com"
 description: >- # this means to ignore newlines until "baseurl:"
-  Nova Vector is cutting edge solutions provider for the business of the future.
+  Industrial IoT and edge computing platform for connecting equipment, monitoring operations, and integrating industrial data with enterprise systems.
 baseurl: "/novavector-staging.github.io"
 url: "https://janko-isidorovic.github.io"
-facebook_url: https://www.facebook.com
-twitter_url: https://twitter.com
-github_url: https://github.com
-pinterest_url: https://www.pinterest.com
-linkedin_url: https://www.linkedin.com
-instagram_url: https://www.instagram.com
 logo: "/assets/img/logo/logo.png"
 logo_2: "/assets/img/logo/logo_2.png"
 mailchimp_list: ""
 mailchimp_input_name: ""
-google_analytics: UA-148449692-1
+# Keep staging out of search results. Override this to false in the
+# production repository when the release is approved for indexing.
+noindex: true
+# Add an approved GA4 measurement ID (G-XXXXXXXXXX) when available.
+google_analytics: ""
 
 permalink: "/:title"
 
@@ -23,6 +21,8 @@ markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
   - jekyll-paginate-v2
   - jekyll-archives
 
@@ -32,9 +32,9 @@ cover_image: "/assets/img/bg/page-title.jpg"
 #collections
 collections:
   features:
-    output: true
+    output: false
   services:
-    output: true
+    output: false
 
 ########################################################
 # Site configuration for the Jekyll 3 Pagination Gem

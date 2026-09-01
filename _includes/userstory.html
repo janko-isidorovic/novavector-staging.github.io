@@ -1,12 +1,5 @@
 
 <!-- user-story -->
-<!--Bootstrap CSS-->
-
-<!--Fontawesome-->
-<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-
 <section class="user-story">
     <script>
         function setNavLinksHeight() {
@@ -46,22 +39,22 @@
             <!-- Tabs navs -->
             <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                    <button class="nav-link active" id="nav-industry-tab" data-bs-toggle="tab" data-bs-target="#nav-industry" type="button" role="tab" aria-controls="nav-industry" aria-selected="true">
+                    <a class="nav-link active" id="nav-industry-tab" data-toggle="tab" href="#nav-industry" role="tab" aria-controls="nav-industry" aria-selected="true">
                                                 Smart <br>Industry
-                                            </button>
-                    <button class="nav-link" id="nav-education-tab" data-bs-toggle="tab" data-bs-target="#nav-education" type="button" role="tab" aria-controls="nav-education" aria-selected="false">
+                                            </a>
+                    <a class="nav-link" id="nav-education-tab" data-toggle="tab" href="#nav-education" role="tab" aria-controls="nav-education" aria-selected="false">
                                                 Education
-                                            </button>
-                    <button class="nav-link" id="nav-building-tab" data-bs-toggle="tab" data-bs-target="#nav-building" type="button" role="tab" aria-controls="nav-building" aria-selected="false">
+                                            </a>
+                    <a class="nav-link" id="nav-building-tab" data-toggle="tab" href="#nav-building" role="tab" aria-controls="nav-building" aria-selected="false">
                                                 Smart <br>Building
-                                            </button>
-                    <button class="nav-link" id="nav-agriculture-tab" data-bs-toggle="tab" data-bs-target="#nav-agriculture" type="button" role="tab" aria-controls="nav-agriculture" aria-selected="false">
+                                            </a>
+                    <a class="nav-link" id="nav-agriculture-tab" data-toggle="tab" href="#nav-agriculture" role="tab" aria-controls="nav-agriculture" aria-selected="false">
                                                 Smart <br>Agriculture
-                                            </button>
+                                            </a>
                 </div>
               </nav>
               <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="nav-agriculture" role="tabpanel" aria-labelledby="nav-agriculture-tab" style="background-image:url({{site.baseurl}}/assets/img/clients/agriculture-resized.png)">
+                <div class="tab-pane fade" id="nav-agriculture" role="tabpanel" aria-labelledby="nav-agriculture-tab" style="background-image:url({{site.baseurl}}/assets/img/clients/agriculture-resized.png)">
                         <div class="row">
                             <div class="col-xl-12">
                                     <h4>Smart <br> agriculture</h4>
@@ -70,7 +63,7 @@
                             </div>
                         </div>
                 </div>
-                <div class="tab-pane fade" id="nav-industry" role="tabpanel" aria-labelledby="nav-industry-tab" style="background-image:url({{site.baseurl}}/assets/img/clients/industry-resized.png)">
+                <div class="tab-pane fade show active" id="nav-industry" role="tabpanel" aria-labelledby="nav-industry-tab" style="background-image:url({{site.baseurl}}/assets/img/clients/industry-resized.png)">
                         <div class="row">
                             <div class="col-xl-12">
                                     <h4>Smart <br> industry</h4>

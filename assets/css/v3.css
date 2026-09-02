@@ -197,6 +197,13 @@
 }
 @media (max-width: 767px) {
   .nv-home-v3 .use-cases .row:last-child { grid-template-columns: 1fr; grid-auto-rows: auto; gap: 24px; }
+  .nv-home-v3 .meeting > .container-fluid > .row > div:first-child,
+  .nv-home-v3 .meeting > .container-fluid > .row > div:last-child { display: none; }
+  .nv-home-v3 .meeting > .container-fluid > .row > div:nth-child(2) { width: 100%; max-width: 100%; flex: 0 0 100%; padding: 34px 20px; }
+  .nv-home-v3 .meeting-text > .row > div:first-child { max-width: 100%; flex: 0 0 100%; margin-left: 0; }
+  .nv-home-v3 .meeting-text-p { margin: 0 0 10px; }
+  .nv-home-v3 .nv-meeting-support { padding: 0; }
+  .nv-home-v3 .meeting-text a.btn { margin: 20px auto 0; }
 }
 @media (max-width: 640px) {
   .v3-shell { width: min(100% - 28px, 1140px); }
@@ -215,7 +222,7 @@
   .v3-cta__inner { align-items: stretch; flex-direction: column; }
   .v3-footer-grid { grid-template-columns: 1fr; }
   .nv-home-v3 .slider-content .nv-hero-secondary { margin: 12px 0 0; }
-  .nv-home-v3 .nv-meeting-support { padding: 0 15%; text-align: center; }
+  .nv-home-v3 .nv-meeting-support { text-align: center; }
   .nv-home-v3 .paragraphs .container-white,
   .nv-home-v3 .paragraphs .container-grey { padding-top: 48px; padding-bottom: 48px; }
   .nv-capabilities-heading { padding: 48px 0 10px; }

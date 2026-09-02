@@ -1,25 +1,31 @@
-<nav id="mobile-menu">
+<nav id="mobile-menu" aria-label="Primary navigation">
 <ul>
-    
     {% for link in site.data.navigation %}
     {% assign active = nil %}
+    {% assign link_path = link.url | split: '#' | first %}
 
     {% for sublink in link.submenu %}
-        {% if page.url contains sublink.url %}
+        {% assign sublink_path = sublink.url | split: '#' | first %}
+        {% if sublink_path == '/' and page.url == '/' %}
+            {% assign active = 'active' %}
+        {% elsif sublink_path != '/' and page.url contains sublink_path %}
             {% assign active = 'active' %}
         {% endif %}
     {% endfor %}
 
-    {% if page.url contains link.url %}
+    {% if link_path == '/' and page.url == '/' %}
+        {% assign active = 'active' %}
+    {% elsif link_path != '/' and page.url contains link_path %}
         {% assign active = 'active' %}
     {% endif %}
-     
-     <li>
-         <a href="{{ link.url | relative_url }}">{{link.text}}{% if link.submenu %}<i class="icofont-simple-down"></i>{% endif %}</a>
+
+     <li{% if link.cta %} class="navigation-cta"{% endif %}>
+         <a href="{{ link.url | relative_url }}"{% if active %} class="menu-active" aria-current="page"{% endif %}>{{link.text}}{% if link.submenu %}<i class="icofont-simple-down" aria-hidden="true"></i><span class="sr-only"> menu</span>{% endif %}</a>
         {% if link.submenu %}
         <ul class="sub-menu">
             {% for sublink in link.submenu %}
-            <li><a href="{{ sublink.url | relative_url }}">{{sublink.text}}</a></li>
+            {% assign sublink_path = sublink.url | split: '#' | first %}
+            <li><a href="{{ sublink.url | relative_url }}"{% unless sublink.url contains '#' %}{% if page.url contains sublink_path %} aria-current="page"{% endif %}{% endunless %}>{{sublink.text}}</a></li>
             {% endfor %}
         </ul>
         {% endif %}

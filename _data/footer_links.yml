@@ -1,10 +1,26 @@
-- text: Home
-  url: /
-#- text: Terms
-#  url: /
-#- text: Privacy
-#  url: /
-#- text: Policy
-#  url: /
-- text: Contact
-  url: /pages/contact
+- title: Platform
+  links:
+  - text: Platform Overview
+    url: /pages/nova-vector-platform
+  - text: Nova Edge
+    url: /pages/nova-edge-computing
+
+- title: Solutions
+  links:
+  - text: Manufacturing
+    url: /pages/smart-industry
+  - text: Industrial Infrastructure
+    url: /pages/smart-building
+  - text: All Solutions
+    url: /pages/solutions
+
+- title: Company
+  links:
+  - text: Professional Services
+    url: /pages/professional-services
+  - text: Support
+    url: /pages/support
+  - text: Training
+    url: /pages/training
+  - text: Contact
+    url: /pages/contact

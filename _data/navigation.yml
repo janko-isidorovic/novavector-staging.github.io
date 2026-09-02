@@ -1,69 +1,48 @@
-#Please use the main menu items under the "text"
-
 - text: Home
   url: /
-  # submenu:
-  # - text: Home 2
-  #   url: /pages/index-2
-  # - text: Home 3
-  #   url: /pages/index-3
-# - text: Blog
-#   url: /pages/blog
-- text: Products
-  url: /pages/products
+
+- text: Platform
+  url: /pages/nova-vector-platform
   submenu:
-  - text: Nova Vector Platform
+  - text: Platform Overview
     url: /pages/nova-vector-platform
-  - text: Nova Edge Computing
-    url: /pages/nova-edge-computing
-- text: Services
-  url: /pages/services
+  - text: Open Architecture
+    url: /pages/nova-vector-platform#open-architecture
+  - text: Platform Capabilities
+    url: /pages/nova-vector-platform#platform-capabilities
+
+- text: Edge
+  url: /pages/nova-edge-computing
   submenu:
-  - text: Support
-    url: /pages/support
-  - text: Services
-    url: /pages/professional-services
-  - text: Training
-    url: /pages/training
-  # - text: PaaS
-  #   url: /pages/paas
-# - text: About
-#   url: /pages/about
+  - text: Nova Edge Overview
+    url: /pages/nova-edge-computing
+  - text: EdgeX Foundry
+    url: /pages/nova-edge-computing#edgex-foundry
+  - text: Edge Deployment & Operations
+    url: /pages/nova-edge-computing#edge-operations
+
 - text: Solutions
   url: /pages/solutions
   submenu:
-  - text: Smart Industry
+  - text: Manufacturing
     url: /pages/smart-industry
-  - text: Education
-    url: /pages/education
-  - text: Smart Building
+  - text: Industrial Infrastructure
     url: /pages/smart-building
-  - text: Smart Agriculture
-    url: /pages/smart-agriculture
-  - text: Smart City
-    url: /pages/smart-city    
-#  - text: Smart Providers
-#    url: /pages/smart-providers
-#  - text: Smart Retail
-#    url: /pages/smart-retail
-# - text: Pages
-#   url: /
-  # submenu:
-  # - text: Services
-  #   url: /pages/services
-  # - text: Service Details
-  #   url: /pages/services-details
-  # - text: Portfolio
-  #   url: /pages/portfolio
-  # - text: Portfolio Details
-  #   url: /pages/portfolio-details
-  # - text: About Us
-  #   url: /pages/about
-  # - text: Contact
-  #   url: /pages/contact
-  # - text: 404
-  #   url: /pages/404
-#- text: Tutorials
-#  url: /pages/tutoials
-- text: Contact
-  url: /pages/contact
+  - text: All Solutions
+    url: /pages/solutions
+
+- text: Company
+  url: /pages/services
+  submenu:
+  - text: Professional Services
+    url: /pages/professional-services
+  - text: Support
+    url: /pages/support
+  - text: Training
+    url: /pages/training
+  - text: Contact
+    url: /pages/contact
+
+- text: Request a Demo
+  url: /pages/contact#request-demo
+  cta: true

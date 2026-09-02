@@ -1,0 +1,7 @@
+<section class="v3-proof-points" aria-label="Platform proof points">
+  <div class="v3-shell v3-proof-points__grid">
+    {% for point in page.proof_points %}
+    <div><strong>{{ point.value }}</strong><span>{{ point.label }}</span></div>
+    {% endfor %}
+  </div>
+</section>

@@ -1,26 +1,58 @@
 - title: Platform
   links:
-  - text: Platform Overview
-    url: /pages/nova-vector-platform
+  - text: Overview
+    url: /industrial-iot-platform/
+  - text: Architecture
+    url: /architecture/
+  - text: Device Management
+    url: /iot-device-management/
+  - text: Data & Analytics
+    url: /iot-timeseries-analytics/
+  - text: Process Automation
+    url: /industrial-state-machine/
+
+- title: Edge
+  links:
   - text: Nova Edge
-    url: /pages/nova-edge-computing
+    url: /edge-computing-platform/
+  - text: Edge Management
+    url: /industrial-edge-management/
+  - text: EdgeX Foundry
+    url: /edgex-foundry-platform/
 
 - title: Solutions
   links:
   - text: Manufacturing
-    url: /pages/smart-industry
-  - text: Industrial Infrastructure
-    url: /pages/smart-building
-  - text: All Solutions
-    url: /pages/solutions
+    url: /manufacturing/
+  - text: Energy & Storage
+    url: /energy/
+  - text: Industrial OEMs
+    url: /industrial-oem/
+  - text: Infrastructure
+    url: /industrial-infrastructure/
+
+- title: Develop & Learn
+  links:
+  - text: Developers
+    url: /developers/
+  - text: Documentation
+    url: /documentation/
+  - text: API
+    url: /api/
+  - text: Integrations
+    url: /integrations/
+  - text: Technical Articles
+    url: /blog/
 
 - title: Company
   links:
-  - text: Professional Services
-    url: /pages/professional-services
+  - text: About
+    url: /about/
+  - text: Services
+    url: /professional-services/
   - text: Support
-    url: /pages/support
+    url: /support/
   - text: Training
-    url: /pages/training
+    url: /training/
   - text: Contact
-    url: /pages/contact
+    url: /contact/

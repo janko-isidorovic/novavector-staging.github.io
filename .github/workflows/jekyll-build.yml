@@ -24,5 +24,11 @@ jobs:
           ruby-version: "3.1"
           bundler-cache: true
 
+      - name: Report build versions
+        run: |
+          ruby --version
+          bundle exec jekyll --version
+          bundle exec ruby -e 'puts Gem.loaded_specs.fetch("minima").full_name'
+
       - name: Build Jekyll site
         run: bundle exec jekyll build --trace

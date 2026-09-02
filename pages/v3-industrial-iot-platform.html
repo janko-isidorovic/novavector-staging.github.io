@@ -1,0 +1,40 @@
+---
+layout: v3
+permalink: /industrial-iot-platform/
+title: Industrial IoT Platform
+description: Draft Nova Vector Industrial IoT platform overview for design and architecture review.
+summary: A shared operational platform for connecting equipment, organizing industrial assets, processing telemetry, modeling state, and integrating decisions with enterprise systems.
+eyebrow: Nova Vector Platform
+theme: platform
+noindex: true
+sitemap: false
+show_architecture: true
+capabilities:
+  - title: Connect industrial systems
+    text: Structure for device connectivity, asset organization, telemetry ingestion, and approved integration methods.
+  - title: Model operational context
+    text: Structure for state, alarms, notifications, rules, commands, and industrial process definitions.
+  - title: Build operational applications
+    text: Structure for dashboards, reports, APIs, manufacturing workflows, and energy applications.
+screenshots:
+  - src: /assets/img/products/Devices-Things.png
+    alt: Devices and industrial assets organized in Nova Vector
+    caption: Draft screenshot treatment for device and asset management.
+  - src: /assets/img/products/platform-2.png
+    alt: Nova Vector platform dashboard
+    caption: Draft screenshot treatment for platform operations.
+faq:
+  - question: Which deployment models are supported?
+    answer: The P2 structure covers edge, on-premises, private-cloud, and cloud deployment. P3 must document the supported topology and responsibilities for each approved configuration.
+  - question: Which industrial protocols are available?
+    answer: Protocols and device services will be listed only after verification against the production product and the selected edge configuration.
+  - question: Is Nova Vector currently published under Apache 2.0?
+    answer: No. This prototype describes an architecture built on open standards and open-source technologies without claiming public availability of the Nova Vector source code.
+related:
+  - label: Device & Asset Management
+    url: /iot-device-management/
+  - label: Data & Time-Series Analytics
+    url: /iot-timeseries-analytics/
+  - label: Process Automation
+    url: /industrial-state-machine/
+---

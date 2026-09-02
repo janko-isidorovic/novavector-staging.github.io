@@ -1,0 +1,17 @@
+{% if page.capabilities %}
+<section class="v3-section">
+  <div class="v3-shell">
+    <p class="v3-eyebrow">{{ page.capability_eyebrow | default: 'Page structure' }}</p>
+    <h2>{{ page.capability_heading | default: 'Core capabilities' }}</h2>
+    <div class="v3-card-grid">
+      {% for capability in page.capabilities %}
+      <article class="v3-card">
+        <span class="v3-card__index">0{{ forloop.index }}</span>
+        <h3>{{ capability.title }}</h3>
+        <p>{{ capability.text }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}

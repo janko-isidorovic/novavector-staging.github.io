@@ -12,10 +12,29 @@ capability_heading: Operational context for distributed energy assets
 capabilities:
   - title: Asset telemetry
     text: Organize sites, systems, and equipment so measurements and alarms retain asset, location, and operating context.
+    image: /assets/img/solutions/realtime-parameters.png
+    image_alt: Real-time energy and environmental parameters
+    placeholder: Placeholder — approved energy operations view
+    details:
+      - Sites, storage systems, meters, and supporting equipment
+      - Current and historical measurements
+      - Asset-specific alarm context
   - title: Operational state
     text: Represent operating modes and transitions, persist command requests with state changes, notify teams, and retain event history.
+    flow: [Telemetry, Operating state, Alarm or request]
+    details:
+      - Explicit operating modes and guarded transitions
+      - Notification definitions and email targets
+      - Durable history for investigation
   - title: Integration and edge
     text: Integrate BESS, control systems, enterprise applications, and industrial edge services only through interfaces verified for the project.
+    image: /assets/img/solutions/industry-deployment.png
+    image_alt: Distributed industrial deployment
+    placeholder: Placeholder — energy edge-to-platform architecture
+    details:
+      - Configuration-specific BESS and control interfaces
+      - Nova Edge processing close to the asset
+      - Enterprise and analytics integration
 content_sections:
   - eyebrow: Distributed operations
     heading: Put telemetry and events in the context of each energy asset

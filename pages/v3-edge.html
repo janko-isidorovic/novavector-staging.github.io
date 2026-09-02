@@ -12,10 +12,27 @@ show_architecture: true
 capabilities:
   - title: Device connectivity
     text: Use configuration-specific EdgeX device services, gateways, and approved interfaces to connect industrial equipment.
+    image: /assets/img/products/edge-1.png
+    image_alt: Nova Edge connecting industrial equipment
+    details:
+      - EdgeX device services selected per deployment
+      - Device, sensor, PLC, and gateway integration
+      - Commands routed through explicit service boundaries
   - title: Local processing
     text: Transform, filter, and process selected data close to equipment. Buffering, local rules, and control behavior depend on the deployed configuration.
+    flow: [Collect, Transform, Export]
+    details:
+      - Filtering, conversion, compression, and encryption
+      - Local rules and application services
+      - HTTP, MQTT, EdgeX bus, and log outputs where supported
   - title: Platform integration
     text: Exchange telemetry, configuration, and command requests with central services while retaining clear edge and platform responsibilities.
+    image: /assets/img/products/edge-2.png
+    image_alt: Nova Edge and platform integration
+    details:
+      - Selected telemetry and events move upstream
+      - Approved configuration and command requests move downstream
+      - Edge and central responsibilities remain observable
 content_sections:
   - eyebrow: Local industrial integration
     heading: Process selected data close to the equipment

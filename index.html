@@ -13,16 +13,43 @@ capability_heading: Connect, understand, automate, and optimize
 capabilities:
   - title: Device & Asset Management
     text: Organize connected equipment, devices, and their operational context within a shared asset model.
+    flow: [Device, Thing, Asset]
+    details:
+      - Model sites, lines, equipment, and connected devices
+      - Link telemetry, alarms, state, and commands to assets
   - title: Industrial Edge
     text: Connect and process industrial data close to equipment through Nova Edge and deployment-specific EdgeX services.
+    flow: [Device service, Nova Edge, Platform]
+    details:
+      - EdgeX-based device integration where verified
+      - Local filtering, transformation, and export
   - title: Real-Time Data
     text: Ingest, visualize, and analyze real-time and historical telemetry from distributed operations.
+    image: /assets/img/solutions/data-values.png
+    image_alt: Real-time industrial values in Nova Vector
+    details:
+      - Current values and event-driven processing
+      - TimescaleDB-backed history and aggregation
   - title: Process Automation
     text: Represent operating state, evaluate rules, persist command requests, and coordinate asynchronous execution.
+    flow: [Telemetry, Transition, Command request]
+    details:
+      - Guarded state-machine transitions
+      - Alarm, notification, heartbeat, and command actions
   - title: Analytics & AI
     text: Use current and historical operational data in analytics and approved model-development or inference integrations.
+    image: /assets/img/paragraphs/aiml-1.png
+    image_alt: Analytics and machine learning workflow
+    placeholder: Placeholder — replace with approved analytics workflow
+    details:
+      - Contextual data for model development
+      - Managed edge inference remains roadmap
   - title: Industrial Applications
     text: Build manufacturing, energy, OEM, and infrastructure applications on one extensible platform.
+    flow: [Platform services, Domain workflow, Application]
+    details:
+      - Dashboards, reports, APIs, and operational workflows
+      - Shared services across multiple industrial use cases
 content_sections:
   - eyebrow: Nova Vector Platform
     heading: Model the equipment and the process around it

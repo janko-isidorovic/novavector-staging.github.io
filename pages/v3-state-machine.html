@@ -11,10 +11,27 @@ sitemap: false
 capabilities:
   - title: Process and state definitions
     text: Define processes as explicit states and guarded transitions with categories and operational metadata that applications can interpret consistently.
+    flow: [Current state, Guard, Next state]
+    details:
+      - JSON-based definitions and constrained expressions
+      - Categorized states and transitions
+      - Deterministic evaluation without runtime scripts
   - title: Reliable command workflows
     text: A transition can save a command request with the atomic state change; a separate service executes the request asynchronously.
+    flow: [Transition, Persist request, Execute async]
+    details:
+      - Regular and heartbeat command requests
+      - Alarm status changes and notification actions
+      - Execution result remains separate from submission
   - title: Simulation and replay
     text: Test process behavior and review historical execution. Version-selection behavior must be confirmed before it is presented as generally available.
+    image: /assets/img/paragraphs/graphnew.png
+    image_alt: Process graph representing state-machine behavior
+    placeholder: Placeholder — current simulator and replay UI
+    details:
+      - Controlled inputs for definition testing
+      - Historical event reconstruction
+      - Thing and process version selection remains incomplete
 content_sections:
   - eyebrow: Explicit process behavior
     heading: Model industrial operation as states and guarded transitions

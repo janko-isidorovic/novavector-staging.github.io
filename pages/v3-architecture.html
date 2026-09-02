@@ -13,10 +13,27 @@ capability_heading: Architecture boundaries
 capabilities:
   - title: Edge-to-platform data flow
     text: Nova Edge connects deployment-specific device services to local processing and upstream telemetry paths. Buffering and recovery behavior are defined for each topology.
+    flow: [Equipment, EdgeX, Nova Vector]
+    details:
+      - Device services normalize equipment interfaces
+      - Local applications filter and transform selected data
+      - Telemetry and events move through documented message paths
   - title: Operational services
     text: Central services connect assets, telemetry, state machines, rules, commands, alarms, notifications, and analytics without collapsing their operational responsibilities.
+    flow: [Asset context, Process state, Operational action]
+    details:
+      - PostgreSQL and TimescaleDB data services
+      - NATS and MQTT at approved service boundaries
+      - Durable command requests with asynchronous execution
   - title: Deployment qualities
     text: Identity, tenant isolation, resilience, scalability, and high availability are documented against the selected deployment rather than presented as universal claims.
+    image: /assets/img/products/network.png
+    image_alt: Distributed Nova Vector deployment
+    placeholder: Placeholder — approved deployment topology
+    details:
+      - OAuth 2.0 and OIDC integration
+      - Edge, on-premises, private-cloud, and cloud options
+      - Configuration-specific HA, recovery, and ownership
 content_sections:
   - eyebrow: Data path
     heading: From industrial equipment to a shared platform model

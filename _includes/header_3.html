@@ -25,9 +25,10 @@
 <div class="modal fade" id="search-modal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
-            <form>
-                <input type="text" id="search-input" placeholder="Search blog posts..">
-                <button><i class="fa fa-search"></i></button>
+            <form role="search">
+                <label class="sr-only" for="search-input">Search the Nova Vector website</label>
+                <input type="search" id="search-input" placeholder="Search the website">
+                <button type="button" aria-label="Search"><i class="fa fa-search" aria-hidden="true"></i></button>
             </form>
             <ul id="results-container"></ul>
         </div>

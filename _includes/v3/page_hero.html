@@ -1,4 +1,5 @@
-<section class="v3-hero">
+{% assign hero_image = page.hero_image | default: '/assets/img/bg/page-title.jpg' %}
+<section class="v3-hero" style="background-image: linear-gradient(rgba(2, 13, 38, .58), rgba(2, 13, 38, .58)), url('{{ hero_image | relative_url }}')">
   <div class="v3-shell v3-hero__grid">
     <div>
       <p class="v3-eyebrow">{{ page.eyebrow | default: 'Nova Vector' }}</p>
@@ -9,11 +10,6 @@
         <a class="v3-button v3-button--primary" href="{% if primary_url contains 'mailto:' or primary_url contains '://' %}{{ primary_url }}{% else %}{{ primary_url | relative_url }}{% endif %}">{{ page.primary_label | default: 'Explore the Platform' }}</a>
         <a class="v3-button v3-button--secondary" href="{{ '/contact/#request-demo' | relative_url }}">Request a Demo</a>
       </div>
-    </div>
-    <div class="v3-hero__visual" aria-label="Nova Vector edge-to-enterprise product layers">
-      <div class="v3-stack-card"><span>Operations</span><strong>Processes · OEE · Alarms</strong></div>
-      <div class="v3-stack-card"><span>Platform</span><strong>Assets · Telemetry · State</strong></div>
-      <div class="v3-stack-card"><span>Edge</span><strong>Connect · Process · Control</strong></div>
     </div>
   </div>
 </section>

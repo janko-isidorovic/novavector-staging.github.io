@@ -4,15 +4,13 @@ layout: default
 {% include header_3.html %}
 <main class="v3-page v3-page--{{ page.theme | default: 'platform' }}{% if page.homepage %} v3-page--home{% endif %}">
   {% include v3/page_hero.html %}
-  {% if page.homepage %}
-    {% include v3/deployment_strip.html %}
-    {% include v3/machine_flow.html %}
+  {% include v3/content_sections.html %}
+  {% if page.show_capability_cards %}
+    {% include v3/capability_cards.html %}
   {% endif %}
   {% if page.show_architecture %}
     {% include v3/architecture.html %}
   {% endif %}
-  {% include v3/capability_cards.html %}
-  {% include v3/content_sections.html %}
   {% if page.screenshots %}
     {% include v3/screenshot_showcase.html %}
   {% endif %}

@@ -1,7 +1,7 @@
 {% if page.content_sections %}
   {% for section in page.content_sections %}
-  <section class="v3-section{% if section.muted %} v3-section--muted{% endif %}">
-    <div class="v3-shell v3-content{% if section.image %} v3-content--media{% endif %}{% if section.image_side == 'left' %} v3-content--reverse{% endif %}">
+  <section class="v3-section{% if section.muted or forloop.index == 2 %} v3-section--muted{% endif %}">
+    <div class="v3-shell v3-content{% if section.image %} v3-content--media{% endif %}{% if section.image_side == 'left' or forloop.index == 2 %} v3-content--reverse{% endif %}">
       <div class="v3-content__copy">
         {% if section.eyebrow %}<p class="v3-eyebrow">{{ section.eyebrow }}</p>{% endif %}
         <h2>{{ section.heading }}</h2>

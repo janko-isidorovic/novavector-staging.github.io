@@ -24,7 +24,7 @@
 .v3-hero { min-height: 500px; display: flex; align-items: center; padding: 125px 0 64px; color: var(--nv-white); background: var(--nv-panel); }
 .v3-page--home .v3-hero {
   background-color: var(--nv-panel);
-  background-image: linear-gradient(rgba(2, 13, 38, .72), rgba(2, 13, 38, .72)), url("../img/slider/nv-video-v01.gif");
+  background-image: linear-gradient(rgba(2, 13, 38, .42), rgba(2, 13, 38, .42)), url("../img/slider/nv-video-v01.gif");
   background-position: center;
   background-size: cover;
 }

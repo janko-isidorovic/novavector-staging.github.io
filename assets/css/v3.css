@@ -22,6 +22,12 @@
 .v3-page h2 { max-width: 760px; margin: 0 0 30px; font-size: 32px; line-height: 1.25; }
 
 .v3-hero { min-height: 500px; display: flex; align-items: center; padding: 125px 0 64px; color: var(--nv-white); background: var(--nv-panel); }
+.v3-page--home .v3-hero {
+  background-color: var(--nv-panel);
+  background-image: linear-gradient(rgba(2, 13, 38, .72), rgba(2, 13, 38, .72)), url("../img/slider/nv-video-v01.gif");
+  background-position: center;
+  background-size: cover;
+}
 .v3-page--edge .v3-hero { background: #082037; }
 .v3-hero__grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(320px, .8fr); gap: 56px; align-items: center; }
 .v3-hero h1 { max-width: 760px; margin: 0; font-size: 48px; line-height: 1.15; }

@@ -2,7 +2,7 @@
 layout: default
 ---
 {% include header_3.html %}
-<main class="v3-page v3-page--{{ page.theme | default: 'platform' }}">
+<main class="v3-page v3-page--{{ page.theme | default: 'platform' }}{% if page.homepage %} v3-page--home{% endif %}">
   {% include v3/page_hero.html %}
   {% if page.homepage %}
     {% include v3/deployment_strip.html %}

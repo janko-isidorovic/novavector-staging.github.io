@@ -358,7 +358,7 @@
 		margin: auto auto 1rem auto;
 	}
 	
-	#card-text-paragraph {
+	.card-text-paragraph {
 		height: 115px;
 	}
 	.card-text p {

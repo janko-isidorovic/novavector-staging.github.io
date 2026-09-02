@@ -20,6 +20,8 @@ gem "minima", "~> 2.5.2"
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.6"
+  gem "jekyll-seo-tag", "~> 2.8"
+  gem "jekyll-sitemap", "~> 1.4"
   gem "jekyll-paginate-v2"
   gem 'jekyll-tagging'
   gem 'jekyll-archives'

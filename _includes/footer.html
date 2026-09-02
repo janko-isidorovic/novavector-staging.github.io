@@ -37,22 +37,21 @@
                 <img src="{{site.baseurl}}/assets/img/footer/footer_map.png" alt="">
             </div>
             <div class="row">
-                <div class="col-xl-4 col-lg-4 mb-50">
+                <div class="col-xl-6 col-lg-6 mb-50">
                     <div class="footer-widget">
                         <div class="footer-logo">
                             <a href="{{ '/' | relative_url }}"><img src="{{ '/assets/img/logo/footer_logo.png' | relative_url }}" class="img-fluid" alt="{{site.title}}"></a>
                         </div>
                         <div class="footer-text">
-                            <p>Nova Vector is the solution provider for the business solutions of the future.
-                                We integrate your existing systems with advanced technologies and help you move your business forward.</p>
+                            <p>Nova Vector is an Industrial IoT and edge computing platform for connecting equipment, monitoring operations, and integrating industrial data with enterprise systems.</p>
                         </div>
-                        <div class="footer-social-icon">
+                        {% if site.linkedin_url %}<div class="footer-social-icon">
                             <span>Follow us</span>
-                            <a href="{{site.linkedin_url}}" target="_blank"><i class="fab fa-linkedin-in linkedin-bg"></i></a>
-                        </div>
+                            <a href="{{site.linkedin_url}}" target="_blank" rel="noopener noreferrer" aria-label="Nova Vector on LinkedIn"><i class="fab fa-linkedin-in linkedin-bg" aria-hidden="true"></i></a>
+                        </div>{% endif %}
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                <div class="col-xl-6 col-lg-6 col-md-6 mb-30">
                     <div class="footer-widget">
                         <div class="footer-widget-heading">
                             <h4>Useful Links</h4>
@@ -71,17 +70,6 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
-                    <div class="footer-widget">
-                        <div class="footer-widget-heading">
-                            <h4>Subscribe</h4>
-                        </div>
-                        <div class="footer-text mb-25">
-                            <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
-                        </div>
-                        {% include subscribe.html %}
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -90,7 +78,7 @@
             <div class="row">
                 <div class="col-xl-6 col-lg-6 text-center text-lg-left">
                     <div class="copyright-text">
-                        <p>Copyright &copy; {{ 'now' | date: "%Y" }}, All Right Reserved <a href="#">Nova Vector</a></p>
+                        <p>Copyright &copy; {{ 'now' | date: "%Y" }}. All Rights Reserved. Nova Vector.</p>
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">

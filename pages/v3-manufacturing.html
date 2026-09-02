@@ -2,8 +2,8 @@
 layout: v3
 permalink: /manufacturing/
 title: Manufacturing Operations
-description: Manufacturing IoT for production monitoring, OEE, downtime classification, maintenance activity, and process execution.
-summary: Connect production equipment and operational systems to monitor plans, OEE, stoppages, maintenance activity, and real-time process state.
+description: Manufacturing IoT for modern and retrofitted legacy equipment, production monitoring, OEE, downtime classification, and process execution.
+summary: Connect modern and legacy production equipment to monitor plans, OEE, stoppages, maintenance activity, and real-time process state.
 eyebrow: Industrial solution
 theme: platform
 noindex: true
@@ -33,6 +33,20 @@ capabilities:
       - Maintenance and operator context
       - Persisted commands executed by a separate service
 content_sections:
+  - eyebrow: Mixed-equipment deployment
+    heading: Connect modern machines and retrofit legacy equipment
+    paragraphs:
+      - Manufacturing sites rarely replace every machine at once. Nova Vector supports a mixed approach in which modern equipment connects directly to the platform through interfaces such as Modbus and OPC UA, while legacy machines are instrumented with additional sensors, an HMI, and a PLC.
+      - Signals from both connection models are organized within the same device and asset structure. This allows older equipment to contribute operational state, production counts, stoppage information, and performance data alongside newer machines instead of remaining a visibility gap.
+      - This deployment model is already in use in customer environments, including a retrofit installation and a mixed modern-and-legacy equipment deployment. Customer identities and site-specific implementation details remain confidential.
+    points:
+      - Direct Modbus and OPC UA connectivity for compatible modern equipment
+      - Sensor, HMI, and PLC retrofit path for legacy machines
+      - Consistent asset, telemetry, and operational context across both models
+      - Comparable operations and performance insight without replacing viable equipment
+    image: /assets/img/solutions/industry-deployment.png
+    image_alt: Mixed modern and legacy industrial equipment connected to Nova Vector
+    caption: A practical brownfield architecture combines direct machine connectivity with retrofit instrumentation.
   - eyebrow: Production operations
     heading: Combine plans, machine signals, and operator context
     paragraphs:

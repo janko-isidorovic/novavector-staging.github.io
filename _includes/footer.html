@@ -51,23 +51,20 @@
                         </div>{% endif %}
                     </div>
                 </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 mb-30">
-                    <div class="footer-widget">
+                <div class="col-xl-6 col-lg-6 mb-30">
+                    <div class="row">
+                    {% for group in site.data.footer_links %}
+                    <div class="col-md-4 col-sm-6 footer-widget mb-30">
                         <div class="footer-widget-heading">
-                            <h4>Useful Links</h4>
+                            <h4>{{ group.title }}</h4>
                         </div>
                         <ul>
-                            <li><a href="{{ '/' | relative_url }}">Home</a></li>
-                            <!-- <li><a href="#">about</a></li> -->
-                            <li><a href="{{ '/pages/services' | relative_url }}">Services</a></li>
-                            <!-- <li><a href="#">portfolio</a></li> -->
-                            <li><a href="{{ '/pages/contact' | relative_url }}">Contact</a></li>
-                            <!-- <li><a href="#">About us</a></li>
-                            <li><a href="#">Our Services</a></li>
-                            <li><a href="#">Expert Team</a></li>
-                            <li><a href="#">Contact us</a></li>
-                            <li><a href="#">Latest News</a></li> -->
+                            {% for link in group.links %}
+                            <li><a href="{{ link.url | relative_url }}">{{ link.text }}</a></li>
+                            {% endfor %}
                         </ul>
+                    </div>
+                    {% endfor %}
                     </div>
                 </div>
             </div>
@@ -84,11 +81,8 @@
                 <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
                     <div class="footer-menu">
                         <ul>
-                            {% for link in site.data.footer_links %}                             
-                             <li>
-                                 <a href="{{ link.url | relative_url }}">{{link.text}}</a>
-                            </li>
-                            {% endfor %}
+                            <li><a href="{{ '/' | relative_url }}">Home</a></li>
+                            <li><a href="{{ '/pages/contact#request-demo' | relative_url }}">Request a Demo</a></li>
                         </ul>
                     </div>
                 </div>

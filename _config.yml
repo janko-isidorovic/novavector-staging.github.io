@@ -108,3 +108,7 @@ feed:
   collections:
     posts:
       path: "/index.xml"
+
+# Project documentation is maintained in the repository but not published.
+exclude:
+  - docs

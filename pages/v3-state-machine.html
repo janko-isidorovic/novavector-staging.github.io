@@ -2,7 +2,7 @@
 layout: v3
 permalink: /industrial-state-machine/
 title: Process Automation & State Machines
-description: Draft industrial process and state-machine page for Nova Vector.
+description: Model industrial processes with state machines, guarded transitions, alarms, notifications, command requests, simulation, and replay.
 summary: Model industrial processes as explicit state transitions connected to telemetry, alarms, persisted command requests, notifications, simulation, and replay.
 eyebrow: Platform capability
 theme: platform
@@ -10,11 +10,11 @@ noindex: true
 sitemap: false
 capabilities:
   - title: Process and state definitions
-    text: Structure for versioned process definitions, states, guarded transitions, categories, and operational metadata.
+    text: Define processes as explicit states and guarded transitions with categories and operational metadata that applications can interpret consistently.
   - title: Reliable command workflows
     text: A transition can save a command request with the atomic state change; a separate service executes the request asynchronously.
   - title: Simulation and replay
-    text: Structure for testing process behavior, selecting process or thing versions, and reviewing historical execution.
+    text: Test process behavior and review historical execution. Version-selection behavior must be confirmed before it is presented as generally available.
 related:
   - label: Platform Architecture
     url: /architecture/

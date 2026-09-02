@@ -2,21 +2,21 @@
 layout: v3
 permalink: /architecture/
 title: Nova Vector Architecture
-description: Draft edge-to-enterprise Nova Vector architecture page for technical review.
-summary: Review how devices, edge services, platform capabilities, operational applications, and enterprise integrations fit into one industrial architecture.
+description: Explore the Nova Vector edge-to-enterprise architecture for devices, telemetry, state, commands, alarms, applications, and integrations.
+summary: See how devices, edge services, platform capabilities, operational applications, and enterprise integrations fit into one industrial architecture.
 eyebrow: Technical evaluation
 theme: platform
 noindex: true
 sitemap: false
 show_architecture: true
-capability_heading: Architecture review areas
+capability_heading: Architecture boundaries
 capabilities:
   - title: Edge-to-platform data flow
-    text: Validate device connectivity, local processing, buffering, messaging, and upstream telemetry paths.
+    text: Nova Edge connects deployment-specific device services to local processing and upstream telemetry paths. Buffering and recovery behavior are defined for each topology.
   - title: Operational services
-    text: Validate asset, telemetry, state, rules, commands, alarms, notifications, and analytics boundaries.
+    text: Central services connect assets, telemetry, state machines, rules, commands, alarms, notifications, and analytics without collapsing their operational responsibilities.
   - title: Deployment qualities
-    text: Document security, tenancy, resilience, scalability, and high availability only for verified configurations.
+    text: Identity, tenant isolation, resilience, scalability, and high availability are documented against the selected deployment rather than presented as universal claims.
 related:
   - label: Platform Overview
     url: /industrial-iot-platform/

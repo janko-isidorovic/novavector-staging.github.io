@@ -16,6 +16,20 @@ capabilities:
     text: Map EdgeX messages into transformations, exports, platform telemetry, and approved command paths while preserving traceable boundaries.
   - title: Deployment patterns
     text: Define container topology, configuration, resilience, upgrades, and service ownership for the target industrial environment.
+content_sections:
+  - eyebrow: EdgeX architecture
+    heading: Connect device services to Nova Vector applications
+    paragraphs:
+      - EdgeX device services normalize communication with equipment. Core services manage device data and commands, while application services transform and export selected information to platform or local destinations.
+      - Nova Vector integrates these message flows with its asset, telemetry, state, alarm, and command services. The mapping is documented for the chosen EdgeX release and device-service set.
+    image: /assets/img/products/edge-2.png
+    image_alt: EdgeX services integrated with Nova Vector
+    caption: Nova Edge and EdgeX Foundry service relationships.
+  - eyebrow: Engineering experience
+    heading: Practical involvement in the EdgeX ecosystem
+    paragraphs:
+      - Nova Vector’s founder chaired the EdgeX Foundry Application Working Group from the project’s early development through the 1.0 release. This historical statement will be linked to an approved primary source before publication.
+      - The value for an implementation is practical familiarity with device services, application services, message flows, container deployment, and the boundary between edge and central platform responsibilities.
 screenshots:
   - src: /assets/img/products/edge-2.png
     alt: EdgeX Foundry services integrated with Nova Vector

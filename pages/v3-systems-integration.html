@@ -15,6 +15,20 @@ capabilities:
     text: Connect ERP, MES, CMMS, identity, analytics, data platforms, and customer applications through documented APIs and event flows.
   - title: Reliability and ownership
     text: Define retries, persistence, idempotency, monitoring, failure handling, security, and service ownership for each integration boundary.
+content_sections:
+  - eyebrow: Integration design
+    heading: Map semantics before moving messages
+    paragraphs:
+      - Successful industrial integration requires agreement on asset identifiers, units, timestamps, quality, state, command meaning, and ownership—not only a network connection.
+      - Nova Vector maps those semantics into its device, asset, telemetry, process, alarm, and command models.
+    image: /assets/img/products/network.png
+    image_alt: Industrial systems integration network
+    caption: Conceptual network image; replace with the approved project integration diagram.
+    placeholder: Placeholder — Nova Vector integration architecture
+  - eyebrow: Reliability
+    heading: Define what happens when a dependency is unavailable
+    paragraphs:
+      - Each interface documents persistence, retries, idempotency, timeout, monitoring, and recovery behavior. Command submission remains distinct from asynchronous execution and physical equipment response.
 related:
   - label: Integrations
     url: /integrations/

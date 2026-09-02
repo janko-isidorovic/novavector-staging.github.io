@@ -15,6 +15,24 @@ capabilities:
     text: Investigate trends, compare time periods, aggregate measurements, and relate data to equipment and production context.
   - title: Analytics integration
     text: Provide approved APIs and messaging paths for downstream analytics, reporting, and model-development workflows.
+content_sections:
+  - eyebrow: Current operations
+    heading: See live measurements in asset and process context
+    paragraphs:
+      - Incoming telemetry updates current operating views while retaining the device, asset, and timestamp needed for investigation. Dashboards can combine machine signals with production plans, process state, alarms, and operator input.
+      - Event-driven services can respond to selected changes without forcing every application to poll the database.
+    image: /assets/img/solutions/data-values.png
+    image_alt: Nova Vector live industrial data values
+    caption: Current industrial measurements presented in the Nova Vector interface.
+  - eyebrow: Historical analysis
+    heading: Move from individual values to operating patterns
+    paragraphs:
+      - Time-series history supports trends, aggregation, period comparison, process replay, production reporting, and downstream analytics. TimescaleDB is used where its time-series functions match the deployment requirements.
+    points:
+      - Time-window trends and aggregation
+      - Comparison by asset, line, product, shift, or process context
+      - Historical replay for approved process workflows
+      - Export and API paths for external analysis
 screenshots:
   - src: /assets/img/paragraphs/Production-lines.png
     alt: Production telemetry visualized in Nova Vector

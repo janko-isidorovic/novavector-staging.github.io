@@ -16,6 +16,25 @@ capabilities:
     text: Use approved REST, MQTT, NATS, event, export, OAuth 2.0, and OIDC interfaces according to the documented service boundary.
   - title: Enterprise systems
     text: Exchange operational context with ERP, MES, CMMS, analytics, data platforms, and customer applications through validated patterns.
+content_sections:
+  - eyebrow: Industrial interfaces
+    heading: Normalize equipment data at a documented boundary
+    paragraphs:
+      - Device services, gateways, and edge applications map equipment-specific data into Nova Vector device, asset, telemetry, state, and command models.
+      - EdgeX Foundry is used for applicable edge integrations. MQTT, NATS, REST, and other interfaces are listed only where the deployed service and version support them.
+    image: /assets/img/products/network.png
+    image_alt: Network of industrial integration services
+    caption: Conceptual integration visual; replace with an approved interface map.
+    placeholder: Placeholder — approved Nova Vector integration map
+  - eyebrow: Enterprise context
+    heading: Exchange decisions as well as measurements
+    paragraphs:
+      - ERP, MES, CMMS, identity, analytics, and customer applications can exchange plans, asset references, work context, events, or results through verified APIs and message flows.
+    points:
+      - OAuth 2.0 and OIDC identity integration
+      - REST APIs for platform resources
+      - MQTT and NATS at approved service boundaries
+      - ERP, MES, CMMS, and data-platform patterns
 related:
   - label: REST API
     url: /api/

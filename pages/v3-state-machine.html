@@ -15,6 +15,26 @@ capabilities:
     text: A transition can save a command request with the atomic state change; a separate service executes the request asynchronously.
   - title: Simulation and replay
     text: Test process behavior and review historical execution. Version-selection behavior must be confirmed before it is presented as generally available.
+content_sections:
+  - eyebrow: Explicit process behavior
+    heading: Model industrial operation as states and guarded transitions
+    paragraphs:
+      - Nova Vector process definitions describe valid states, transition conditions, categories, and operational metadata. Guards are evaluated with a constrained expression engine rather than unrestricted runtime scripts.
+      - Transitions can change alarm status, start or stop heartbeat commands, and create regular command requests. Alarm status changes can initiate email delivery through notification definitions and configured email targets.
+    points:
+      - JSON-based process definitions
+      - Guarded and categorized transitions
+      - Alarm and notification actions
+      - Persisted heartbeat and regular command requests
+    image: /assets/img/paragraphs/graphnew.png
+    image_alt: Process relationships visualized as a graph
+    caption: Existing process-graph visual used as a placeholder until the current state-machine UI is approved.
+    placeholder: Placeholder — replace with approved state-machine editor screenshot
+  - eyebrow: Test before operation
+    heading: Simulate definitions and replay historical behavior
+    paragraphs:
+      - The process simulator exercises transition logic with controlled inputs. Replay reconstructs behavior from historical events so engineering teams can investigate how a process reached a state.
+      - Selection of thing and process-definition versions remains an identified completion item and is not presented as generally available.
 related:
   - label: Platform Architecture
     url: /architecture/

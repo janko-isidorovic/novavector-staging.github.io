@@ -16,6 +16,28 @@ capabilities:
     text: Represent process state, evaluate transitions, raise alarms, notify teams, and create command requests without hiding execution boundaries.
   - title: Build operational applications
     text: Use shared platform services to build dashboards, reports, APIs, manufacturing workflows, and energy applications.
+content_sections:
+  - eyebrow: Operational model
+    heading: Keep device data connected to the industrial process
+    paragraphs:
+      - Nova Vector does more than store measurements. Devices are connected to assets such as sites, areas, lines, machines, and subsystems, giving telemetry a stable operational context.
+      - Process state, alarms, notifications, rules, and command requests use that same context. Applications can therefore show what a value means, where it originated, and which operating condition was active when it changed.
+    points:
+      - Multi-tenant platform with role-based access boundaries
+      - Device and asset hierarchy linked to telemetry and events
+      - Real-time and historical time-series data
+      - State machines, alarms, notifications, rules, and commands
+    image: /assets/img/products/Devices-Things.png
+    image_alt: Nova Vector devices and things interface
+    caption: Devices and things organized in the Nova Vector Platform.
+  - eyebrow: Event and command flow
+    heading: Coordinate automation without hiding service boundaries
+    paragraphs:
+      - A state transition can update alarm status, start or stop heartbeat commands, or create a regular command request. The request and state change can be stored together, while a separate service performs execution asynchronously.
+      - This persisted workflow makes the handoff between process logic and device execution explicit. Integrations can monitor request state, execution results, alarms, and notifications instead of assuming that a distributed side effect happened inside one transaction.
+    image: /assets/img/products/platform-2.png
+    image_alt: Nova Vector platform operational dashboard
+    caption: Platform interface showing operational information across connected assets.
 screenshots:
   - src: /assets/img/products/Devices-Things.png
     alt: Devices and industrial assets organized in Nova Vector

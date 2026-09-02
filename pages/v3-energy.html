@@ -16,6 +16,25 @@ capabilities:
     text: Represent operating modes and transitions, persist command requests with state changes, notify teams, and retain event history.
   - title: Integration and edge
     text: Integrate BESS, control systems, enterprise applications, and industrial edge services only through interfaces verified for the project.
+content_sections:
+  - eyebrow: Distributed operations
+    heading: Put telemetry and events in the context of each energy asset
+    paragraphs:
+      - Nova Vector can organize sites, battery systems, power-conversion equipment, meters, environmental sensors, and supporting infrastructure within one asset hierarchy.
+      - Time-series measurements, current operating state, alarms, and notification history remain connected to the affected asset and site.
+    image: /assets/img/solutions/realtime-parameters.png
+    image_alt: Real-time energy and environmental parameters
+    caption: Existing real-time parameter view used as a placeholder for an approved energy deployment screenshot.
+    placeholder: Placeholder — replace with approved energy or BESS operations screenshot
+  - eyebrow: State and control
+    heading: Separate operational intent from physical execution
+    paragraphs:
+      - State-machine transitions can persist command requests together with state changes, but a separate service performs execution. This preserves a durable record without implying atomic behavior across the platform, edge network, and control equipment.
+    points:
+      - Asset and site telemetry
+      - Explicit operating-state models
+      - Alarm and email-notification workflows
+      - Configuration-specific control-system integration
 related:
   - label: Platform Architecture
     url: /architecture/

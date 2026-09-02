@@ -16,6 +16,24 @@ capabilities:
     text: Transform, filter, and process selected data close to equipment. Buffering, local rules, and control behavior depend on the deployed configuration.
   - title: Platform integration
     text: Exchange telemetry, configuration, and command requests with central services while retaining clear edge and platform responsibilities.
+content_sections:
+  - eyebrow: Local industrial integration
+    heading: Process selected data close to the equipment
+    paragraphs:
+      - Nova Edge uses containerized services and EdgeX Foundry components to connect deployment-specific devices and sensors. Local application services can filter, transform, compress, convert, or encrypt data before export.
+      - Rules can route processed output to approved HTTP, MQTT, EdgeX message-bus, or logging destinations. Exact services and protocols are confirmed for the deployed EdgeX version.
+    image: /assets/img/products/edge-1.png
+    image_alt: Nova Edge processing data near industrial equipment
+    caption: Edge processing and connectivity close to equipment.
+  - eyebrow: Edge-to-platform operation
+    heading: Exchange telemetry, configuration, and commands
+    paragraphs:
+      - Edge deployments send selected telemetry and events to the Nova Vector Platform and receive approved configuration or command requests. Local processing can continue where the selected topology supports disconnected operation.
+    points:
+      - EdgeX device, core, and application services
+      - Local filtering and transformation
+      - Container-based deployment
+      - Central platform integration
 screenshots:
   - src: /assets/img/products/edge-2.png
     alt: Nova Edge and EdgeX Foundry integration architecture

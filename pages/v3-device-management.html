@@ -2,7 +2,7 @@
 layout: v3
 permalink: /iot-device-management/
 title: Device & Asset Management
-description: Draft device and industrial asset management page for Nova Vector.
+description: Manage industrial devices and assets with identity, hierarchy, telemetry, state, alarms, configuration, and operational context.
 summary: Connect devices to a structured industrial asset model and keep telemetry, configuration, state, and operational context together.
 eyebrow: Platform capability
 theme: platform
@@ -10,15 +10,33 @@ noindex: true
 sitemap: false
 capabilities:
   - title: Device registry
-    text: Placeholder structure for device identity, connectivity, configuration, and lifecycle information.
+    text: Maintain device identity, connectivity settings, configuration, and the information needed to operate connected equipment.
   - title: Asset hierarchy
-    text: Placeholder structure for sites, areas, lines, equipment, and other operational relationships.
+    text: Represent sites, areas, production lines, systems, and equipment so incoming data retains its physical and operational context.
   - title: Operational context
-    text: Placeholder structure linking telemetry, alarms, state, commands, and dashboards to assets.
+    text: Link telemetry, alarms, process state, command requests, and dashboards to the assets operators recognize.
+content_sections:
+  - eyebrow: Asset hierarchy
+    heading: Represent the structure operators use every day
+    paragraphs:
+      - Model organizations, sites, buildings, production areas, lines, equipment, and connected devices as related platform entities rather than a flat device list.
+      - Applications can use these relationships to filter dashboards, assign access, locate alarms, compare equipment, and preserve context when devices are replaced or reconfigured.
+    image: /assets/img/products/floorplan.png
+    image_alt: Nova Vector industrial floor plan and asset hierarchy
+    caption: Industrial assets placed in operational and spatial context.
+  - eyebrow: Device lifecycle
+    heading: Connect identity, configuration, data, and commands
+    paragraphs:
+      - Each connected device carries the identifiers and configuration required by its integration. Telemetry, current values, alarms, and command requests remain linked to that identity.
+    points:
+      - Device and thing definitions
+      - Connectivity and deployment-specific configuration
+      - Telemetry and current-value association
+      - Alarm, state, and command context
 screenshots:
   - src: /assets/img/paragraphs/homepageresized.png
     alt: Nova Vector device and asset management interface
-    caption: Asset hierarchy and connected-device screenshot candidate; approval pending.
+    caption: Device and asset relationships in the Nova Vector interface. Screenshot content remains subject to disclosure review.
 related:
   - label: Platform Overview
     url: /industrial-iot-platform/

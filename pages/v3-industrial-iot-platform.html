@@ -2,7 +2,7 @@
 layout: v3
 permalink: /industrial-iot-platform/
 title: Industrial IoT Platform
-description: Draft Nova Vector Industrial IoT platform overview for design and architecture review.
+description: Industrial IoT platform for device management, edge computing, real-time telemetry, process state, alarms, commands, and industrial applications.
 summary: A shared operational platform for connecting equipment, organizing industrial assets, processing telemetry, modeling state, and integrating decisions with enterprise systems.
 eyebrow: Nova Vector Platform
 theme: platform
@@ -11,25 +11,64 @@ sitemap: false
 show_architecture: true
 capabilities:
   - title: Connect industrial systems
-    text: Structure for device connectivity, asset organization, telemetry ingestion, and approved integration methods.
+    text: Register connected equipment, organize it in an industrial asset hierarchy, and bring telemetry into a consistent operational model.
+    image: /assets/img/products/Devices-Things.png
+    image_alt: Devices and things managed in Nova Vector
+    details:
+      - Device identity and configuration
+      - Thing, asset, site, and line relationships
+      - Real-time telemetry linked to operational context
   - title: Model operational context
-    text: Structure for state, alarms, notifications, rules, commands, and industrial process definitions.
+    text: Represent process state, evaluate transitions, raise alarms, notify teams, and create command requests without hiding execution boundaries.
+    flow: [Event, State transition, Persisted action]
+    details:
+      - Guarded state-machine behavior
+      - Alarm status and email notification workflows
+      - Atomic state and command-request persistence
   - title: Build operational applications
-    text: Structure for dashboards, reports, APIs, manufacturing workflows, and energy applications.
+    text: Use shared platform services to build dashboards, reports, APIs, manufacturing workflows, and energy applications.
+    image: /assets/img/products/platform-2.png
+    image_alt: Nova Vector platform dashboard
+    details:
+      - Multi-tenant application model
+      - REST and messaging integration
+      - Manufacturing, energy, OEM, and infrastructure workflows
+content_sections:
+  - eyebrow: Operational model
+    heading: Keep device data connected to the industrial process
+    paragraphs:
+      - Nova Vector does more than store measurements. Devices are connected to assets such as sites, areas, lines, machines, and subsystems, giving telemetry a stable operational context.
+      - Process state, alarms, notifications, rules, and command requests use that same context. Applications can therefore show what a value means, where it originated, and which operating condition was active when it changed.
+    points:
+      - Multi-tenant platform with role-based access boundaries
+      - Device and asset hierarchy linked to telemetry and events
+      - Real-time and historical time-series data
+      - State machines, alarms, notifications, rules, and commands
+    image: /assets/img/products/Devices-Things.png
+    image_alt: Nova Vector devices and things interface
+    caption: Devices and things organized in the Nova Vector Platform.
+  - eyebrow: Event and command flow
+    heading: Coordinate automation without hiding service boundaries
+    paragraphs:
+      - A state transition can update alarm status, start or stop heartbeat commands, or create a regular command request. The request and state change can be stored together, while a separate service performs execution asynchronously.
+      - This persisted workflow makes the handoff between process logic and device execution explicit. Integrations can monitor request state, execution results, alarms, and notifications instead of assuming that a distributed side effect happened inside one transaction.
+    image: /assets/img/products/platform-2.png
+    image_alt: Nova Vector platform operational dashboard
+    caption: Platform interface showing operational information across connected assets.
 screenshots:
   - src: /assets/img/products/Devices-Things.png
     alt: Devices and industrial assets organized in Nova Vector
-    caption: Draft screenshot treatment for device and asset management.
+    caption: Devices and industrial assets organized within the platform.
   - src: /assets/img/products/platform-2.png
     alt: Nova Vector platform dashboard
-    caption: Draft screenshot treatment for platform operations.
+    caption: Operational data presented in a shared platform workspace.
 faq:
   - question: Which deployment models are supported?
-    answer: The P2 structure covers edge, on-premises, private-cloud, and cloud deployment. P3 must document the supported topology and responsibilities for each approved configuration.
+    answer: Nova Vector can be deployed at the edge, on premises, in a private cloud, or in a cloud environment. The supported topology, service ownership, and resilience model are confirmed for each implementation.
   - question: Which industrial protocols are available?
-    answer: Protocols and device services will be listed only after verification against the production product and the selected edge configuration.
+    answer: Connectivity is configuration-specific. Nova Vector documents only the protocols, gateways, and EdgeX device services verified for the target equipment and deployment.
   - question: Is Nova Vector currently published under Apache 2.0?
-    answer: No. This prototype describes an architecture built on open standards and open-source technologies without claiming public availability of the Nova Vector source code.
+    answer: No. Nova Vector is built with open standards and open-source technologies, but the Nova Vector platform source code is not currently published under Apache 2.0.
 related:
   - label: Device & Asset Management
     url: /iot-device-management/

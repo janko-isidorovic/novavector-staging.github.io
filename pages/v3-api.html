@@ -2,7 +2,7 @@
 layout: v3
 permalink: /api/
 title: REST API & Platform Integration
-description: Draft Nova Vector API and platform-integration landing page.
+description: Integrate Nova Vector assets, telemetry, state, commands, alarms, and workflows through authenticated platform APIs.
 summary: Plan integrations around approved platform resources, authentication, telemetry, operational state, commands, alarms, and enterprise workflows.
 eyebrow: Developer resources
 theme: platform
@@ -10,11 +10,30 @@ noindex: true
 sitemap: false
 capabilities:
   - title: Resource model
-    text: Placeholder for verified API resources, identifiers, relationships, pagination, filtering, and versioning.
+    text: Work with documented resources, identifiers, relationships, pagination, filtering, and version behavior.
   - title: Authentication and authorization
-    text: Placeholder for supported OAuth 2.0 and OIDC flows, scopes, roles, and tenant boundaries.
+    text: Apply supported OAuth 2.0 and OIDC flows, scopes, roles, and tenant boundaries to application integrations.
   - title: Operational integration
-    text: Placeholder for telemetry, state, command requests, alarms, notifications, and application workflows.
+    text: Connect applications to telemetry, process state, command requests, alarms, notifications, and operational workflows through approved endpoints.
+content_sections:
+  - eyebrow: Platform resources
+    heading: Integrate with the same model used by Nova Vector applications
+    paragraphs:
+      - APIs expose approved resources for tenants, users, devices, things, assets, telemetry, process state, alarms, notifications, and command workflows.
+      - Authentication and authorization use the supported OAuth 2.0 and OIDC configuration, with roles and tenant boundaries applied to the caller.
+    image: /assets/img/products/platform-3.png
+    image_alt: Nova Vector platform interface representing API resources
+    caption: Platform UI placeholder for a future API documentation example.
+    placeholder: Placeholder — replace with approved API documentation screenshot
+  - eyebrow: Command integration
+    heading: Create durable requests and observe asynchronous execution
+    paragraphs:
+      - A command request is persisted before a separate service executes it. API consumers should handle request state, retries, device response, and failures rather than treating submission as proof of physical execution.
+    points:
+      - Authenticated resource access
+      - Tenant and role boundaries
+      - Telemetry and operational-state integration
+      - Observable command-request lifecycle
 related:
   - label: Documentation
     url: /documentation/

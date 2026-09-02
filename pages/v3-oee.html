@@ -2,7 +2,7 @@
 layout: v3
 permalink: /manufacturing-oee-software/
 title: Production Monitoring, OEE & Downtime
-description: Draft real-time manufacturing OEE, production monitoring, and downtime-analysis page.
+description: Real-time OEE, production monitoring, and downtime classification software for manufacturing operations.
 summary: Combine production plans, machine data, product context, and classified stoppages to investigate availability, performance, quality, and production losses.
 eyebrow: Manufacturing analytics
 theme: platform
@@ -10,15 +10,50 @@ noindex: true
 sitemap: false
 capabilities:
   - title: OEE context
-    text: Template for availability, performance, quality, shifts, products, and line-level comparison.
+    text: Analyze availability, performance, and quality in the context of shifts, products, orders, and production lines.
+    flow: [Availability, Performance, Quality]
+    details:
+      - Planned production time and classified downtime
+      - Actual output compared with expected rate
+      - Accepted and rejected quantities
   - title: Downtime classification
-    text: Template for automatic detection, operator classification, causes, duration, frequency, and recurrence.
+    text: Detect stoppages from machine data, capture operator classifications, and compare causes, duration, frequency, and recurrence.
+    image: /assets/img/solutions/packaging-line-data.png
+    image_alt: Packaging line downtime analysis
+    details:
+      - Signal-based start and end detection
+      - Operator reason and cause hierarchy
+      - Recurring-loss comparison across periods
   - title: Production execution
-    text: Template for plan-versus-actual output, line speed, changeovers, and current operating condition.
+    text: Compare planned and actual output while monitoring line speed, changeovers, and the current operating condition.
+    image: /assets/img/solutions/report1.png
+    image_alt: Nova Vector manufacturing production report
+    details:
+      - Plan-versus-actual reporting
+      - Line, shift, product, and order filters
+      - Current state connected to historical results
+content_sections:
+  - eyebrow: Defensible OEE
+    heading: Calculate performance from production context, not isolated counters
+    paragraphs:
+      - Availability depends on the planned production period and classified downtime. Performance relates actual output or speed to the expected rate. Quality requires the accepted and rejected quantities for the relevant product and order.
+      - Nova Vector keeps these inputs connected to lines, shifts, products, plans, and operating states so the resulting OEE can be investigated rather than treated as a single unexplained percentage.
+    image: /assets/img/solutions/packaging-line-data.png
+    image_alt: Packaging line production and downtime data
+    caption: Packaging-line data used to investigate production loss.
+  - eyebrow: Downtime workflow
+    heading: Detect the event, then capture the reason
+    paragraphs:
+      - Machine signals can identify when a line stops. Operators add the cause when automation cannot infer it reliably, producing a classified event with start time, duration, equipment, and production context.
+    points:
+      - Duration and frequency by stoppage cause
+      - Recurring-loss comparison
+      - Shift, line, product, and order context
+      - Plan-versus-actual reporting
 screenshots:
   - src: /assets/img/solutions/packaging-line-data.png
     alt: Packaging-line stoppage analysis in Nova Vector
-    caption: Downtime-analysis screenshot candidate; data-redaction review required.
+    caption: Packaging-line downtime analysis. Production data requires disclosure review before publication.
 related:
   - label: Manufacturing
     url: /manufacturing/

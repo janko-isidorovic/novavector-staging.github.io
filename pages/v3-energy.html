@@ -2,20 +2,58 @@
 layout: v3
 permalink: /energy/
 title: Energy & Energy Storage
-description: Draft energy and BESS operational-monitoring solution page for Nova Vector.
-summary: Structure distributed energy telemetry, asset state, alarms, operational workflows, edge processing, and approved control-system integrations.
+description: Industrial IoT for distributed energy and battery-storage telemetry, operating state, alarms, edge processing, and integration.
+summary: Connect distributed energy and storage assets to telemetry, explicit operating state, alarms, edge processing, and approved control-system integrations.
 eyebrow: Industrial solution
 theme: edge
 noindex: true
 sitemap: false
-capability_heading: Solution structure under domain review
+capability_heading: Operational context for distributed energy assets
 capabilities:
   - title: Asset telemetry
-    text: Template for sites, systems, equipment, measurements, alarms, and operating context.
+    text: Organize sites, systems, and equipment so measurements and alarms retain asset, location, and operating context.
+    image: /assets/img/solutions/realtime-parameters.png
+    image_alt: Real-time energy and environmental parameters
+    placeholder: Placeholder — approved energy operations view
+    details:
+      - Sites, storage systems, meters, and supporting equipment
+      - Current and historical measurements
+      - Asset-specific alarm context
   - title: Operational state
-    text: Template for explicit state models, transitions, command requests, notification workflows, and event history.
+    text: Represent operating modes and transitions, persist command requests with state changes, notify teams, and retain event history.
+    flow: [Telemetry, Operating state, Alarm or request]
+    details:
+      - Explicit operating modes and guarded transitions
+      - Notification definitions and email targets
+      - Durable history for investigation
   - title: Integration and edge
-    text: Template for configuration-specific BESS, controls, enterprise, and industrial-edge integration.
+    text: Integrate BESS, control systems, enterprise applications, and industrial edge services only through interfaces verified for the project.
+    image: /assets/img/solutions/industry-deployment.png
+    image_alt: Distributed industrial deployment
+    placeholder: Placeholder — energy edge-to-platform architecture
+    details:
+      - Configuration-specific BESS and control interfaces
+      - Nova Edge processing close to the asset
+      - Enterprise and analytics integration
+content_sections:
+  - eyebrow: Distributed operations
+    heading: Put telemetry and events in the context of each energy asset
+    paragraphs:
+      - Nova Vector can organize sites, battery systems, power-conversion equipment, meters, environmental sensors, and supporting infrastructure within one asset hierarchy.
+      - Time-series measurements, current operating state, alarms, and notification history remain connected to the affected asset and site.
+    image: /assets/img/solutions/realtime-parameters.png
+    image_alt: Real-time energy and environmental parameters
+    caption: Existing real-time parameter view used as a placeholder for an approved energy deployment screenshot.
+    placeholder: Placeholder — replace with approved energy or BESS operations screenshot
+  - eyebrow: State and control
+    heading: Separate operational intent from physical execution
+    paragraphs:
+      - State-machine transitions can persist command requests together with state changes, but a separate service performs execution. This preserves a durable record without implying atomic behavior across the platform, edge network, and control equipment.
+    points:
+      - Asset and site telemetry
+      - Explicit operating-state models
+      - Alarm and email-notification workflows
+      - Configuration-specific control-system integration
 related:
   - label: Platform Architecture
     url: /architecture/

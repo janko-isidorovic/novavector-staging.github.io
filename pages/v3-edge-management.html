@@ -2,20 +2,39 @@
 layout: v3
 permalink: /industrial-edge-management/
 title: Industrial Edge Management
-description: Draft industrial edge fleet-management page with explicit capability verification gates.
+description: Manage approved workloads, health data, metrics, and logs across distributed Nova Edge computers.
 summary: Define how distributed edge computers, services, deployments, health information, metrics, and logs are managed across industrial sites.
 eyebrow: Nova Edge Agent
 theme: edge
 noindex: true
 sitemap: false
-capability_heading: Capability structure under verification
+capability_heading: Manage distributed edge operations
 capabilities:
   - title: Workload lifecycle
-    text: Template for allowlisted systemd and container workloads, remote deployment, and configuration-specific lifecycle actions.
+    text: Operate allowlisted systemd services and container workloads through configuration-specific deployment and lifecycle actions.
   - title: Fleet observability
-    text: Template for host and container metrics, health, logs, and edge-to-platform operational visibility.
+    text: Bring host and container health, metrics, and logs into a central operational view where the deployed agent configuration supports them.
   - title: Controlled operations
-    text: Template for permissions, audit context, failure handling, and safeguards for remote edge actions.
+    text: Constrain remote actions through an explicit workload allowlist, permissions, operational context, and failure handling.
+content_sections:
+  - eyebrow: Nova Edge Agent
+    heading: Operate mixed workloads from one controlled interface
+    paragraphs:
+      - The Nova Edge Agent is designed for industrial computers that run both systemd services and Docker workloads. Remote lifecycle operations are restricted to an explicit allowlist rather than exposing unrestricted host control.
+      - Deployment-specific workflows can distribute Docker Compose definitions and systemd units, then report status back to the central platform.
+    image: /assets/img/products/administrative-tools.png
+    image_alt: Administrative tools representing edge workload management
+    caption: Conceptual placeholder for the Nova Edge Agent fleet interface.
+    placeholder: Placeholder — replace with approved Nova Edge Agent fleet screenshot
+  - eyebrow: Fleet observability
+    heading: Bring edge health, metrics, and logs into operational view
+    paragraphs:
+      - The planned operating model combines host and container metrics with workload health and centralized log collection. OpenSearch-backed log workflows and the precise set of metrics must be verified against the released agent version.
+    points:
+      - Host and container health
+      - Allowlisted service lifecycle
+      - Centralized logs and diagnostics
+      - Deployment and version visibility
 related:
   - label: Nova Edge
     url: /edge-computing-platform/

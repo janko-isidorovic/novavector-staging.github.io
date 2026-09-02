@@ -2,36 +2,44 @@
 <!-- paragraphs -->
 <section class="paragraphs">
 <div class="container-fluid">
+        <div class="nv-capabilities-heading">
+            <div class="container text-center">
+                <span class="nv-section-label">Platform capabilities</span>
+                <h2>Turn industrial data into operational action</h2>
+                <p>Nova Vector brings connectivity, telemetry, process state, automation, analytics, and integration into one operational platform.</p>
+            </div>
+        </div>
         <div class="container-white">
             <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-12 col-12 text-left">
-                    <h3>Device and Asset Management</h3>
-                    <p>Register devices and organize them within an industrial asset hierarchy.
+                    <h3>Connect equipment to a usable asset model</h3>
+                    <p>Register devices and represent equipment within an industrial asset hierarchy.
                         <br>
                         <br>
-                        View current telemetry, status, and operational context for connected equipment.
+                        Connect modern equipment through interfaces such as Modbus and OPC UA.
                         <br>
                         <br>
-                        Track equipment information and use operational data to support inspection and maintenance workflows.
+                        Retrofit legacy machines with additional sensors, an HMI, and a PLC, then bring those signals into the same platform model.
                         <br>
                         <br>
-                        Provide operations and engineering teams with a shared view of assets and their data.
+                        Give operations and engineering teams comparable visibility into the condition, operation, and performance of both modern and legacy equipment.
                         <br>
                     </p>
+                    <a class="nv-inline-link" href="{{ '/iot-device-management/' | relative_url }}">Explore device and asset management <span aria-hidden="true">→</span></a>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-12 text-right align-self-center">
-                    <img src="{{site.baseurl}}/assets/img/paragraphs/homepageresized.png" class="img-fluid" id="img-border" alt="Nova Vector device and asset management interface">
+                    <img src="{{site.baseurl}}/assets/img/paragraphs/homepageresized.png" class="img-fluid" id="img-border" loading="lazy" alt="Nova Vector device and asset management interface">
                 </div>
             </div>
         </div>
         <div class="container-grey" style="background-color: #F7F6F6;">
             <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-12 col-12 text-left align-self-center">
-                        <img src="{{site.baseurl}}/assets/img/paragraphs/Production-lines.png" class="img-fluid" id="img-border" alt="Production-line data visualization in Nova Vector">
+                        <img src="{{site.baseurl}}/assets/img/paragraphs/Production-lines.png" class="img-fluid" id="img-border" loading="lazy" alt="Production-line data visualization in Nova Vector">
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-12 text-left">
-                    <h3>Data Visualization</h3>
-                    <p>Nova Vector presents real-time and historical IoT data in operational dashboards.
+                    <h3>See current conditions—and investigate what changed</h3>
+                    <p>Monitor real-time and historical IoT data in operational dashboards.
                         <br>
                         <br>
                         Build views for equipment status, telemetry, alarms, and production information.
@@ -43,38 +51,56 @@
                         Follow live data streams and compare them with historical operating conditions.
                         <br>
                     </p>
+                    <a class="nv-inline-link" href="{{ '/iot-timeseries-analytics/' | relative_url }}">Explore time-series analytics <span aria-hidden="true">→</span></a>
                 </div>
             </div>
         </div>
         <div class="container-white">
             <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-12 col-12 text-left">
-                    <h3>Edge Computing</h3>
-                    <p>Nova Vector supports local data collection and processing close to industrial equipment.
+                    <h3>Model and automate industrial processes</h3>
+                    <p>Represent industrial processes as explicit states and guarded transitions.
                         <br>
                         <br>
-                        Keep selected collection and processing workloads close to their data sources.
+                        Connect transitions to alarm status changes, notification workflows, and persisted command requests.
                         <br>
                         <br>
-                        Integrate edge services with devices and the central platform while controlling which data is forwarded upstream.
+                        Store the state change and command request together, while a separate service performs execution asynchronously.
                         <br>
                         <br>
-                        Filter and process data locally to reduce unnecessary upstream transmission.
+                        Test process definitions in the simulator and investigate historical behavior through replay.
                         <br>
                     </p>
+                    <a class="nv-inline-link" href="{{ '/industrial-state-machine/' | relative_url }}">Explore process and state modeling <span aria-hidden="true">→</span></a>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-12 text-right align-self-center">
-                    <img src="{{site.baseurl}}/assets/img/paragraphs/graphnew.png" class="img-fluid" id="img-border" alt="Industrial telemetry processed at the edge">
+                    <img src="{{site.baseurl}}/assets/img/paragraphs/graphnew.png" class="img-fluid" id="img-border" loading="lazy" alt="Industrial process and state relationships">
                 </div>
             </div>
         </div>
         <div class="container-grey" style="background-color: #F7F6F6;">
             <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-12 col-12 text-left align-self-center">
-                    <img src="{{site.baseurl}}/assets/img/paragraphs/aiml-1.png" class="img-fluid" id="img-border" alt="Analytics workflow for industrial time-series data">
+                    <img src="{{site.baseurl}}/assets/img/products/edge-2.png" class="img-fluid" loading="lazy" alt="Nova Edge and EdgeX Foundry integration">
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-12 text-left">
-                    <h3>Advanced Analytics & AI/ML</h3>
+                    <h3>Process and manage data at the industrial edge</h3>
+                    <p>Connect deployment-specific devices through EdgeX Foundry device services and approved industrial interfaces.
+                        <br><br>
+                        Filter, transform, compress, convert, or encrypt selected data close to equipment.
+                        <br><br>
+                        Exchange telemetry, configuration, events, and command requests with the central Nova Vector Platform.
+                        <br><br>
+                        Manage edge workloads and observability according to the deployed Nova Edge Agent version and configuration.
+                    </p>
+                    <a class="nv-inline-link" href="{{ '/edge-computing-platform/' | relative_url }}">Explore Nova Edge <span aria-hidden="true">→</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="container-white">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-12 text-left">
+                    <h3>Apply analytics and AI to industrial data</h3>
                     <p>Nova Vector provides real-time and historical data for operational analytics and model-development workflows.
                         <br>
                         <br>
@@ -87,6 +113,10 @@
                         Model training, edge inference, and accelerator support are published only for configurations in which those capabilities have been validated.
                         <br>
                     </p>
+                    <a class="nv-inline-link" href="{{ '/edge-ai-industrial-iot/' | relative_url }}">Explore industrial analytics and AI <span aria-hidden="true">→</span></a>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-12 col-12 text-right align-self-center">
+                    <img src="{{site.baseurl}}/assets/img/paragraphs/aiml-1.png" class="img-fluid" id="img-border" loading="lazy" alt="Analytics workflow for industrial time-series data">
                 </div>
             </div>
         </div>

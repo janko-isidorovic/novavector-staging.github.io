@@ -2,7 +2,7 @@
 layout: v3
 permalink: /industrial-infrastructure/
 title: Industrial Infrastructure & Facilities
-description: Draft distributed industrial infrastructure and facility-monitoring page.
+description: Monitor distributed industrial assets, facilities, energy use, environmental conditions, alarms, and operational workflows.
 summary: Connect distributed assets, facility systems, energy measurements, environmental sensors, alarms, and operational workflows.
 eyebrow: Industrial solution
 theme: edge
@@ -10,15 +10,33 @@ noindex: true
 sitemap: false
 capabilities:
   - title: Distributed assets
-    text: Template for sites, facilities, equipment, sensors, connectivity, and operational ownership.
+    text: Represent sites, facilities, equipment, sensors, connectivity, and operational ownership in a shared asset hierarchy.
   - title: Energy and environment
-    text: Template for energy use, occupancy, air quality, environmental conditions, and historical comparison.
+    text: Collect energy, occupancy, air-quality, and environmental measurements for current visibility and historical comparison.
   - title: Events and response
-    text: Template for alarms, notifications, task context, dashboards, and approved automation workflows.
+    text: Connect alarms and notifications to asset context, operational dashboards, and approved response or automation workflows.
+content_sections:
+  - eyebrow: Facility context
+    heading: Connect floor plans, equipment, meters, and environmental sensors
+    paragraphs:
+      - Nova Vector can represent buildings, floors, rooms, utility systems, equipment, and sensors in one hierarchy. Current values and alarms can be presented against a floor plan or operational dashboard.
+      - Historical data supports comparison by site, area, equipment type, and time period.
+    image: /assets/img/solutions/floorplan.png
+    image_alt: Building floor plan with monitored assets
+    caption: Floor-plan view connecting facility data to physical location.
+  - eyebrow: Operational response
+    heading: Turn abnormal conditions into traceable events
+    paragraphs:
+      - Thresholds and process logic can update alarms and notify configured email targets. Operators retain the asset, measurement, time, and state context needed to investigate and respond.
+    points:
+      - Energy and utility monitoring
+      - Temperature, air quality, and environmental data
+      - Alarms and notification definitions
+      - Multi-site dashboards and historical comparison
 screenshots:
   - src: /assets/img/solutions/realtime-parameters.png
     alt: Facility operating parameters visualized in Nova Vector
-    caption: Facility-monitoring screenshot candidate; approval pending.
+    caption: Facility operating parameters presented in Nova Vector. Screenshot data requires disclosure review.
 related:
   - label: Industrial Edge
     url: /edge-computing-platform/

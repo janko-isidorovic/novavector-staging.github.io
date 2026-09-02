@@ -2,20 +2,39 @@
 layout: v3
 permalink: /integrations/
 title: Industrial Integrations
-description: Draft Nova Vector industrial and enterprise integration page.
+description: Integrate industrial devices, EdgeX services, messaging, identity, data platforms, and enterprise applications with Nova Vector.
 summary: Review how devices, edge services, messaging, identity, data platforms, and enterprise applications connect to Nova Vector.
 eyebrow: Developer resources
 theme: edge
 noindex: true
 sitemap: false
-capability_heading: Integration categories under verification
+capability_heading: Integration boundaries
 capabilities:
   - title: Industrial connectivity
-    text: Placeholder for only the device services, protocols, gateways, and EdgeX integrations verified in production configurations.
+    text: Connect equipment through device services, gateways, protocols, and EdgeX integrations verified for the production configuration.
   - title: Platform interfaces
-    text: Placeholder for approved REST, MQTT, NATS, event, export, and identity interfaces.
+    text: Use approved REST, MQTT, NATS, event, export, OAuth 2.0, and OIDC interfaces according to the documented service boundary.
   - title: Enterprise systems
-    text: Placeholder for validated ERP, MES, CMMS, analytics, data-platform, and customer-application patterns.
+    text: Exchange operational context with ERP, MES, CMMS, analytics, data platforms, and customer applications through validated patterns.
+content_sections:
+  - eyebrow: Industrial interfaces
+    heading: Normalize equipment data at a documented boundary
+    paragraphs:
+      - Device services, gateways, and edge applications map equipment-specific data into Nova Vector device, asset, telemetry, state, and command models.
+      - EdgeX Foundry is used for applicable edge integrations. MQTT, NATS, REST, and other interfaces are listed only where the deployed service and version support them.
+    image: /assets/img/products/network.png
+    image_alt: Network of industrial integration services
+    caption: Conceptual integration visual; replace with an approved interface map.
+    placeholder: Placeholder — approved Nova Vector integration map
+  - eyebrow: Enterprise context
+    heading: Exchange decisions as well as measurements
+    paragraphs:
+      - ERP, MES, CMMS, identity, analytics, and customer applications can exchange plans, asset references, work context, events, or results through verified APIs and message flows.
+    points:
+      - OAuth 2.0 and OIDC identity integration
+      - REST APIs for platform resources
+      - MQTT and NATS at approved service boundaries
+      - ERP, MES, CMMS, and data-platform patterns
 related:
   - label: REST API
     url: /api/

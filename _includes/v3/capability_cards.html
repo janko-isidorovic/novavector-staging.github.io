@@ -6,9 +6,24 @@
     <div class="v3-card-grid">
       {% for capability in page.capabilities %}
       <article class="v3-card">
+        {% if capability.image %}
+        <div class="v3-card__image">
+          <img src="{{ capability.image | relative_url }}" alt="{{ capability.image_alt }}" loading="lazy">
+          {% if capability.placeholder %}<span class="v3-image-placeholder">{{ capability.placeholder }}</span>{% endif %}
+        </div>
+        {% elsif capability.flow %}
+        <div class="v3-card__flow" aria-label="{{ capability.title }} workflow">
+          {% for step in capability.flow %}<span>{{ step }}</span>{% unless forloop.last %}<i aria-hidden="true">→</i>{% endunless %}{% endfor %}
+        </div>
+        {% endif %}
         <span class="v3-card__index">0{{ forloop.index }}</span>
         <h3>{{ capability.title }}</h3>
         <p>{{ capability.text }}</p>
+        {% if capability.details %}
+        <ul class="v3-card__details">
+          {% for detail in capability.details %}<li>{{ detail }}</li>{% endfor %}
+        </ul>
+        {% endif %}
       </article>
       {% endfor %}
     </div>

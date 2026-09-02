@@ -2,21 +2,57 @@
 layout: v3
 permalink: /architecture/
 title: Nova Vector Architecture
-description: Draft edge-to-enterprise Nova Vector architecture page for technical review.
-summary: Review how devices, edge services, platform capabilities, operational applications, and enterprise integrations fit into one industrial architecture.
+description: Explore the Nova Vector edge-to-enterprise architecture for devices, telemetry, state, commands, alarms, applications, and integrations.
+summary: See how devices, edge services, platform capabilities, operational applications, and enterprise integrations fit into one industrial architecture.
 eyebrow: Technical evaluation
 theme: platform
 noindex: true
 sitemap: false
 show_architecture: true
-capability_heading: Architecture review areas
+capability_heading: Architecture boundaries
 capabilities:
   - title: Edge-to-platform data flow
-    text: Validate device connectivity, local processing, buffering, messaging, and upstream telemetry paths.
+    text: Nova Edge connects deployment-specific device services to local processing and upstream telemetry paths. Buffering and recovery behavior are defined for each topology.
+    flow: [Equipment, EdgeX, Nova Vector]
+    details:
+      - Device services normalize equipment interfaces
+      - Local applications filter and transform selected data
+      - Telemetry and events move through documented message paths
   - title: Operational services
-    text: Validate asset, telemetry, state, rules, commands, alarms, notifications, and analytics boundaries.
+    text: Central services connect assets, telemetry, state machines, rules, commands, alarms, notifications, and analytics without collapsing their operational responsibilities.
+    flow: [Asset context, Process state, Operational action]
+    details:
+      - PostgreSQL and TimescaleDB data services
+      - NATS and MQTT at approved service boundaries
+      - Durable command requests with asynchronous execution
   - title: Deployment qualities
-    text: Document security, tenancy, resilience, scalability, and high availability only for verified configurations.
+    text: Identity, tenant isolation, resilience, scalability, and high availability are documented against the selected deployment rather than presented as universal claims.
+    image: /assets/img/products/network.png
+    image_alt: Distributed Nova Vector deployment
+    placeholder: Placeholder — approved deployment topology
+    details:
+      - OAuth 2.0 and OIDC integration
+      - Edge, on-premises, private-cloud, and cloud options
+      - Configuration-specific HA, recovery, and ownership
+content_sections:
+  - eyebrow: Data path
+    heading: From industrial equipment to a shared platform model
+    paragraphs:
+      - Device services and gateways collect measurements and events close to equipment. Nova Edge can transform selected data locally and exchange telemetry, configuration, and command requests with central platform services.
+      - The platform associates incoming data with devices and assets, stores time-series history, evaluates process state and rules, and exposes information to dashboards, reports, APIs, and enterprise integrations.
+    points:
+      - EdgeX Foundry device services where verified
+      - MQTT and NATS messaging at documented service boundaries
+      - PostgreSQL and TimescaleDB-backed operational and time-series data
+      - REST APIs and event-driven integrations
+    image: /assets/img/products/edge-2.png
+    image_alt: Nova Edge and EdgeX Foundry architecture
+    caption: Existing Nova Edge integration diagram; component versions require technical review.
+  - eyebrow: Control path
+    heading: Treat commands as durable operational requests
+    paragraphs:
+      - Process logic persists a command request together with the related state change. Execution is performed asynchronously by a separate service, so delivery, device response, and failure handling remain observable.
+      - This distinction is important in industrial systems: database atomicity does not imply atomic behavior across networks, edge computers, controllers, and physical equipment.
 related:
   - label: Platform Overview
     url: /industrial-iot-platform/

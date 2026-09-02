@@ -2,7 +2,7 @@
 layout: v3
 permalink: /edge-computing-platform/
 title: Nova Edge Computing
-description: Draft Nova Edge industrial edge-computing platform page.
+description: Industrial edge computing for device connectivity, local data processing, EdgeX services, and integration with Nova Vector Platform.
 summary: Connect devices and process selected data close to industrial equipment while integrating telemetry, configuration, and commands with the Nova Vector Platform.
 eyebrow: Nova Edge
 theme: edge
@@ -11,15 +11,50 @@ sitemap: false
 show_architecture: true
 capabilities:
   - title: Device connectivity
-    text: Structure for EdgeX device services and configuration-specific industrial connectivity.
+    text: Use configuration-specific EdgeX device services, gateways, and approved interfaces to connect industrial equipment.
+    image: /assets/img/products/edge-1.png
+    image_alt: Nova Edge connecting industrial equipment
+    details:
+      - EdgeX device services selected per deployment
+      - Device, sensor, PLC, and gateway integration
+      - Commands routed through explicit service boundaries
   - title: Local processing
-    text: Structure for transformation, filtering, buffering, rules, and approved control workflows near equipment.
+    text: Transform, filter, and process selected data close to equipment. Buffering, local rules, and control behavior depend on the deployed configuration.
+    flow: [Collect, Transform, Export]
+    details:
+      - Filtering, conversion, compression, and encryption
+      - Local rules and application services
+      - HTTP, MQTT, EdgeX bus, and log outputs where supported
   - title: Platform integration
-    text: Structure for exchanging telemetry, configuration, and commands with central platform services.
+    text: Exchange telemetry, configuration, and command requests with central services while retaining clear edge and platform responsibilities.
+    image: /assets/img/products/edge-2.png
+    image_alt: Nova Edge and platform integration
+    details:
+      - Selected telemetry and events move upstream
+      - Approved configuration and command requests move downstream
+      - Edge and central responsibilities remain observable
+content_sections:
+  - eyebrow: Local industrial integration
+    heading: Process selected data close to the equipment
+    paragraphs:
+      - Nova Edge uses containerized services and EdgeX Foundry components to connect deployment-specific devices and sensors. Local application services can filter, transform, compress, convert, or encrypt data before export.
+      - Rules can route processed output to approved HTTP, MQTT, EdgeX message-bus, or logging destinations. Exact services and protocols are confirmed for the deployed EdgeX version.
+    image: /assets/img/products/edge-1.png
+    image_alt: Nova Edge processing data near industrial equipment
+    caption: Edge processing and connectivity close to equipment.
+  - eyebrow: Edge-to-platform operation
+    heading: Exchange telemetry, configuration, and commands
+    paragraphs:
+      - Edge deployments send selected telemetry and events to the Nova Vector Platform and receive approved configuration or command requests. Local processing can continue where the selected topology supports disconnected operation.
+    points:
+      - EdgeX device, core, and application services
+      - Local filtering and transformation
+      - Container-based deployment
+      - Central platform integration
 screenshots:
   - src: /assets/img/products/edge-2.png
     alt: Nova Edge and EdgeX Foundry integration architecture
-    caption: Existing Nova Edge architecture visual; technical review pending.
+    caption: Nova Edge and EdgeX service integration. Diagram labels and supported versions require final technical approval.
 related:
   - label: Industrial Edge Management
     url: /industrial-edge-management/

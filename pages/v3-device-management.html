@@ -2,23 +2,51 @@
 layout: v3
 permalink: /iot-device-management/
 title: Device & Asset Management
-description: Draft device and industrial asset management page for Nova Vector.
-summary: Connect devices to a structured industrial asset model and keep telemetry, configuration, state, and operational context together.
+description: Manage industrial devices with reusable Thing Profiles, protocol register maps, asset hierarchy, telemetry, health, commands, and lifecycle configuration.
+summary: Describe device capabilities once, connect equipment through direct or edge adapters, and preserve identity and operational context across the asset hierarchy.
 eyebrow: Platform capability
 theme: platform
 noindex: true
 sitemap: false
 capabilities:
   - title: Device registry
-    text: Placeholder structure for device identity, connectivity, configuration, and lifecycle information.
-  - title: Asset hierarchy
-    text: Placeholder structure for sites, areas, lines, equipment, and other operational relationships.
-  - title: Operational context
-    text: Placeholder structure linking telemetry, alarms, state, commands, and dashboards to assets.
+    text: Maintain Things, channels, keys, connectivity settings, status, metadata, parent relationships, and the information needed to operate connected equipment.
+  - title: Reusable Thing Profiles
+    text: Define metrics, units, data types, ranges, sampling behavior, protocol register attributes, custom properties, and lifecycle versions in one portable descriptor.
+  - title: Adapter health and operations
+    text: View connection and point health, enable or disable devices without deleting configuration, and expose authorized read, write, method, and command operations.
+content_sections:
+  - eyebrow: Asset hierarchy
+    heading: Represent the structure operators use every day
+    paragraphs:
+      - Model organizations, sites, buildings, production areas, lines, equipment, and connected devices as related platform entities rather than a flat device list.
+      - Applications can use these relationships to filter dashboards, assign access, locate alarms, compare equipment, and preserve context when devices are replaced or reconfigured.
+    image: /assets/img/products/floorplan.png
+    image_alt: Nova Vector industrial floor plan and asset hierarchy
+    caption: Industrial assets placed in operational and spatial context.
+  - eyebrow: Device lifecycle
+    heading: Connect identity, configuration, data, and commands
+    paragraphs:
+      - Each connected device carries the identifiers and configuration required by its integration. Telemetry, current values, alarms, and command requests remain linked to that identity.
+    points:
+      - Device and thing definitions
+      - Connectivity and deployment-specific configuration
+      - Telemetry and current-value association
+      - Alarm, state, and command context
+  - eyebrow: Profile-driven connectivity
+    heading: Reuse the same device description across platform and edge adapters
+    paragraphs:
+      - Thing Profiles define what equipment measures and how those metrics map to OPC UA nodes, Modbus registers, BACnet objects, SNMP data, or other protocol attributes. Seeded profiles can be cloned, versioned, imported, and exported.
+      - The same register model can provision native platform adapters or map into EdgeX device profiles, reducing repeated configuration when equipment types appear across many sites.
+    points:
+      - Metrics aligned to units, types, range, resolution, and sampling
+      - Per-protocol addressing and publish-on-change settings
+      - Versioned profile lifecycle and catalog
+      - Single and bulk JSON import and export
 screenshots:
   - src: /assets/img/paragraphs/homepageresized.png
     alt: Nova Vector device and asset management interface
-    caption: Asset hierarchy and connected-device screenshot candidate; approval pending.
+    caption: Device and asset relationships in the Nova Vector interface. Screenshot content remains subject to disclosure review.
 related:
   - label: Platform Overview
     url: /industrial-iot-platform/

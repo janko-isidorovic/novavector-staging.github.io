@@ -10,6 +10,8 @@
     url: /iot-timeseries-analytics/
   - text: Process Automation
     url: /industrial-state-machine/
+  - text: Simulation & Replay
+    url: /industrial-simulation/
 
 - title: Edge
   links:

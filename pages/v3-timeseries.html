@@ -2,23 +2,46 @@
 layout: v3
 permalink: /iot-timeseries-analytics/
 title: Real-Time Data & Time-Series Analytics
-description: Draft Nova Vector real-time telemetry and time-series analytics page.
-summary: Turn industrial telemetry into current operational visibility and historical context for engineering, operations, and analytics workflows.
+description: Ingest, normalize, store, aggregate, visualize, and export industrial telemetry with device, asset, process, production, and workforce context.
+summary: Turn live and historical telemetry into operational dashboards, shift-level aggregates, reports, replay, analytics, and AI-ready data.
 eyebrow: Platform capability
 theme: platform
 noindex: true
 sitemap: false
 capabilities:
   - title: Real-time telemetry
-    text: Placeholder structure for ingestion, current values, live views, and event-driven processing.
+    text: Ingest timestamped measurements, expose current values, and feed live operational views and event-driven services.
   - title: Historical analysis
-    text: Placeholder structure for time ranges, trends, comparisons, aggregation, and production context.
+    text: Query by channel, publisher, subtopic, and time range; calculate windowed aggregates; and relate results to equipment, shifts, products, and work orders.
   - title: Analytics integration
-    text: Placeholder structure for approved APIs, messaging paths, and downstream data or model workflows.
+    text: Feed chart-ready views, embedded Grafana reports, CSV/JSON/XML/Excel imports, downstream analytics, and model-development workflows.
+content_sections:
+  - eyebrow: Current operations
+    heading: See live measurements in asset and process context
+    paragraphs:
+      - Incoming telemetry updates current operating views while retaining the device, asset, and timestamp needed for investigation. Dashboards can combine machine signals with production plans, process state, alarms, and operator input.
+      - Event-driven services can respond to selected changes without forcing every application to poll the database.
+    image: /assets/img/solutions/data-values.png
+    image_alt: Nova Vector live industrial data values
+    caption: Current industrial measurements presented in the Nova Vector interface.
+  - eyebrow: Historical analysis
+    heading: Move from individual values to operating patterns
+    paragraphs:
+      - TimescaleDB-backed history supports trends, windowed aggregation, period comparison, process replay, production reporting, and downstream analytics. Buffered batch writing handles sustained ingestion, while the data-reader service supports multi-filter queries and chart-ready feeds.
+    points:
+      - Time-window trends and aggregation
+      - Comparison by asset, line, product, shift, or process context
+      - Historical replay for approved process workflows
+      - Export and API paths for external analysis
+  - eyebrow: Operational reporting
+    heading: Use the same history for plans, downtime, reliability, and consumption
+    paragraphs:
+      - Report templates combine time-series data with production plans and operational records to show shift, weekly, and monthly plan attainment; stoppage count and duration; OEE; MTTR and MTBF; and standard-versus-actual consumption.
+      - Templates provide a working starting point and are commonly adapted to the customer's equipment, process, terminology, and management reporting needs.
 screenshots:
   - src: /assets/img/paragraphs/Production-lines.png
     alt: Production telemetry visualized in Nova Vector
-    caption: Time-series and production visualization candidate; approval pending.
+    caption: Production telemetry shown with operational context. Screenshot content remains subject to disclosure review.
 related:
   - label: Device & Asset Management
     url: /iot-device-management/

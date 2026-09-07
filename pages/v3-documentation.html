@@ -2,20 +2,34 @@
 layout: v3
 permalink: /documentation/
 title: Documentation
-description: Draft information architecture for Nova Vector technical documentation.
+description: Nova Vector technical documentation for platform concepts, deployment, administration, APIs, edge integration, and troubleshooting.
 summary: A structured documentation entry point for platform concepts, deployment, administration, development, edge integration, and troubleshooting.
 eyebrow: Developer resources
 theme: platform
 noindex: true
 sitemap: false
-capability_heading: Planned documentation paths
+capability_heading: Documentation paths
 capabilities:
   - title: Platform concepts
-    text: Placeholder for tenants, users, assets, devices, telemetry, state, alarms, rules, commands, and notifications.
+    text: Understand tenants, users, assets, devices, telemetry, process state, alarms, rules, commands, and notifications.
   - title: Deployment and operations
-    text: Placeholder for supported topologies, configuration, upgrades, observability, backup, and recovery.
+    text: Follow configuration-specific guidance for supported topologies, upgrades, observability, backup, recovery, and operational ownership.
   - title: Developer guides
-    text: Placeholder for APIs, messages, integrations, examples, compatibility, and edge development.
+    text: Build with documented APIs, messages, integrations, examples, compatibility notes, and edge-development guidance.
+content_sections:
+  - eyebrow: Documentation structure
+    heading: Follow a deployment from concept to operation
+    paragraphs:
+      - The documentation will connect architecture concepts to installation, configuration, administration, integration, and troubleshooting rather than separating them into unrelated reference pages.
+      - Every version-specific page will identify the applicable Nova Vector, Nova Edge Agent, and EdgeX releases.
+    image: /assets/img/products/administrative-tools.png
+    image_alt: Administrative tools representing Nova Vector documentation
+    caption: Placeholder image for the future Nova Vector documentation portal.
+    placeholder: Placeholder — Nova Vector documentation portal
+  - eyebrow: Operational clarity
+    heading: Document ownership and failure behavior
+    paragraphs:
+      - Guides will distinguish platform persistence, asynchronous service execution, edge delivery, and physical device behavior. Backup, recovery, observability, and upgrade guidance will be tied to supported deployment topologies.
 related:
   - label: Developers
     url: /developers/

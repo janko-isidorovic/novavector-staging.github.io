@@ -2,19 +2,43 @@
 layout: v3
 permalink: /api/
 title: REST API & Platform Integration
-description: Draft Nova Vector API and platform-integration landing page.
-summary: Plan integrations around approved platform resources, authentication, telemetry, operational state, commands, alarms, and enterprise workflows.
+description: Integrate Nova Vector devices, telemetry, tasks, production, edge fleet, digital twins, commands, alarms, and workflows through authenticated APIs.
+summary: Use authenticated platform APIs and event interfaces to provision assets, exchange operational context, automate workflows, and integrate enterprise systems.
 eyebrow: Developer resources
 theme: platform
 noindex: true
 sitemap: false
 capabilities:
   - title: Resource model
-    text: Placeholder for verified API resources, identifiers, relationships, pagination, filtering, and versioning.
+    text: Work with documented resources, identifiers, relationships, pagination, filtering, and version behavior.
   - title: Authentication and authorization
-    text: Placeholder for supported OAuth 2.0 and OIDC flows, scopes, roles, and tenant boundaries.
+    text: Apply supported OAuth 2.0 and OIDC flows, scopes, roles, and tenant boundaries to application integrations.
   - title: Operational integration
-    text: Placeholder for telemetry, state, command requests, alarms, notifications, and application workflows.
+    text: Connect applications to telemetry, process state, command requests, alarms, notifications, and operational workflows through approved endpoints.
+content_sections:
+  - eyebrow: Platform resources
+    heading: Integrate with the same model used by Nova Vector applications
+    paragraphs:
+      - APIs expose platform resources for tenants, users, Things, channels, profiles, telemetry, process state, simulations, replay, alerts, notifications, tasks, commands, production plans, work orders, and edge-fleet workflows according to deployed module coverage.
+      - Authentication and authorization use the supported OAuth 2.0 and OIDC configuration, with roles and tenant boundaries applied to the caller.
+    image: /assets/img/products/platform-3.png
+    image_alt: Nova Vector platform interface representing API resources
+    caption: Platform UI placeholder for a future API documentation example.
+    placeholder: Placeholder — replace with approved API documentation screenshot
+  - eyebrow: Command integration
+    heading: Create durable requests and observe asynchronous execution
+    paragraphs:
+      - A command request is persisted before a separate service executes it. API consumers should handle request state, retries, device response, and failures rather than treating submission as proof of physical execution.
+    points:
+      - Authenticated resource access
+      - Tenant and role boundaries
+      - Telemetry and operational-state integration
+      - Observable command-request lifecycle
+  - eyebrow: Provisioning and automation
+    heading: Build repeatable equipment and system integrations
+    paragraphs:
+      - Public APIs can create profiles, Things, channels, industrial-adapter connections, and bindings. The simulator provisioning tool uses these same interfaces to apply or remove complete reference systems idempotently.
+      - Server-Sent Events provide live updates with token refresh and reconnect, while MQTT, NATS, Node-RED, and service-specific interfaces support event-driven integration where appropriate.
 related:
   - label: Documentation
     url: /documentation/

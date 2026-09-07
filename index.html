@@ -1,47 +1,16 @@
 ---
-layout: v3
-homepage: true
-theme: platform
-title: Industrial IoT. From Edge to Enterprise.
-description: Connect machines, sensors, edge systems, and enterprise applications with the Nova Vector Industrial IoT platform.
-summary: Connect machines, sensors, and systems. Model industrial processes. Analyze operations in real time. Automate decisions across edge and enterprise environments.
-primary_label: Explore the Platform
-primary_url: /industrial-iot-platform/
-show_architecture: true
-capability_eyebrow: Platform capabilities
-capability_heading: Connect, understand, automate, and optimize
-capabilities:
-  - title: Device & Asset Management
-    text: Organize connected equipment, devices, and their operational context within a shared asset model.
-  - title: Industrial Edge
-    text: Connect and process industrial data close to equipment through Nova Edge and EdgeX-based services.
-  - title: Real-Time Data
-    text: Ingest, visualize, and analyze real-time and historical telemetry from distributed operations.
-  - title: Process Automation
-    text: Represent operating state, evaluate rules, persist command requests, and coordinate asynchronous execution.
-  - title: Analytics & AI
-    text: Prepare operational data for analytics and approved model-development or inference workflows.
-  - title: Industrial Applications
-    text: Build manufacturing, energy, OEM, and infrastructure applications on one extensible platform.
-screenshots:
-  - src: /assets/img/paragraphs/homepageresized.png
-    alt: Nova Vector device and asset management interface
-    caption: Device and asset context across connected industrial systems.
-  - src: /assets/img/solutions/Production-lines.png
-    alt: Nova Vector connected production lines interface
-    caption: Real-time production visibility across multiple lines.
-proof_points:
-  - value: Edge → Enterprise
-    label: Connected operating context
-  - value: Real-time + Historical
-    label: Industrial telemetry
-  - value: Assets + Process State
-    label: Operational model
-related:
-  - label: Review the architecture
-    url: /architecture/
-  - label: Explore Nova Edge
-    url: /edge-computing-platform/
-  - label: See manufacturing workflows
-    url: /manufacturing/
+layout: default
+title: Industrial IoT & Edge Computing Platform
+description: Industrial IoT and edge computing platform for manufacturing, energy, industrial OEMs, and distributed infrastructure.
 ---
+{% include header_3.html %}
+<main class="nv-home-v3">
+  {% include slider.html %}
+  {% include intro.html %}
+  {% include v3/deployment_strip.html %}
+  {% include paragraphs.html %}
+  {% include home_architecture.html %}
+  {% include usecases.html %}
+  {% include meeting.html %}
+  {% include services.html %}
+</main>

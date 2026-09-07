@@ -1,0 +1,46 @@
+---
+layout: v3
+permalink: /edge-ai-industrial-iot/
+title: Industrial AI & Edge Inference
+description: Use an on-premises AI assistant and deploy approved, signed ONNX models to Nova Edge nodes for governed offline inference on live industrial data.
+summary: Build on contextualized operational data, use a local AI assistant, and deploy governed models to edge nodes as an integrated beta capability.
+eyebrow: AI-ready by design
+theme: edge
+noindex: true
+sitemap: false
+capability_heading: Put governed AI into operational context
+capabilities:
+  - title: Contextual data foundation
+    text: Real-time and historical telemetry retains device, asset, process, alarm, task, and production context for analytics and model development.
+  - title: On-premises AI assistant
+    text: A local language model can use supported platform tools for conversational access without sending operational data outside the customer's deployment.
+  - title: Governed Edge AI
+    text: Approve and sign ONNX model bundles, deploy them to selected nodes, run inference on live EdgeX data, and return results as ordinary telemetry.
+content_sections:
+  - eyebrow: Available platform foundation
+    heading: Prepare governed industrial data for model development
+    paragraphs:
+      - Nova Vector provides real-time and historical telemetry with device, asset, and process context. Approved APIs and messaging integrations can supply this data to external analytics and model-development environments.
+      - The built-in assistant runs against a local language model and exposes a governed set of platform operations. External analytics and training environments can use approved APIs and messaging integrations without changing the operational data model.
+    image: /assets/img/paragraphs/aiml-1.png
+    image_alt: Analytics and machine-learning workflow
+    caption: Existing analytics visual used as a placeholder for the approved industrial AI workflow.
+    placeholder: Placeholder — replace with Nova Vector model and inference workflow
+  - eyebrow: Integrated beta
+    heading: Approve centrally, infer locally, and reuse the result everywhere
+    paragraphs:
+      - The model registry accepts ONNX bundles through a draft, approval, signing, and retirement lifecycle. The deployment manager checks compatibility and sends the approved model to selected nodes, where the Edge AI runtime consumes live EdgeX data and can continue operating offline.
+      - Inference results return as normal Nova Vector telemetry, allowing existing dashboards, alerts, state machines, and digital-twin workflows to use model outputs without a separate integration. Activation and rollback use the same governed fleet pipeline as other edge workloads.
+    points:
+      - Governed model versions and Ed25519 signatures
+      - Node compatibility checks, activation, and rollback
+      - ONNX Runtime inference on live EdgeX MessageBus data
+      - Model training remains external; AI Studio and broader acceleration are roadmap items
+related:
+  - label: Time-Series Analytics
+    url: /iot-timeseries-analytics/
+  - label: Industrial Edge Management
+    url: /industrial-edge-management/
+  - label: Platform Architecture
+    url: /architecture/
+---

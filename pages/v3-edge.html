@@ -1,0 +1,65 @@
+---
+layout: v3
+permalink: /edge-computing-platform/
+title: Nova Edge Computing
+description: Industrial edge runtime with EdgeX device services, local processing, offline operation, workload monitoring, local console, and central fleet management.
+summary: Keep industrial sites operating locally, connect equipment through EdgeX, manage Linux and container workloads, and integrate securely with Nova Vector.
+eyebrow: Nova Edge
+theme: edge
+noindex: true
+sitemap: false
+show_architecture: true
+capabilities:
+  - title: Device connectivity
+    text: Use configuration-specific EdgeX device services, gateways, and approved interfaces to connect industrial equipment.
+    image: /assets/img/products/edge-1.png
+    image_alt: Nova Edge connecting industrial equipment
+    details:
+      - EdgeX device services selected per deployment
+      - Device, sensor, PLC, and gateway integration
+      - Commands routed through explicit service boundaries
+  - title: Local processing
+    text: Transform, filter, and process selected data close to equipment. Buffering, local rules, and control behavior depend on the deployed configuration.
+    flow: [Collect, Transform, Export]
+    details:
+      - Filtering, conversion, compression, and encryption
+      - Local rules and application services
+      - HTTP, MQTT, EdgeX bus, and log outputs where supported
+  - title: Local operation and fleet integration
+    text: Retain a local operator console during disconnection, exchange Sparkplug B telemetry upstream, and receive signed, node-scoped deployment commands.
+    image: /assets/img/products/edge-2.png
+    image_alt: Nova Edge and platform integration
+    details:
+      - Host, systemd, Docker and Compose monitoring
+      - Local logs, audit journal and authorized lifecycle controls
+      - Outbound-only connection to central fleet services
+content_sections:
+  - eyebrow: Local industrial integration
+    heading: Process selected data close to the equipment
+    paragraphs:
+      - Nova Edge uses containerized services and EdgeX Foundry components to connect deployment-specific devices and sensors. Local application services can filter, transform, compress, convert, or encrypt data before export.
+      - Rules can route processed output to approved HTTP, MQTT, EdgeX message-bus, or logging destinations. Exact services and protocols are confirmed for the deployed EdgeX version.
+    image: /assets/img/products/edge-1.png
+    image_alt: Nova Edge processing data near industrial equipment
+    caption: Edge processing and connectivity close to equipment.
+  - eyebrow: Edge-to-platform operation
+    heading: Exchange telemetry, configuration, and commands
+    paragraphs:
+      - Edge deployments publish host facts and selected telemetry through MQTT and Sparkplug B, and receive authorized configuration, workload, or AI model commands. The local console exposes health, metrics, logs, audit events, and allowlisted lifecycle operations even when the central connection is unavailable.
+    points:
+      - EdgeX device, core, and application services
+      - Local filtering and transformation
+      - Systemd and Docker Compose deployment
+      - Local operator console and remote desktop access
+screenshots:
+  - src: /assets/img/products/edge-2.png
+    alt: Nova Edge and EdgeX Foundry integration architecture
+    caption: Nova Edge and EdgeX service integration. Diagram labels and supported versions require final technical approval.
+related:
+  - label: Industrial Edge Management
+    url: /industrial-edge-management/
+  - label: EdgeX Foundry
+    url: /edgex-foundry-platform/
+  - label: Platform Architecture
+    url: /architecture/
+---

@@ -1,0 +1,46 @@
+---
+layout: v3
+permalink: /industrial-edge-management/
+title: Industrial Edge Management
+description: Onboard Nova Edge nodes, monitor Linux and container workloads, and deploy signed software bundles through staged fleet rollouts with rollback.
+summary: Operate distributed edge sites through controlled onboarding, local consoles, fleet health, signed deployment bundles, staged rollouts, and rollback.
+eyebrow: Nova Edge Agent
+theme: edge
+noindex: true
+sitemap: false
+capability_heading: Manage distributed edge operations
+capabilities:
+  - title: Fleet onboarding
+    text: Import nodes from CSV, issue single-use enrollment tokens, and push the Edge Agent through a fingerprint-pinned bootstrap workflow.
+  - title: Signed software rollouts
+    text: Approve and sign service, agent, and AI bundles, deploy them by node type or group, monitor health, and retry or roll back failed nodes.
+  - title: Local and central operations
+    text: Monitor host, systemd, Docker, Compose, logs, and audit history centrally or through the local operator console, including disconnected sites.
+content_sections:
+  - eyebrow: Nova Edge Agent
+    heading: Operate mixed workloads from one controlled interface
+    paragraphs:
+      - The Nova Edge Agent is designed for industrial computers that run both systemd services and Docker workloads. Remote lifecycle operations are restricted to an explicit allowlist rather than exposing unrestricted host control.
+      - Deployment workflows verify source, size, checksum, Ed25519 signature, node compatibility, and bundle parameters before an atomic swap. Health checks, backup retention, and rollback make failure visible and recoverable.
+    image: /assets/img/products/administrative-tools.png
+    image_alt: Administrative tools representing edge workload management
+    caption: Conceptual placeholder for the Nova Edge Agent fleet interface.
+    placeholder: Placeholder — replace with approved Nova Edge Agent fleet screenshot
+  - eyebrow: Fleet observability
+    heading: Onboard and update fleets without opening inbound site connections
+    paragraphs:
+      - Fleet import creates the node identities and channels, while an SSH push installs the correct agent preset. After enrollment, nodes communicate outbound and receive node-scoped, idempotent deployment commands.
+      - Node types define the approved bundle set for a role. Group rollouts use bounded concurrency, stop-after-failure controls, desired-state snapshots, health checks, retry, and rollback. A site-local registry can serve images in air-gapped environments.
+    points:
+      - CSV fleet import, enrollment tokens, bootstrap, and SSH push
+      - Signed artifacts, compatibility checks, and node-scoped commands
+      - Group rollouts, baselines, desired state, retry, and rollback
+      - Integrated beta; controlled early-adopter deployment recommended
+related:
+  - label: Nova Edge
+    url: /edge-computing-platform/
+  - label: EdgeX Foundry
+    url: /edgex-foundry-platform/
+  - label: Industrial AI
+    url: /edge-ai-industrial-iot/
+---

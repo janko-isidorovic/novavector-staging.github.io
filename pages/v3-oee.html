@@ -1,0 +1,74 @@
+---
+layout: v3
+permalink: /manufacturing-oee-software/
+title: Production Monitoring, OEE & Downtime
+description: Real-time plan attainment, OEE, downtime Pareto, MTTR, MTBF, and production-loss analysis connected to machines, shifts, products, and work orders.
+summary: See whether production is on plan, identify where time is being lost, and connect OEE, downtime, reliability, and quality to the operational context behind each result.
+eyebrow: Manufacturing analytics
+theme: platform
+noindex: true
+sitemap: false
+capabilities:
+  - title: OEE context
+    text: Analyze availability, performance, and quality in the context of shifts, products, orders, and production lines.
+    flow: [Availability, Performance, Quality]
+    details:
+      - Planned production time and classified downtime
+      - Actual output compared with expected rate
+      - Accepted and rejected quantities
+  - title: Downtime classification
+    text: Detect stoppages from machine data, capture operator classifications, and compare causes, duration, frequency, and recurrence.
+    image: /assets/img/solutions/packaging-line-data.png
+    image_alt: Packaging line downtime analysis
+    details:
+      - Signal-based start and end detection
+      - Operator reason and cause hierarchy
+      - Recurring-loss comparison across periods
+  - title: Production execution
+    text: Compare live actual output with shift, weekly, and monthly plans while monitoring line speed, work orders, changeovers, and current conditions.
+    image: /assets/img/solutions/report1.png
+    image_alt: Nova Vector manufacturing production report
+    details:
+      - Shift, weekly, and monthly plan attainment
+      - Line, shift, product, and order filters
+      - Current state connected to historical results
+content_sections:
+  - eyebrow: Defensible OEE
+    heading: Calculate performance from production context, not isolated counters
+    paragraphs:
+      - Availability depends on the planned production period and classified downtime. Performance relates actual output or speed to the expected rate. Quality requires the accepted and rejected quantities for the relevant product and order.
+      - Nova Vector keeps these inputs connected to lines, shifts, products, plans, and operating states so the resulting OEE can be investigated rather than treated as a single unexplained percentage.
+    image: /assets/img/solutions/packaging-line-data.png
+    image_alt: Packaging line production and downtime data
+    caption: Packaging-line data used to investigate production loss.
+  - eyebrow: Downtime workflow
+    heading: Detect the event, then capture the reason
+    paragraphs:
+      - Machine signals can identify when a line stops. Operators add the cause when automation cannot infer it reliably, producing a classified event with start time, duration, equipment, and production context.
+    points:
+      - Duration and frequency by stoppage cause
+      - Recurring-loss comparison
+      - Shift, line, product, and order context
+      - Plan-versus-actual reporting
+  - eyebrow: Reliability and response
+    heading: Measure recovery time and equipment reliability from the same events
+    paragraphs:
+      - Stoppage start, support activity, repair completion, and return-to-production timestamps support MTTR and MTBF analysis by machine or line. Equipment reliability metrics use downtime history and do not require RFID readers.
+      - Where RFID is installed, the same events can be related to the responding maintenance or support team to analyze response intervals, utilization, and team-attributed repair performance.
+    points:
+      - MTTR and MTBF by machine and production line
+      - Downtime Pareto by reason, duration, and frequency
+      - Support response and repair intervals
+      - Optional RFID context for operator and support teams
+screenshots:
+  - src: /assets/img/solutions/packaging-line-data.png
+    alt: Packaging-line stoppage analysis in Nova Vector
+    caption: Packaging-line downtime analysis. Production data requires disclosure review before publication.
+related:
+  - label: Manufacturing
+    url: /manufacturing/
+  - label: Time-Series Analytics
+    url: /iot-timeseries-analytics/
+  - label: Process Automation
+    url: /industrial-state-machine/
+---

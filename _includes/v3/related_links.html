@@ -1,0 +1,10 @@
+{% if page.related %}
+<section class="v3-section v3-section--compact">
+  <div class="v3-shell">
+    <p class="v3-eyebrow">Continue evaluating</p>
+    <div class="v3-related">
+      {% for item in page.related %}<a href="{{ item.url | relative_url }}">{{ item.label }} <span>→</span></a>{% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}

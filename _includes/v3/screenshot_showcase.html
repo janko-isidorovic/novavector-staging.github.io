@@ -1,0 +1,14 @@
+<section class="v3-section v3-section--muted">
+  <div class="v3-shell">
+    <p class="v3-eyebrow">Product interface</p>
+    <h2>{{ page.screenshot_heading | default: 'See the operational context' }}</h2>
+    <div class="v3-screenshots">
+      {% for screenshot in page.screenshots %}
+      <figure>
+        <img src="{{ screenshot.src | relative_url }}" alt="{{ screenshot.alt }}" loading="lazy">
+        <figcaption>{{ screenshot.caption }}</figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+  </div>
+</section>

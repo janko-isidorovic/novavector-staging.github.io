@@ -1,0 +1,20 @@
+{% assign hero_image = page.hero_image | default: '/assets/img/bg/page-title.jpg' %}
+<section class="v3-hero" style="background-image: linear-gradient(rgba(2, 13, 38, .58), rgba(2, 13, 38, .58)), url('{{ hero_image | relative_url }}')">
+  <div class="v3-shell v3-hero__grid">
+    <div>
+      <p class="v3-eyebrow">{{ page.eyebrow | default: 'Nova Vector' }}</p>
+      <h1>{{ page.title }}</h1>
+      <p class="v3-lead">{{ page.summary }}</p>
+      <div class="v3-actions">
+        {% assign primary_url = page.primary_url | default: '/industrial-iot-platform/' %}
+        <a class="v3-button v3-button--primary" href="{% if primary_url contains 'mailto:' or primary_url contains '://' %}{{ primary_url }}{% else %}{{ primary_url | relative_url }}{% endif %}">{{ page.primary_label | default: 'Explore the Platform' }}</a>
+        <a class="v3-button v3-button--secondary" href="{{ '/contact/#request-demo' | relative_url }}">Request a Demo</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% unless page.homepage %}
+<aside class="v3-draft-notice" aria-label="Draft status">
+  <div class="v3-shell"><strong>P3 content draft.</strong> Content and visual design remain under review. Capability, integration, deployment, and outcome claims require final approval before publication.</div>
+</aside>
+{% endunless %}

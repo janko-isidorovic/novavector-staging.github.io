@@ -1,0 +1,124 @@
+---
+layout: v3
+permalink: /manufacturing/
+title: Manufacturing Operations
+description: Lightweight MES and Industrial IoT for production planning, work orders, OEE, downtime, recipes, consumption variance, quality, and workforce performance.
+summary: Connect modern and legacy equipment, plan and execute shifts, track work-order output and consumption, and improve equipment and workforce performance.
+eyebrow: Industrial solution
+theme: platform
+noindex: true
+sitemap: false
+capabilities:
+  - title: Production visibility
+    text: Compare live output with shift, weekly, and monthly plans while monitoring speed, changeovers, current state, quality, and production dashboards.
+    image: /assets/img/solutions/Production-lines.png
+    image_alt: Multiple production lines monitored in Nova Vector
+    details:
+      - Active plan, product, shift, and order context
+      - Actual quantity, line speed, and current condition
+      - Multi-line operational dashboards
+  - title: OEE and downtime
+    text: Calculate availability, performance, and quality; detect stoppages; capture operator classifications; and investigate production losses.
+    image: /assets/img/solutions/report-tv.png
+    image_alt: Production downtime report in Nova Vector
+    details:
+      - Automatic stoppage detection from machine signals
+      - Operator cause classification
+      - Duration, frequency, recurrence, and loss analysis
+  - title: Process execution
+    text: Drive shift plans from approved work orders and track produced, scrap, rework, serials, and completion against each order while the shift runs.
+    flow: [Work order, Shift execution, Actual result]
+    details:
+      - Machine-derived counts with scrap and rework reasons
+      - Serial-number capture, overrides, and over-production visibility
+      - Automatic work-order completion when configured targets are fulfilled
+  - title: Team utilization and response
+    text: Use RFID-based workflows to associate operators with machines and production lines, record support activity, and measure response intervals.
+    image: /assets/img/service/support.png
+    image_alt: Industrial support team working with production equipment
+    details:
+      - Operator and team association with equipment
+      - Support request, check-in, and activity timestamps
+      - Utilization and response-time analysis
+  - title: Recipes and consumption
+    text: Define versioned recipes and routings, including alternatives, then compare standard and actual material, labor, machine-time, and energy consumption per order.
+    details:
+      - Input lots and consumption records
+      - Standard-versus-actual quantity and cost variance
+      - Product, routing, operation, and resource definitions
+content_sections:
+  - eyebrow: Mixed-equipment deployment
+    heading: Connect modern machines and retrofit legacy equipment
+    paragraphs:
+      - Manufacturing sites rarely replace every machine at once. Nova Vector supports a mixed approach in which modern equipment connects directly to the platform through interfaces such as Modbus and OPC UA, while legacy machines are instrumented with additional sensors, an HMI, and a PLC.
+      - Signals from both connection models are organized within the same device and asset structure. This allows older equipment to contribute operational state, production counts, stoppage information, and performance data alongside newer machines instead of remaining a visibility gap.
+      - This deployment model is already in use in customer environments, including a retrofit installation and a mixed modern-and-legacy equipment deployment. Customer identities and site-specific implementation details remain confidential.
+    points:
+      - Direct Modbus and OPC UA connectivity for compatible modern equipment
+      - Sensor, HMI, and PLC retrofit path for legacy machines
+      - Consistent asset, telemetry, and operational context across both models
+      - Comparable operations and performance insight without replacing viable equipment
+    image: /assets/img/solutions/industry-deployment.png
+    image_alt: Mixed modern and legacy industrial equipment connected to Nova Vector
+    caption: A practical brownfield architecture combines direct machine connectivity with retrofit instrumentation.
+  - eyebrow: Production operations
+    heading: Combine plans, machine signals, and operator context
+    paragraphs:
+      - Nova Vector connects production plans with actual machine data so supervisors can see the active order, expected output, produced quantity, current line state, speed, and stoppages in one operational view.
+      - Operators can classify stoppages that cannot be determined from signals alone. The resulting context supports downtime analysis instead of presenting an unexplained gap in production.
+    image: /assets/img/solutions/Production-lines.png
+    image_alt: Multiple production lines monitored in Nova Vector
+    caption: Connected production lines with current operating context.
+  - eyebrow: People and response workflows
+    heading: Understand who operated equipment and how quickly support responded
+    paragraphs:
+      - RFID readers and identification cards can record when an authorized operator or team member checks in at a machine or production line. Nova Vector relates that identity and time interval to equipment state, production activity, stoppages, and other operational events.
+      - The same model can record when a support request is created, when a support team checks in or begins work, and when the activity is completed. These timestamps make response and resolution intervals measurable and allow support-team utilization to be analyzed by equipment, line, shift, activity type, or reporting period.
+      - Customers use this capability to evaluate how operating teams use production assets and how effectively support resources respond to interruptions. Access to identifiable workforce information can be restricted according to the organization's roles, policies, and applicable privacy requirements.
+    points:
+      - RFID association of authorized personnel with machines and lines
+      - Operating-team utilization in production context
+      - Support response and resolution intervals
+      - Analysis by asset, line, shift, activity, and period
+    image: /assets/img/service/support.png
+    image_alt: Support personnel responding to an industrial equipment event
+    caption: RFID check-ins and workflow timestamps connect team activity with the affected equipment and production context.
+  - eyebrow: From event to action
+    heading: Relate production loss to alarms and maintenance work
+    paragraphs:
+      - Detected conditions can update process state and alarm status, notify configured recipients, and create command requests. Maintenance activities and operational notes can be associated with the affected line or equipment.
+    points:
+      - Plan-versus-actual production
+      - Automatic stoppage detection and operator classification
+      - OEE and loss analysis
+      - Process state, alarms, and maintenance context
+  - eyebrow: Work-order production
+    heading: Close the loop between what was ordered, planned, and produced
+    paragraphs:
+      - Approved work-order items feed the shift planning board with provenance back to the source document. During an active plan window, machine counters and production records update produced, scrap, and rework quantities against the correct order.
+      - Serial capture, mandatory scrap or rework reasons, manual overrides, and authoritative recomputation provide a traceable result. When every item is fulfilled, Nova Vector can transition the work order to its configured completion status exactly once.
+    points:
+      - Live and recomputed production totals per work order
+      - Good, scrap, and rework quantities with reasons
+      - Serial lookup and plan-level breakdown
+      - Work-order and label printing through a managed printer registry
+  - eyebrow: Product definitions
+    heading: Compare the recipe with what production actually consumed
+    paragraphs:
+      - Versioned product definitions describe routings, operations, materials, labor, machine time, energy, and approved alternatives. The planning and production workflow records actual quantities and input lots used for each order.
+      - Variance analysis compares standard and actual quantity and cost, helping teams identify material loss, excess machine time, labor deviation, or energy use that would otherwise appear only as a period-end accounting difference.
+screenshots:
+  - src: /assets/img/solutions/Production-lines.png
+    alt: Multiple manufacturing lines monitored in Nova Vector
+    caption: Connected production-line overview.
+  - src: /assets/img/solutions/report-tv.png
+    alt: Production stoppage report in Nova Vector
+    caption: Stoppage classification and reporting view.
+related:
+  - label: OEE & Downtime
+    url: /manufacturing-oee-software/
+  - label: Process Automation
+    url: /industrial-state-machine/
+  - label: Case Studies
+    url: /case-studies/
+---

@@ -2,8 +2,8 @@
 layout: v3
 permalink: /industrial-state-machine/
 title: Process Automation & State Machines
-description: Model industrial processes with state machines, guarded transitions, alarms, notifications, command requests, simulation, and replay.
-summary: Model industrial processes as explicit state transitions connected to telemetry, alarms, persisted command requests, notifications, simulation, and replay.
+description: Model industrial processes with versioned state machines, guarded transitions, alarms, tasks, commands, simulation, diagnostics, and historical replay.
+summary: Create a live operational digital twin with explicit machine and process states, deterministic transitions, versioned simulation, and historical replay.
 eyebrow: Platform capability
 theme: platform
 noindex: true
@@ -24,14 +24,14 @@ capabilities:
       - Alarm status changes and notification actions
       - Execution result remains separate from submission
   - title: Simulation and replay
-    text: Test process behavior and review historical execution. Version-selection behavior must be confirmed before it is presented as generally available.
+    text: Run version-pinned simulations, inspect execution diagnostics, compare runs, reconstruct snapshots, and replay recorded device streams.
     image: /assets/img/paragraphs/graphnew.png
     image_alt: Process graph representing state-machine behavior
     placeholder: Placeholder — current simulator and replay UI
     details:
-      - Controlled inputs for definition testing
-      - Historical event reconstruction
-      - Thing and process version selection remains incomplete
+      - Run, pause, resume, stop, and adjust simulation speed
+      - Immutable published versions and version comparison
+      - Historical reconstruction and per-device replay progress
 content_sections:
   - eyebrow: Explicit process behavior
     heading: Model industrial operation as states and guarded transitions
@@ -50,8 +50,18 @@ content_sections:
   - eyebrow: Test before operation
     heading: Simulate definitions and replay historical behavior
     paragraphs:
-      - The process simulator exercises transition logic with controlled inputs. Replay reconstructs behavior from historical events so engineering teams can investigate how a process reached a state.
-      - Selection of thing and process-definition versions remains an identified completion item and is not presented as generally available.
+      - The process simulator targets an immutable published definition and supports run, pause, resume, stop, and speed control. Preflight checks, execution logs, diagnostics, run comparison, and promotion to a published version support a controlled engineering workflow.
+      - Replay feeds recorded device streams back through the operational model with version-pinned playback and per-device progress, helping teams reproduce incidents and understand how a process reached a state.
+  - eyebrow: Hardware-independent testing
+    heading: Exercise adapters and workflows before equipment is available
+    paragraphs:
+      - Nova Vector protocol simulators behave like real Modbus TCP, BACnet/IP, SNMP, MQTT, and OPC UA equipment. A scenario engine couples simulated devices into complete systems and introduces scripted faults, expected outcomes, delay, packet loss, or network partitions.
+      - Reference battery-storage, production-line, and AI-server assembly scenarios can provision platform profiles, Things, channels, adapter connections, and bindings through public APIs for demonstrations, training, load tests, and acceptance testing.
+    points:
+      - Protocol traffic follows the same path as real equipment
+      - Scripted scenarios, fault injection, and network impairment
+      - Idempotent provisioning and cleanup through platform APIs
+      - Operator console for signals, faults, requests, and events
 related:
   - label: Platform Architecture
     url: /architecture/
@@ -59,4 +69,6 @@ related:
     url: /manufacturing/
   - label: Documentation
     url: /documentation/
+  - label: Industrial Simulation
+    url: /industrial-simulation/
 ---

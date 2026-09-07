@@ -2,8 +2,8 @@
 layout: v3
 permalink: /industrial-iot-platform/
 title: Industrial IoT Platform
-description: Industrial IoT platform for device management, edge computing, real-time telemetry, process state, alarms, commands, and industrial applications.
-summary: A shared operational platform for connecting equipment, organizing industrial assets, processing telemetry, modeling state, and integrating decisions with enterprise systems.
+description: Industrial digitalization platform with native OT connectivity, time-series data, lightweight MES, digital twins, edge fleet management, and edge AI.
+summary: Connect machines and people, digitalize physical operations, improve performance today, and create the contextual data foundation for industrial AI.
 eyebrow: Nova Vector Platform
 theme: platform
 noindex: true
@@ -11,28 +11,28 @@ sitemap: false
 show_architecture: true
 capabilities:
   - title: Connect industrial systems
-    text: Register connected equipment, organize it in an industrial asset hierarchy, and bring telemetry into a consistent operational model.
+    text: Connect equipment directly through native industrial adapters or through Nova Edge, then organize every signal in a reusable device and asset model.
     image: /assets/img/products/Devices-Things.png
     image_alt: Devices and things managed in Nova Vector
     details:
-      - Device identity and configuration
-      - Thing, asset, site, and line relationships
-      - Real-time telemetry linked to operational context
-  - title: Model operational context
-    text: Represent process state, evaluate transitions, raise alarms, notify teams, and create command requests without hiding execution boundaries.
-    flow: [Event, State transition, Persisted action]
+      - MQTT, HTTP, CoAP, WebSocket, LoRaWAN and Sparkplug B
+      - Native OPC UA, Modbus TCP, BACnet/IP and SNMP adapters
+      - Profile-driven metrics, register maps and asset relationships
+  - title: Digitalize operations
+    text: Combine live equipment data with plans, work orders, products, process state, alarms, tasks, quality, consumption, and workforce activity.
+    flow: [Live data, Operational context, Measurable outcome]
     details:
-      - Guarded state-machine behavior
-      - Alarm status and email notification workflows
-      - Atomic state and command-request persistence
-  - title: Build operational applications
-    text: Use shared platform services to build dashboards, reports, APIs, manufacturing workflows, and energy applications.
+      - Production planning, OEE, downtime and plan attainment
+      - Work-order output, scrap, rework and consumption variance
+      - State machines, alerts, tasks, notifications and commands
+  - title: Scale from one site to an edge fleet
+    text: Deploy on premises, in the cloud, in hybrid or air-gapped environments, and add governed edge workloads and AI as requirements grow.
     image: /assets/img/products/platform-2.png
     image_alt: Nova Vector platform dashboard
     details:
-      - Multi-tenant application model
-      - REST and messaging integration
-      - Manufacturing, energy, OEM, and infrastructure workflows
+      - Multi-tenant platform with role-based access and SSO
+      - Edge node onboarding, signed bundles and rollback (integrated beta)
+      - REST, messaging, low-code automation and enterprise integration
 content_sections:
   - eyebrow: Operational model
     heading: Keep device data connected to the industrial process
@@ -47,6 +47,16 @@ content_sections:
     image: /assets/img/products/Devices-Things.png
     image_alt: Nova Vector devices and things interface
     caption: Devices and things organized in the Nova Vector Platform.
+  - eyebrow: Start small and expand
+    heading: Each digitalization step delivers value on its own
+    paragraphs:
+      - Begin with one machine, production line, building system, or remote site. Establish connectivity and live visibility first, then add workflows for production, downtime, maintenance, workforce activity, process simulation, or edge operations.
+      - Because the same device, asset, telemetry, identity, and event models support every module, a successful first deployment can scale without rebuilding the data foundation.
+    points:
+      - Connect equipment and normalize operational data
+      - Digitalize workflows now handled through paper or spreadsheets
+      - Optimize with dashboards, alerts, OEE, tasks, and automation
+      - Add AI when sufficient governed, contextual data is available
   - eyebrow: Event and command flow
     heading: Coordinate automation without hiding service boundaries
     paragraphs:
@@ -66,7 +76,7 @@ faq:
   - question: Which deployment models are supported?
     answer: Nova Vector can be deployed at the edge, on premises, in a private cloud, or in a cloud environment. The supported topology, service ownership, and resilience model are confirmed for each implementation.
   - question: Which industrial protocols are available?
-    answer: Connectivity is configuration-specific. Nova Vector documents only the protocols, gateways, and EdgeX device services verified for the target equipment and deployment.
+    answer: Nova Vector supports MQTT, HTTP, CoAP, WebSocket, LoRaWAN, OPC UA, Modbus TCP, BACnet/IP, SNMP and Sparkplug B, with EdgeX available for site-side device services. Exact security, discovery, write, and command behavior depends on the selected adapter and deployment.
   - question: Is Nova Vector currently published under Apache 2.0?
     answer: No. Nova Vector is built with open standards and open-source technologies, but the Nova Vector platform source code is not currently published under Apache 2.0.
 related:

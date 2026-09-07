@@ -2,8 +2,8 @@
 layout: v3
 permalink: /integrations/
 title: Industrial Integrations
-description: Integrate industrial devices, EdgeX services, messaging, identity, data platforms, and enterprise applications with Nova Vector.
-summary: Review how devices, edge services, messaging, identity, data platforms, and enterprise applications connect to Nova Vector.
+description: Connect industrial equipment through OPC UA, Modbus TCP, BACnet/IP, SNMP, MQTT, LoRaWAN, Sparkplug B, EdgeX, REST APIs, and enterprise integrations.
+summary: Connect plant and building systems directly, use Nova Edge where local operation is required, and integrate contextual operational data with business applications.
 eyebrow: Developer resources
 theme: edge
 noindex: true
@@ -11,7 +11,7 @@ sitemap: false
 capability_heading: Integration boundaries
 capabilities:
   - title: Industrial connectivity
-    text: Connect equipment through device services, gateways, protocols, and EdgeX integrations verified for the production configuration.
+    text: Use MQTT, HTTP, CoAP, WebSocket, LoRaWAN, OPC UA, Modbus TCP, BACnet/IP, SNMP, Sparkplug B, or EdgeX integrations according to the equipment and topology.
   - title: Platform interfaces
     text: Use approved REST, MQTT, NATS, event, export, OAuth 2.0, and OIDC interfaces according to the documented service boundary.
   - title: Enterprise systems
@@ -20,12 +20,21 @@ content_sections:
   - eyebrow: Industrial interfaces
     heading: Normalize equipment data at a documented boundary
     paragraphs:
-      - Device services, gateways, and edge applications map equipment-specific data into Nova Vector device, asset, telemetry, state, and command models.
-      - EdgeX Foundry is used for applicable edge integrations. MQTT, NATS, REST, and other interfaces are listed only where the deployed service and version support them.
+      - Native OPC UA, Modbus TCP, BACnet/IP, and SNMP services can poll, subscribe to, discover, read, or write compatible equipment directly from the platform, without requiring a separate edge tier.
+      - Connections can represent gateways that front multiple devices. Profile-driven addressing, publish-on-change, health information, enable/disable controls, replica leases, and tenant authorization provide a common operational pattern across industrial adapters.
     image: /assets/img/products/network.png
     image_alt: Network of industrial integration services
-    caption: Conceptual integration visual; replace with an approved interface map.
-    placeholder: Placeholder — approved Nova Vector integration map
+    caption: Industrial equipment can connect directly to the platform or through a managed site-side edge tier.
+  - eyebrow: Discovery and provisioning
+    heading: Move from protocol discovery to a managed asset
+    paragraphs:
+      - OPC UA browsing, BACnet Who-Is and object discovery, and SNMP learn mode help engineering teams identify available equipment and data points. Selected points can be bound to Things and channels individually or in bulk.
+      - Modbus addressing can be defined per point, including gateway unit IDs, data types, word order, scale, and offset. Reusable Thing Profiles keep those definitions consistent across equivalent equipment.
+    points:
+      - OPC UA browse, subscribe, read/write, and method calls
+      - Modbus TCP FC01–FC04 reads and FC05/06/15/16 writes
+      - BACnet/IP discovery, object browse, reads, writes, and BBMD configuration
+      - SNMP v1, v2c, and v3 traps and informs
   - eyebrow: Enterprise context
     heading: Exchange decisions as well as measurements
     paragraphs:

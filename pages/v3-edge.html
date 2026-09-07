@@ -2,8 +2,8 @@
 layout: v3
 permalink: /edge-computing-platform/
 title: Nova Edge Computing
-description: Industrial edge computing for device connectivity, local data processing, EdgeX services, and integration with Nova Vector Platform.
-summary: Connect devices and process selected data close to industrial equipment while integrating telemetry, configuration, and commands with the Nova Vector Platform.
+description: Industrial edge runtime with EdgeX device services, local processing, offline operation, workload monitoring, local console, and central fleet management.
+summary: Keep industrial sites operating locally, connect equipment through EdgeX, manage Linux and container workloads, and integrate securely with Nova Vector.
 eyebrow: Nova Edge
 theme: edge
 noindex: true
@@ -25,14 +25,14 @@ capabilities:
       - Filtering, conversion, compression, and encryption
       - Local rules and application services
       - HTTP, MQTT, EdgeX bus, and log outputs where supported
-  - title: Platform integration
-    text: Exchange telemetry, configuration, and command requests with central services while retaining clear edge and platform responsibilities.
+  - title: Local operation and fleet integration
+    text: Retain a local operator console during disconnection, exchange Sparkplug B telemetry upstream, and receive signed, node-scoped deployment commands.
     image: /assets/img/products/edge-2.png
     image_alt: Nova Edge and platform integration
     details:
-      - Selected telemetry and events move upstream
-      - Approved configuration and command requests move downstream
-      - Edge and central responsibilities remain observable
+      - Host, systemd, Docker and Compose monitoring
+      - Local logs, audit journal and authorized lifecycle controls
+      - Outbound-only connection to central fleet services
 content_sections:
   - eyebrow: Local industrial integration
     heading: Process selected data close to the equipment
@@ -45,12 +45,12 @@ content_sections:
   - eyebrow: Edge-to-platform operation
     heading: Exchange telemetry, configuration, and commands
     paragraphs:
-      - Edge deployments send selected telemetry and events to the Nova Vector Platform and receive approved configuration or command requests. Local processing can continue where the selected topology supports disconnected operation.
+      - Edge deployments publish host facts and selected telemetry through MQTT and Sparkplug B, and receive authorized configuration, workload, or AI model commands. The local console exposes health, metrics, logs, audit events, and allowlisted lifecycle operations even when the central connection is unavailable.
     points:
       - EdgeX device, core, and application services
       - Local filtering and transformation
-      - Container-based deployment
-      - Central platform integration
+      - Systemd and Docker Compose deployment
+      - Local operator console and remote desktop access
 screenshots:
   - src: /assets/img/products/edge-2.png
     alt: Nova Edge and EdgeX Foundry integration architecture

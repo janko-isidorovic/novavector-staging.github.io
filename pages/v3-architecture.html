@@ -2,8 +2,8 @@
 layout: v3
 permalink: /architecture/
 title: Nova Vector Architecture
-description: Explore the Nova Vector edge-to-enterprise architecture for devices, telemetry, state, commands, alarms, applications, and integrations.
-summary: See how devices, edge services, platform capabilities, operational applications, and enterprise integrations fit into one industrial architecture.
+description: Explore Nova Vector architecture across native OT adapters, Nova Edge, time-series data, operational services, lightweight MES, digital twins, and AI.
+summary: See how direct equipment connectivity, optional edge services, platform modules, operational applications, and enterprise integrations form one modular architecture.
 eyebrow: Technical evaluation
 theme: platform
 noindex: true
@@ -12,37 +12,37 @@ show_architecture: true
 capability_heading: Architecture boundaries
 capabilities:
   - title: Edge-to-platform data flow
-    text: Nova Edge connects deployment-specific device services to local processing and upstream telemetry paths. Buffering and recovery behavior are defined for each topology.
-    flow: [Equipment, EdgeX, Nova Vector]
+    text: Equipment can connect directly to native platform adapters or through Nova Edge when a site requires local processing, offline operation, or edge-side device services.
+    flow: [Equipment, Direct or edge path, Nova Vector]
     details:
-      - Device services normalize equipment interfaces
-      - Local applications filter and transform selected data
-      - Telemetry and events move through documented message paths
+      - Native OPC UA, Modbus TCP, BACnet/IP, SNMP and IoT transports
+      - EdgeX and NV Edge Agent for site-side operation
+      - SenML-normalized telemetry and documented message paths
   - title: Operational services
     text: Central services connect assets, telemetry, state machines, rules, commands, alarms, notifications, and analytics without collapsing their operational responsibilities.
     flow: [Asset context, Process state, Operational action]
     details:
-      - PostgreSQL and TimescaleDB data services
-      - NATS and MQTT at approved service boundaries
-      - Durable command requests with asynchronous execution
+      - PostgreSQL, TimescaleDB, Redis and MinIO data services
+      - NATS, MQTT and REST at documented service boundaries
+      - MES, digital-twin, task, alert and command services
   - title: Deployment qualities
     text: Identity, tenant isolation, resilience, scalability, and high availability are documented against the selected deployment rather than presented as universal claims.
     image: /assets/img/products/network.png
     image_alt: Distributed Nova Vector deployment
     placeholder: Placeholder — approved deployment topology
     details:
-      - OAuth 2.0 and OIDC integration
-      - Edge, on-premises, private-cloud, and cloud options
-      - Configuration-specific HA, recovery, and ownership
+      - Keycloak SSO, role-based access and tenant isolation
+      - Edge, on-premises, cloud, hybrid and air-gapped options
+      - Docker Compose or customer-managed Kubernetes topologies
 content_sections:
   - eyebrow: Data path
     heading: From industrial equipment to a shared platform model
     paragraphs:
-      - Device services and gateways collect measurements and events close to equipment. Nova Edge can transform selected data locally and exchange telemetry, configuration, and command requests with central platform services.
+      - Compatible equipment can connect to native platform adapters directly. Nova Edge adds site-local services where equipment cannot reach the platform, connectivity is unreliable, or operations must continue offline.
       - The platform associates incoming data with devices and assets, stores time-series history, evaluates process state and rules, and exposes information to dashboards, reports, APIs, and enterprise integrations.
     points:
-      - EdgeX Foundry device services where verified
-      - MQTT and NATS messaging at documented service boundaries
+      - Native industrial adapters or EdgeX Foundry device services
+      - MQTT, Sparkplug B, and NATS messaging at documented boundaries
       - PostgreSQL and TimescaleDB-backed operational and time-series data
       - REST APIs and event-driven integrations
     image: /assets/img/products/edge-2.png
@@ -52,7 +52,7 @@ content_sections:
     heading: Treat commands as durable operational requests
     paragraphs:
       - Process logic persists a command request together with the related state change. Execution is performed asynchronously by a separate service, so delivery, device response, and failure handling remain observable.
-      - This distinction is important in industrial systems: database atomicity does not imply atomic behavior across networks, edge computers, controllers, and physical equipment.
+      - "This distinction is important in industrial systems: database atomicity does not imply atomic behavior across networks, edge computers, controllers, and physical equipment."
 related:
   - label: Platform Overview
     url: /industrial-iot-platform/

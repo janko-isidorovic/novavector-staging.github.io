@@ -13,13 +13,13 @@
             <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-12 col-12 text-left">
                     <h3>Connect equipment to a usable asset model</h3>
-                    <p>Register devices and represent equipment within an industrial asset hierarchy.
+                    <p>Connect equipment through MQTT, HTTP, CoAP, WebSocket, LoRaWAN, OPC UA, Modbus TCP, BACnet/IP, SNMP, Sparkplug B, or EdgeX device services.
                         <br>
                         <br>
-                        Connect modern equipment through interfaces such as Modbus and OPC UA.
+                        Discover and bind compatible OPC UA, BACnet, and SNMP devices, and use reusable Thing Profiles to describe metrics and protocol addressing.
                         <br>
                         <br>
-                        Retrofit legacy machines with additional sensors, an HMI, and a PLC, then bring those signals into the same platform model.
+                        Retrofit legacy machines with additional sensors, an HMI, and a PLC, then bring those signals into the same asset and telemetry model.
                         <br>
                         <br>
                         Give operations and engineering teams comparable visibility into the condition, operation, and performance of both modern and legacy equipment.
@@ -39,16 +39,16 @@
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-12 text-left">
                     <h3>See current conditions—and investigate what changed</h3>
-                    <p>Monitor real-time and historical IoT data in operational dashboards.
+                    <p>Monitor real-time and historical IoT data in operational dashboards and embedded Grafana reports.
                         <br>
                         <br>
-                        Build views for equipment status, telemetry, alarms, and production information.
+                        Compare actual production with shift, weekly, and monthly plans while there is still time to respond.
                         <br>
                         <br>
-                        Use charts and filters to investigate patterns, correlations, and outliers.
+                        Investigate downtime count and duration, OEE, MTTR, MTBF, consumption variance, and recurring operational losses.
                         <br>
                         <br>
-                        Follow live data streams and compare them with historical operating conditions.
+                        Adapt report templates to the customer's production process, equipment hierarchy, and management needs.
                         <br>
                     </p>
                     <a class="nv-inline-link" href="{{ '/iot-timeseries-analytics/' | relative_url }}">Explore time-series analytics <span aria-hidden="true">→</span></a>
@@ -62,13 +62,13 @@
                     <p>Represent industrial processes as explicit states and guarded transitions.
                         <br>
                         <br>
-                        Connect transitions to alarm status changes, notification workflows, and persisted command requests.
+                        Connect transitions to alarm status changes, notifications, assignable tasks, and persisted command requests.
                         <br>
                         <br>
                         Store the state change and command request together, while a separate service performs execution asynchronously.
                         <br>
                         <br>
-                        Test process definitions in the simulator and investigate historical behavior through replay.
+                        Simulate versioned process definitions, replay historical behavior, or exercise complete systems through protocol-level simulators before hardware is available.
                         <br>
                     </p>
                     <a class="nv-inline-link" href="{{ '/industrial-state-machine/' | relative_url }}">Explore process and state modeling <span aria-hidden="true">→</span></a>
@@ -85,13 +85,13 @@
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-12 text-left">
                     <h3>Process and manage data at the industrial edge</h3>
-                    <p>Connect deployment-specific devices through EdgeX Foundry device services and approved industrial interfaces.
+                    <p>Connect site equipment through EdgeX Foundry and operate Linux edge nodes through the Nova Edge Agent.
                         <br><br>
-                        Filter, transform, compress, convert, or encrypt selected data close to equipment.
+                        Monitor host, systemd, Docker, and Compose workloads while retaining a local operator console when the central connection is unavailable.
                         <br><br>
-                        Exchange telemetry, configuration, events, and command requests with the central Nova Vector Platform.
+                        Onboard fleets from a spreadsheet and deploy approved, signed software bundles through staged rollouts with health checks and rollback.
                         <br><br>
-                        Manage edge workloads and observability according to the deployed Nova Edge Agent version and configuration.
+                        Fleet onboarding and rollout capabilities are integrated beta features and are positioned for controlled early-adopter deployments.
                     </p>
                     <a class="nv-inline-link" href="{{ '/edge-computing-platform/' | relative_url }}">Explore Nova Edge <span aria-hidden="true">→</span></a>
                 </div>
@@ -101,16 +101,16 @@
             <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-12 col-12 text-left">
                     <h3>Apply analytics and AI to industrial data</h3>
-                    <p>Nova Vector provides real-time and historical data for operational analytics and model-development workflows.
+                    <p>Nova Vector normalizes operational data and preserves device, asset, process, and production context for analytics and model-development workflows.
                         <br>
                         <br>
-                        Analyze telemetry to identify abnormal operating conditions, patterns, and performance changes.
+                        Use the on-premises AI assistant to query supported platform resources while keeping operational data inside the customer's deployment.
                         <br>
                         <br>
-                        Integrate approved analytics and machine-learning services with platform data through APIs and messaging interfaces.
+                        Approve, sign, deploy, activate, and roll back ONNX model bundles on selected Nova Edge nodes; inference results return as ordinary telemetry.
                         <br>
                         <br>
-                        Model training, edge inference, and accelerator support are published only for configurations in which those capabilities have been validated.
+                        Edge AI is an integrated beta capability. Model training remains in external data-science tooling while an in-platform training workspace remains on the roadmap.
                         <br>
                     </p>
                     <a class="nv-inline-link" href="{{ '/edge-ai-industrial-iot/' | relative_url }}">Explore industrial analytics and AI <span aria-hidden="true">→</span></a>

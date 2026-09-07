@@ -1,0 +1,49 @@
+---
+layout: v3
+permalink: /industrial-simulation/
+title: Industrial Process & Equipment Simulation
+description: Simulate industrial processes and protocol-connected equipment for digital-twin validation, demonstrations, training, load testing, and acceptance tests.
+summary: Test process definitions and complete industrial scenarios against realistic Modbus, BACnet, SNMP, MQTT, and OPC UA traffic before production hardware is available.
+eyebrow: Digital twin and testing
+theme: platform
+noindex: true
+sitemap: false
+capabilities:
+  - title: Process simulation
+    text: Run immutable process versions with controlled inputs, speed adjustment, preflight checks, diagnostics, snapshot reconstruction, and run comparison.
+    flow: [Published model, Simulated events, Verified behavior]
+  - title: Protocol simulators
+    text: Exercise Nova Vector adapters with equipment that behaves like real Modbus TCP, BACnet/IP, SNMP, MQTT, Sparkplug B, and OPC UA devices.
+    flow: [Simulated device, Real protocol, Platform adapter]
+  - title: Complete system scenarios
+    text: Couple devices into battery-storage, production-line, or assembly-line examples with scripted faults, expectations, and network impairment.
+    flow: [Scenario, Fault or event, Operational response]
+content_sections:
+  - eyebrow: Test the complete data path
+    heading: Use real protocol traffic without waiting for hardware
+    paragraphs:
+      - The simulator suite stands outside Nova Vector and communicates through the same adapters used by production equipment. Engineering teams can test addressing, decoding, discovery, writes, exceptions, alerting, state transitions, and downstream workflows without bypassing the real integration boundary.
+      - An idempotent provisioning tool creates profiles, Things, channels, adapter connections, bindings, and node credentials through public APIs, and can remove the environment cleanly after a test.
+    points:
+      - Modbus TCP devices and gateways with register encodings and writes
+      - BACnet/IP objects, priorities, discovery, and device personalities
+      - SNMP v1/v2c/v3 traps and informs
+      - MQTT fleets in SenML or Sparkplug B, plus OPC UA reference servers
+  - eyebrow: Scenario-driven validation
+    heading: Reproduce operating conditions, faults, and network problems
+    paragraphs:
+      - YAML system definitions couple simulated equipment through formulas and behavior packs. Scripted scenarios change inputs, assert expected outcomes, and record model events as ground truth.
+      - Network impairment can add delay, jitter, loss, reordering, or complete partitions to selected targets. This makes the environment useful for demonstrations, operator training, acceptance tests, capacity exercises, and resilience validation.
+    points:
+      - Battery energy-storage enclosure reference system
+      - Production-line reference system
+      - Serialized AI-server assembly-line reference system with RFID operators
+      - Embedded operator console for live signals, faults, requests, and events
+related:
+  - label: Process Automation
+    url: /industrial-state-machine/
+  - label: Industrial Integrations
+    url: /integrations/
+  - label: Platform Architecture
+    url: /architecture/
+---

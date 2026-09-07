@@ -2,8 +2,8 @@
 layout: v3
 permalink: /edgex-foundry-platform/
 title: Nova Vector + EdgeX Foundry
-description: Integrate EdgeX Foundry device services and message flows with Nova Edge and the Nova Vector Industrial IoT platform.
-summary: Connect EdgeX device services and message flows to local processing, containerized edge deployments, and the Nova Vector Platform.
+description: Deploy and manage EdgeX Foundry 2.3, 3.1, or 4.0 device services through Nova Edge, reusable profiles, signed bundles, and platform integration.
+summary: Use EdgeX as the vendor-neutral site-side device layer, managed through Nova Vector profiles, fleet deployment, telemetry, and command workflows.
 eyebrow: Open edge ecosystem
 theme: edge
 noindex: true
@@ -15,16 +15,21 @@ capabilities:
   - title: Data and command flow
     text: Map EdgeX messages into transformations, exports, platform telemetry, and approved command paths while preserving traceable boundaries.
   - title: Deployment patterns
-    text: Define container topology, configuration, resilience, upgrades, and service ownership for the target industrial environment.
+    text: Deploy reference EdgeX 2.3, 3.1, or 4.0 bundles through the fleet pipeline, site registry, health checks, and rollback.
 content_sections:
   - eyebrow: EdgeX architecture
     heading: Connect device services to Nova Vector applications
     paragraphs:
       - EdgeX device services normalize communication with equipment. Core services manage device data and commands, while application services transform and export selected information to platform or local destinations.
-      - Nova Vector integrates these message flows with its asset, telemetry, state, alarm, and command services. The mapping is documented for the chosen EdgeX release and device-service set.
+      - Nova Vector manages EdgeX devices, bulk devices, profiles, services, commands, and resources through the metadata APIs. Profiles and Things can be imported between EdgeX and the platform, while Sparkplug B telemetry is normalized into the platform data model.
     image: /assets/img/products/edge-2.png
     image_alt: EdgeX services integrated with Nova Vector
     caption: Nova Edge and EdgeX Foundry service relationships.
+  - eyebrow: Managed deployment
+    heading: Operate multiple EdgeX versions through one fleet workflow
+    paragraphs:
+      - Reference bundles for EdgeX 2.3, 3.1, and 4.0 include the EdgeX web interface, rules engine, and supporting services. Approved bundles are signed, distributed through the site registry, and deployed to compatible node types with health checks and rollback.
+      - The platform's Edge tab can combine the local Nova Edge console, EdgeX user interface, remote desktop, and EdgeX configuration for a selected node.
   - eyebrow: Engineering experience
     heading: Practical involvement in the EdgeX ecosystem
     paragraphs:

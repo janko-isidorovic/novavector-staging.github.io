@@ -47,7 +47,7 @@
     });
     BasicSlider.slick({
       autoplay: true,
-      autoplaySpeed: 10000,
+      autoplaySpeed: 7000,
       fade: true,
       prevArrow:
         '<button type="button" class="slick-prev"><i class="icofont-long-arrow-left"></i>Prev</button>',

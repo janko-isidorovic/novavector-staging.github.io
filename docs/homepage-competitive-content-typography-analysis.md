@@ -300,8 +300,23 @@ competitor claim.
 ### 4. Add customer proof
 
 The largest current homepage gap is evidence. Add one restrained proof section
-rather than another generic card grid. A suitable anonymized manufacturing
-example could cover:
+rather than another generic card grid.
+
+The following customer outcomes have been confirmed by Nova Vector and are
+approved for anonymized homepage use:
+
+| Deployment | Measured result | Operational foundation |
+|---|---:|---|
+| Smart agriculture | 38% year-over-year increase in crop yield | Real-time air, soil, and weather sensing replaced twice-yearly laboratory analysis and supported fertilization optimization. |
+| Smart buildings | 17% year-over-year reduction in operating cost | Floor-level occupancy analysis revealed underused areas and enabled targeted energy savings. |
+| Industrial digitalization | 35% OEE improvement over two years | Micro-stoppage visibility exposed significant production losses and guided operator training and utilization improvements. |
+| Smart energy | 75% reduction in go-to-market timeline | Predictive monitoring and control technology accelerated development of an energy-storage and delivery solution. |
+
+Customer names and outbound customer links must not appear in the homepage
+version. Results should be described as deployment-specific rather than typical
+or guaranteed outcomes.
+
+The existing anonymized manufacturing example can continue to cover:
 
 - Mixed modern and retrofitted legacy equipment
 - Direct Modbus TCP and OPC UA connectivity where supported
@@ -310,9 +325,8 @@ example could cover:
 - Alarm-to-support workflow
 - Optional RFID operator and response context
 
-Every published quantity, improvement, deployment size, and result requires
-evidence and customer-disclosure approval. Until approval exists, describe the
-architecture and workflow without invented performance claims.
+Any additional quantity, improvement, deployment size, or result still requires
+evidence and customer-disclosure approval before publication.
 
 ## Proposed implementation sequence
 

@@ -134,7 +134,7 @@
 .nv-home-v3 .paragraphs h3,
 .nv-home-v3 .usecase-title h3,
 .nv-home-v3 .service-title h3 { font-size: 32px; line-height: 1.25; }
-.nv-home-v3 .paragraphs h3::before { width: 100%; }
+.nv-home-v3 .paragraphs h3::before { bottom: -12px; width: 100%; }
 .nv-home-v3 .user-story { margin: 0 !important; padding: 72px 0 !important; background: var(--nv-soft); }
 .nv-home-v3 .user-story > .container-fluid { width: min(100% - 40px, 1260px); margin: 34px auto 0 !important; padding: 0; }
 .nv-home-v3 .user-story .container-box { margin: 0 !important; padding: 28px; border: 1px solid #707070; }

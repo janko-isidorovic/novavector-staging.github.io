@@ -195,7 +195,7 @@
 .nv-home-v3 .use-cases .row:last-child { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: 1fr; gap: 30px; margin-right: 0; margin-left: 0; }
 .nv-home-v3 .use-cases .row:last-child > [class*="col-"] { width: auto; max-width: none; display: flex; flex: none; padding: 0; }
 .nv-home-v3 .usecase-box-new { width: 100%; height: 100%; display: flex; flex-direction: column; margin: 0; }
-.nv-home-v3 .usecase-img-new img { width: 100%; aspect-ratio: 16 / 8; object-fit: cover; }
+.nv-home-v3 .usecase-img-new img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
 .nv-home-v3 .usecase-content-new { flex: 1; display: flex; flex-direction: column; padding-bottom: 28px; }
 .nv-home-v3 .usecase-content-new .card-text,
 .nv-home-v3 .usecase-content-new .card-text-paragraph { height: auto; flex: 1; }

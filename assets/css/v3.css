@@ -135,6 +135,19 @@
 .nv-home-v3 .usecase-title h3,
 .nv-home-v3 .service-title h3 { font-size: 32px; line-height: 1.25; }
 .nv-home-v3 .paragraphs h3::before { width: 100%; }
+.nv-home-v3 .user-story { margin: 0 !important; padding: 72px 0 !important; background: var(--nv-soft); }
+.nv-home-v3 .user-story > .container-fluid { width: min(100% - 40px, 1260px); margin: 34px auto 0 !important; padding: 0; }
+.nv-home-v3 .user-story .container-box { margin: 0 !important; padding: 28px; border: 1px solid #707070; }
+.nv-home-v3 .user-story h3 { margin: 0 0 12px; color: var(--nv-ink); font-size: 32px; line-height: 1.25; }
+.nv-home-v3 .user-story .black-text { max-width: 820px; margin: 0 auto; font-size: 17px; line-height: 1.6; }
+.nv-home-v3 .user-story .nav-tabs { display: flex; margin: 0 0 28px; }
+.nv-home-v3 .user-story .nav-tabs .nav-link { min-height: 72px; display: flex; flex: 1; align-items: center; justify-content: center; margin: 0; padding: 14px 10px; font-size: 16px; line-height: 1.35; text-align: center; }
+.nv-home-v3 .user-story .tab-content { margin: 0; }
+.nv-home-v3 .user-story .tab-pane { min-height: 420px; height: auto; padding: 70px 48px; background-position: center; background-size: cover; box-shadow: inset 0 0 0 1000px rgba(2, 13, 38, .56); }
+.nv-home-v3 .user-story .tab-pane .col-xl-12 { margin: 0; padding: 0; }
+.nv-home-v3 .user-story .tab-pane h4 { max-width: 720px; margin: 0 0 24px; font-size: 30px; line-height: 1.25; }
+.nv-home-v3 .user-story .tab-pane p { max-width: 900px; margin: 0 0 30px; color: var(--nv-white); font-size: 18px; line-height: 1.65; }
+.nv-home-v3 .user-story .tab-pane a.btn { margin: 0; }
 .nv-home-v3 .intro .grey-text,
 .nv-home-v3 .usecase-title p,
 .nv-home-v3 .services-paragraph p { font-size: 18px; line-height: 1.55; }
@@ -282,6 +295,12 @@
   .nv-home-v3 .meeting-text a.btn { margin: 0; }
 }
 @media (max-width: 767px) {
+  .nv-home-v3 .user-story { padding: 52px 0 !important; }
+  .nv-home-v3 .user-story > .container-fluid { width: min(100% - 28px, 1260px); }
+  .nv-home-v3 .user-story .container-box { padding: 16px; }
+  .nv-home-v3 .user-story .nav-tabs { display: grid; grid-template-columns: repeat(2, 1fr); }
+  .nv-home-v3 .user-story .nav-tabs .nav-link { min-height: 58px; }
+  .nv-home-v3 .user-story .tab-pane { min-height: 390px; padding: 48px 24px; }
   .nv-home-v3 .use-cases .row:last-child { grid-template-columns: 1fr; grid-auto-rows: auto; gap: 24px; }
   .nv-home-v3 .meeting > .container-fluid > .row > div:nth-child(2) { padding: 32px 20px; }
   .nv-home-v3 .meeting-text > .row > div:first-child { max-width: 100%; flex: 0 0 100%; }

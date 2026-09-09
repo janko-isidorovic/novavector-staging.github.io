@@ -132,6 +132,8 @@
 
 /* Restrained v3 refinements for the original homepage composition. */
 .nv-home-v3 { color: var(--nv-ink); font-family: "Lato", sans-serif; }
+.nv-home-v3 .slider-active { overflow: hidden; }
+.nv-home-v3 .slider-active:not(.slick-initialized) .single-slider:not(:first-child) { display: none !important; }
 .nv-home-v3 p { font-size: 16px; line-height: 1.65; }
 .nv-home-v3 .slider-content { margin: 0; transform: translateY(-24px); }
 .nv-home-v3 .slider-content h1 { font-size: 48px; line-height: 1.15; }

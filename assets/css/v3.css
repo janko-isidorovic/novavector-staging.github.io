@@ -134,7 +134,7 @@
 .nv-home-v3 .paragraphs h3,
 .nv-home-v3 .usecase-title h3,
 .nv-home-v3 .service-title h3 { font-size: 32px; line-height: 1.25; }
-.nv-home-v3 .paragraphs h3::before { width: min(210px, 46%); }
+.nv-home-v3 .paragraphs h3::before { width: 100%; }
 .nv-home-v3 .intro .grey-text,
 .nv-home-v3 .usecase-title p,
 .nv-home-v3 .services-paragraph p { font-size: 18px; line-height: 1.55; }

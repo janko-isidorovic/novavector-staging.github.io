@@ -145,7 +145,7 @@
 .nv-home-v3 .v3-strip { border-top: 1px solid var(--nv-line); }
 .nv-home-v3 .intro { margin: 0; padding: 72px 0 60px; }
 .nv-home-v3 .intro img { max-height: 430px; width: auto; }
-.nv-home-journey { display: grid; grid-template-columns: repeat(5, 1fr); margin: 42px 0 0; border-top: 1px solid var(--nv-line); border-bottom: 1px solid var(--nv-line); }
+.nv-home-journey { display: grid; grid-template-columns: repeat(6, 1fr); margin: 42px 0 0; border-top: 1px solid var(--nv-line); border-bottom: 1px solid var(--nv-line); }
 .nv-home-journey article { position: relative; padding: 22px 22px 20px; text-align: left; }
 .nv-home-journey article + article { border-left: 1px solid var(--nv-line); }
 .nv-home-journey article:not(:last-child)::after { content: "→"; position: absolute; top: 24px; right: -8px; z-index: 1; color: var(--nv-orange); font-size: 16px; font-weight: 700; }

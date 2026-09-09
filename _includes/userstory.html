@@ -3,7 +3,7 @@
 <section class="user-story">
     <script>
         function setNavLinksHeight() {
-          const navLinks = document.querySelectorAll('.nav-link');
+          const navLinks = document.querySelectorAll('.user-story .nav-tabs .nav-link');
           let maxHeight = 0;
 
           navLinks.forEach(link => {
@@ -23,12 +23,12 @@
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
-                <h3>User Story</h3>
+                <h3>See Nova Vector in operation</h3>
             </div>
         </div>
         <div class="row">
             <div class="col-12 text-center">
-            <p class="black-text">Here are some of the user stories of the Nova Vector Industry 4.0 Platform.</p>
+            <p class="black-text">Explore how one platform connects equipment, operational context, edge systems, and teams across different industrial environments.</p>
             </div>
         </div>
     </div>
@@ -40,13 +40,13 @@
             <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                     <a class="nav-link active" id="nav-industry-tab" data-toggle="tab" href="#nav-industry" role="tab" aria-controls="nav-industry" aria-selected="true">
-                                                Smart <br>Industry
+                                                Manufacturing
                                             </a>
-                    <a class="nav-link" id="nav-education-tab" data-toggle="tab" href="#nav-education" role="tab" aria-controls="nav-education" aria-selected="false">
-                                                Education
+                    <a class="nav-link" id="nav-energy-tab" data-toggle="tab" href="#nav-energy" role="tab" aria-controls="nav-energy" aria-selected="false">
+                                                Energy &amp; Storage
                                             </a>
-                    <a class="nav-link" id="nav-building-tab" data-toggle="tab" href="#nav-building" role="tab" aria-controls="nav-building" aria-selected="false">
-                                                Smart <br>Building
+                    <a class="nav-link" id="nav-edge-tab" data-toggle="tab" href="#nav-edge" role="tab" aria-controls="nav-edge" aria-selected="false">
+                                                Industrial Edge
                                             </a>
                     <a class="nav-link" id="nav-agriculture-tab" data-toggle="tab" href="#nav-agriculture" role="tab" aria-controls="nav-agriculture" aria-selected="false">
                                                 Smart <br>Agriculture
@@ -57,36 +57,36 @@
                 <div class="tab-pane fade" id="nav-agriculture" role="tabpanel" aria-labelledby="nav-agriculture-tab" style="background-image:url({{site.baseurl}}/assets/img/clients/agriculture-resized.png)">
                         <div class="row">
                             <div class="col-xl-12">
-                                    <h4>Smart <br> agriculture</h4>
-                                    <p>Connect soil, weather, and equipment data to monitor agricultural conditions and support irrigation and operational decisions.</p>
-                                    <a href="{{ '/pages/smart-agriculture' | relative_url }}" id="bigbtn" class="btn">More details</a>
+                                    <h4>Connected agriculture</h4>
+                                    <p>Combine soil, weather, irrigation, and equipment data to detect changing field conditions, use resources efficiently, and make timely operational decisions.</p>
+                                    <a href="{{ '/pages/smart-agriculture' | relative_url }}" class="btn">More details</a>
                             </div>
                         </div>
                 </div>
                 <div class="tab-pane fade show active" id="nav-industry" role="tabpanel" aria-labelledby="nav-industry-tab" style="background-image:url({{site.baseurl}}/assets/img/clients/industry-resized.png)">
                         <div class="row">
                             <div class="col-xl-12">
-                                    <h4>Smart <br> industry</h4>
-                                    <p>Connect production equipment and existing systems to monitor operating conditions, analyze downtime, and support maintenance and production decisions.</p>
-                                    <a href="{{ '/pages/smart-industry' | relative_url }}" id="bigbtn" class="btn">More details</a>
+                                    <h4>Connected manufacturing operations</h4>
+                                    <p>Combine machine signals with production plans, work orders, downtime classification, maintenance response, and workforce context to improve output and OEE.</p>
+                                    <a href="{{ '/manufacturing/' | relative_url }}" class="btn">More details</a>
                             </div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="nav-building" role="tabpanel" aria-labelledby="nav-building-tab" style="background-image:url({{site.baseurl}}/assets/img/clients/building-resized.png)">
+                <div class="tab-pane fade" id="nav-edge" role="tabpanel" aria-labelledby="nav-edge-tab" style="background-image:url({{site.baseurl}}/assets/img/products/nova-edge-computing.png)">
                         <div class="row">
                             <div class="col-xl-12">
-                                    <h4>Smart <br> building</h4>
-                                    <p>Connect building sensors and energy-management systems to monitor indoor conditions, energy use, and maintenance events.</p>
-                                    <a href="{{ '/pages/smart-building' | relative_url }}" id="bigbtn" class="btn">More details</a>
+                                    <h4>Industrial edge operations</h4>
+                                    <p>Collect and process equipment data locally, continue operating through limited connectivity, and centrally manage distributed edge workloads and node health.</p>
+                                    <a href="{{ '/edge-computing-platform/' | relative_url }}" class="btn">More details</a>
                             </div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="nav-education" role="tabpanel" aria-labelledby="nav-education-tab" style="background-image:url({{site.baseurl}}/assets/img/clients/education-resized.png)">
+                <div class="tab-pane fade" id="nav-energy" role="tabpanel" aria-labelledby="nav-energy-tab" style="background-image:url({{site.baseurl}}/assets/img/service/novavector-environment-monitoring.jpg)">
                         <div class="row">
                             <div class="col-xl-12">
-                                    <h4>Education</h4>
-                                    <p>Connect campus equipment and environmental sensors to monitor facilities, energy use, and operating conditions.</p>
-                                    <a href="{{ '/pages/education' | relative_url }}" id="bigbtn" class="btn">More details</a>
+                                    <h4>Energy and energy storage</h4>
+                                    <p>Maintain visibility across distributed assets, manage alarms and operating states near the equipment, and coordinate central response without unnecessary site visits.</p>
+                                    <a href="{{ '/energy/' | relative_url }}" class="btn">More details</a>
                             </div>
                     </div>
                 </div>

@@ -1,11 +1,17 @@
 (function($) {
   "use strict";
 
-  // mobile menu
-  $("#mobile-menu").meanmenu({
-    meanMenuContainer: ".mobile-menu",
-    meanScreenWidth: "991"
-  });
+  // Keep an optional mobile-menu failure from blocking the homepage carousel.
+  if ($.fn.meanmenu) {
+    try {
+      $("#mobile-menu").meanmenu({
+        meanMenuContainer: ".mobile-menu",
+        meanScreenWidth: "991"
+      });
+    } catch (error) {
+      // The desktop navigation remains available as a fallback.
+    }
+  }
 
 
   // sticky
@@ -33,6 +39,9 @@
 
   function mainSlider() {
     var BasicSlider = $(".slider-active");
+    if (!BasicSlider.length || BasicSlider.hasClass("slick-initialized") || !$.fn.slick) {
+      return;
+    }
     BasicSlider.on("init", function(e, slick) {
       var $firstAnimatingElements = $(".single-slider:first-child").find(
         "[data-animation]"
@@ -47,7 +56,7 @@
     });
     BasicSlider.slick({
       autoplay: true,
-      autoplaySpeed: 10000,
+      autoplaySpeed: 7000,
       fade: true,
       prevArrow:
         '<button type="button" class="slick-prev"><i class="icofont-long-arrow-left"></i>Prev</button>',

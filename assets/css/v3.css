@@ -326,8 +326,25 @@
   .nv-home-v3 .user-story { padding: 52px 0 !important; }
   .nv-home-v3 .user-story > .container-fluid { width: min(100% - 28px, 1260px); }
   .nv-home-v3 .user-story .container-box { padding: 16px; }
-  .nv-home-v3 .user-story .nav-tabs { display: grid; grid-template-columns: repeat(2, 1fr); }
-  .nv-home-v3 .user-story .nav-tabs .nav-link { min-height: 58px; }
+  .nv-home-v3 .user-story .nav-tabs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    margin: 0 0 28px;
+    gap: 0;
+  }
+  .nv-home-v3 .user-story .nav-tabs .nav-link {
+    box-sizing: border-box;
+    width: 100% !important;
+    min-width: 0;
+    min-height: 64px;
+    margin: 0 !important;
+    padding: 10px 8px;
+    flex: none;
+    font-size: 16px !important;
+    line-height: 1.35;
+    white-space: normal;
+  }
   .nv-home-v3 .user-story .tab-pane { min-height: 390px; padding: 48px 24px; }
   .nv-home-v3 .use-cases .row:last-child { grid-template-columns: 1fr; grid-auto-rows: auto; gap: 24px; }
   .nv-home-v3 .meeting > .container-fluid > .row > div:nth-child(2) { padding: 32px 20px; }

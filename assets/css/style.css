@@ -3064,6 +3064,13 @@ blockquote {
 
 /* Digitalization Journey steps */
 .nv-home-journey {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
   text-align: center;
 }
 .nv-home-journey article,

@@ -205,7 +205,7 @@
 .nv-home-v3 .slider-active { overflow: hidden; }
 .nv-home-v3 .slider-active:not(.slick-initialized) .single-slider:not(:first-child) { display: none !important; }
 .nv-home-v3 p { font-size: 16px; line-height: 1.65; }
-.nv-home-v3 .slider-content { margin: 0; transform: translateY(-24px); }
+.nv-home-v3 .slider-content { margin: 0; transform: translateY(-24px); text-align: left; }
 .nv-home-v3 .slider-content h1 { font-size: 48px; line-height: 1.15; }
 .nv-home-v3 .slider-content p { max-width: 760px; font-size: 18px; line-height: 1.55; }
 .nv-home-v3 .intro h2,

@@ -3072,6 +3072,7 @@ blockquote {
   gap: 2rem;
   flex-wrap: wrap;
   text-align: center;
+  transform: translateX(8%);
 }
 .nv-home-journey article,
 .nv-home-journey article span,

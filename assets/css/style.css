@@ -3061,3 +3061,14 @@ blockquote {
 	display: list-item;
 	list-style-type: disc;
 }
+
+/* Digitalization Journey steps */
+.nv-home-journey {
+  text-align: center;
+}
+.nv-home-journey article,
+.nv-home-journey article span,
+.nv-home-journey article h3,
+.nv-home-journey article p {
+  text-align: center;
+}

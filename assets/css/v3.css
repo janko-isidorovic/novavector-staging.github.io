@@ -209,6 +209,22 @@
 .nv-home-v3 .slider-content h1,
 .nv-home-v3 .slider-content p,
 .nv-home-v3 .slider-content a.btn { margin-left: 0; margin-right: 0; text-align: left !important; }
+/* Keep the rotating banner CTAs equal without changing hero copy styles. */
+.nv-home-v3 .slider-content a.btn {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 244px;
+  height: 60px;
+  padding: 10px 12px !important;
+  font-size: 16px !important;
+  line-height: 1.25;
+  white-space: normal;
+  text-align: center !important;
+  vertical-align: top;
+}
+
 .nv-home-v3 .slider-content p { max-width: 760px; }
 .nv-home-v3 .slider-content .nv-hero-secondary { margin-left: 10px; }
 .nv-home-v3 .slider-content h1 { font-size: 48px; line-height: 1.15; }
@@ -482,6 +498,7 @@
   .v3-proof > div:last-child { padding: 20px 0 0; border-top: 3px solid var(--nv-orange); border-left: 0; }
   .v3-cta__inner { align-items: stretch; flex-direction: column; }
   .v3-footer-grid { grid-template-columns: 1fr; }
+  .nv-home-v3 .slider-content a.btn { display: flex; width: min(100%, 244px); }
   .nv-home-v3 .slider-content .nv-hero-secondary { margin: 12px 0 0; }
   .nv-home-v3 .intro { padding: 48px 0 42px; }
   .nv-home-v3 .slider-content h1 { font-size: 36px; }

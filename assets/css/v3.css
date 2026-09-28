@@ -242,7 +242,8 @@
 .nv-home-v3 .user-story .nav-tabs { display: flex; margin: 0 0 28px; }
 .nv-home-v3 .user-story .nav-tabs .nav-link { min-height: 72px; display: flex; flex: 1; align-items: center; justify-content: center; margin: 0; padding: 14px 10px; font-size: 16px; line-height: 1.35; text-align: center; }
 .nv-home-v3 .user-story .tab-content { margin: 0; }
-.nv-home-v3 .user-story .tab-pane { min-height: 420px; height: auto; padding: 70px 48px; background-position: center; background-size: cover; box-shadow: inset 0 0 0 1000px rgba(2, 13, 38, .56); }
+.nv-home-v3 .user-story .tab-pane { display: none; min-height: 420px; height: auto; padding: 70px 48px; background-position: center; background-size: cover; box-shadow: inset 0 0 0 1000px rgba(2, 13, 38, .56); }
+.nv-home-v3 .user-story .tab-pane.show.active { display: block; }
 .nv-home-v3 .user-story .tab-pane .col-xl-12 { margin: 0; padding: 0; }
 .nv-home-v3 .user-story .tab-pane h4 { max-width: 720px; margin: 0 0 24px; font-size: 30px; line-height: 1.25; }
 .nv-home-v3 .user-story .tab-pane p { max-width: 900px; margin: 0 0 30px; color: var(--nv-white); font-size: 18px; line-height: 1.65; }

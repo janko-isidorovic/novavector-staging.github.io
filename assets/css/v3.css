@@ -320,16 +320,6 @@
    Do not reorder capability columns here; this keeps desktop placement aligned
    with the HTML and preserves the natural stacked order on smaller screens. */
 
-/* Desktop capability copy alignment.
-   White rows establish the approved text inset on the right-hand column.
-   Apply that same 40px inset from the center gutter to grey rows whose copy
-   occupies the left-hand column, without changing the outer page edge. */
-@media (min-width: 992px) {
-  .nv-home-v3 .paragraphs .container-grey .row > [class*="col-"]:first-child {
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-}
 
 .nv-home-v3 .paragraphs h3 { margin-bottom: 24px; }
 .nv-home-v3 .paragraphs img { max-width: 100%; max-height: 480px; width: auto; display: block; margin-right: auto; margin-left: auto; object-fit: contain; }

@@ -279,6 +279,8 @@
 .nv-home-v3 .paragraphs .row { width: min(1140px, calc(100% - 40px)); min-height: 360px; margin: 0 auto; align-items: stretch; }
 .nv-home-v3 .paragraphs .row > [class*="col-"] {
   min-width: 0;
+  padding-left: 40px;
+  padding-right: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -291,6 +293,7 @@
   height: 320px;
   margin: 0 auto;
   object-fit: contain;
+  object-position: center;
 }
 .nv-home-v3 .paragraphs .row > [class*="col-"] > h3 {
   width: 100%;
@@ -300,7 +303,11 @@
 
 @media (max-width: 991.98px) {
   .nv-home-v3 .paragraphs .row { min-height: 0; }
-  .nv-home-v3 .paragraphs .row > [class*="col-"] { display: block; }
+  .nv-home-v3 .paragraphs .row > [class*="col-"] {
+    display: block;
+    padding-left: 0;
+    padding-right: 0;
+  }
   .nv-home-v3 .paragraphs .row > [class*="col-"] > img {
     height: auto;
     max-height: 360px;

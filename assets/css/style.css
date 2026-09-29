@@ -3094,9 +3094,16 @@ blockquote {
 }
 
 
-/* Homepage capability rows: align copy with the CTA edge. */
-.nv-home-v3 .paragraphs .container-grey > .row,
-.nv-home-v3 .paragraphs .container-white > .row {
-	margin-left: 0;
-	margin-right: 0;
+
+/* Homepage capability rows: keep heading, body copy, and CTA on one left edge at every breakpoint. */
+.nv-home-v3 .paragraphs .container-grey > .row > [class*="col-"],
+.nv-home-v3 .paragraphs .container-white > .row > [class*="col-"] {
+	padding-left: 0;
+}
+
+@media (max-width: 991px) {
+	.nv-home-v3 .paragraphs .container-grey > .row > [class*="col-"],
+	.nv-home-v3 .paragraphs .container-white > .row > [class*="col-"] {
+		padding-right: 0;
+	}
 }

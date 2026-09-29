@@ -268,11 +268,8 @@
 .nv-home-journey p { margin: 0; color: var(--nv-muted); font-size: 14px; line-height: 1.55; }
 .nv-home-v3 .paragraphs .container-white,
 .nv-home-v3 .paragraphs .container-grey { margin: 0; padding: 72px 0; }
-.nv-home-v3 .paragraphs > .container-fluid > .container-white,
-.nv-home-v3 .paragraphs > .container-fluid > .container-grey { background: var(--nv-white); }
-.nv-home-v3 .paragraphs > .container-fluid > :nth-child(2),
-.nv-home-v3 .paragraphs > .container-fluid > :nth-child(4),
-.nv-home-v3 .paragraphs > .container-fluid > :nth-child(6) { background: var(--nv-soft) !important; }
+.nv-home-v3 .paragraphs > .container-fluid > .container-white { background: var(--nv-white); }
+.nv-home-v3 .paragraphs > .container-fluid > .container-grey { background: var(--nv-soft); }
 .nv-home-v3 .paragraphs,
 .nv-home-v3 .paragraphs .container-fluid { margin: 0; padding: 0; }
 .nv-capabilities-heading { padding: 70px 0 22px; background: var(--nv-white); }

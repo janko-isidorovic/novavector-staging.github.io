@@ -3086,3 +3086,9 @@ blockquote {
 .card-text-paragraph p span {
   display: block;
 }
+
+
+/* Industrial use case tab paragraphs */
+.tab-content .tab-pane p span {
+  display: block;
+}

@@ -194,6 +194,7 @@
 .v3-footer-grid .footer-widget ul { margin: 0; padding: 0; }
 .v3-footer-grid .footer-widget ul li { width: 100%; display: block; float: none; margin: 0 0 10px; line-height: 1.45; }
 .v3-footer-grid .footer-widget ul li a { display: block; font-size: 15px; overflow-wrap: anywhere; text-transform: none; }
+.footer-section .footer-logo h2 { color: #fff; }
 .footer-section .footer-text p { color: #878787; }
 
 @media (prefers-reduced-motion: no-preference) {

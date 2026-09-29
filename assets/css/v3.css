@@ -259,12 +259,12 @@
 .nv-home-v3 .v3-strip { border-top: 1px solid var(--nv-line); }
 .nv-home-v3 .intro { margin: 0; padding: 72px 0 60px; }
 .nv-home-v3 .intro img { max-height: 430px; width: auto; }
-.nv-home-journey { display: grid; grid-template-columns: repeat(6, 1fr); margin: 42px 0 0; border-top: 1px solid var(--nv-line); border-bottom: 1px solid var(--nv-line); }
-.nv-home-journey article { position: relative; padding: 22px 22px 20px; text-align: left; }
+.nv-home-journey { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 42px 0 0; border-top: 1px solid var(--nv-line); border-bottom: 1px solid var(--nv-line); }
+.nv-home-journey article { position: relative; min-width: 0; min-height: 240px; padding: 22px 22px 20px; text-align: left; display: flex; flex-direction: column; }
 .nv-home-journey article + article { border-left: 1px solid var(--nv-line); }
 .nv-home-journey article:not(:last-child)::after { content: "→"; position: absolute; top: 24px; right: -8px; z-index: 1; color: var(--nv-orange); font-size: 16px; font-weight: 700; }
-.nv-home-journey span { color: var(--nv-orange); font-size: 14px; font-weight: 700; }
-.nv-home-journey h3 { margin: 10px 0 8px; color: var(--nv-ink); font-size: 20px; line-height: 1.35; }
+.nv-home-journey span { display: block; min-height: 20px; color: var(--nv-orange); font-size: 14px; font-weight: 700; }
+.nv-home-journey h3 { min-height: 54px; margin: 10px 0 8px; color: var(--nv-ink); font-size: 20px; line-height: 1.35; }
 .nv-home-journey p { margin: 0; color: var(--nv-muted); font-size: 14px; line-height: 1.55; }
 .nv-home-v3 .paragraphs .container-white,
 .nv-home-v3 .paragraphs .container-grey { margin: 0; padding: 72px 0; }
@@ -354,7 +354,7 @@
   .nv-home-v3 .intro { padding: 60px 0 52px; }
   .nv-home-v3 .intro img { max-height: 350px; }
   .nv-home-journey { grid-template-columns: repeat(3, 1fr); }
-  .nv-home-journey article { min-height: 138px; border-bottom: 1px solid var(--nv-line); }
+  .nv-home-journey article { min-height: 220px; border-bottom: 1px solid var(--nv-line); }
   .nv-home-journey article + article { border-left: 1px solid var(--nv-line); }
   .nv-home-journey article:nth-child(3n + 1) { border-left: 0; }
   .nv-home-journey article::after { display: none; }

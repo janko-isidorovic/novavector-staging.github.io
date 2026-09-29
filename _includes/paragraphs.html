@@ -74,73 +74,6 @@
                     <img src="{{site.baseurl}}/assets/img/paragraphs/aiml-1.png" class="img-fluid" id="img-border" loading="lazy" alt="Analytics workflow for industrial time-series data">
                 </div>
             </div>
-        <div class="container-white">
-            <div class="row">
-                <div class="col-xl-6 col-lg-6 col-md-12 col-12 text-left">
-                    <h3>&nbsp; Digital Twin — Model, Simulate &amp; Replay</h3>
-                    <p>The Nova Vector Digital Twin allows you to run a what-if simulation to simulate changes and issues before they actually happen. Instead of spending time and funds on system changes that may or may not work for you, you can run a simulation on Nova Vector hardware. Harvest historical data to assess how such a change may impact your daily workflow.
-                        <br>
-                        Create a digital model of your operations and explore how each process runs in real time to understand how work moves through your equipment at each phase of production.&nbsp;
-                        <br>
-                        In case you still don’t have the required hardware to run a digital model, Nova Vector provides you with its own simulated suite that mimics the real equipment down to a single assembly or production line. Script different scenarios, simulate network faults, and run acceptance tests directly in the platform to see how Nova Vector can help you optimize your processes.
-                        <br>
-                        The Nova Vector simulator suite includes OPC UA servers, MQTT edge nodes, SNMP network gear, BACnet HVAC, Modbus meters, PLCs, operator training, and testing.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="container-white">
-            <div class="row">
-                <div class="col-xl-6 col-lg-6 col-md-12 col-12 text-left">
-                    <h3>Fleet-Scale Edge &amp; Remote Site Management&nbsp;</h3>
-                    <p>Effective running of remote operations across multiple sites greatly depends on a reliable internet connection. If there’s no internet, you won’t be able to keep your operations in check. Nova Vector solves this problem with Edge runtime and remote site management.&nbsp;
-                        <br>
-                        The platform monitors your remote sites, including the on-site equipment, giving you full control over all processes, despite an unreachable cloud or unreliable internet. You control your software locally via an operator console with secure remote-desktop access, so you can take timely action and activate automatic rollback without visiting your on-site machines physically.
-                        <br>
-                        As of 2026, Nova Vector has expanded this capability to a fleet scale, allowing clients to update multiple remote sites without a truck roll. The platform supports air-gapped plants too, making it perfect for customers who wish to isolate their operational networks from the public internet.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="container-white">
-            <div class="row">
-                <div class="col-xl-6 col-lg-6 col-md-12 col-12 text-left">
-                    <h3>Low-Code Automation &amp; Integration</h3>
-                    <p>Get your data working for you immediately; no software development is required. Nova Vector gives you a simple, visual layout tool to build your own operational rules, daily workflows, and system connections.&nbsp;
-                        <br>
-                        You can automatically route data, send instant alerts, trigger outside systems, and coordinate team responses exactly how you want them.&nbsp;
-                        <br>
-                        The platform plugs right into the tools you already use every day, including your ERP, MES, quality systems, and assembly line equipment, so you can upgrade your operations without rewriting your entire technical setup.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="container-white">
-            <div class="row">
-                <div class="col-xl-6 col-lg-6 col-md-12 col-12 text-left">
-                    <h3>AI-Ready by Design with Built-In Edge AI&nbsp;</h3>
-                    <p>Armed with Nova Vector’s Digital Twin, the platform makes your operations ready to embrace the power of AI by normalizing and contextualizing your operational data. It creates a strong foundation for process digitalization, predictive anomaly detection, and proactive maintenance.
-                        <br>
-                        Edge AI takes it even further by letting you run your AI models on real-time data and your local devices, forever eliminating dependency on centralized cloud servers. You deploy your uploaded, approved, and digitally signed AI model on Nova Vector edge nodes and collect live operational data, even offline, without new software integration.&nbsp;
-                        <br>
-                        Additionally, the platform provides a built-in AI assistant to keep all your data at home and receive assistance with any issue that may arise. Nova Vector doesn’t just introduce AI to your operations; it lays a foundation to make your operations AI-ready for tomorrow with no additional hardware or charges required.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="container-white">
-            <div class="row">
-                <div class="col-xl-6 col-lg-6 col-md-12 col-12 text-left">
-                    <h3>Enterprise-Level Security</h3>
-                    <p>The built-in security protects your business operations by giving everyone one secure login that only shows the specific tools they need for their shift, and it automatically locks the screen if they walk away.&nbsp;
-                        <br>
-                        It also acts like an invisible barrier between different factories or clients, keeping their information completely separate and letting you control exactly who can tweak settings on each machine.&nbsp;
-                        <br>
-                        Best of all, it locks down your files to block hackers, keeps a foolproof diary of who changed what and when, and stops unauthorized updates from messing with your gear. These capabilities make Nova Vector a perfect fit for clients who deal with multiple customers.
-                    </p>
-                </div>
-            </div>
-        </div>
         </div>
         {% assign current_month = 'now' | date: '%m' %}
 
@@ -201,6 +134,11 @@
             </div>
         </div>
         {% endif %}
-
-</div>
+        {% comment %}
+        Future rotation pool:
+        - Digital Twin — Model, Simulate & Replay
+        - Production Operations (Lightweight MES)
+        - Enterprise-Level Security
+        {% endcomment %}
+        </div>
 </section>

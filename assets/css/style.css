@@ -3092,3 +3092,11 @@ blockquote {
 .tab-content .tab-pane p span {
   display: block;
 }
+
+/* Homepage capability alternation: explicit at desktop widths, text-first when stacked. */
+@media (min-width: 992px) {
+	.nv-home-v3 .paragraphs .nv-capability-row.nv-image-right > div:first-child { order: 1; }
+	.nv-home-v3 .paragraphs .nv-capability-row.nv-image-right > div:last-child  { order: 2; }
+	.nv-home-v3 .paragraphs .nv-capability-row.nv-image-left > div:first-child  { order: 1; }
+	.nv-home-v3 .paragraphs .nv-capability-row.nv-image-left > div:last-child   { order: 2; }
+}

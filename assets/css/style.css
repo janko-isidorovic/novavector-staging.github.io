@@ -3092,3 +3092,11 @@ blockquote {
 .tab-content .tab-pane p span {
   display: block;
 }
+
+
+/* Homepage capability rows: align copy with the CTA edge. */
+.nv-home-v3 .paragraphs .container-grey > .row,
+.nv-home-v3 .paragraphs .container-white > .row {
+	margin-left: 0;
+	margin-right: 0;
+}

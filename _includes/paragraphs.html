@@ -58,29 +58,6 @@
                 </div>
             </div>
         </div>
-        <div class="container-grey" style="background-color: #F7F6F6;">
-            <div class="row">
-                <div class="col-xl-6 col-lg-6 col-md-12 col-12 text-left align-self-center">
-                    <img src="{{site.baseurl}}/assets/img/products/edge-2.png" class="img-fluid" loading="lazy" alt="Nova Edge and EdgeX Foundry integration">
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-12 col-12 text-left">
-                    <h3>Production Operations (Lightweight MES)</h3>
-                    <p>One of the greatest strengths of Nova Vector is that it provides you with a wide range of built-in capabilities to help you run the full scale of production operations, from packaging to shipping. Instead of flooding you with raw data, Nova Vector helps you plan every production step, from shift and production to consumption.&nbsp;</p>
-                    <p>The built-in capabilities include:</p>
-                    <ul class="nv-capability-list" style="margin: 0 0 24px; padding-left: 20px;">
-                        <li style="margin-bottom: 6px;"><strong>Detailed product catalogs</strong></li>
-                        <li style="margin-bottom: 6px;"><strong>Track your performance and measure productivity and asset utilization</strong></li>
-                        <li style="margin-bottom: 6px;"><strong>Live actual vs. planned output and plan attainment tracking</strong></li>
-                        <li style="margin-bottom: 6px;"><strong>Configurable work order documentation</strong></li>
-                        <li style="margin-bottom: 6px;"><strong>Standard vs. actual consumption and variance per order</strong></li>
-                        <li style="margin-bottom: 6px;"><strong>Shift planning boards with execution tracking</strong></li>
-                        <li style="margin-bottom: 6px;"><strong>Downtime management&nbsp;</strong></li>
-                        <li style="margin-bottom: 6px;"><strong>Shift reporting with work order detailing</strong></li>
-                        <li><strong>Shop-floor integrations</strong></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
         <div class="container-white">
             <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-12 col-12 text-left">
@@ -165,5 +142,65 @@
             </div>
         </div>
         </div>
+        {% assign current_month = 'now' | date: '%m' %}
+
+        {% if current_month == '10' %}
+        <div class="container-white">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-12 text-left">
+                    <h3>AI-Ready by Design with Built-In Edge AI&nbsp;</h3>
+                    <p>Armed with Nova Vector’s Digital Twin, the platform makes your operations ready to embrace the power of AI by normalizing and contextualizing your operational data. It creates a strong foundation for process digitalization, predictive anomaly detection, and proactive maintenance.
+                        <br>
+                        Edge AI takes it even further by letting you run your AI models on real-time data and your local devices, forever eliminating dependency on centralized cloud servers. You deploy your uploaded, approved, and digitally signed AI model on Nova Vector edge nodes and collect live operational data, even offline, without new software integration.&nbsp;
+                        <br>
+                        Additionally, the platform provides a built-in AI assistant to keep all your data at home and receive assistance with any issue that may arise. Nova Vector doesn’t just introduce AI to your operations; it lays a foundation to make your operations AI-ready for tomorrow with no additional hardware or charges required.
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% elsif current_month == '11' %}
+        <div class="container-white">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-12 text-left">
+                    <h3>Low-Code Automation &amp; Integration</h3>
+                    <p>Get your data working for you immediately; no software development is required. Nova Vector gives you a simple, visual layout tool to build your own operational rules, daily workflows, and system connections.&nbsp;
+                        <br>
+                        You can automatically route data, send instant alerts, trigger outside systems, and coordinate team responses exactly how you want them.&nbsp;
+                        <br>
+                        The platform plugs right into the tools you already use every day, including your ERP, MES, quality systems, and assembly line equipment, so you can upgrade your operations without rewriting your entire technical setup.
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% elsif current_month == '12' %}
+        <div class="container-white">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-12 text-left">
+                    <h3>Fleet-Scale Edge &amp; Remote Site Management&nbsp;</h3>
+                    <p>Effective running of remote operations across multiple sites greatly depends on a reliable internet connection. If there’s no internet, you won’t be able to keep your operations in check. Nova Vector solves this problem with Edge runtime and remote site management.&nbsp;
+                        <br>
+                        The platform monitors your remote sites, including the on-site equipment, giving you full control over all processes, despite an unreachable cloud or unreliable internet. You control your software locally via an operator console with secure remote-desktop access, so you can take timely action and activate automatic rollback without visiting your on-site machines physically.
+                        <br>
+                        As of 2026, Nova Vector has expanded this capability to a fleet scale, allowing clients to update multiple remote sites without a truck roll. The platform supports air-gapped plants too, making it perfect for customers who wish to isolate their operational networks from the public internet.
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="container-white">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-12 text-left">
+                    <h3>AI-Ready by Design with Built-In Edge AI&nbsp;</h3>
+                    <p>Armed with Nova Vector’s Digital Twin, the platform makes your operations ready to embrace the power of AI by normalizing and contextualizing your operational data. It creates a strong foundation for process digitalization, predictive anomaly detection, and proactive maintenance.
+                        <br>
+                        Edge AI takes it even further by letting you run your AI models on real-time data and your local devices, forever eliminating dependency on centralized cloud servers. You deploy your uploaded, approved, and digitally signed AI model on Nova Vector edge nodes and collect live operational data, even offline, without new software integration.&nbsp;
+                        <br>
+                        Additionally, the platform provides a built-in AI assistant to keep all your data at home and receive assistance with any issue that may arise. Nova Vector doesn’t just introduce AI to your operations; it lays a foundation to make your operations AI-ready for tomorrow with no additional hardware or charges required.
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
 </div>
 </section>

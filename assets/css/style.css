@@ -3092,18 +3092,3 @@ blockquote {
 .tab-content .tab-pane p span {
   display: block;
 }
-
-
-
-/* Homepage capability rows: keep heading, body copy, and CTA on one left edge at every breakpoint. */
-.nv-home-v3 .paragraphs .container-grey > .row > [class*="col-"],
-.nv-home-v3 .paragraphs .container-white > .row > [class*="col-"] {
-	padding-left: 0;
-}
-
-@media (max-width: 991px) {
-	.nv-home-v3 .paragraphs .container-grey > .row > [class*="col-"],
-	.nv-home-v3 .paragraphs .container-white > .row > [class*="col-"] {
-		padding-right: 0;
-	}
-}

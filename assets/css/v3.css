@@ -319,6 +319,16 @@
 /* Core Capabilities: column order is defined explicitly in paragraphs.html.
    Do not reorder capability columns here; this keeps desktop placement aligned
    with the HTML and preserves the natural stacked order on smaller screens. */
+
+/* Desktop: the grey capability rows place copy in the first column while the
+   white rows place copy in the second. Mirror the white-row copy inset so both
+   orientations use the same visual spacing from the center of the composition. */
+@media (min-width: 992px) {
+  .nv-home-v3 .paragraphs .container-grey .row > [class*="col-"]:first-child {
+    padding-left: 60px;
+    padding-right: 20px;
+  }
+}
 .nv-home-v3 .paragraphs h3 { margin-bottom: 24px; }
 .nv-home-v3 .paragraphs img { max-width: 100%; max-height: 480px; width: auto; display: block; margin-right: auto; margin-left: auto; object-fit: contain; }
 .nv-home-v3 .nv-inline-link { display: inline-block; margin-top: 4px; color: var(--nv-orange-dark); font-weight: 700; }

@@ -3092,3 +3092,14 @@ blockquote {
 .tab-content .tab-pane p span {
   display: block;
 }
+
+/* Align only the first capability's text content; preserve the Bootstrap row/column geometry. */
+.nv-home-v3 .paragraphs .nv-capability-copy {
+	margin-left: -15px;
+}
+
+@media (max-width: 575px) {
+	.nv-home-v3 .paragraphs .nv-capability-copy {
+		margin-left: 0;
+	}
+}

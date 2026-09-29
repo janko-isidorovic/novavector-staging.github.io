@@ -284,22 +284,24 @@
 
 /* Alternate Core Capabilities image placement: left, right, left, right. */
 @media (min-width: 992px) {
-  .nv-home-v3 .paragraphs > .container-fluid > .container-white:nth-child(2) .row > [class*="col-"]:first-child,
-  .nv-home-v3 .paragraphs > .container-fluid > .container-white:nth-child(4) .row > [class*="col-"]:first-child {
-    order: 2;
-  }
-  .nv-home-v3 .paragraphs > .container-fluid > .container-white:nth-child(2) .row > [class*="col-"]:last-child,
-  .nv-home-v3 .paragraphs > .container-fluid > .container-white:nth-child(4) .row > [class*="col-"]:last-child {
+  .nv-home-v3 .paragraphs > .container-fluid > :nth-child(2) .row > [class*="col-"]:first-child,
+  .nv-home-v3 .paragraphs > .container-fluid > :nth-child(4) .row > [class*="col-"]:first-child,
+  .nv-home-v3 .paragraphs > .container-fluid > :nth-child(6) .row > [class*="col-"]:first-child {
     order: 1;
+  }
+  .nv-home-v3 .paragraphs > .container-fluid > :nth-child(2) .row > [class*="col-"]:last-child,
+  .nv-home-v3 .paragraphs > .container-fluid > :nth-child(4) .row > [class*="col-"]:last-child,
+  .nv-home-v3 .paragraphs > .container-fluid > :nth-child(6) .row > [class*="col-"]:last-child {
+    order: 2;
   }
 
-  .nv-home-v3 .paragraphs > .container-fluid > .container-grey:nth-child(3) .row > [class*="col-"]:first-child,
-  .nv-home-v3 .paragraphs > .container-fluid > .container-white:nth-child(5) .row > [class*="col-"]:first-child {
-    order: 1;
-  }
-  .nv-home-v3 .paragraphs > .container-fluid > .container-grey:nth-child(3) .row > [class*="col-"]:last-child,
-  .nv-home-v3 .paragraphs > .container-fluid > .container-white:nth-child(5) .row > [class*="col-"]:last-child {
+  .nv-home-v3 .paragraphs > .container-fluid > :nth-child(3) .row > [class*="col-"]:first-child,
+  .nv-home-v3 .paragraphs > .container-fluid > :nth-child(5) .row > [class*="col-"]:first-child {
     order: 2;
+  }
+  .nv-home-v3 .paragraphs > .container-fluid > :nth-child(3) .row > [class*="col-"]:last-child,
+  .nv-home-v3 .paragraphs > .container-fluid > :nth-child(5) .row > [class*="col-"]:last-child {
+    order: 1;
   }
 }
 .nv-home-v3 .paragraphs h3 { margin-bottom: 24px; }

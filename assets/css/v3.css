@@ -288,15 +288,6 @@
 .nv-home-v3 .paragraphs .row > [class*="col-"] > p { margin-bottom: 24px; }
 .nv-home-v3 .paragraphs .row > [class*="col-"] > .nv-inline-link { margin-top: 0; }
 
-/* Keep capability copy on one shared left edge. Positioning belongs to the
-   column itself; headings, body copy and links must not carry horizontal offsets. */
-.nv-home-v3 .paragraphs .row > [class*="col-"] > h3,
-.nv-home-v3 .paragraphs .row > [class*="col-"] > p,
-.nv-home-v3 .paragraphs .row > [class*="col-"] > .nv-inline-link {
-  margin-left: 0;
-  padding-left: 0;
-  align-self: stretch;
-}
 .nv-home-v3 .paragraphs .row > [class*="col-"] > img {
   width: 100%;
   max-width: 500px;

@@ -3080,3 +3080,9 @@ blockquote {
 .nv-home-journey article p {
   text-align: center;
 }
+
+
+/* Industrial use case paragraphs */
+.card-text-paragraph p span {
+  display: block;
+}

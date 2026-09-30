@@ -3102,3 +3102,8 @@ blockquote {
 .intro h3 {
   font-size: 20px;
 }
+
+/* Customer Outcomes subheading */
+.nv-home-results__heading > h2#customer-results-title {
+  font-size: 20px;
+}

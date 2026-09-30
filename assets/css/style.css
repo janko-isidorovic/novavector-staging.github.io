@@ -3092,3 +3092,8 @@ blockquote {
 .tab-content .tab-pane p span {
   display: block;
 }
+
+/* Homepage orange section headings */
+.orange-text {
+  color: #FF5A14 !important;
+}

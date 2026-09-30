@@ -3097,3 +3097,8 @@ blockquote {
 .orange-text {
   color: #FF5A14 !important;
 }
+
+/* Digitalization Journey subheading */
+.intro h3 {
+  font-size: 20px;
+}

@@ -276,7 +276,7 @@
 .nv-home-v3 .paragraphs,
 .nv-home-v3 .paragraphs .container-fluid { margin: 0; padding: 0; }
 .nv-capabilities-heading { padding: 70px 0 22px; background: var(--nv-white); }
-.nv-capabilities-heading .nv-section-label { color: var(--nv-orange); font-size: 14px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.nv-capabilities-heading .nv-section-label { color: var(--nv-orange); font-size: 14px; font-weight: 700; letter-spacing: .04em; }
 .nv-capabilities-heading h2 { max-width: 760px; margin: 12px auto 18px; color: var(--nv-ink); font-size: 36px; line-height: 1.25; }
 .nv-capabilities-heading p { max-width: 760px; margin: 0 auto; color: var(--nv-muted); font-size: 17px; line-height: 1.65; }
 .nv-home-v3 .paragraphs .row { width: min(1140px, calc(100% - 40px)); min-height: 360px; margin: 0 auto; align-items: stretch; }

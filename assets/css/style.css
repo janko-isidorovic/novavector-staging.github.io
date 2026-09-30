@@ -3107,3 +3107,8 @@ blockquote {
 .nv-home-results__heading > h2#customer-results-title {
   font-size: 20px;
 }
+
+/* Core Operational Capabilities subheading */
+.nv-capabilities-heading > .container > h2:not(.orange-text) {
+  font-size: 20px;
+}

@@ -261,7 +261,9 @@
 .nv-home-v3 .intro { margin: 0; padding: 72px 0 60px; }
 .nv-home-v3 .intro img { max-height: 430px; width: auto; }
 .nv-home-journey { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 42px 0 0; border-top: 1px solid var(--nv-line); border-bottom: 1px solid var(--nv-line); }
-.nv-home-journey article { position: relative; min-width: 0; min-height: 240px; padding: 22px 22px 20px; text-align: left; display: flex; flex-direction: column; }
+.nv-home-journey article { position: relative; min-width: 0; min-height: 240px; padding: 30px 26px 32px; text-align: left; display: flex; flex-direction: column; }
+.nv-home-journey article:first-child { padding-left: 0; }
+.nv-home-journey article:last-child { padding-right: 0; }
 .nv-home-journey article + article { border-left: 1px solid var(--nv-line); }
 .nv-home-journey article:not(:last-child)::after { content: "→"; position: absolute; top: 24px; right: -8px; z-index: 1; color: var(--nv-orange); font-size: 16px; font-weight: 700; }
 .nv-home-journey span { display: block; min-height: 20px; color: var(--nv-orange); font-size: 14px; font-weight: 700; }
@@ -399,11 +401,10 @@
   .nv-home-v3 .v3-strip__row span { padding-left: 10px; white-space: nowrap; }
   .nv-home-v3 .intro { padding: 60px 0 52px; }
   .nv-home-v3 .intro img { max-height: 350px; }
-  .nv-home-journey { grid-template-columns: repeat(3, 1fr); }
-  .nv-home-journey article { min-height: 220px; border-bottom: 1px solid var(--nv-line); }
+  .nv-home-journey { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .nv-home-journey article { min-height: 240px; border-bottom: 0; }
   .nv-home-journey article + article { border-left: 1px solid var(--nv-line); }
-  .nv-home-journey article:nth-child(3n + 1) { border-left: 0; }
-  .nv-home-journey article::after { display: none; }
+  .nv-home-journey article::after { display: block; }
   .nv-home-v3 .paragraphs .container-white,
   .nv-home-v3 .paragraphs .container-grey { padding-top: 56px; padding-bottom: 56px; }
   .nv-home-v3 .paragraphs img { max-height: 390px; }
@@ -446,8 +447,10 @@
   .nv-home-architecture__visual { margin: 0 0 40px; }
   .nv-home-architecture__copy { padding-left: 0; }
   .nv-home-proof__visual > span { position: static; display: block; }
-  .nv-home-journey { grid-template-columns: repeat(2, 1fr); }
-  .nv-home-journey article { border-bottom: 1px solid var(--nv-line); }
+  .nv-home-journey { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .nv-home-journey article,
+  .nv-home-journey article:first-child,
+  .nv-home-journey article:last-child { padding: 28px; border-bottom: 1px solid var(--nv-line); }
   .nv-home-journey article + article { border-left: 0; }
   .nv-home-journey article:nth-child(even) { border-left: 1px solid var(--nv-line); }
   .nv-home-journey article::after { display: none; }

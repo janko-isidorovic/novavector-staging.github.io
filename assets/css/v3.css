@@ -580,3 +580,66 @@
   .nv-home-v3 .single-slider.slider-bg { background-image: url("../img/slider/first_frame.png") !important; }
   .nv-home-v3 *, .nv-home-v3 *::before, .nv-home-v3 *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+/* Journey alignment locked to Results achieved in real operations */
+.nv-home-v3 .intro .nv-home-journey {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.nv-home-v3 .intro .nv-home-journey article,
+.nv-home-v3 .intro .nv-home-journey article:first-child,
+.nv-home-v3 .intro .nv-home-journey article:last-child {
+  min-width: 0;
+  padding: 30px 26px 32px;
+  border-left: 0;
+  border-right: 1px solid var(--nv-line);
+  border-bottom: 0;
+}
+.nv-home-v3 .intro .nv-home-journey article:first-child {
+  padding-left: 0;
+}
+.nv-home-v3 .intro .nv-home-journey article:last-child {
+  padding-right: 0;
+  border-right: 0;
+}
+
+@media (max-width: 991px) {
+  .nv-home-v3 .intro .nv-home-journey {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .nv-home-v3 .intro .nv-home-journey article,
+  .nv-home-v3 .intro .nv-home-journey article:first-child,
+  .nv-home-v3 .intro .nv-home-journey article:last-child {
+    padding: 28px;
+    border-left: 0;
+    border-right: 1px solid var(--nv-line);
+    border-bottom: 1px solid var(--nv-line);
+  }
+  .nv-home-v3 .intro .nv-home-journey article:nth-child(even) {
+    border-right: 0;
+  }
+  .nv-home-v3 .intro .nv-home-journey article:nth-last-child(-n+2) {
+    border-bottom: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .nv-home-v3 .intro .nv-home-journey {
+    grid-template-columns: 1fr;
+  }
+  .nv-home-v3 .intro .nv-home-journey article,
+  .nv-home-v3 .intro .nv-home-journey article:first-child,
+  .nv-home-v3 .intro .nv-home-journey article:last-child {
+    padding: 26px 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--nv-line);
+  }
+  .nv-home-v3 .intro .nv-home-journey article:nth-last-child(2) {
+    border-bottom: 1px solid var(--nv-line);
+  }
+  .nv-home-v3 .intro .nv-home-journey article:last-child {
+    border-bottom: 0;
+  }
+}

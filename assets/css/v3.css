@@ -643,3 +643,84 @@
     border-bottom: 0;
   }
 }
+
+/* Journey section: force left alignment and override legacy rules */
+.nv-home-v3 .intro .nv-home-journey {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  justify-content: start !important;
+  justify-items: stretch !important;
+  align-items: stretch !important;
+  text-align: left !important;
+}
+.nv-home-v3 .intro .nv-home-journey article,
+.nv-home-v3 .intro .nv-home-journey article:first-child,
+.nv-home-v3 .intro .nv-home-journey article:last-child {
+  width: auto !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  text-align: left !important;
+  box-sizing: border-box !important;
+  padding: 30px 26px 32px !important;
+  border-left: 0 !important;
+  border-right: 1px solid var(--nv-line) !important;
+  border-bottom: 0 !important;
+}
+.nv-home-v3 .intro .nv-home-journey article:first-child {
+  padding-left: 0 !important;
+}
+.nv-home-v3 .intro .nv-home-journey article:last-child {
+  padding-right: 0 !important;
+  border-right: 0 !important;
+}
+.nv-home-v3 .intro .nv-home-journey article span,
+.nv-home-v3 .intro .nv-home-journey article h3,
+.nv-home-v3 .intro .nv-home-journey article p {
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+@media (max-width: 991px) {
+  .nv-home-v3 .intro .nv-home-journey {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .nv-home-v3 .intro .nv-home-journey article,
+  .nv-home-v3 .intro .nv-home-journey article:first-child,
+  .nv-home-v3 .intro .nv-home-journey article:last-child {
+    padding: 28px !important;
+    border-left: 0 !important;
+    border-right: 1px solid var(--nv-line) !important;
+    border-bottom: 1px solid var(--nv-line) !important;
+  }
+  .nv-home-v3 .intro .nv-home-journey article:nth-child(even) {
+    border-right: 0 !important;
+  }
+  .nv-home-v3 .intro .nv-home-journey article:nth-last-child(-n+2) {
+    border-bottom: 0 !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .nv-home-v3 .intro .nv-home-journey {
+    grid-template-columns: 1fr !important;
+  }
+  .nv-home-v3 .intro .nv-home-journey article,
+  .nv-home-v3 .intro .nv-home-journey article:first-child,
+  .nv-home-v3 .intro .nv-home-journey article:last-child {
+    padding: 26px 0 !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
+    border-bottom: 1px solid var(--nv-line) !important;
+  }
+  .nv-home-v3 .intro .nv-home-journey article:last-child {
+    border-bottom: 0 !important;
+  }
+}

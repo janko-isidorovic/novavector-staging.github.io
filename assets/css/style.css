@@ -3112,3 +3112,8 @@ blockquote {
 .nv-capabilities-heading > .container > h2:not(.orange-text) {
   font-size: 20px;
 }
+
+/* Platform Architecture subheading */
+.nv-home-architecture__copy > h3 {
+  font-size: 20px;
+}

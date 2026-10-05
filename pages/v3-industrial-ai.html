@@ -2,40 +2,49 @@
 layout: v3
 permalink: /edge-ai-industrial-iot/
 title: Industrial AI & Edge Inference
-description: Use an on-premises AI assistant and deploy approved, signed ONNX models to Nova Edge nodes for governed offline inference on live industrial data.
-summary: Build on contextualized operational data, use a local AI assistant, and deploy governed models to edge nodes as an integrated beta capability.
+description: Use contextualized operational data, a preview on-premises AI assistant, and approved signed ONNX models for governed inference on Nova Edge nodes.
+summary: Prepare industrial data for analytics, use a local AI assistant for supported platform tasks, and deploy approved ONNX models to edge nodes as an integrated beta capability.
 eyebrow: AI-ready by design
 theme: edge
 noindex: true
 sitemap: false
 capability_heading: Put governed AI into operational context
 capabilities:
-  - title: Contextual data foundation
-    text: Real-time and historical telemetry retains device, asset, process, alarm, task, and production context for analytics and model development.
+  - title: AI-ready operational data
+    text: Device, asset, process, alarm, task and production context stay attached to live and historical telemetry so external analytics and model-development tools receive more than isolated sensor values.
   - title: On-premises AI assistant
-    text: A local language model can use supported platform tools for conversational access without sending operational data outside the customer's deployment.
+    text: A preview assistant runs against a local language model and can use supported platform tools for conversational access without sending operational data to an external AI service.
   - title: Governed Edge AI
-    text: Approve and sign ONNX model bundles, deploy them to selected nodes, run inference on live EdgeX data, and return results as ordinary telemetry.
+    text: Register, approve and sign ONNX model versions, target compatible nodes, run inference on live EdgeX data, and return results as ordinary Nova Vector telemetry.
 content_sections:
-  - eyebrow: Available platform foundation
-    heading: Prepare governed industrial data for model development
+  - eyebrow: Data foundation
+    heading: Start with contextualized data before introducing models
     paragraphs:
-      - Nova Vector provides real-time and historical telemetry with device, asset, and process context. Approved APIs and messaging integrations can supply this data to external analytics and model-development environments.
-      - The built-in assistant runs against a local language model and exposes a governed set of platform operations. External analytics and training environments can use approved APIs and messaging integrations without changing the operational data model.
+      - Nova Vector keeps time-series measurements tied to device, asset and process context. APIs and messaging integrations can supply governed data to external analytics, notebooks and model-training environments.
+      - Model training and broader MLOps remain external to Nova Vector today. The platform focuses on operational data preparation, controlled deployment and inference.
     image: /assets/img/paragraphs/aiml-1.png
-    image_alt: Analytics and machine-learning workflow
-    caption: Existing analytics visual used as a placeholder for the approved industrial AI workflow.
-    placeholder: Placeholder — replace with Nova Vector model and inference workflow
-  - eyebrow: Integrated beta
+    image_alt: Industrial analytics and model workflow
+    caption: Nova Vector supplies governed operational data and deployment context while training remains in external data-science tools.
+  - eyebrow: Edge AI integrated beta
     heading: Approve centrally, infer locally, and reuse the result everywhere
     paragraphs:
-      - The model registry accepts ONNX bundles through a draft, approval, signing, and retirement lifecycle. The deployment manager checks compatibility and sends the approved model to selected nodes, where the Edge AI runtime consumes live EdgeX data and can continue operating offline.
-      - Inference results return as normal Nova Vector telemetry, allowing existing dashboards, alerts, state machines, and digital-twin workflows to use model outputs without a separate integration. Activation and rollback use the same governed fleet pipeline as other edge workloads.
+      - Edge AI uses standard ONNX models. Each model version can move through approval and signing before deployment, and the platform checks node compatibility before activation.
+      - On the node, model inputs come from EdgeX device readings. Numeric or camera inference results can be published back into Nova Vector so dashboards, alerts, automation and other operational workflows can consume them like normal telemetry.
     points:
-      - Governed model versions and Ed25519 signatures
-      - Node compatibility checks, activation, and rollback
-      - ONNX Runtime inference on live EdgeX MessageBus data
-      - Model training remains external; AI Studio and broader acceleration are roadmap items
+      - Standard ONNX model format
+      - Approval, signing and model-version control
+      - Node compatibility checks and targeted deployment
+      - Local inference that can continue without cloud connectivity
+  - eyebrow: AI assistant preview
+    heading: Use a local language model for supported platform actions
+    paragraphs:
+      - The AI assistant is a preview capability. It can answer supported questions and, for selected actions, show a confirmation step before creating, changing or deleting platform records.
+      - Because the model runs inside the customer's deployment, operational prompts and data do not need to be sent to a third-party AI service.
+    points:
+      - Local model deployment
+      - Supported platform tools and read operations
+      - Confirmation before selected write actions
+      - Preview status; scope depends on the configured tool set
 related:
   - label: Time-Series Analytics
     url: /iot-timeseries-analytics/

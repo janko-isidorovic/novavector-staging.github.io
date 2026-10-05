@@ -2,51 +2,52 @@
 layout: v3
 permalink: /iot-device-management/
 title: Device & Asset Management
-description: Manage industrial devices with reusable Thing Profiles, protocol register maps, asset hierarchy, telemetry, health, commands, and lifecycle configuration.
-summary: Describe device capabilities once, connect equipment through direct or edge adapters, and preserve identity and operational context across the asset hierarchy.
+description: Manage industrial devices, channels, reusable profiles, live data, hierarchy, status, commands, and lifecycle configuration in one operational workspace.
+summary: Register equipment once, organize it in a practical asset hierarchy, reuse versioned device profiles, and keep live and historical data tied to the correct operational context.
 eyebrow: Platform capability
 theme: platform
 noindex: true
 sitemap: false
 capabilities:
-  - title: Device registry
-    text: Maintain Things, channels, keys, connectivity settings, status, metadata, parent relationships, and the information needed to operate connected equipment.
-  - title: Reusable Thing Profiles
-    text: Define metrics, units, data types, ranges, sampling behavior, protocol register attributes, custom properties, and lifecycle versions in one portable descriptor.
-  - title: Adapter health and operations
-    text: View connection and point health, enable or disable devices without deleting configuration, and expose authorized read, write, method, and command operations.
+  - title: One device registry
+    text: Manage devices in table or tree view with status, ownership group, parent relationship, enable state, profile, metadata, device identity, and CSV export.
+  - title: Reusable device profiles
+    text: Define metrics, units, ranges, protocol registers or objects, report-by-exception defaults, custom properties, decoder logic, versions, and lifecycle states once and reuse them across devices.
+  - title: Live and historical device data
+    text: View real-time readings, configurable charts and tables, embedded Grafana panels, alerts, connection context, and time-series history from the device page.
 content_sections:
-  - eyebrow: Asset hierarchy
-    heading: Represent the structure operators use every day
+  - eyebrow: Device registry
+    heading: Organize equipment the way operations already think about it
     paragraphs:
-      - Model organizations, sites, buildings, production areas, lines, equipment, and connected devices as related platform entities rather than a flat device list.
-      - Applications can use these relationships to filter dashboards, assign access, locate alarms, compare equipment, and preserve context when devices are replaced or reconfigured.
-    image: /assets/img/products/floorplan.png
-    image_alt: Nova Vector industrial floor plan and asset hierarchy
-    caption: Industrial assets placed in operational and spatial context.
-  - eyebrow: Device lifecycle
-    heading: Connect identity, configuration, data, and commands
+      - Model parent-child relationships between sites, areas, lines, machines, gateways, meters, sensors, and other assets instead of maintaining a flat device list.
+      - Group ownership controls which records users can see or change, while device status and enable state make operating condition visible without deleting configuration.
+    image: /assets/img/products/Devices-Things.png
+    image_alt: Nova Vector device registry and asset relationships
+    caption: Devices remain tied to ownership, hierarchy, status, profile, and connectivity context.
+  - eyebrow: Device profiles
+    heading: Describe a device type once and reuse it across deployments
     paragraphs:
-      - Each connected device carries the identifiers and configuration required by its integration. Telemetry, current values, alarms, and command requests remain linked to that identity.
+      - A profile defines the metrics a device reports together with units, data types, ranges, resolution, sampling behavior, protocol registers or objects, custom properties, and decoding rules.
+      - Profiles are versioned and can move through customer-defined lifecycle states. Individual versions can be exported and imported, including ZIP-based imports for reusable device packages.
     points:
-      - Device and thing definitions
-      - Connectivity and deployment-specific configuration
-      - Telemetry and current-value association
-      - Alarm, state, and command context
-  - eyebrow: Profile-driven connectivity
-    heading: Reuse the same device description across platform and edge adapters
+      - Versioned metric and register definitions
+      - Modbus, BACnet, OPC UA and other protocol mapping attributes
+      - Publish-on-change, deadband and heartbeat defaults
+      - Profile types, properties, lifecycle workflow, import and export
+  - eyebrow: Device data
+    heading: Move from current values to historical operating patterns
     paragraphs:
-      - Thing Profiles define what equipment measures and how those metrics map to OPC UA nodes, Modbus registers, BACnet objects, SNMP data, or other protocol attributes. Seeded profiles can be cloned, versioned, imported, and exported.
-      - The same register model can provision native platform adapters or map into EdgeX device profiles, reducing repeated configuration when equipment types appear across many sites.
+      - Device Data combines incoming measurements with configurable charts and tables. Users can switch to real-time mode, zoom into a period, filter by channel, subtopic or metric, and save chart preferences for the device.
+      - Historical readings are stored as time series and exposed through platform APIs for reporting, analytics and downstream applications.
     points:
-      - Metrics aligned to units, types, range, resolution, and sampling
-      - Per-protocol addressing and publish-on-change settings
-      - Versioned profile lifecycle and catalog
-      - Single and bulk JSON import and export
+      - Line, area, step, scatter and bar chart options
+      - Date ranges from recent minutes through longer operating periods
+      - PDF and data export paths
+      - Embedded Grafana view for richer analysis
 screenshots:
-  - src: /assets/img/paragraphs/homepageresized.png
-    alt: Nova Vector device and asset management interface
-    caption: Device and asset relationships in the Nova Vector interface. Screenshot content remains subject to disclosure review.
+  - src: /assets/img/solutions/data-values.png
+    alt: Nova Vector live device data and time-series values
+    caption: Live and historical device values remain connected to the device record and operational context.
 related:
   - label: Platform Overview
     url: /industrial-iot-platform/

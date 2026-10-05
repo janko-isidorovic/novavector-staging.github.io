@@ -3,38 +3,57 @@ layout: v3
 permalink: /documentation/
 title: Documentation
 description: Nova Vector technical documentation for platform concepts, deployment, administration, APIs, edge integration, and troubleshooting.
-summary: A structured documentation entry point for platform concepts, deployment, administration, development, edge integration, and troubleshooting.
+summary: Follow Nova Vector from system architecture and device connectivity through operations, deployment, security, and integration using the same terminology as the platform.
 eyebrow: Developer resources
 theme: platform
 noindex: true
 sitemap: false
-capability_heading: Documentation paths
-capabilities:
-  - title: Platform concepts
-    text: Understand tenants, users, assets, devices, telemetry, process state, alarms, rules, commands, and notifications.
-  - title: Deployment and operations
-    text: Follow configuration-specific guidance for supported topologies, upgrades, observability, backup, recovery, and operational ownership.
-  - title: Developer guides
-    text: Build with documented APIs, messages, integrations, examples, compatibility notes, and edge-development guidance.
 content_sections:
-  - eyebrow: Documentation structure
-    heading: Follow a deployment from concept to operation
+  - eyebrow: Platform concepts
+    heading: Begin with the objects users and services share
     paragraphs:
-      - The documentation will connect architecture concepts to installation, configuration, administration, integration, and troubleshooting rather than separating them into unrelated reference pages.
-      - Every version-specific page will identify the applicable Nova Vector, Nova Edge Agent, and EdgeX releases.
-    image: /assets/img/products/administrative-tools.png
-    image_alt: Administrative tools representing Nova Vector documentation
-    caption: Placeholder image for the future Nova Vector documentation portal.
-    placeholder: Placeholder — Nova Vector documentation portal
-  - eyebrow: Operational clarity
-    heading: Document ownership and failure behavior
+      - The core documentation describes devices, channels, profiles, time-series data, process state, alerts, tasks, manufacturing records, edge nodes, and AI models. These are not isolated product features; they are related platform resources that appear across the console, APIs, and service architecture.
+      - Understanding those relationships first makes later installation and integration guidance easier to follow because each configuration step can be tied back to the resource it affects.
+    image: /assets/img/v3/features/02-devices-and-live-data/devices-tree.png
+    image_alt: Nova Vector device hierarchy used in documentation
+    caption: Device and asset relationships provide a foundation for the rest of the platform documentation.
+  - eyebrow: Connectivity
+    heading: Document protocol behavior instead of reducing connectivity to a logo list
     paragraphs:
-      - Guides will distinguish platform persistence, asynchronous service execution, edge delivery, and physical device behavior. Backup, recovery, observability, and upgrade guidance will be tied to supported deployment topologies.
+      - The connectivity documentation distinguishes which side initiates the connection, how discovery works, how measurements are mapped, and which protocol-specific settings are required. Current platform adapters include OPC UA, Modbus TCP, BACnet/IP, and SNMP together with MQTT, HTTP, and WebSocket.
+      - CoAP and LoRaWAN are pilot capabilities. Exact write behavior, security, discovery, and command handling depend on the selected adapter and should be checked against the project configuration.
+    image: /assets/img/v3/features/01-device-connectivity/protocol-catalog.png
+    image_alt: Nova Vector protocol catalog
+    caption: Connectivity documentation follows the actual adapter and protocol configuration model.
+  - eyebrow: Deployment and operations
+    heading: Keep production guidance separate from the development installation
+    paragraphs:
+      - The standard scripted install is intended for development and demonstration. Production deployments are prepared and hardened per project, including ports, secrets, certificates, administration consoles, monitoring, backups, and network access.
+      - Docker Compose on one x86-64 Linux server is the standard installation. Kubernetes is delivered as a project service and there are no standard whole-platform manifests or Helm charts today. Isolated networks are also prepared per project rather than through a packaged offline installer.
+    image: /assets/img/v3/architecture/01-high-level.png
+    image_alt: Nova Vector deployment architecture
+    caption: Deployment documentation distinguishes the central platform, edge nodes, field equipment, and external systems.
+  - eyebrow: Security
+    heading: Document what is enabled by default and what must be designed for the project
+    paragraphs:
+      - Keycloak provides single sign-on, roles, and groups, and two-factor authentication is available but not enforced by default. Company-directory integration, password policy, audit requirements, certificate management, and administration-console restrictions are deployment decisions.
+      - The current security documentation also identifies limits in cross-customer separation for some shared tools and administration functions. Those boundaries should be part of any multi-customer architecture review rather than omitted from the documentation.
+    image: /assets/img/v3/features/12-security-and-administration/two-factor.png
+    image_alt: Nova Vector two-factor authentication settings
+    caption: Security documentation distinguishes available controls from controls that are enabled or enforced by default.
+  - eyebrow: Troubleshooting and integration
+    heading: Follow the path a message or command actually takes
+    paragraphs:
+      - Architecture diagrams for telemetry, events, commands, device authentication, and user authentication make troubleshooting more concrete because they show which component owns each step.
+      - The same approach applies to API and edge troubleshooting: start from the resource and message path, then inspect the adapter, service, broker, storage layer, or node responsible for that stage instead of treating the platform as one opaque application.
+    image: /assets/img/v3/architecture/03-telemetry-path.png
+    image_alt: Nova Vector telemetry path
+    caption: The telemetry diagram provides a practical map for both implementation and troubleshooting.
 related:
   - label: Developers
     url: /developers/
   - label: Platform Architecture
     url: /architecture/
-  - label: Support
-    url: /support/
+  - label: REST API
+    url: /api/
 ---

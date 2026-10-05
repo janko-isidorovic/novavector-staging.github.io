@@ -3,55 +3,49 @@ layout: v3
 permalink: /industrial-simulation/
 title: Industrial Process & Equipment Simulation
 description: Simulate process definitions and protocol-connected industrial systems for validation, replay, demonstrations, training, acceptance tests, and resilience testing.
-summary: Exercise real Nova Vector adapters and process logic against repeatable Modbus, BACnet, SNMP, MQTT, Sparkplug B and OPC UA scenarios before production hardware is available.
+summary: Test process logic and real integration paths before depending on production hardware or changing a live operating environment.
 eyebrow: Digital twin and testing
 theme: platform
 noindex: true
 sitemap: false
-capabilities:
-  - title: Process simulation and replay
-    text: Run published process versions against controlled inputs, adjust simulation speed, perform preflight checks, inspect execution logs, reconstruct snapshots, and compare runs.
-    flow: [Published process, Simulated or replayed data, Verified state behavior]
-  - title: Protocol simulators
-    text: Test real platform adapters with simulated Modbus TCP, BACnet/IP, SNMP, MQTT, Sparkplug B and OPC UA equipment instead of bypassing the integration layer.
-    flow: [Simulated equipment, Real protocol traffic, Nova Vector adapter]
-  - title: Reference systems and scenarios
-    text: Use battery-storage, bottling or production-line, and serialized assembly-line systems with scripted events, faults, expected results and network impairment.
-    flow: [Scenario, Event or fault, Expected operational response]
 content_sections:
   - eyebrow: Process simulator
-    heading: Validate process logic before changing live operations
+    heading: Test a published process version against controlled data
     paragraphs:
-      - The process simulator can execute an immutable published process version against selected data sources, including recorded data. Preflight checks identify missing inputs before a run begins, while the execution log explains transitions and the values that caused them.
-      - Completed runs can be reconstructed and compared, making simulation useful for model validation, troubleshooting, training and controlled change review.
-    image: /assets/img/v3/features/05-process-simulator/production-line.png
-    image_alt: Nova Vector process state and simulation model
-    caption: Versioned process logic can be tested against controlled or historical inputs before production use.
+      - Nova Vector can execute an immutable published process version against selected inputs, including recorded data. Before a run starts, preflight checks identify missing inputs; during execution, the simulator records state changes and the values that caused them.
+      - This makes the process model inspectable. Engineers can see not only the resulting state but also why the state changed, which is useful when validating logic, diagnosing unexpected behavior, or training people on a process before touching live equipment.
+    image: /assets/img/v3/features/05-process-simulator/simulation-running.png
+    image_alt: Nova Vector process simulation running
+    caption: A simulation run executes versioned process logic against selected inputs and records each transition.
+  - eyebrow: Historical replay
+    heading: Reconstruct a run instead of relying on memory or screenshots
+    paragraphs:
+      - Completed simulations can be reconstructed from their execution history and compared with other runs or process versions. Historical data can also be replayed faster than real time, allowing teams to investigate a past sequence or test how revised logic would interpret the same input.
+      - The value is not a photorealistic digital twin. It is a repeatable operational model whose state transitions can be explained, reproduced, and compared.
+    image: /assets/img/v3/features/05-process-simulator/compare-runs.png
+    image_alt: Nova Vector simulation run comparison
+    caption: Run comparison helps engineers see how process versions behave against comparable inputs.
   - eyebrow: Protocol simulators
-    heading: Test the same adapters used by production equipment
+    heading: Exercise the real adapter path without waiting for production equipment
     paragraphs:
-      - Simulator services stand outside Nova Vector and communicate through real protocols, allowing engineering teams to validate discovery, addressing, decoding, writes, alarms, commands and downstream workflows through the normal integration boundary.
-    points:
-      - Modbus TCP devices and gateways
-      - BACnet/IP devices and objects
-      - SNMP traps and informs
-      - MQTT and Sparkplug B fleets
-      - OPC UA reference servers
-  - eyebrow: Complete system scenarios
-    heading: Reproduce normal production, faults, and difficult network conditions
+      - The simulator suite stands outside Nova Vector and communicates through real protocols. Reference services can emulate Modbus TCP, BACnet/IP, SNMP, MQTT, Sparkplug B, and OPC UA systems so discovery, addressing, decoding, writes, alarms, commands, and downstream workflows are tested through the same integration boundary used in production.
+      - This is useful during demonstrations, pilots, engineering workshops, and acceptance testing because a realistic device environment can be reproduced without shipping the customer's physical equipment into a lab.
+    image: /assets/img/v3/features/10-simulators/assembly-line.png
+    image_alt: Nova Vector serialized assembly-line simulator
+    caption: Reference systems provide repeatable device and production scenarios for integration testing.
+  - eyebrow: Fault and resilience testing
+    heading: Introduce failures deliberately before they happen in the field
     paragraphs:
-      - Reference systems include a battery energy-storage enclosure, a bottling or production-line environment, and a serialized assembly-line scenario with RFID operators.
-      - Scripted scenarios can change inputs and assert expected outcomes, while network impairment can introduce delay, jitter, loss, reordering or complete partitions for resilience testing.
-    points:
-      - One-command provisioning for reference environments
-      - Scripted faults and expected outcomes
-      - Operator console for live signals and events
-      - Demonstrations, acceptance testing and training without production hardware
+      - Simulator scenarios can change signals, trigger faults, and assert expected outcomes. Network impairment can add delay, jitter, packet loss, reordering, or a complete partition, making it possible to observe how the wider workflow behaves under difficult conditions.
+      - Reference environments currently include a battery-energy-storage enclosure, a bottling or production line, and a serialized assembly-line scenario with RFID operators.
+    image: /assets/img/v3/features/10-simulators/scenario-results.png
+    image_alt: Nova Vector simulator scenario results
+    caption: Scenario results compare the scripted event sequence with the expected operational response.
 related:
   - label: Process Automation
     url: /industrial-state-machine/
-  - label: Industrial Integrations
-    url: /integrations/
+  - label: Device Connectivity
+    url: /iot-device-management/
   - label: Platform Architecture
     url: /architecture/
 ---

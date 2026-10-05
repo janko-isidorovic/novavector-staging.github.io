@@ -809,3 +809,16 @@
     border-bottom: 0 !important;
   }
 }
+
+
+/* Expanded narrative product pages */
+.v3-content__copy > p:first-of-type { font-size: 17px; line-height: 1.72; }
+.v3-content__copy > p + p { margin-top: 18px; }
+.v3-content__media { box-shadow: 0 14px 34px rgba(2,13,38,.07); }
+.v3-content__media figcaption { padding: 12px 14px 14px; }
+.v3-section + .v3-section { border-top: 1px solid rgba(229,232,236,.65); }
+.v3-section--muted + .v3-section { border-top: 0; }
+@media (min-width: 992px) {
+  .v3-content__copy { padding-right: 12px; }
+  .v3-content--reverse .v3-content__copy { padding-right: 0; padding-left: 12px; }
+}

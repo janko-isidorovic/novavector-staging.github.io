@@ -3,89 +3,56 @@ layout: v3
 permalink: /manufacturing/
 title: Manufacturing Operations
 description: Lightweight MES and Industrial IoT for production planning, work orders, OEE, downtime, recipes, routings, consumption variance, quality, labels, attendance, and workforce performance.
-summary: Connect modern and legacy equipment, plan shifts from approved work orders, track actual production and consumption, and use machine plus operator context to improve manufacturing performance.
+summary: Connect machine data with the production records that explain what should be happening, what is actually happening, and where time or material is being lost.
 eyebrow: Industrial solution
 theme: platform
 noindex: true
 sitemap: false
-capabilities:
-  - title: Production planning and work orders
-    text: Define products, work orders, planned quantities, validated speeds, packaging, dates and priorities, then schedule approved work onto production lines and shifts.
-    image: /assets/img/v3/features/06-manufacturing-operations/shift-planning-board.png
-    image_alt: Nova Vector production planning and live line view
-    details:
-      - Shift planning board with work-order placement
-      - Planned, active and completed production context
-      - Good, scrap and rework quantities from machine signals and operator input
-  - title: OEE and downtime
-    text: Calculate availability, performance and quality from production data, detect stoppages, capture causes, and analyze duration, frequency and recurrence by machine or line.
-    image: /assets/img/v3/features/06-manufacturing-operations/work-order-production.png
-    image_alt: Nova Vector OEE and production performance report
-    details:
-      - Automatic stoppage detection
-      - Operator reason classification
-      - OEE, MTTR, MTBF and plan-attainment reporting
-  - title: Recipes, routings and consumption
-    text: Define versioned bills of material and process steps, including alternatives, then compare standard and actual material, labor, machine-time and energy consumption by order.
-    details:
-      - Product, recipe, routing and operation definitions
-      - Input lots and actual consumption
-      - Standard-versus-actual quantity and cost variance
-  - title: Shop-floor execution
-    text: Support serial capture, configurable work-order documents, Zebra label printing, attendance, operator association, maintenance response and other workflows at the point of production.
-    image: /assets/img/v3/features/06-manufacturing-operations/work-order-production.png
-    image_alt: Production and support teams working around industrial equipment
-    details:
-      - RFID attendance and equipment association
-      - Label printing from work-order context
-      - Support request and response timestamps
 content_sections:
-  - eyebrow: Production planning
-    heading: Turn approved work orders into an executable shift plan
+  - eyebrow: Work orders and planning
+    heading: Turn demand into an executable shift plan
     paragraphs:
-      - Work orders carry the product, target quantity, dates, priority and related production context. The shift planning board places that work on the appropriate line and shift so supervisors can compare the plan with actual machine output as production runs.
-      - Validated product speed and planned stoppages contribute to the expected capacity, while actual good, scrap and rework quantities update the order during execution.
+      - Manufacturing operations start with products and work orders rather than with dashboards. A work order carries the product, target quantity, dates, priority, and related production context. The shift planning board then places approved work onto the appropriate line and shift so supervisors have a practical operating plan for the day.
+      - Validated product speeds and planned stoppages contribute to expected capacity. As production runs, the same order can be updated with actual good, scrap, and rework quantities from machine signals and operator input.
     image: /assets/img/v3/features/06-manufacturing-operations/shift-planning-board.png
-    image_alt: Nova Vector production line plan and actual output
-    caption: Production plans stay connected to live machine and work-order data.
-  - eyebrow: Recipes and consumption
-    heading: Compare what production should consume with what it actually used
+    image_alt: Nova Vector manufacturing shift planning board
+    caption: The planning board places work orders onto production lines and shifts before execution.
+  - eyebrow: Production execution
+    heading: Compare the plan with what the line is producing now
     paragraphs:
-      - Versioned recipes and routings define required materials and process steps. During execution, actual material, labor, machine-time and energy use can be recorded against the work order.
-      - Standard-versus-actual comparisons make quantity and cost variance visible without separating operational data from the order that created it.
-    points:
-      - Bill of material and routing versions
-      - Alternative materials and process steps
-      - Lot-level consumption records
-      - Quantity and cost variance by work order
-  - eyebrow: Downtime and workforce context
-    heading: Explain production loss with machine and team activity
-    paragraphs:
-      - Nova Vector detects stoppages from machine state and lets operators classify causes that signals alone cannot determine. The same production context can include RFID-based operator association, support requests, team check-in and completion timestamps.
-      - That combination supports downtime, utilization, response-time and reliability analysis by machine, line, shift or reporting period.
+      - Live machine signals can update work-order production while the shift is still active. Supervisors can see the current order and production context rather than waiting for end-of-day reporting to discover that the line fell behind.
+      - This connection between machine data and work-order records is what allows plan attainment, production counts, stoppages, and quality quantities to be investigated together instead of as unrelated metrics.
     image: /assets/img/v3/features/06-manufacturing-operations/work-order-production.png
-    image_alt: Nova Vector downtime and production report
-    caption: Downtime analysis combines detected machine events with operator-entered causes and production context.
-  - eyebrow: Brownfield deployment
-    heading: Digitalize viable legacy equipment without forcing a rip-and-replace project
+    image_alt: Nova Vector work-order production view
+    caption: Work-order production connects current output with the order and production context responsible for it.
+  - eyebrow: Recipes and routings
+    heading: Define what a product should consume and how it should be made
     paragraphs:
-      - Compatible modern machines can connect directly through interfaces such as Modbus TCP or OPC UA. Legacy equipment can be instrumented with additional sensors, an HMI and PLC so older machines contribute state, counts and stoppage data to the same platform.
-    points:
-      - Direct industrial connectivity for modern equipment
-      - Sensor, HMI and PLC retrofit path for legacy machines
-      - Common asset and telemetry model across both approaches
-      - Start with one line and expand using the same operating model
-screenshots:
-  - src: /assets/img/v3/features/06-manufacturing-operations/work-order-production.png
-    alt: Nova Vector work-order production tracking
-    caption: Work-order production view showing execution context and actual production data.
-  - src: /assets/img/v3/features/06-manufacturing-operations/recipe.png
-    alt: Nova Vector manufacturing recipe definition
-    caption: Versioned recipes connect products, materials, and production requirements.
+      - Versioned recipes describe required materials, while routings describe process steps and operations. Alternatives can be represented where the manufacturing process allows substitution or more than one valid path.
+      - During execution, actual material, labor, machine time, or energy use can be recorded against the work order. Standard-versus-actual comparisons then show quantity and cost variance in the context of the specific production order.
+    image: /assets/img/v3/features/06-manufacturing-operations/recipe.png
+    image_alt: Nova Vector manufacturing recipe
+    caption: Versioned recipes define the bill of material used as the standard for production and consumption comparison.
+  - eyebrow: Consumption
+    heading: Make material variance visible while the production record is still intact
+    paragraphs:
+      - Consumption records connect input lots and actual usage to the plan and work order that consumed them. That makes it possible to compare the expected recipe quantity with what was actually recorded on the shop floor.
+      - Project-specific connections to scales, ERP, or other shop-floor systems can extend this workflow, but those integrations are implemented according to the customer's environment rather than assumed to be universal built-in connectors.
+    image: /assets/img/v3/features/06-manufacturing-operations/plan-consumption.png
+    image_alt: Nova Vector manufacturing plan consumption
+    caption: Consumption views compare expected and actual material use within the production plan.
+  - eyebrow: Downtime and workforce
+    heading: Explain lost production with both machine state and human context
+    paragraphs:
+      - Nova Vector can detect stoppages from machine state and let operators classify causes that signals alone cannot identify reliably. Those events support downtime frequency, duration, recurrence, OEE, MTTR, and MTBF analysis by line, machine, shift, or period.
+      - RFID can add attendance and operator association where that hardware is part of the project. Support requests and response timestamps can then relate equipment events to the people involved in restoring production.
+    image: /assets/img/v3/features/04-alerts-notifications-and-tasks/task-details.png
+    image_alt: Nova Vector operational task details
+    caption: Operational tasks can preserve the equipment and response context associated with a production issue.
 related:
-  - label: OEE & Performance
-    url: /oee-manufacturing/
-  - label: Device Connectivity
+  - label: OEE & Downtime
+    url: /manufacturing-oee-software/
+  - label: Device & Asset Management
     url: /iot-device-management/
   - label: Industrial Edge
     url: /edge-computing-platform/

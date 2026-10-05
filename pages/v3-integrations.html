@@ -2,52 +2,50 @@
 layout: v3
 permalink: /integrations/
 title: Automation & Integration
-description: Integrate Nova Vector through documented REST APIs, MQTT, HTTP, WebSocket, scheduled jobs, device commands, low-code workflows, and deployment-specific connectors.
-summary: Connect operational data and commands with business systems, custom applications, recurring jobs, and low-code workflows without locking integrations to one proprietary interface.
+description: Integrate Nova Vector through REST APIs, MQTT, HTTP, WebSocket, scheduled jobs, device commands, Node-RED, and project-specific connectors.
+summary: Connect operational data and actions with external systems without forcing every workflow into custom application code.
 eyebrow: Platform capability
 theme: platform
 noindex: true
 sitemap: false
-capabilities:
-  - title: Open interfaces
-    text: Use documented REST APIs together with MQTT, HTTP and WebSocket to exchange data with applications, gateways and enterprise systems.
-  - title: Device commands and schedules
-    text: Define reusable device commands, send fixed or calculated values, and run recurring jobs at configured intervals for automated operational actions.
-  - title: Low-code workflows
-    text: Use the embedded Node-RED environment for project-specific rules, transformations and integrations where a visual flow is more practical than a custom service.
 content_sections:
-  - eyebrow: REST API
-    heading: Integrate through documented platform interfaces
+  - eyebrow: Integration model
+    heading: Keep external systems connected to the same operational resources
     paragraphs:
-      - Nova Vector exposes documented REST APIs for device, asset, data and operational workflows. Authenticated systems can integrate without scraping the user interface or relying on undocumented database access.
-      - MQTT, HTTP and WebSocket provide additional paths for live data exchange, while customer-specific connectors can be added around the same platform model.
+      - Integrations work against the same devices, channels, profiles, telemetry, tasks, production records, and command resources used inside Nova Vector. That reduces the risk of creating an integration-only copy of the operating model that drifts away from what users see in the platform.
+      - REST is the documented request-response interface, while MQTT, HTTP, and WebSocket provide additional data paths where continuous or event-driven exchange is more appropriate.
     image: /assets/img/v3/features/11-automation-and-integration/open-api.png
-    image_alt: Nova Vector application and API interface
-    caption: Open interfaces keep external applications connected to the same governed device and operational model.
-  - eyebrow: Commands and jobs
-    heading: Turn repeatable operational actions into managed commands
+    image_alt: Nova Vector OpenAPI documentation
+    caption: Documented APIs expose the platform resource model to authenticated external applications.
+  - eyebrow: Commands and schedules
+    heading: Turn repeatable device actions into managed operations
     paragraphs:
-      - Device commands are defined once and can carry fixed values or values calculated at execution time. Scheduled jobs can run recurring commands at fixed intervals, with execution results available to the operator.
-    points:
-      - Reusable command definitions
-      - Fixed or calculated command values
-      - Recurring schedules and job execution
-      - Heartbeat and operational job patterns
-  - eyebrow: Low-code automation
-    heading: Add project logic without changing the core platform
+      - Device commands can be defined once and reused with fixed or calculated values. Scheduled jobs can invoke those commands at configured intervals, which is useful for recurring operational actions that should remain visible and configurable rather than hidden in an external cron script.
+      - Execution remains asynchronous. The platform records and routes the software request, while the final behavior of a remote device depends on the network, adapter, edge node, and physical equipment involved.
+    image: /assets/img/v3/features/11-automation-and-integration/schedules.png
+    image_alt: Nova Vector scheduled operational jobs
+    caption: Schedules expose recurring operational actions as managed platform configuration.
+  - eyebrow: Low-code workflows
+    heading: Use Node-RED for project logic that does not justify a custom service
     paragraphs:
-      - Node-RED is available for project-specific rules and integrations. It can subscribe to platform data, transform payloads, call external services and coordinate custom workflows.
-      - Custom serverless functions are a preview capability and should not be presented as a mature general-purpose application platform.
-    points:
-      - Visual Node-RED flows
-      - Data transformation and routing
-      - Calls to external APIs and services
-      - Preview custom-function workspace
+      - Node-RED is available for project-specific transformations, routing, rules, and service calls. A flow can subscribe to platform data, reshape payloads, call an external API, and coordinate a custom workflow without modifying the core Nova Vector services.
+      - This makes low-code useful as an integration layer, but it is still project logic. It should be operated, versioned, and supported with the same discipline as other customer-specific integration code.
+    image: /assets/img/v3/features/11-automation-and-integration/automation-result.png
+    image_alt: Nova Vector automation result
+    caption: Automation workflows can connect platform events with project-specific actions and external services.
+  - eyebrow: Custom functions
+    heading: Keep preview capabilities clearly separated from established integration paths
+    paragraphs:
+      - Nova Vector includes a custom-function workspace in preview. It should not yet be positioned as a mature serverless application platform or as a replacement for a customer's existing development environment.
+      - For production integrations, the supported REST, messaging, command, scheduling, and Node-RED paths remain the clearer foundation today.
+    image: /assets/img/v3/architecture/04-events-commands.png
+    image_alt: Nova Vector event and command paths
+    caption: Established integration paths are tied to explicit event, command, and API boundaries.
 related:
   - label: REST API
     url: /api/
-  - label: Device Management
-    url: /iot-device-management/
+  - label: Developers
+    url: /developers/
   - label: Platform Architecture
     url: /architecture/
 ---

@@ -2,56 +2,50 @@
 layout: v3
 permalink: /industrial-state-machine/
 title: Process Automation, Alerts & Tasks
-description: Model operational state, detect abnormal conditions, notify the right people, create assigned work, and preserve the event history through resolution.
-summary: Combine versioned process logic with alerts, notifications, assignable tasks, commands, and replay so operating events lead to traceable action.
+description: Model operational state, detect abnormal conditions, notify the right people, create assigned work, and preserve event history through resolution.
+summary: Turn measurements into understandable process state, then connect abnormal conditions to notifications, tasks, commands, and a traceable response workflow.
 eyebrow: Operational automation
 theme: platform
 noindex: true
 sitemap: false
-capabilities:
-  - title: Versioned process models
-    text: Define states, state types, transitions and data sources, publish immutable process versions, and explain each state change with the values that triggered it.
-  - title: Alerts and notifications
-    text: Create alert limits and notification targets so abnormal values, no-data conditions, stoppages or process-state changes can be routed to configured recipients.
-  - title: Assignable tasks
-    text: Create tasks manually or from alerts, assign categories and owners, track history, and retain the originating alarm or asset context through completion or automatic resolution.
 content_sections:
   - eyebrow: Process state
-    heading: Translate raw measurements into operating meaning
+    heading: Give raw signals an operational meaning
     paragraphs:
-      - Process definitions combine selected device data with explicit states and guarded transitions. Published versions remain immutable so historical events can always be interpreted against the logic that was active at the time.
-      - The execution log records state changes and the data behind them, making process behavior easier to explain during troubleshooting and review.
-    image: /assets/img/v3/features/04-alerts-notifications-and-tasks/alerts.png
-    image_alt: Nova Vector industrial process state model
-    caption: Versioned state logic turns device events into understandable operational state.
-  - eyebrow: Alerts and notifications
-    heading: Detect conditions and route them to the right audience
+      - A temperature, counter, pressure value, or machine bit often matters only because of the operating state around it. Nova Vector process definitions combine selected data sources with explicit states and guarded transitions so the platform can interpret whether equipment is running, idle, starved, stopped, or in another customer-defined condition.
+      - Published process versions are immutable. That means historical execution can be interpreted against the exact logic that was active at the time instead of today's edited configuration.
+    image: /assets/img/v3/features/05-process-simulator/production-line.png
+    image_alt: Nova Vector process model for a production line
+    caption: Process models relate machine states and transitions to the data sources that drive them.
+  - eyebrow: Alerts
+    heading: Detect a condition and preserve the evidence around it
     paragraphs:
-      - Alert limits can monitor configured measurements and no-data conditions. When an alert is raised, Nova Vector can use notification templates and targets to route the event according to the deployment's operating model.
-    points:
-      - Threshold and no-data alert conditions
-      - Notification templates and targets
-      - Alert state and history
-      - Asset and device context preserved with the event
-  - eyebrow: Tasks
-    heading: Connect an event to owned work and a traceable resolution
+      - Alert definitions can watch configured values and no-data conditions. When the condition changes state, Nova Vector can update the affected device context and route the result into notification and task workflows.
+      - Alert limits are defined in the platform rather than hard-coded into a dashboard. This keeps the detection rule connected to the operational object that owns it and gives teams a consistent place to inspect current and historical alert state.
+    image: /assets/img/v3/features/04-alerts-notifications-and-tasks/alert-limits.png
+    image_alt: Nova Vector alert-limit configuration
+    caption: Alert limits define the conditions the platform evaluates for a device or metric.
+  - eyebrow: From alarm to work
+    heading: Convert an abnormal event into something a person can own
     paragraphs:
-      - Tasks can be created directly by users or automatically from alerts. Categories, assignees, status changes and task history keep follow-up work connected to the condition that created it.
-      - Where configured, clearing the source alert can automatically resolve the related task so operational state and work state stay synchronized.
-    points:
-      - Manual and alert-generated tasks
-      - Task categories, assignment and status
-      - Full task history
-      - Automatic resolution patterns
-screenshots:
-  - src: /assets/img/v3/features/04-alerts-notifications-and-tasks/tasks-from-alerts.png
-    alt: Nova Vector tasks created from alerts
-    caption: Alerts can create assignable tasks while preserving the originating alert and device context.
+      - An alert can create a task using a configured task template. The resulting work item keeps its category, assignee, status, history, and the source context that caused it to exist, so maintenance or support teams do not have to reconstruct the original event from another system.
+      - Where configured, clearing the source alert can automatically resolve the related task. That keeps the technical condition and the work-management state synchronized for straightforward cases while still preserving the task history.
+    image: /assets/img/v3/features/04-alerts-notifications-and-tasks/tasks-from-alerts.png
+    image_alt: Nova Vector task list showing tasks created from alerts
+    caption: Alert-generated tasks retain the originating context and can be tracked through resolution.
+  - eyebrow: Traceable response
+    heading: Keep notification, task, and command behavior separate and observable
+    paragraphs:
+      - Notifications route information to configured recipients, tasks represent owned work, and commands represent requests to act on a device. Keeping those concepts separate makes it clearer whether a condition was detected, whether somebody was assigned to it, and whether an automated action was requested.
+      - Commands are executed asynchronously through the platform's command path. Persisting the software request does not imply that a remote controller or physical process acted atomically, which is an important distinction in industrial systems.
+    image: /assets/img/v3/architecture/04-events-commands.png
+    image_alt: Nova Vector event, alert, task, and command architecture
+    caption: Alerts, tasks, notifications, schedules, and commands use explicit service paths rather than one hidden automation chain.
 related:
   - label: Process Simulation
     url: /industrial-simulation/
-  - label: Real-Time Data
-    url: /iot-timeseries-analytics/
   - label: Manufacturing
     url: /manufacturing/
+  - label: Platform Architecture
+    url: /architecture/
 ---

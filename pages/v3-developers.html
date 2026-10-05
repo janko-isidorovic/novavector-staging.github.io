@@ -3,43 +3,57 @@ layout: v3
 permalink: /developers/
 title: Nova Vector for Developers
 description: Developer resources for Nova Vector architecture, APIs, platform concepts, industrial integrations, and Nova Edge.
-summary: Find the technical paths for understanding the platform model, integrating systems, building applications, and working with Nova Edge.
+summary: Understand how devices, data, identity, messaging, services, edge nodes, and APIs fit together before building integrations or extending a deployment.
 eyebrow: Developer resources
 theme: platform
-show_capability_cards: true
 noindex: true
 sitemap: false
-capabilities:
-  - title: Understand the architecture
-    text: Trace platform services, edge-to-enterprise data and command flows, deployment boundaries, and operational data models.
-  - title: Integrate systems
-    text: Use approved APIs, messaging interfaces, identity integration, EdgeX services, and industrial connectivity patterns.
-  - title: Build and operate
-    text: Follow examples and guidance for deployment, diagnostics, version compatibility, troubleshooting, and support.
 content_sections:
-  - eyebrow: Start with the model
-    heading: Understand devices, assets, telemetry, and process state
+  - eyebrow: Architecture first
+    heading: Start with the system boundaries before choosing an endpoint
     paragraphs:
-      - Nova Vector integrations work best when physical equipment, data definitions, and process behavior are modeled before endpoints are connected.
-      - Developer resources will document identifiers, relationships, tenant boundaries, event semantics, and the lifecycle of alarms and command requests.
-    image: /assets/img/products/platform-4.png
-    image_alt: Nova Vector platform developer view
-    caption: Product interface placeholder for developer documentation.
-    placeholder: Placeholder — replace with approved developer documentation screenshot
-  - eyebrow: Build and integrate
-    heading: Use APIs, messages, and EdgeX services at explicit boundaries
+      - Nova Vector is made up of protocol adapters, messaging services, operational services, storage, identity, web applications, and optional edge nodes. Understanding those boundaries makes integrations easier because it clarifies which service owns a resource and how data or commands move between components.
+      - The architecture documentation describes the high-level platform, internal service layers, telemetry path, event and command flow, device authentication, and user authentication. It also documents current limits such as single-server deployment, non-persistent NATS, and project-specific Kubernetes.
+    image: /assets/img/v3/architecture/02-platform.png
+    image_alt: Nova Vector platform architecture for developers
+    caption: The platform diagram separates adapters, messaging, services, storage, identity, and operations tooling.
+  - eyebrow: Resource model
+    heading: Build around devices, channels, profiles, and operational records
     paragraphs:
-      - REST, MQTT, NATS, OAuth 2.0, OIDC, and EdgeX are documented only for the services and versions where they are supported.
-    points:
-      - Architecture and data-model concepts
-      - API authentication and resource guides
-      - Messaging and event-flow examples
-      - Edge development and troubleshooting
+      - Devices have durable identities and ownership context. Channels carry messages. Profiles describe device types, metrics, properties, and decoding behavior. Production, alerts, tasks, commands, and process state build on top of those lower-level resources.
+      - Integrations are easier to maintain when they use those platform relationships instead of inventing a second naming and identity scheme outside Nova Vector.
+    image: /assets/img/v3/features/02-devices-and-live-data/profile-metrics.png
+    image_alt: Nova Vector device profile metrics
+    caption: Device profiles provide the semantic layer between protocol data and application-level meaning.
+  - eyebrow: APIs and messaging
+    heading: Choose the interface that matches the integration pattern
+    paragraphs:
+      - REST is the primary documented resource interface. MQTT, HTTP, WebSocket, and internal event flows serve different real-time or asynchronous needs. Scheduled jobs and command resources provide a managed path for repeatable device actions.
+      - The documented API surface should be preferred over direct database coupling because it preserves authorization, resource ownership, and service boundaries.
+    image: /assets/img/v3/features/11-automation-and-integration/open-api.png
+    image_alt: Nova Vector OpenAPI documentation for developers
+    caption: OpenAPI provides the documented entry point for supported resource operations.
+  - eyebrow: Edge development
+    heading: Treat the site runtime as a managed part of the wider platform
+    paragraphs:
+      - Nova Edge can host EdgeX device services, application logic, local operator access, and Edge AI. The Edge Agent connects that site-side runtime to central node identity, software catalogs, rollout state, and audit information.
+      - Supported service combinations and versions are deployment-specific. Developers should design against the approved bundle and node type for the project rather than assuming arbitrary EdgeX or container workloads can be deployed without qualification.
+    image: /assets/img/v3/features/07-edge-management/node-state.png
+    image_alt: Nova Vector edge node state for developers
+    caption: Node state links site-side software with the central deployment model.
+  - eyebrow: Failure behavior
+    heading: Design for what happens when networks or services are unavailable
+    paragraphs:
+      - The current architecture uses core NATS without persistence, so messages missed during a restart or overload are not automatically replayed. Edge nodes also do not buffer telemetry while the central platform is unreachable.
+      - Commands, API submissions, and persisted state should therefore be interpreted carefully: software acceptance of a request is not the same as guaranteed delivery to a remote site or atomic execution by physical equipment.
+    image: /assets/img/v3/architecture/04-events-commands.png
+    image_alt: Nova Vector event and command flow
+    caption: Understanding asynchronous event and command paths is essential for reliable integration design.
 related:
   - label: Documentation
     url: /documentation/
   - label: REST API
     url: /api/
-  - label: Integrations
-    url: /integrations/
+  - label: Architecture
+    url: /architecture/
 ---

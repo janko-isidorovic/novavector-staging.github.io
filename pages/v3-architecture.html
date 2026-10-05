@@ -2,57 +2,85 @@
 layout: v3
 permalink: /architecture/
 title: Nova Vector Architecture
-description: Explore Nova Vector architecture across native OT adapters, Nova Edge, time-series data, operational services, lightweight MES, digital twins, and AI.
-summary: See how direct equipment connectivity, optional edge services, platform modules, operational applications, and enterprise integrations form one modular architecture.
+description: Explore Nova Vector from field equipment and edge nodes through adapters, messaging, services, storage, identity, dashboards, manufacturing, automation, and AI.
+summary: See how one Nova Vector installation connects field equipment, edge nodes, platform services, users, APIs, and operational applications—and where project-specific architecture decisions are still required.
 eyebrow: Technical evaluation
 theme: platform
 noindex: true
 sitemap: false
-show_architecture: true
-capability_heading: Architecture boundaries
+capability_heading: Architecture at a glance
 capabilities:
-  - title: Edge-to-platform data flow
-    text: Equipment can connect directly to native platform adapters or through Nova Edge when a site requires local processing, offline operation, or edge-side device services.
-    flow: [Equipment, Direct or edge path, Nova Vector]
-    details:
-      - Native OPC UA, Modbus TCP, BACnet/IP, SNMP and IoT transports
-      - EdgeX and NV Edge Agent for site-side operation
-      - SenML-normalized telemetry and documented message paths
-  - title: Operational services
-    text: Central services connect assets, telemetry, state machines, rules, commands, alarms, notifications, and analytics without collapsing their operational responsibilities.
-    flow: [Asset context, Process state, Operational action]
-    details:
-      - PostgreSQL, TimescaleDB, Redis and MinIO data services
-      - NATS, MQTT and REST at documented service boundaries
-      - MES, digital-twin, task, alert and command services
-  - title: Deployment qualities
-    text: Identity, tenant isolation, resilience, scalability, and high availability are documented against the selected deployment rather than presented as universal claims.
-    image: /assets/img/products/network.png
-    image_alt: Distributed Nova Vector deployment
-    placeholder: Placeholder — approved deployment topology
-    details:
-      - Keycloak SSO, role-based access and tenant isolation
-      - Edge, on-premises, cloud, hybrid and air-gapped options
-      - Docker Compose or customer-managed Kubernetes topologies
+  - title: Field to platform
+    text: Equipment connects directly through platform adapters or through a Linux edge node running the Nova Vector Edge Agent and deployment-specific EdgeX services.
+    image: /assets/img/v3/architecture/01-high-level.png
+    image_alt: Nova Vector high-level platform and edge architecture
+  - title: Modular platform services
+    text: Device management, telemetry, alerts, tasks, manufacturing, simulation, edge management, AI, APIs, identity, storage, and operations tooling run as containerized platform services.
+    image: /assets/img/v3/architecture/02-platform.png
+    image_alt: Nova Vector platform service architecture
+  - title: Explicit data and control paths
+    text: Telemetry, record-change events, alerts, scheduled commands, and edge-management commands follow documented message paths instead of being hidden inside one monolithic service.
+    image: /assets/img/v3/architecture/03-telemetry-path.png
+    image_alt: Nova Vector telemetry path
 content_sections:
-  - eyebrow: Data path
-    heading: From industrial equipment to a shared platform model
+  - eyebrow: High-level architecture
+    heading: Platform server, edge nodes, field equipment, users, and external systems
     paragraphs:
-      - Compatible equipment can connect to native platform adapters directly. Nova Edge adds site-local services where equipment cannot reach the platform, connectivity is unreliable, or operations must continue offline.
-      - The platform associates incoming data with devices and assets, stores time-series history, evaluates process state and rules, and exposes information to dashboards, reports, APIs, and enterprise integrations.
+      - The standard platform installation runs as Docker containers on one x86-64 Linux server, either on premises or in a customer-controlled cloud environment. It holds the device registry, stored data, alerts, tasks, manufacturing records, web console, and services used to manage edge nodes.
+      - Edge nodes run next to equipment and can host the Nova Vector Edge Agent, EdgeX Foundry services, Edge AI runtime, and a local operator console. IoT devices can send data to the platform, while industrial adapters can connect outward to controllers, building systems, and network equipment.
+    image: /assets/img/v3/architecture/01-high-level.png
+    image_alt: High-level Nova Vector architecture showing platform, edge nodes, field equipment, users, and external systems
+    caption: High-level deployment model from field equipment and edge nodes to the central Nova Vector platform.
+  - eyebrow: Platform building blocks
+    heading: Separate access, adapters, messaging, services, storage, and operations tooling
+    paragraphs:
+      - The platform uses nginx as the web entry point, Keycloak for user identity, protocol adapters at the device boundary, NATS and Redis for internal messaging patterns, PostgreSQL and TimescaleDB for operational and time-series data, and object storage for approved artifacts.
+      - Operational modules—including alerts, tasks, manufacturing, process simulation, edge management, AI, dashboards, automation, and APIs—share the same device, channel, identity, and event foundation without being collapsed into one application.
+    image: /assets/img/v3/architecture/02-platform.png
+    image_alt: Nova Vector platform building blocks
+    caption: Platform services are separated by responsibility and connected through documented interfaces.
+  - eyebrow: Telemetry path
+    heading: Normalize incoming readings and keep the route observable
+    paragraphs:
+      - Device and adapter traffic enters through the supported protocol path, is normalized into the platform reading format, distributed to interested services, and written to time-series storage.
+      - Device profiles can decode vendor payloads into normalized readings for storage and visualization. Current architecture documentation distinguishes these decoded readings from the original readings used by the alert engine.
+    image: /assets/img/v3/architecture/03-telemetry-path.png
+    image_alt: Nova Vector telemetry flow from devices through adapters and messaging to storage and applications
+    caption: Telemetry follows a defined path from connection adapters through messaging, processing, and storage.
+  - eyebrow: Events and commands
+    heading: Keep record changes, alerts, schedules, and device commands explicit
+    paragraphs:
+      - Record changes are distributed through Redis Streams to services that maintain their own operational copy. Alert outcomes and device commands travel through NATS, while scheduled jobs and heartbeats feed the same command path.
+      - Edge nodes use their MQTT control channel for status and signed deployment commands. A command request is observable as a software operation; network and physical device execution remain separate concerns.
+    image: /assets/img/v3/architecture/04-events-commands.png
+    image_alt: Nova Vector events and commands architecture
+    caption: Events, alerts, schedules, and commands use separate documented paths.
+  - eyebrow: Device authentication
+    heading: Authenticate device and edge traffic at the connection boundary
+    paragraphs:
+      - Device identity and connection checks depend on the selected protocol and adapter. Edge nodes use their registered device identity for telemetry and status, while edge-management commands carry signed command tokens.
+      - Transport security is finalized per deployment. MQTT over TLS is available, but the standard installation does not publish it by default.
+    image: /assets/img/v3/architecture/05-device-authentication.png
+    image_alt: Nova Vector device authentication flow
+    caption: Device authentication is applied at the relevant protocol and adapter boundary.
+  - eyebrow: User authentication
+    heading: Use Keycloak-backed sign-in, roles, and groups across the web platform
+    paragraphs:
+      - Users sign in through Keycloak. Platform services validate the active token and use roles, permissions, and group ownership to control access to records and modules.
+      - Two-factor authentication is available but is not enforced by default. Company-directory integration, password policy, audit requirements, and administration-console restrictions are finalized for each production project.
+    image: /assets/img/v3/architecture/06-user-authentication.png
+    image_alt: Nova Vector user authentication and authorization flow
+    caption: User access is based on Keycloak identity, roles, permissions, and groups.
+  - eyebrow: Current deployment scope
+    heading: Treat resilience and infrastructure choices as project architecture
+    paragraphs:
+      - The standard Docker Compose installation runs one instance of each service on one server. Industrial adapters and the batch writer can scale independently, but a fully redundant installation is designed per project.
+      - Kubernetes is delivered as a project service; standard whole-platform manifests or Helm charts are not shipped today. Isolated networks are prepared per project rather than through a packaged offline installer.
     points:
-      - Native industrial adapters or EdgeX Foundry device services
-      - MQTT, Sparkplug B, and NATS messaging at documented boundaries
-      - PostgreSQL and TimescaleDB-backed operational and time-series data
-      - REST APIs and event-driven integrations
-    image: /assets/img/products/edge-2.png
-    image_alt: Nova Edge and EdgeX Foundry architecture
-    caption: Existing Nova Edge integration diagram; component versions require technical review.
-  - eyebrow: Control path
-    heading: Treat commands as durable operational requests
-    paragraphs:
-      - Process logic persists a command request together with the related state change. Execution is performed asynchronously by a separate service, so delivery, device response, and failure handling remain observable.
-      - "This distinction is important in industrial systems: database atomicity does not imply atomic behavior across networks, edge computers, controllers, and physical equipment."
+      - No built-in HA for database, Redis, NATS, Keycloak, or MQTT broker in the standard single-server deployment
+      - NATS is used without persistence; missed messages are not replayed automatically
+      - Edge nodes do not buffer telemetry while the platform is unreachable
+      - Data retention, backups, TLS exposure, VPN/routing, and production hardening are defined per project
 related:
   - label: Platform Overview
     url: /industrial-iot-platform/

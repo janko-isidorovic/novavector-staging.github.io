@@ -2,63 +2,50 @@
 layout: v3
 permalink: /energy/
 title: Energy & Energy Storage
-description: Industrial IoT for distributed energy and battery-storage telemetry, operating state, alarms, edge processing, and integration.
-summary: Connect distributed energy and storage assets to telemetry, explicit operating state, alarms, edge processing, and approved control-system integrations.
+description: Industrial IoT for distributed energy and battery-storage telemetry, operating state, alarms, edge processing, simulation, and integration.
+summary: Use Nova Vector's existing device, time-series, process-state, edge, and simulation capabilities to build project-specific monitoring and integration for distributed energy assets.
 eyebrow: Industrial solution
 theme: edge
 noindex: true
 sitemap: false
-capability_heading: Operational context for distributed energy assets
-capabilities:
-  - title: Asset telemetry
-    text: Organize sites, systems, and equipment so measurements and alarms retain asset, location, and operating context.
-    image: /assets/img/solutions/realtime-parameters.png
-    image_alt: Real-time energy and environmental parameters
-    placeholder: Placeholder — approved energy operations view
-    details:
-      - Sites, storage systems, meters, and supporting equipment
-      - Current and historical measurements
-      - Asset-specific alarm context
-  - title: Operational state
-    text: Represent operating modes and transitions, persist command requests with state changes, notify teams, and retain event history.
-    flow: [Telemetry, Operating state, Alarm or request]
-    details:
-      - Explicit operating modes and guarded transitions
-      - Notification definitions and email targets
-      - Durable history for investigation
-  - title: Integration and edge
-    text: Integrate BESS, control systems, enterprise applications, and industrial edge services only through interfaces verified for the project.
-    image: /assets/img/solutions/industry-deployment.png
-    image_alt: Distributed industrial deployment
-    placeholder: Placeholder — energy edge-to-platform architecture
-    details:
-      - Configuration-specific BESS and control interfaces
-      - Nova Edge processing close to the asset
-      - Enterprise and analytics integration
 content_sections:
-  - eyebrow: Distributed operations
-    heading: Put telemetry and events in the context of each energy asset
+  - eyebrow: Distributed assets
+    heading: Keep site, equipment, and measurement context together
     paragraphs:
-      - Nova Vector can organize sites, battery systems, power-conversion equipment, meters, environmental sensors, and supporting infrastructure within one asset hierarchy.
-      - Time-series measurements, current operating state, alarms, and notification history remain connected to the affected asset and site.
-    image: /assets/img/solutions/realtime-parameters.png
-    image_alt: Real-time energy and environmental parameters
-    caption: Existing real-time parameter view used as a placeholder for an approved energy deployment screenshot.
-    placeholder: Placeholder — replace with approved energy or BESS operations screenshot
-  - eyebrow: State and control
-    heading: Separate operational intent from physical execution
+      - Energy projects can organize sites, storage systems, meters, environmental sensors, network equipment, and supporting devices in the same hierarchy used elsewhere in Nova Vector. Current and historical measurements then remain tied to the physical asset and location that produced them.
+      - The feature documentation does not define a universal BESS application package. Energy deployments therefore use the platform building blocks and project-specific interfaces appropriate to the equipment and control system involved.
+    image: /assets/img/v3/features/10-simulators/bess-console.png
+    image_alt: Battery energy storage reference-system simulator
+    caption: The BESS reference simulator is used for integration and workflow testing; production energy interfaces are defined per project.
+  - eyebrow: Operating state
+    heading: Represent an energy asset as more than a collection of tags
     paragraphs:
-      - State-machine transitions can persist command requests together with state changes, but a separate service performs execution. This preserves a durable record without implying atomic behavior across the platform, edge network, and control equipment.
-    points:
-      - Asset and site telemetry
-      - Explicit operating-state models
-      - Alarm and email-notification workflows
-      - Configuration-specific control-system integration
+      - Process-state models can interpret selected measurements as explicit operating modes and transitions. This gives alarms, notifications, and reports a clearer operational context than raw time-series values alone.
+      - Where commands are part of an integration, the platform keeps the requested software action separate from the eventual physical response of the control system. That distinction is especially important for remote and safety-relevant infrastructure.
+    image: /assets/img/v3/features/05-process-simulator/production-line.png
+    image_alt: Nova Vector process-state model
+    caption: The same versioned process-model approach can be applied to project-specific equipment operating states.
+  - eyebrow: Edge deployment
+    heading: Put connectivity and selected processing close to remote assets
+    paragraphs:
+      - Nova Edge can host site-side device services, local processing, and a local operator console where distributed assets are difficult to reach from the central platform. The node reports status and selected telemetry through its outbound connection while remaining part of the managed fleet.
+      - Direct site access is still required for functions such as initial SSH installation, EdgeX device setup, or remote sessions, so routing and VPN design remain part of the project architecture.
+    image: /assets/img/v3/architecture/01-high-level.png
+    image_alt: Nova Vector central platform and remote edge architecture
+    caption: Distributed sites can combine local edge services with a central operational platform.
+  - eyebrow: Test before site commissioning
+    heading: Use the reference BESS simulator to validate integration behavior
+    paragraphs:
+      - The simulator suite includes a battery-energy-storage enclosure reference system. It can reproduce device values, events, and scripted faults through the normal protocol path, which is useful for demos, integration testing, and acceptance preparation before the real equipment is available.
+      - This reference environment is a testing asset, not evidence that every BESS vendor interface is supported out of the box.
+    image: /assets/img/v3/features/10-simulators/scenario-results.png
+    image_alt: Nova Vector simulator scenario results
+    caption: Scripted scenarios make integration and expected responses repeatable before production commissioning.
 related:
-  - label: Platform Architecture
-    url: /architecture/
-  - label: Industrial Edge Management
-    url: /industrial-edge-management/
+  - label: Nova Edge
+    url: /edge-computing-platform/
+  - label: Process Simulation
+    url: /industrial-simulation/
   - label: Systems Integration
     url: /systems-integration/
 ---

@@ -2,40 +2,51 @@
 layout: v3
 permalink: /industrial-edge-management/
 title: Industrial Edge Management
-description: Onboard Nova Edge nodes, monitor Linux and container workloads, and deploy signed software bundles through staged fleet rollouts with rollback.
-summary: Operate distributed edge sites through controlled onboarding, local consoles, fleet health, signed deployment bundles, staged rollouts, and rollback.
+description: Onboard Nova Edge nodes, monitor local workloads, deploy approved software bundles, stage fleet rollouts, support rollback, and operate sites with limited connectivity.
+summary: Manage distributed edge sites through controlled onboarding, approved bundle catalogs, node types, staged deployments, local operator access, site registries, and audit history.
 eyebrow: Nova Edge Agent
 theme: edge
 noindex: true
 sitemap: false
 capability_heading: Manage distributed edge operations
 capabilities:
-  - title: Fleet onboarding
-    text: Import nodes from CSV, issue single-use enrollment tokens, and push the Edge Agent through a fingerprint-pinned bootstrap workflow.
-  - title: Signed software rollouts
-    text: Approve and sign service, agent, and AI bundles, deploy them by node type or group, monitor health, and retry or roll back failed nodes.
-  - title: Local and central operations
-    text: Monitor host, systemd, Docker, Compose, logs, and audit history centrally or through the local operator console, including disconnected sites.
+  - title: Fleet onboarding at scale
+    text: Import nodes from CSV, validate fleet definitions, issue enrollment tokens, and install the appropriate Edge Agent preset for each node type.
+  - title: Approved software catalog
+    text: Keep service bundles and agent packages in a governed catalog, define allowed software by node type, and verify source, checksum, signature and compatibility before deployment.
+  - title: Controlled rollouts and rollback
+    text: Deploy to groups of nodes with bounded concurrency, health checks, stop-after-failure controls, retry, desired-state tracking and rollback.
+  - title: Local site operations
+    text: Use the node-local operator console and optional site registry so technicians can inspect approved workloads and keep software available in isolated or intermittently connected environments.
 content_sections:
-  - eyebrow: Nova Edge Agent
-    heading: Operate mixed workloads from one controlled interface
+  - eyebrow: Fleet onboarding
+    heading: Bring many sites under management without opening inbound site access
     paragraphs:
-      - The Nova Edge Agent is designed for industrial computers that run both systemd services and Docker workloads. Remote lifecycle operations are restricted to an explicit allowlist rather than exposing unrestricted host control.
-      - Deployment workflows verify source, size, checksum, Ed25519 signature, node compatibility, and bundle parameters before an atomic swap. Health checks, backup retention, and rollback make failure visible and recoverable.
+      - Fleet import creates node identities and validates the rollout inventory before installation. After enrollment, nodes communicate outward to the platform and receive node-scoped commands rather than exposing unrestricted remote host control.
+      - Node types define the approved software set for a role, helping keep deployment policy consistent across similar industrial computers.
     image: /assets/img/products/administrative-tools.png
-    image_alt: Administrative tools representing edge workload management
-    caption: Conceptual placeholder for the Nova Edge Agent fleet interface.
-    placeholder: Placeholder — replace with approved Nova Edge Agent fleet screenshot
-  - eyebrow: Fleet observability
-    heading: Onboard and update fleets without opening inbound site connections
+    image_alt: Nova Vector edge fleet administration
+    caption: Fleet operations are controlled through node identity, type, policy and deployment state.
+  - eyebrow: Rollout control
+    heading: Stage software updates and make failure recoverable
     paragraphs:
-      - Fleet import creates the node identities and channels, while an SSH push installs the correct agent preset. After enrollment, nodes communicate outbound and receive node-scoped, idempotent deployment commands.
-      - Node types define the approved bundle set for a role. Group rollouts use bounded concurrency, stop-after-failure controls, desired-state snapshots, health checks, retry, and rollback. A site-local registry can serve images in air-gapped environments.
+      - Group rollouts use bounded concurrency and health checks so updates do not reach every node at once. Operators can stop after a configured number of failures, retry failed nodes, restore a previous desired state or roll back a deployment.
+      - Software packages are approved before use and validated for source, size, checksum, signature, node compatibility and deployment parameters.
     points:
-      - CSV fleet import, enrollment tokens, bootstrap, and SSH push
-      - Signed artifacts, compatibility checks, and node-scoped commands
-      - Group rollouts, baselines, desired state, retry, and rollback
-      - Integrated beta; controlled early-adopter deployment recommended
+      - Bundle and agent catalogs
+      - Node-type compatibility rules
+      - Group rollouts and deployment board
+      - Health checks, retry and rollback
+  - eyebrow: On-site resilience
+    heading: Keep operators and software access useful when connectivity is limited
+    paragraphs:
+      - Each managed node can expose a local operator console for approved site-side operations. A local container registry can keep required images at the site so nodes do not depend on external registry access during an isolated deployment.
+      - Edge fleet management is an integrated beta capability and should be introduced through controlled early-adopter deployments.
+    points:
+      - Local operator console
+      - Site-local image registry
+      - EdgeX device and data visibility
+      - Audit events and node state
 related:
   - label: Nova Edge
     url: /edge-computing-platform/

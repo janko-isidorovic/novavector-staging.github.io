@@ -2,41 +2,45 @@
 layout: v3
 permalink: /industrial-infrastructure/
 title: Industrial Infrastructure & Facilities
-description: Connect facilities and distributed infrastructure through native BACnet/IP, SNMP, LoRaWAN, edge services, energy monitoring, alarms, and tasks.
-summary: Connect building systems, utilities, environmental sensors, network equipment, and remote sites without losing physical, operational, or response context.
+description: Connect building systems, utilities, environmental sensors, network equipment, and distributed sites through industrial protocols, dashboards, alerts, tasks, and edge services.
+summary: Bring facility, environmental and infrastructure data into the same asset, time-series and response model used by the rest of Nova Vector.
 eyebrow: Industrial solution
 theme: edge
 noindex: true
 sitemap: false
 capabilities:
-  - title: Distributed assets
-    text: Represent sites, facilities, equipment, sensors, connectivity, and operational ownership in a shared asset hierarchy.
-  - title: Energy and environment
-    text: Collect energy, occupancy, air-quality, HVAC, utility, and environmental measurements for current visibility and historical comparison.
-  - title: Events and response
-    text: Connect alarms and notifications to asset context, operational dashboards, and approved response or automation workflows.
+  - title: Building and infrastructure connectivity
+    text: Connect compatible BACnet/IP, SNMP, MQTT, HTTP, LoRaWAN and other supported sources directly or through edge services.
+  - title: Live and historical monitoring
+    text: Use device views, maps, dashboards and reports for utilities, energy, environmental conditions, equipment state and other project-specific metrics.
+  - title: Alerts and response
+    text: Convert abnormal values or missing data into notifications, assignable tasks and traceable operating events.
 content_sections:
   - eyebrow: Facility context
-    heading: Connect floor plans, equipment, meters, and environmental sensors
+    heading: Relate measurements to the physical places and equipment they describe
     paragraphs:
-      - Nova Vector can represent buildings, floors, rooms, utility systems, equipment, and sensors in one hierarchy. Native BACnet/IP discovery and object browsing can connect compatible HVAC and building-control equipment directly, while SNMP receives events from network infrastructure and LoRaWAN supports remote low-power sensors.
-      - Historical data supports comparison by site, area, equipment type, and time period.
+      - Nova Vector can organize buildings, floors, rooms, utility systems, equipment and sensors in one hierarchy so users can move from a site view to the individual device and its history.
+      - BACnet/IP discovery and object browsing support compatible building-control equipment, while SNMP receives infrastructure events and low-power sensors can connect through supported IoT or LoRaWAN project configurations.
     image: /assets/img/solutions/floorplan.png
     image_alt: Building floor plan with monitored assets
-    caption: Floor-plan view connecting facility data to physical location.
-  - eyebrow: Operational response
-    heading: Turn abnormal conditions into traceable events
+    caption: Facility data stays connected to physical location and asset context.
+  - eyebrow: Dashboards and reporting
+    heading: Compare sites, equipment and operating periods using the same data foundation
     paragraphs:
-      - Threshold and no-data alarms can notify configured targets and automatically create assignable tasks for support teams. Tasks retain category, status, history, campaign, and the originating asset or alarm context through resolution.
+      - Embedded Grafana dashboards and project-specific reports can combine time-series measurements with site, equipment and period filters for energy, environmental and infrastructure analysis.
     points:
-      - Energy and utility monitoring
-      - Temperature, air quality, and environmental data
-      - Alarms and notification definitions
-      - Multi-site dashboards and historical comparison
+      - Energy and utility measurements
+      - Temperature, air quality and environmental data
+      - Current and historical device views
+      - Multi-site dashboards and project reports
+  - eyebrow: Operational response
+    heading: Turn abnormal conditions into owned work
+    paragraphs:
+      - Alert limits and no-data conditions can route notifications to configured targets and create tasks with category, status, history and source context.
 screenshots:
   - src: /assets/img/solutions/realtime-parameters.png
     alt: Facility operating parameters visualized in Nova Vector
-    caption: Facility operating parameters presented in Nova Vector. Screenshot data requires disclosure review.
+    caption: Facility operating parameters presented with asset and time-series context.
 related:
   - label: Industrial Edge
     url: /edge-computing-platform/

@@ -3,49 +3,49 @@ layout: v3
 permalink: /industrial-infrastructure/
 title: Industrial Infrastructure & Facilities
 description: Connect building systems, utilities, environmental sensors, network equipment, and distributed sites through industrial protocols, dashboards, alerts, tasks, and edge services.
-summary: Bring facility, environmental and infrastructure data into the same asset, time-series and response model used by the rest of Nova Vector.
+summary: Bring building and infrastructure data into the same device, time-series, alert, and response model used by the rest of Nova Vector.
 eyebrow: Industrial solution
 theme: edge
 noindex: true
 sitemap: false
-capabilities:
-  - title: Building and infrastructure connectivity
-    text: Connect compatible BACnet/IP, SNMP, MQTT, HTTP, LoRaWAN and other supported sources directly or through edge services.
-  - title: Live and historical monitoring
-    text: Use device views, maps, dashboards and reports for utilities, energy, environmental conditions, equipment state and other project-specific metrics.
-  - title: Alerts and response
-    text: Convert abnormal values or missing data into notifications, assignable tasks and traceable operating events.
 content_sections:
-  - eyebrow: Facility context
-    heading: Relate measurements to the physical places and equipment they describe
+  - eyebrow: Building and infrastructure connectivity
+    heading: Connect control systems and infrastructure through the protocols already in use
     paragraphs:
-      - Nova Vector can organize buildings, floors, rooms, utility systems, equipment and sensors in one hierarchy so users can move from a site view to the individual device and its history.
-      - BACnet/IP discovery and object browsing support compatible building-control equipment, while SNMP receives infrastructure events and low-power sensors can connect through supported IoT or LoRaWAN project configurations.
-    image: /assets/img/solutions/floorplan.png
-    image_alt: Building floor plan with monitored assets
-    caption: Facility data stays connected to physical location and asset context.
-  - eyebrow: Dashboards and reporting
-    heading: Compare sites, equipment and operating periods using the same data foundation
+      - BACnet/IP supports discovery and object browsing for compatible building-control equipment, while SNMP can receive traps from network and infrastructure devices. MQTT, HTTP, and WebSocket provide additional IoT paths, and edge services can be introduced when a site benefits from local connectivity or processing.
+      - LoRaWAN is currently a pilot capability rather than a generally packaged feature. It should be scoped explicitly where low-power field sensors are part of the project.
+    image: /assets/img/v3/features/01-device-connectivity/bacnet-device-discovery.png
+    image_alt: Nova Vector BACnet device discovery
+    caption: BACnet discovery helps bring compatible building-control devices into the platform device model.
+  - eyebrow: Asset context
+    heading: Organize facilities by place and equipment, not only by protocol address
     paragraphs:
-      - Embedded Grafana dashboards and project-specific reports can combine time-series measurements with site, equipment and period filters for energy, environmental and infrastructure analysis.
-    points:
-      - Energy and utility measurements
-      - Temperature, air quality and environmental data
-      - Current and historical device views
-      - Multi-site dashboards and project reports
-  - eyebrow: Operational response
-    heading: Turn abnormal conditions into owned work
+      - Buildings, floors, rooms, utility systems, equipment, meters, and sensors can be represented through the device hierarchy. That allows a user to move from a site-level view into the specific equipment record and its live or historical data.
+      - Reusable profiles provide a consistent description for repeated device types, helping standardize the meaning of measurements across similar meters, controllers, or sensors.
+    image: /assets/img/v3/features/02-devices-and-live-data/devices-tree.png
+    image_alt: Nova Vector device hierarchy
+    caption: The same hierarchy used for production equipment can represent facilities, systems, and infrastructure devices.
+  - eyebrow: Monitoring and reports
+    heading: Compare operating periods without separating current and historical views
     paragraphs:
-      - Alert limits and no-data conditions can route notifications to configured targets and create tasks with category, status, history and source context.
-screenshots:
-  - src: /assets/img/solutions/realtime-parameters.png
-    alt: Facility operating parameters visualized in Nova Vector
-    caption: Facility operating parameters presented with asset and time-series context.
+      - Device pages provide direct access to current readings and history, while embedded Grafana supports broader site and system dashboards. Project-specific reports can combine time-series data with the filters and KPIs relevant to the facility or infrastructure use case.
+      - The documentation supports the reporting framework rather than a fixed library of building-management reports, so energy, utility, environmental, or network views are configured to the project's available data and objectives.
+    image: /assets/img/v3/features/03-dashboards-and-reports/grafana-dashboards.png
+    image_alt: Grafana dashboards embedded in Nova Vector
+    caption: Embedded dashboards provide a broader view across multiple devices and operating periods.
+  - eyebrow: Alerts and response
+    heading: Turn abnormal conditions into a traceable operational workflow
+    paragraphs:
+      - Alert limits and no-data checks can identify abnormal or missing measurements. Notifications can route the event to configured recipients, and tasks can preserve the originating device and alert context through assignment and resolution.
+      - That makes the workflow useful for infrastructure operations where the important outcome is not merely displaying an alarm, but ensuring that somebody can own and close the resulting work.
+    image: /assets/img/v3/features/04-alerts-notifications-and-tasks/tasks-from-alerts.png
+    image_alt: Nova Vector tasks created from operational alerts
+    caption: Alert-generated tasks connect monitored infrastructure conditions with assigned follow-up work.
 related:
-  - label: Industrial Edge
-    url: /edge-computing-platform/
   - label: Device Management
     url: /iot-device-management/
-  - label: Systems Integration
-    url: /systems-integration/
+  - label: Time-Series Analytics
+    url: /iot-timeseries-analytics/
+  - label: Nova Edge
+    url: /edge-computing-platform/
 ---

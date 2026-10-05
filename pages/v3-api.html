@@ -2,51 +2,50 @@
 layout: v3
 permalink: /api/
 title: REST API & Platform Integration
-description: Integrate Nova Vector through documented REST APIs, authenticated application access, live event interfaces, device commands, telemetry, production, alerts, tasks, and edge workflows.
-summary: Use the same governed resource model as the platform UI to provision equipment, exchange data, automate operational workflows, and integrate business or engineering systems.
+description: Integrate Nova Vector through documented REST APIs, authenticated application access, telemetry, production, alerts, tasks, commands, and edge workflows.
+summary: Work with the same devices, profiles, data, tasks, production records, and operational resources used by Nova Vector applications instead of integrating against a separate reporting database.
 eyebrow: Developer resources
 theme: platform
 noindex: true
 sitemap: false
-capabilities:
-  - title: Documented REST APIs
-    text: Work with supported resources for devices, channels, profiles, data, production, alerts, tasks, commands, process state, simulation, edge operations, and other deployed modules.
-  - title: Authenticated integrations
-    text: Use the platform identity layer and supported OAuth 2.0 / OIDC flows so application access follows the same roles and group boundaries as interactive users.
-  - title: Event-driven integration
-    text: Combine REST with MQTT, HTTP, WebSocket, Server-Sent Events, Node-RED, and deployment-specific services where live or asynchronous integration is required.
 content_sections:
-  - eyebrow: Platform resources
-    heading: Integrate with the same objects used by Nova Vector applications
+  - eyebrow: OpenAPI
+    heading: Start from documented resources and operations
     paragraphs:
-      - The API exposes the platform's operational resource model rather than a separate integration database. Devices, channels, profiles, telemetry, tasks, production records, commands and other entities retain the same identifiers and relationships used by the user interface.
-      - This keeps external systems aligned with the same device, asset and operational context used inside Nova Vector.
+      - Nova Vector exposes documented REST APIs for platform resources including devices, channels, profiles, telemetry, production records, alerts, tasks, commands, process simulation, and deployed edge modules. The API follows the same resource model used by the web console rather than maintaining a separate integration representation.
+      - That matters because an external application can work with the same identifiers, ownership groups, and relationships that operators already see inside Nova Vector.
     image: /assets/img/v3/features/11-automation-and-integration/open-api.png
-    image_alt: Nova Vector platform interface representing API resources
-    caption: Nova Vector integrations use the same governed platform resource model as the operational applications.
-  - eyebrow: Commands and automation
-    heading: Treat device actions as observable operational requests
+    image_alt: Nova Vector OpenAPI documentation
+    caption: The OpenAPI interface documents supported platform resources and operations.
+  - eyebrow: Authentication
+    heading: Integrate through the same identity boundary used by the platform
     paragraphs:
-      - Device commands can be defined once with fixed or calculated values. A request is persisted before execution so integrations can observe state, errors and response instead of treating submission as proof that a physical device acted.
-      - Scheduled jobs and Node-RED flows can build on the same interfaces for repeatable project-specific automation.
-    points:
-      - Reusable device command definitions
-      - Persistent command request lifecycle
-      - Scheduled jobs at configured intervals
-      - Node-RED workflows and external service calls
-  - eyebrow: Provisioning
-    heading: Build repeatable equipment and test-environment setup
+      - User-facing and service integrations are designed around the platform identity layer rather than anonymous database access. Keycloak provides the user login foundation, and platform services validate active tokens and use roles, permissions, and groups when authorizing requests.
+      - Service-account and identity-provider design are implementation concerns that should be confirmed for the customer's environment, especially where external applications need long-lived unattended access.
+    image: /assets/img/v3/architecture/06-user-authentication.png
+    image_alt: Nova Vector user and service authentication architecture
+    caption: API authorization sits within the same identity architecture as interactive platform access.
+  - eyebrow: Commands
+    heading: Make remote actions observable instead of treating submission as success
     paragraphs:
-      - Public APIs can create profiles, devices, channels, industrial-adapter connections and bindings. The simulator provisioning tools use these same interfaces to create and remove complete reference environments idempotently.
-screenshots:
-  - src: /assets/img/v3/features/11-automation-and-integration/open-api.png
-    alt: Nova Vector OpenAPI documentation
-    caption: Documented API resources provide authenticated integration with platform data and workflows.
+      - Device commands are defined as platform resources and can carry fixed or calculated values. When a command is submitted, the software request enters the command path and can be observed independently from the eventual response of a remote device.
+      - This distinction is deliberate. A successful HTTP request means the platform accepted the request; it does not prove that a remote network, edge node, controller, or physical process completed the action atomically.
+    image: /assets/img/v3/features/11-automation-and-integration/commands.png
+    image_alt: Nova Vector device command definitions
+    caption: Reusable command definitions provide a managed entry point for device actions.
+  - eyebrow: Provisioning and automation
+    heading: Use APIs to build repeatable environments and integration workflows
+    paragraphs:
+      - Public APIs can create profiles, devices, channels, industrial-adapter connections, and related bindings. The simulator tooling uses these same interfaces to provision and remove complete reference environments in a repeatable way.
+      - Scheduled jobs, Node-RED workflows, MQTT, HTTP, and WebSocket can complement REST when the integration needs recurring, event-driven, or low-code behavior rather than a simple request-response exchange.
+    image: /assets/img/v3/features/11-automation-and-integration/schedules.png
+    image_alt: Nova Vector scheduled jobs
+    caption: Schedules provide a managed way to repeat commands and operational jobs at configured intervals.
 related:
-  - label: Documentation
-    url: /documentation/
   - label: Integrations
     url: /integrations/
-  - label: Systems Integration
-    url: /systems-integration/
+  - label: Developers
+    url: /developers/
+  - label: Platform Architecture
+    url: /architecture/
 ---

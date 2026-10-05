@@ -2,58 +2,53 @@
 layout: v3
 permalink: /industrial-edge-management/
 title: Industrial Edge Management
-description: Onboard Nova Edge nodes, monitor local workloads, deploy approved software bundles, stage fleet rollouts, support rollback, and operate sites with limited connectivity.
-summary: Manage distributed edge sites through controlled onboarding, approved bundle catalogs, node types, staged deployments, local operator access, site registries, and audit history.
+description: Onboard Nova Edge nodes, monitor local workloads, deploy approved software bundles, stage rollouts, support rollback, and operate sites with limited connectivity.
+summary: Manage distributed edge sites through controlled onboarding, approved software catalogs, node types, staged deployments, local operator access, and audit history.
 eyebrow: Nova Edge Agent
 theme: edge
 noindex: true
 sitemap: false
-capability_heading: Manage distributed edge operations
-capabilities:
-  - title: Fleet onboarding at scale
-    text: Import nodes from CSV, validate fleet definitions, issue enrollment tokens, and install the appropriate Edge Agent preset for each node type.
-  - title: Approved software catalog
-    text: Keep service bundles and agent packages in a governed catalog, define allowed software by node type, and verify source, checksum, signature and compatibility before deployment.
-  - title: Controlled rollouts and rollback
-    text: Deploy to groups of nodes with bounded concurrency, health checks, stop-after-failure controls, retry, desired-state tracking and rollback.
-  - title: Local site operations
-    text: Use the node-local operator console and optional site registry so technicians can inspect approved workloads and keep software available in isolated or intermittently connected environments.
 content_sections:
   - eyebrow: Fleet onboarding
-    heading: Bring many sites under management without opening inbound site access
+    heading: Bring distributed edge computers under one managed identity
     paragraphs:
-      - Fleet import creates node identities and validates the rollout inventory before installation. After enrollment, nodes communicate outward to the platform and receive node-scoped commands rather than exposing unrestricted remote host control.
-      - Node types define the approved software set for a role, helping keep deployment policy consistent across similar industrial computers.
+      - Nova Vector can import a fleet definition from CSV, validate the records before installation, issue enrollment tokens, and apply the appropriate Edge Agent preset for each node type. The goal is to make onboarding repeatable when a project grows from a few sites to many similarly configured locations.
+      - Node types define which software bundles and agent settings belong on a particular class of edge computer. That creates a governed baseline for sites that perform the same role instead of relying on individually maintained machines.
+    image: /assets/img/v3/features/07-edge-management/node-state.png
+    image_alt: Nova Vector edge node state view
+    caption: Each node keeps its identity, type, desired software state, and operating status in the fleet view.
+  - eyebrow: Software catalog
+    heading: Treat edge software as an approved deployment artifact
+    paragraphs:
+      - EdgeX runtimes, the local operator console, Edge AI runtime, simulator systems, and other approved service bundles can be stored in the platform artifact catalog. The deployment workflow checks source, size, checksum, signature, compatibility, and configured parameters before software is pushed toward a node.
+      - This separates the question of what software is allowed from the mechanics of installing it. Operators work from approved catalog entries rather than arbitrary container references entered at rollout time.
     image: /assets/img/v3/features/07-edge-management/rollout-board.png
-    image_alt: Nova Vector edge fleet administration
-    caption: Fleet operations are controlled through node identity, type, policy and deployment state.
-  - eyebrow: Rollout control
-    heading: Stage software updates and make failure recoverable
+    image_alt: Nova Vector edge rollout board
+    caption: Rollouts expose deployment state across the selected nodes rather than hiding installation behind a one-click action.
+  - eyebrow: Controlled rollout
+    heading: Update groups of nodes without changing the entire fleet at once
     paragraphs:
-      - Group rollouts use bounded concurrency and health checks so updates do not reach every node at once. Operators can stop after a configured number of failures, retry failed nodes, restore a previous desired state or roll back a deployment.
-      - Software packages are approved before use and validated for source, size, checksum, signature, node compatibility and deployment parameters.
-    points:
-      - Bundle and agent catalogs
-      - Node-type compatibility rules
-      - Group rollouts and deployment board
-      - Health checks, retry and rollback
-  - eyebrow: On-site resilience
-    heading: Keep operators and software access useful when connectivity is limited
+      - Group rollouts use bounded concurrency and health checks so an update can progress in controlled batches. Operators can define failure thresholds, retry failed nodes, restore a previous desired state, or roll back when the new software does not behave as expected.
+      - The current fleet-management capability is an integrated beta feature. It is appropriate for controlled early-adopter deployments and should not be represented as a fully mature general-purpose endpoint-management product.
+    image: /assets/img/v3/features/07-edge-management/rollout-board.png
+    image_alt: Edge software rollout status in Nova Vector
+    caption: The rollout board makes deployment progress, failures, and recovery actions visible to the operator.
+  - eyebrow: Site resilience
+    heading: Keep essential operator access and software available at the site
     paragraphs:
-      - Each managed node can expose a local operator console for approved site-side operations. A local container registry can keep required images at the site so nodes do not depend on external registry access during an isolated deployment.
-      - Edge fleet management is an integrated beta capability and should be introduced through controlled early-adopter deployments.
-    points:
-      - Local operator console
-      - Site-local image registry
-      - EdgeX device and data visibility
-      - Audit events and node state
-screenshots:
-  - src: /assets/img/v3/features/07-edge-management/rollout-board.png
-    alt: Nova Vector edge rollout board
-    caption: Fleet rollout view with deployment progress and node status.
-  - src: /assets/img/v3/features/07-edge-management/local-console.png
-    alt: Nova Vector local edge operator console
-    caption: Local console for site-side node and workload visibility.
+      - A managed node can expose a local operator console for approved site-side operations even when central connectivity is limited. A site-local container registry can retain required images inside the site so nodes do not depend on external registry access during an isolated deployment.
+      - The platform can also show EdgeX devices and data from the node, helping central and local teams work from the same device context when troubleshooting a remote site.
+    image: /assets/img/v3/features/07-edge-management/local-console.png
+    image_alt: Nova Vector local edge operator console
+    caption: The local console provides site-side visibility into node health and approved workloads.
+  - eyebrow: Network boundaries
+    heading: Distinguish outbound node control from connections that still need site reachability
+    paragraphs:
+      - Telemetry, node status, AI results, and deployment commands use the node's outbound MQTT session, which works through common NAT and firewall arrangements. Installation over SSH, EdgeX device setup, browser access to site consoles, and remote sessions still require the platform or user browser to reach the node address.
+      - That distinction matters when designing VPNs, routing, and firewall rules. Edge management reduces the need for inbound service exposure, but it does not remove every platform-to-site network dependency.
+    image: /assets/img/v3/architecture/01-high-level.png
+    image_alt: Nova Vector platform and edge network architecture
+    caption: The architecture separates node-initiated communication from functions that require direct reachability to the site.
 related:
   - label: Nova Edge
     url: /edge-computing-platform/

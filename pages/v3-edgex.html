@@ -2,48 +2,50 @@
 layout: v3
 permalink: /edgex-foundry-platform/
 title: Nova Vector + EdgeX Foundry
-description: Use EdgeX Foundry as a site-side device layer with Nova Edge, reusable profiles, local services, platform telemetry, commands, and centrally managed deployment.
-summary: Extend industrial connectivity at the edge while keeping device identity, telemetry, deployment and operational context connected to Nova Vector.
+description: Use EdgeX Foundry as a site-side device layer with Nova Edge, reusable profiles, local services, platform telemetry, commands, and managed deployment.
+summary: Extend industrial connectivity at the edge without creating a separate operational data model or an unmanaged software stack at each site.
 eyebrow: Open edge ecosystem
 theme: edge
 noindex: true
 sitemap: false
-show_architecture: true
-capabilities:
-  - title: Device services
-    text: Use deployment-specific EdgeX device services for industrial protocols and equipment that benefit from a local device abstraction layer.
-  - title: Data and commands
-    text: Normalize device data, transform or route it locally, publish selected telemetry upstream, and preserve approved command paths.
-  - title: Managed deployment
-    text: Deliver approved EdgeX bundles through the same node-type, compatibility, health-check, rollout and rollback model used by Nova Edge fleet management.
 content_sections:
-  - eyebrow: EdgeX at the site
-    heading: Separate equipment-specific device services from central applications
+  - eyebrow: Device services
+    heading: Keep equipment-specific protocol handling close to the site
     paragraphs:
-      - EdgeX device services handle communication with local equipment while core and application services manage device data, commands, transformation and export.
-      - Nova Vector can relate EdgeX-connected devices back to platform devices and profiles so local connectivity does not create a separate operational data model.
-    image: /assets/img/products/edge-2.png
-    image_alt: EdgeX services integrated with Nova Vector
-    caption: EdgeX provides a site-side device-services layer within the broader Nova Edge architecture.
-  - eyebrow: Platform integration
-    heading: Keep profiles, devices, data and commands connected across the boundary
+      - EdgeX device services provide a site-side abstraction for equipment that benefits from a local integration layer. They can handle the protocol-facing work while EdgeX core and application services manage device data, commands, transformation, and export.
+      - Nova Vector uses this capability when a project needs local device services rather than treating EdgeX as a separate user-facing platform. The objective is to extend connectivity while keeping the equipment tied to the same central asset and operational model.
+    image: /assets/img/v3/features/07-edge-management/edgex-devices.png
+    image_alt: EdgeX device list integrated with Nova Vector
+    caption: EdgeX-connected equipment can be inspected as part of the managed edge environment.
+  - eyebrow: Shared device context
+    heading: Relate edge devices back to central profiles and identities
     paragraphs:
-      - Nova Vector can exchange device and profile information with EdgeX and normalize upstream telemetry into the same platform data model used by directly connected devices.
-      - This allows dashboards, alerts, tasks, production workflows and other central services to consume edge-originated data without requiring a separate application stack.
-  - eyebrow: Fleet operations
-    heading: Deploy approved EdgeX stacks through the managed edge pipeline
+      - Nova Vector can exchange device and profile information with EdgeX and normalize upstream events into the platform data path. This allows edge-originated readings to be stored and charted beside data from directly connected equipment.
+      - The current architecture has an important boundary: decoded readings produced from some edge payloads are stored and visualized, but the alert engine evaluates the original SenML readings rather than those decoder-produced values. That behavior should be considered when designing edge alarm workflows.
+    image: /assets/img/v3/architecture/03-telemetry-path.png
+    image_alt: Telemetry path from devices and edge systems into Nova Vector
+    caption: Edge data passes through the same normalization and storage path once it reaches the platform.
+  - eyebrow: Managed bundles
+    heading: Deploy approved EdgeX stacks through Nova Edge
     paragraphs:
-      - Approved bundles can be assigned to compatible node types, distributed through a site registry where required, and deployed with health checks, bounded concurrency, retry and rollback.
-      - Supported EdgeX service combinations are confirmed per project rather than treated as one universal bundle.
-screenshots:
-  - src: /assets/img/products/edge-2.png
-    alt: EdgeX Foundry services integrated with Nova Vector
-    caption: Nova Edge and EdgeX Foundry operate as part of the same managed edge environment.
+      - Supported EdgeX runtime combinations are packaged as approved bundles in the artifact catalog. Node types can define which bundle belongs on a given class of edge computer, and the fleet pipeline can distribute that bundle using the same health-check, concurrency, retry, and rollback controls as other edge software.
+      - A site-local registry can retain required container images where internet access is restricted. The exact EdgeX version and device-service set remain project decisions rather than one universal platform default.
+    image: /assets/img/v3/features/07-edge-management/site-registry.png
+    image_alt: Nova Vector site container registry
+    caption: A site registry can keep approved edge images available within restricted or isolated networks.
+  - eyebrow: Operations
+    heading: Preserve local visibility without splitting central and site workflows
+    paragraphs:
+      - Operators can inspect EdgeX devices and data from the edge-management interface, while local technicians can use the site console when central connectivity is unavailable or inconvenient.
+      - This gives both audiences a view of the same managed node and software stack instead of forcing local operations to rely on an unrelated administration tool.
+    image: /assets/img/v3/features/07-edge-management/local-console.png
+    image_alt: Local edge operator console
+    caption: The local console provides a site-side operational view of the approved services running on the node.
 related:
   - label: Nova Edge
     url: /edge-computing-platform/
-  - label: Integrations
-    url: /integrations/
+  - label: Industrial Edge Management
+    url: /industrial-edge-management/
   - label: Documentation
     url: /documentation/
 ---

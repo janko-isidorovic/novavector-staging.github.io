@@ -2,42 +2,50 @@
 layout: v3
 permalink: /industrial-oem/
 title: Industrial OEMs & Connected Products
-description: Connected-product platform for industrial OEM device management, remote monitoring, edge software, service workflows, and APIs.
-summary: Add device identity, telemetry, remote monitoring, edge software, APIs, and service workflows to industrial equipment portfolios.
+description: Connected-product foundation for industrial OEM device management, telemetry, remote monitoring, edge software, APIs, and service workflows.
+summary: Use Nova Vector's device model, edge runtime, APIs, alerts, tasks, and dashboards as building blocks for project-specific connected-equipment services.
 eyebrow: Industrial solution
 theme: platform
 noindex: true
 sitemap: false
-capabilities:
-  - title: Connected equipment
-    text: Onboard equipment, model product and customer relationships, and keep telemetry and configuration connected to each installed asset.
-  - title: Remote service
-    text: Give service teams access to equipment health, alarms, diagnostics, maintenance context, and approved remote operations.
-  - title: Product integration
-    text: Connect customer applications and enterprise systems through APIs and design tenant and deployment boundaries for the OEM service model.
 content_sections:
-  - eyebrow: Connected product foundation
-    heading: Give every installed machine a digital operating context
+  - eyebrow: Installed-base model
+    heading: Give every connected machine a durable digital identity
     paragraphs:
-      - An OEM can model product families, customer sites, installed equipment, connected devices, telemetry definitions, and service relationships in Nova Vector.
-      - The same platform services support customer-facing dashboards, internal service tools, alarms, diagnostics, and application integrations without creating a separate backend for each product line.
-    image: /assets/img/products/Devices-Things.png
-    image_alt: Connected devices and equipment in Nova Vector
-    caption: Device and thing relationships used as the foundation for connected equipment.
-  - eyebrow: Remote service
-    heading: Move from reactive support to evidence-based diagnosis
+      - An OEM can represent customer sites, installed machines, gateways, sensors, and supporting devices in the same hierarchical registry used by Nova Vector operations. Reusable profiles describe the metrics and properties common to a machine family, while each installed instance retains its own identity and ownership context.
+      - The feature sources support this device-and-profile model directly. They do not define a packaged OEM portal or a universal multi-customer SaaS product, so customer separation and service experience should be designed for the specific OEM program.
+    image: /assets/img/v3/features/02-devices-and-live-data/devices-tree.png
+    image_alt: Nova Vector hierarchical device registry
+    caption: Hierarchical device relationships can represent customer sites and installed equipment without flattening the installed base.
+  - eyebrow: Remote evidence
+    heading: Give service teams history before they decide to travel
     paragraphs:
-      - Service teams can inspect current and historical telemetry, alarm history, operating state, and maintenance context before dispatching an engineer. Approved commands remain durable requests with traceable asynchronous execution.
-    points:
-      - Multi-tenant customer separation
-      - Installed-base and asset hierarchy
-      - Remote monitoring and diagnostics
-      - REST and messaging integration
+      - Current and historical device data, alerts, operating state, and tasks can provide evidence about what a machine was doing before and during a reported problem. That gives service teams more context than a phone description or a single current-value snapshot.
+      - The same data can be exposed through customer-specific dashboards or external applications using the documented APIs, depending on how the OEM wants to package the service experience.
+    image: /assets/img/v3/features/02-devices-and-live-data/device-live-data.png
+    image_alt: Nova Vector device live and historical data
+    caption: Device history gives support teams a direct view of the measurements associated with the installed asset.
+  - eyebrow: Edge software
+    heading: Manage approved site-side software as part of the connected product
+    paragraphs:
+      - Where an OEM solution requires local device services or processing, Nova Edge can host approved workloads next to the machine. Node types, software bundles, rollout controls, and local operator access provide a managed path for maintaining that site-side stack.
+      - Fleet management is currently an integrated beta capability, so it should be introduced through controlled deployments rather than described as a fully mature generic fleet-management service.
+    image: /assets/img/v3/features/07-edge-management/rollout-board.png
+    image_alt: Nova Vector edge software rollout board
+    caption: Approved edge software can be rolled out to managed nodes with visible deployment state.
+  - eyebrow: Product integration
+    heading: Connect the OEM service model through APIs instead of database coupling
+    paragraphs:
+      - External customer applications, service portals, ERP systems, or engineering tools can integrate through documented platform APIs and supported messaging paths. The same device and operational identifiers used inside Nova Vector remain available to those integrations.
+      - Identity, customer isolation, audit requirements, and administration boundaries need to be designed explicitly for multi-customer programs because the current security documentation identifies known limits in whole-installation administration and some shared tools.
+    image: /assets/img/v3/features/11-automation-and-integration/open-api.png
+    image_alt: Nova Vector API documentation
+    caption: Documented APIs provide the cleanest boundary between Nova Vector resources and OEM-facing applications.
 related:
   - label: Device Management
     url: /iot-device-management/
   - label: REST API
     url: /api/
-  - label: Professional Services
-    url: /professional-services/
+  - label: Industrial Edge Management
+    url: /industrial-edge-management/
 ---

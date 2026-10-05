@@ -2,57 +2,50 @@
 layout: v3
 permalink: /iot-timeseries-analytics/
 title: Real-Time Data & Time-Series Analytics
-description: Ingest, visualize, aggregate, report, and export industrial telemetry with device, asset, production, process, and workforce context.
-summary: Keep live and historical measurements usable from the device page through operational dashboards, project reports, exports, APIs, replay, and downstream analytics.
+description: Ingest, visualize, report, and export industrial telemetry with device, asset, production, process, and workforce context.
+summary: Keep current and historical measurements useful from the device page through dashboards, reports, replay, APIs, and operational analysis.
 eyebrow: Platform capability
 theme: platform
 noindex: true
 sitemap: false
-capabilities:
-  - title: Live operational data
-    text: View incoming measurements in real time on device and channel pages, with configurable filtering, chart styles, polling behavior, and current status.
-  - title: Historical time series
-    text: Store measurements in a time-series database, compress older data automatically, query by time range and context, and use the same history for reports and replay.
-  - title: Dashboards and reports
-    text: Use built-in views plus embedded Grafana dashboards and project-specific reports for production, downtime, reliability, utilities, workforce, and other operating needs.
 content_sections:
-  - eyebrow: Real-time visibility
-    heading: See current measurements without losing device and process context
+  - eyebrow: Live operational data
+    heading: See what equipment is doing now without losing where the data came from
     paragraphs:
-      - Incoming readings appear on device and channel views while remaining linked to the equipment, hierarchy, metric and timestamp that produced them.
-      - The home dashboard summarizes message activity, protocol traffic, device and channel totals, site locations, and the most active channels to help operators see how the connected estate is behaving.
+      - Incoming measurements remain tied to the registered device, channel, metric, timestamp, and asset hierarchy that produced them. Operators can move from a site or equipment view into current readings instead of working from a disconnected stream of tags.
+      - The device data view supports real-time inspection and configurable charting, while the platform home dashboard summarizes message activity, protocol traffic, device and channel totals, locations, and the most active channels across the connected estate.
     image: /assets/img/v3/features/02-devices-and-live-data/device-live-data.png
-    image_alt: Nova Vector live industrial data values
-    caption: Current measurements can be viewed directly from the connected device or channel.
-  - eyebrow: Grafana inside Nova Vector
-    heading: Build operational dashboards on the same governed data
+    image_alt: Nova Vector live device data
+    caption: Device-level live data connects measurements to the equipment and metric definitions that generated them.
+  - eyebrow: Operational overview
+    heading: Use dashboards to move from individual signals to the state of the operation
     paragraphs:
-      - Grafana is embedded in the platform with single sign-on. Authorized users can open dashboards and reports without leaving Nova Vector, while editors and administrators can use the full dashboard editor.
-      - Grafana reads the platform time-series data and can render panels as images for reports and other platform workflows.
-    points:
-      - Single sign-on and embedded dashboard viewing
-      - Device, channel, production and project-specific dashboards
-      - Panel rendering for report output
-      - Group-based report visibility
-  - eyebrow: Operational reporting
-    heading: Report on outcomes, not just individual measurements
+      - Embedded Grafana gives authorized users a richer dashboard environment without leaving Nova Vector. Device, production, infrastructure, and project-specific dashboards can use the same stored time-series data while respecting the platform login experience.
+      - This makes dashboards a presentation layer over the operational data model rather than a separate data island. The same measurements can be inspected at device level, compared across periods, and reused in project reports or external analysis.
+    image: /assets/img/v3/features/03-dashboards-and-reports/home-dashboard.png
+    image_alt: Nova Vector operational home dashboard
+    caption: The home dashboard summarizes current platform activity and connected assets.
+  - eyebrow: Reports
+    heading: Combine telemetry with the records that explain performance
     paragraphs:
-      - Project reports can combine telemetry with production plans and operating records to show plan attainment, stoppage frequency and duration, OEE, MTTR, MTBF, material variance, team performance and other site-specific KPIs.
-      - Reports are adapted to each implementation rather than presented as one fixed reporting package.
-    points:
-      - Shift and production PDF outputs
-      - Device and channel reporting
-      - CSV and API access for external analysis
-      - Historical data for process replay and model-development workflows
-screenshots:
-  - src: /assets/img/v3/features/03-dashboards-and-reports/home-dashboard.png
-    alt: Nova Vector operational report and dashboard
-    caption: Operational dashboards combine time-series data with production and asset context.
+      - Industrial reporting becomes more useful when a time series can be interpreted alongside the plan, work order, shift, product, stoppage reason, or maintenance event active at the same time. Nova Vector project reports can combine those records to show plan attainment, downtime, OEE, MTTR, MTBF, material variance, team performance, or other implementation-specific KPIs.
+      - Reports are adapted to each deployment rather than presented as one universal report library. That keeps the reporting layer aligned with the operating model and the information the customer actually records.
+    image: /assets/img/v3/features/03-dashboards-and-reports/report-view.png
+    image_alt: Nova Vector operational report
+    caption: Project reports combine platform data with the operational context required for interpretation.
+  - eyebrow: Historical use
+    heading: Reuse stored history for analysis, replay, and integration
+    paragraphs:
+      - Historical data is not limited to chart display. It can be accessed through platform APIs, used as input to process replay and simulation, exported for external analysis, or supplied to customer data-science environments.
+      - The current platform stores telemetry in TimescaleDB and compresses older data. Retention and deletion policy are defined for each project rather than being imposed as a fixed platform rule.
+    image: /assets/img/v3/features/03-dashboards-and-reports/grafana-dashboards.png
+    image_alt: Grafana dashboards embedded in Nova Vector
+    caption: Embedded Grafana extends analysis while using the same stored operational data.
 related:
   - label: Device & Asset Management
     url: /iot-device-management/
-  - label: Industrial AI
-    url: /edge-ai-industrial-iot/
+  - label: Process Simulation
+    url: /industrial-simulation/
   - label: REST API
     url: /api/
 ---

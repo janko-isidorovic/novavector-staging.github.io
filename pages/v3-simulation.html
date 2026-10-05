@@ -2,43 +2,51 @@
 layout: v3
 permalink: /industrial-simulation/
 title: Industrial Process & Equipment Simulation
-description: Simulate industrial processes and protocol-connected equipment for digital-twin validation, demonstrations, training, load testing, and acceptance tests.
-summary: Test process definitions and complete industrial scenarios against realistic Modbus, BACnet, SNMP, MQTT, and OPC UA traffic before production hardware is available.
+description: Simulate process definitions and protocol-connected industrial systems for validation, replay, demonstrations, training, acceptance tests, and resilience testing.
+summary: Exercise real Nova Vector adapters and process logic against repeatable Modbus, BACnet, SNMP, MQTT, Sparkplug B and OPC UA scenarios before production hardware is available.
 eyebrow: Digital twin and testing
 theme: platform
 noindex: true
 sitemap: false
 capabilities:
-  - title: Process simulation
-    text: Run immutable process versions with controlled inputs, speed adjustment, preflight checks, diagnostics, snapshot reconstruction, and run comparison.
-    flow: [Published model, Simulated events, Verified behavior]
+  - title: Process simulation and replay
+    text: Run published process versions against controlled inputs, adjust simulation speed, perform preflight checks, inspect execution logs, reconstruct snapshots, and compare runs.
+    flow: [Published process, Simulated or replayed data, Verified state behavior]
   - title: Protocol simulators
-    text: Exercise Nova Vector adapters with equipment that behaves like real Modbus TCP, BACnet/IP, SNMP, MQTT, Sparkplug B, and OPC UA devices.
-    flow: [Simulated device, Real protocol, Platform adapter]
-  - title: Complete system scenarios
-    text: Couple devices into battery-storage, production-line, or assembly-line examples with scripted faults, expectations, and network impairment.
-    flow: [Scenario, Fault or event, Operational response]
+    text: Test real platform adapters with simulated Modbus TCP, BACnet/IP, SNMP, MQTT, Sparkplug B and OPC UA equipment instead of bypassing the integration layer.
+    flow: [Simulated equipment, Real protocol traffic, Nova Vector adapter]
+  - title: Reference systems and scenarios
+    text: Use battery-storage, bottling or production-line, and serialized assembly-line systems with scripted events, faults, expected results and network impairment.
+    flow: [Scenario, Event or fault, Expected operational response]
 content_sections:
-  - eyebrow: Test the complete data path
-    heading: Use real protocol traffic without waiting for hardware
+  - eyebrow: Process simulator
+    heading: Validate process logic before changing live operations
     paragraphs:
-      - The simulator suite stands outside Nova Vector and communicates through the same adapters used by production equipment. Engineering teams can test addressing, decoding, discovery, writes, exceptions, alerting, state transitions, and downstream workflows without bypassing the real integration boundary.
-      - An idempotent provisioning tool creates profiles, Things, channels, adapter connections, bindings, and node credentials through public APIs, and can remove the environment cleanly after a test.
-    points:
-      - Modbus TCP devices and gateways with register encodings and writes
-      - BACnet/IP objects, priorities, discovery, and device personalities
-      - SNMP v1/v2c/v3 traps and informs
-      - MQTT fleets in SenML or Sparkplug B, plus OPC UA reference servers
-  - eyebrow: Scenario-driven validation
-    heading: Reproduce operating conditions, faults, and network problems
+      - The process simulator can execute an immutable published process version against selected data sources, including recorded data. Preflight checks identify missing inputs before a run begins, while the execution log explains transitions and the values that caused them.
+      - Completed runs can be reconstructed and compared, making simulation useful for model validation, troubleshooting, training and controlled change review.
+    image: /assets/img/paragraphs/graphnew.png
+    image_alt: Nova Vector process state and simulation model
+    caption: Versioned process logic can be tested against controlled or historical inputs before production use.
+  - eyebrow: Protocol simulators
+    heading: Test the same adapters used by production equipment
     paragraphs:
-      - YAML system definitions couple simulated equipment through formulas and behavior packs. Scripted scenarios change inputs, assert expected outcomes, and record model events as ground truth.
-      - Network impairment can add delay, jitter, loss, reordering, or complete partitions to selected targets. This makes the environment useful for demonstrations, operator training, acceptance tests, capacity exercises, and resilience validation.
+      - Simulator services stand outside Nova Vector and communicate through real protocols, allowing engineering teams to validate discovery, addressing, decoding, writes, alarms, commands and downstream workflows through the normal integration boundary.
     points:
-      - Battery energy-storage enclosure reference system
-      - Production-line reference system
-      - Serialized AI-server assembly-line reference system with RFID operators
-      - Embedded operator console for live signals, faults, requests, and events
+      - Modbus TCP devices and gateways
+      - BACnet/IP devices and objects
+      - SNMP traps and informs
+      - MQTT and Sparkplug B fleets
+      - OPC UA reference servers
+  - eyebrow: Complete system scenarios
+    heading: Reproduce normal production, faults, and difficult network conditions
+    paragraphs:
+      - Reference systems include a battery energy-storage enclosure, a bottling or production-line environment, and a serialized assembly-line scenario with RFID operators.
+      - Scripted scenarios can change inputs and assert expected outcomes, while network impairment can introduce delay, jitter, loss, reordering or complete partitions for resilience testing.
+    points:
+      - One-command provisioning for reference environments
+      - Scripted faults and expected outcomes
+      - Operator console for live signals and events
+      - Demonstrations, acceptance testing and training without production hardware
 related:
   - label: Process Automation
     url: /industrial-state-machine/

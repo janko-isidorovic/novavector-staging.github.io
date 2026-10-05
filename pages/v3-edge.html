@@ -3,62 +3,44 @@ layout: v3
 permalink: /edge-computing-platform/
 title: Nova Edge Computing
 description: Industrial edge runtime for local device connectivity, EdgeX services, data processing, offline operation, workload monitoring, local operator access, and central fleet integration.
-summary: Connect equipment close to the process, keep selected functions available locally, and link distributed sites to Nova Vector without depending on continuous cloud connectivity.
+summary: Place connectivity and selected processing close to industrial equipment while keeping the device, software, and operational context connected to the central Nova Vector platform.
 eyebrow: Nova Edge
 theme: edge
 noindex: true
 sitemap: false
-show_architecture: true
-capabilities:
-  - title: Site-side connectivity
-    text: Use EdgeX device services and deployment-specific adapters to connect equipment that benefits from local integration or cannot communicate directly with the central platform.
-    image: /assets/img/v3/features/07-edge-management/local-console.png
-    image_alt: Nova Edge connecting industrial equipment
-    details:
-      - EdgeX device services selected per deployment
-      - Industrial equipment, sensors, PLCs and gateways
-      - Local device and command context
-  - title: Local data processing
-    text: Filter, transform, convert, compress or route selected data before export, using local services and approved application flows.
-    flow: [Collect, Process locally, Export]
-    details:
-      - HTTP, MQTT and EdgeX message paths
-      - Rules and application services
-      - Local operation during limited connectivity
-  - title: Managed edge runtime
-    text: Monitor systemd, Docker and Compose workloads, review logs and node state, and connect the site to the central fleet pipeline through outbound communication.
-    image: /assets/img/v3/features/07-edge-management/rollout-board.png
-    image_alt: Nova Vector edge computing and fleet operations
-    details:
-      - Local operator console
-      - Host and workload health
-      - Signed node-scoped commands
 content_sections:
-  - eyebrow: Local industrial integration
-    heading: Keep data processing and device access close to the equipment
+  - eyebrow: Edge runtime
+    heading: Put site-side services next to the equipment that needs them
     paragraphs:
-      - Nova Edge runs on Ubuntu edge computers and can combine EdgeX device services with local application services. The exact service set depends on the equipment, required protocols and deployment design.
-      - Local processing can reduce unnecessary upstream traffic and preserve useful site-side operation when the central platform is temporarily unavailable.
+      - Nova Edge runs on Ubuntu edge computers and combines the Nova Vector Edge Agent with the software required for the site. A typical node can host EdgeX device services, local application services, Edge AI inference, and the local operator console, but the exact bundle is chosen for the deployment rather than assumed to be identical everywhere.
+      - This is useful when equipment cannot connect directly to the platform, when local processing reduces unnecessary upstream traffic, or when the site must remain useful during periods of limited central connectivity.
     image: /assets/img/v3/features/07-edge-management/local-console.png
-    image_alt: Nova Edge processing data near industrial equipment
-    caption: Nova Edge connects and processes selected operational data close to the equipment.
-  - eyebrow: Local operations
-    heading: Give site teams a controlled console even during disconnection
+    image_alt: Nova Vector local edge console
+    caption: Site-side services can be operated locally while remaining part of the managed Nova Edge environment.
+  - eyebrow: Local device layer
+    heading: Use EdgeX where a site benefits from a local device abstraction
     paragraphs:
-      - The local console exposes node health, approved workloads, logs and allowlisted lifecycle controls. Edge management can also use a site-local container registry so required images remain available inside isolated environments.
-    points:
-      - Ubuntu edge nodes on amd64 or arm64
-      - Local console and audit information
-      - EdgeX device and data visibility
-      - Optional site-local registry
-  - eyebrow: Fleet integration
-    heading: Manage distributed nodes through controlled central workflows
+      - EdgeX Foundry device services can communicate with local equipment and expose a common device and command model to the rest of the edge stack. Nova Vector can relate those EdgeX devices back to platform devices and profiles so the site does not become a separate data island.
+      - The supported EdgeX service combination is selected for each project. The platform packages approved EdgeX versions as deployable bundles rather than claiming that every possible community device service is supported automatically.
+    image: /assets/img/v3/features/07-edge-management/edgex-devices.png
+    image_alt: EdgeX devices viewed through Nova Vector
+    caption: EdgeX-connected devices remain visible within the broader Nova Vector operating model.
+  - eyebrow: Local processing
+    heading: Filter and transform data before it leaves the site
     paragraphs:
-      - Edge nodes communicate outbound to central services, receive node-scoped commands, and participate in controlled rollout and rollback workflows. Fleet management remains an integrated beta capability and should be introduced in controlled deployments.
-screenshots:
-  - src: /assets/img/v3/features/07-edge-management/rollout-board.png
-    alt: Nova Vector edge computing and central fleet integration
-    caption: Nova Edge links local industrial operations with central fleet and platform services.
+      - Local services can process selected EdgeX or device data close to the process, including transformation, routing, and application-specific logic. The result can then be published upstream through the site's configured messaging path.
+      - This does not turn the edge node into a disconnected second platform. Device identity, approved software, deployment state, and selected telemetry remain tied to the central environment.
+    image: /assets/img/v3/architecture/03-telemetry-path.png
+    image_alt: Nova Vector telemetry architecture
+    caption: Edge-originated telemetry ultimately enters the same normalized data path used by directly connected equipment.
+  - eyebrow: Managed operation
+    heading: Monitor workloads and update sites through the fleet pipeline
+    paragraphs:
+      - The Edge Agent monitors systemd, Docker, and Compose workloads and reports node state back to the platform. Approved bundles can then be deployed through controlled rollout, retry, and rollback workflows.
+      - Fleet onboarding and rollout are integrated beta capabilities. They are best positioned as part of a managed Nova Vector deployment rather than as a standalone replacement for general enterprise device-management software.
+    image: /assets/img/v3/features/07-edge-management/rollout-board.png
+    image_alt: Nova Vector edge fleet rollout board
+    caption: Central rollout control connects the desired software state with actual node deployment results.
 related:
   - label: Industrial Edge Management
     url: /industrial-edge-management/

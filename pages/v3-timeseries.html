@@ -2,46 +2,52 @@
 layout: v3
 permalink: /iot-timeseries-analytics/
 title: Real-Time Data & Time-Series Analytics
-description: Ingest, normalize, store, aggregate, visualize, and export industrial telemetry with device, asset, process, production, and workforce context.
-summary: Turn live and historical telemetry into operational dashboards, shift-level aggregates, reports, replay, analytics, and AI-ready data.
+description: Ingest, visualize, aggregate, report, and export industrial telemetry with device, asset, production, process, and workforce context.
+summary: Keep live and historical measurements usable from the device page through operational dashboards, project reports, exports, APIs, replay, and downstream analytics.
 eyebrow: Platform capability
 theme: platform
 noindex: true
 sitemap: false
 capabilities:
-  - title: Real-time telemetry
-    text: Ingest timestamped measurements, expose current values, and feed live operational views and event-driven services.
-  - title: Historical analysis
-    text: Query by channel, publisher, subtopic, and time range; calculate windowed aggregates; and relate results to equipment, shifts, products, and work orders.
-  - title: Analytics integration
-    text: Feed chart-ready views, embedded Grafana reports, CSV/JSON/XML/Excel imports, downstream analytics, and model-development workflows.
+  - title: Live operational data
+    text: View incoming measurements in real time on device and channel pages, with configurable filtering, chart styles, polling behavior, and current status.
+  - title: Historical time series
+    text: Store measurements in a time-series database, compress older data automatically, query by time range and context, and use the same history for reports and replay.
+  - title: Dashboards and reports
+    text: Use built-in views plus embedded Grafana dashboards and project-specific reports for production, downtime, reliability, utilities, workforce, and other operating needs.
 content_sections:
-  - eyebrow: Current operations
-    heading: See live measurements in asset and process context
+  - eyebrow: Real-time visibility
+    heading: See current measurements without losing device and process context
     paragraphs:
-      - Incoming telemetry updates current operating views while retaining the device, asset, and timestamp needed for investigation. Dashboards can combine machine signals with production plans, process state, alarms, and operator input.
-      - Event-driven services can respond to selected changes without forcing every application to poll the database.
+      - Incoming readings appear on device and channel views while remaining linked to the equipment, hierarchy, metric and timestamp that produced them.
+      - The home dashboard summarizes message activity, protocol traffic, device and channel totals, site locations, and the most active channels to help operators see how the connected estate is behaving.
     image: /assets/img/solutions/data-values.png
     image_alt: Nova Vector live industrial data values
-    caption: Current industrial measurements presented in the Nova Vector interface.
-  - eyebrow: Historical analysis
-    heading: Move from individual values to operating patterns
+    caption: Current measurements can be viewed directly from the connected device or channel.
+  - eyebrow: Grafana inside Nova Vector
+    heading: Build operational dashboards on the same governed data
     paragraphs:
-      - TimescaleDB-backed history supports trends, windowed aggregation, period comparison, process replay, production reporting, and downstream analytics. Buffered batch writing handles sustained ingestion, while the data-reader service supports multi-filter queries and chart-ready feeds.
+      - Grafana is embedded in the platform with single sign-on. Authorized users can open dashboards and reports without leaving Nova Vector, while editors and administrators can use the full dashboard editor.
+      - Grafana reads the platform time-series data and can render panels as images for reports and other platform workflows.
     points:
-      - Time-window trends and aggregation
-      - Comparison by asset, line, product, shift, or process context
-      - Historical replay for approved process workflows
-      - Export and API paths for external analysis
+      - Single sign-on and embedded dashboard viewing
+      - Device, channel, production and project-specific dashboards
+      - Panel rendering for report output
+      - Group-based report visibility
   - eyebrow: Operational reporting
-    heading: Use the same history for plans, downtime, reliability, and consumption
+    heading: Report on outcomes, not just individual measurements
     paragraphs:
-      - Report templates combine time-series data with production plans and operational records to show shift, weekly, and monthly plan attainment; stoppage count and duration; OEE; MTTR and MTBF; and standard-versus-actual consumption.
-      - Templates provide a working starting point and are commonly adapted to the customer's equipment, process, terminology, and management reporting needs.
+      - Project reports can combine telemetry with production plans and operating records to show plan attainment, stoppage frequency and duration, OEE, MTTR, MTBF, material variance, team performance and other site-specific KPIs.
+      - Reports are adapted to each implementation rather than presented as one fixed reporting package.
+    points:
+      - Shift and production PDF outputs
+      - Device and channel reporting
+      - CSV and API access for external analysis
+      - Historical data for process replay and model-development workflows
 screenshots:
-  - src: /assets/img/paragraphs/Production-lines.png
-    alt: Production telemetry visualized in Nova Vector
-    caption: Production telemetry shown with operational context. Screenshot content remains subject to disclosure review.
+  - src: /assets/img/solutions/report1.png
+    alt: Nova Vector operational report and dashboard
+    caption: Operational dashboards combine time-series data with production and asset context.
 related:
   - label: Device & Asset Management
     url: /iot-device-management/

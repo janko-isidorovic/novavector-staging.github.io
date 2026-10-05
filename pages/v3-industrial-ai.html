@@ -2,61 +2,58 @@
 layout: v3
 permalink: /edge-ai-industrial-iot/
 title: Industrial AI & Edge Inference
-description: Use contextualized operational data, a preview on-premises AI assistant, and approved signed ONNX models for governed inference on Nova Edge nodes.
-summary: Prepare industrial data for analytics, use a local AI assistant for supported platform tasks, and deploy approved ONNX models to edge nodes as an integrated beta capability.
+description: Use contextualized operational data, a preview on-premises AI assistant, and approved ONNX models for governed inference on Nova Edge nodes.
+summary: Prepare industrial data for external analytics and model development, then deploy approved models for local inference without presenting Nova Vector as a full training or MLOps platform.
 eyebrow: AI-ready by design
 theme: edge
 noindex: true
 sitemap: false
-capability_heading: Put governed AI into operational context
-capabilities:
-  - title: AI-ready operational data
-    text: Device, asset, process, alarm, task and production context stay attached to live and historical telemetry so external analytics and model-development tools receive more than isolated sensor values.
-  - title: On-premises AI assistant
-    text: A preview assistant runs against a local language model and can use supported platform tools for conversational access without sending operational data to an external AI service.
-  - title: Governed Edge AI
-    text: Register, approve and sign ONNX model versions, target compatible nodes, run inference on live EdgeX data, and return results as ordinary Nova Vector telemetry.
 content_sections:
-  - eyebrow: Data foundation
-    heading: Start with contextualized data before introducing models
+  - eyebrow: AI-ready data
+    heading: Start with context before asking a model to interpret operations
     paragraphs:
-      - Nova Vector keeps time-series measurements tied to device, asset and process context. APIs and messaging integrations can supply governed data to external analytics, notebooks and model-training environments.
-      - Model training and broader MLOps remain external to Nova Vector today. The platform focuses on operational data preparation, controlled deployment and inference.
-    image: /assets/img/v3/features/08-edge-ai/models.png
-    image_alt: Industrial analytics and model workflow
-    caption: Nova Vector supplies governed operational data and deployment context while training remains in external data-science tools.
-  - eyebrow: Edge AI integrated beta
-    heading: Approve centrally, infer locally, and reuse the result everywhere
+      - Nova Vector keeps measurements tied to devices, assets, process state, alerts, tasks, and manufacturing records. That context matters because a model trained on isolated sensor values often lacks the information needed to distinguish one operating mode, product, shift, or machine condition from another.
+      - APIs and messaging interfaces can supply this governed operational data to external notebooks, analytics systems, and model-development environments. Model training and broader MLOps remain outside Nova Vector today.
+    image: /assets/img/v3/features/03-dashboards-and-reports/home-dashboard.png
+    image_alt: Nova Vector operational dashboard showing contextualized industrial data
+    caption: Operational context is built before model deployment so AI results can be related back to real equipment and workflows.
+  - eyebrow: Model governance
+    heading: Register and approve model versions before they reach edge nodes
     paragraphs:
-      - Edge AI uses standard ONNX models. Each model version can move through approval and signing before deployment, and the platform checks node compatibility before activation.
-      - On the node, model inputs come from EdgeX device readings. Numeric or camera inference results can be published back into Nova Vector so dashboards, alerts, automation and other operational workflows can consume them like normal telemetry.
-    points:
-      - Standard ONNX model format
-      - Approval, signing and model-version control
-      - Node compatibility checks and targeted deployment
-      - Local inference that can continue without cloud connectivity
-  - eyebrow: AI assistant preview
-    heading: Use a local language model for supported platform actions
+      - Edge AI uses the ONNX model format. Model versions are stored in the platform and can move through an approval process before deployment. Signing is available, and checksums are always verified, giving the deployment workflow a defined artifact to evaluate rather than an arbitrary file copied manually to the node.
+      - Approval is currently role-based rather than a two-person approval process, and model signing is available but not enabled by default. Those are important current-scope details when designing a governance process around the feature.
+    image: /assets/img/v3/features/08-edge-ai/model-approval.png
+    image_alt: Nova Vector Edge AI model approval interface
+    caption: Model versions can be reviewed and approved before they become deployment candidates.
+  - eyebrow: Edge inference
+    heading: Run approved models next to the live EdgeX data
     paragraphs:
-      - The AI assistant is a preview capability. It can answer supported questions and, for selected actions, show a confirmation step before creating, changing or deleting platform records.
-      - Because the model runs inside the customer's deployment, operational prompts and data do not need to be sent to a third-party AI service.
-    points:
-      - Local model deployment
-      - Supported platform tools and read operations
-      - Confirmation before selected write actions
-      - Preview status; scope depends on the configured tool set
-screenshots:
-  - src: /assets/img/v3/features/08-edge-ai/deployment-board.png
-    alt: Nova Vector Edge AI deployment board
-    caption: Edge AI deployment status across selected nodes.
-  - src: /assets/img/v3/features/09-ai-assistant/confirm-create.png
-    alt: Nova Vector AI Assistant confirmation before a write action
-    caption: The AI Assistant preview asks for confirmation before selected platform changes.
+      - A deployment selects compatible edge nodes and binds model inputs to EdgeX device readings. The Edge AI runtime performs inference locally and can continue operating without a cloud connection once the required model and runtime are present on the node.
+      - Numeric and camera-model outputs can be returned to Nova Vector as ordinary device data. That allows results to appear in the same telemetry environment used by dashboards, reporting, automation, and other operational workflows.
+    image: /assets/img/v3/features/08-edge-ai/deployment-board.png
+    image_alt: Nova Vector Edge AI deployment board
+    caption: Edge AI deployment status remains visible across the selected nodes.
+  - eyebrow: Results
+    heading: Treat inference output as operational data, not as a separate AI application
+    paragraphs:
+      - Returning inference results through the normal data path makes them easier to combine with existing asset and process context. A numeric anomaly score or classification can be stored and visualized next to the measurements that produced it.
+      - The current implementation still has boundaries. Model-result alerts are configured per project, the platform does not yet show the node's measured inference latency and throughput, and switching a deployment off does not currently undeploy the model from nodes.
+    image: /assets/img/v3/features/08-edge-ai/numeric-results.png
+    image_alt: Numeric Edge AI inference results in Nova Vector
+    caption: Inference results are returned as platform telemetry so they can be viewed with other operational data.
+  - eyebrow: AI Assistant preview
+    heading: Use a local language model for supported platform questions and actions
+    paragraphs:
+      - The AI Assistant is a separate preview capability. Its language model runs on an Ollama server inside or alongside the customer deployment, while the assistant uses the signed-in user's platform access when calling supported APIs.
+      - For selected create, change, or delete operations, the assistant shows a confirmation step before the action is submitted. Its scope depends on the tool set currently exposed to the assistant and should not be described as unrestricted natural-language control of the platform.
+    image: /assets/img/v3/features/09-ai-assistant/confirm-create.png
+    image_alt: Nova Vector AI Assistant confirming a create operation
+    caption: The preview assistant requests confirmation before selected write operations.
 related:
-  - label: Time-Series Analytics
-    url: /iot-timeseries-analytics/
   - label: Industrial Edge Management
     url: /industrial-edge-management/
+  - label: Time-Series Analytics
+    url: /iot-timeseries-analytics/
   - label: Platform Architecture
     url: /architecture/
 ---

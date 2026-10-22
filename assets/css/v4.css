@@ -160,3 +160,11 @@ h1, h2, h3, h4, h5, h6, .v3-page h1, .v3-page h2, .v3-page h3 { color: var(--nv-
 .nv-home-v3 .slider-active { position: relative; z-index: 1; background-image: none !important; background-color: transparent; }
 .nv-home-v3 .single-slider.slider-bg { background-image: none !important; background-color: transparent; }
 @media (prefers-reduced-motion: reduce) { .nv-banner-video { display: none; } .nv-home-v3 .slider-area { background: #000 url(../img/slider/nv-banner-platform-first.jpg) left top / cover no-repeat; } }
+
+/* Platform page "Connect operational data" cards: real cards need equal padding and gaps (the v3 column layout removed the outer padding) */
+.v3-platform-difference { gap: 24px; border-top: 0; border-bottom: 0; }
+.v3-platform-difference article,
+.v3-platform-difference article:first-child,
+.v3-platform-difference article:last-child { padding: 28px 30px !important; border-right: 0; }
+.v3-platform-difference span { display: inline-block; padding: 3px 7px; border-radius: 3px; background: var(--nv-orange); color: #fff; font-weight: 800; }
+@media (max-width: 991px) { .v3-platform-difference { gap: 16px; } }

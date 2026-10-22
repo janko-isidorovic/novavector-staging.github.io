@@ -1,0 +1,69 @@
+---
+layout: v3
+permalink: /systems-integration/
+title: Industrial Systems Integration
+description: Industrial and enterprise systems integration for equipment, EdgeX, identity, ERP, MES, SCADA, CMMS, APIs, and event flows, tested before go-live.
+summary: Connect equipment, edge services, industrial applications, identity systems, and enterprise platforms through verified interfaces and clear operational boundaries, and prove the integration before go-live.
+eyebrow: Professional services
+theme: edge
+hero_image: /assets/img/v3/hero/systems-integration.jpg
+noindex: true
+sitemap: false
+primary_label: Discuss your integration
+primary_url: /contact/
+video:
+  src: /assets/video/assembly-line.mp4
+  poster: /assets/video/assembly-line.jpg
+  title: Every serial, every badge, every lot, proven before go-live
+  summary: "A simulated assembly line with a known ground truth drives real Modbus, MQTT, and SNMP traffic into Nova Vector. Scenarios inject a bad parts lot or a repeated serial, and every platform record can be checked against the simulator's truth: the groundwork for testing MES and ERP links before the real line goes live."
+  duration: "4:24"
+show_capability_cards: true
+capability_eyebrow: Integration scope
+capability_heading: Three boundaries, each designed explicitly
+capabilities:
+  - title: Industrial integration
+    text: Map equipment, PLCs, gateways, EdgeX services, protocols, data semantics, and command boundaries for the approved configuration.
+  - title: Enterprise integration
+    text: Connect ERP, MES, SCADA, CMMS, identity, analytics, data platforms, and customer applications through documented APIs and event flows.
+  - title: Reliability and ownership
+    text: Define retries, persistence, idempotency, monitoring, failure handling, security, and service ownership for each integration boundary.
+content_sections:
+  - eyebrow: Integration design
+    heading: Map semantics before moving messages
+    paragraphs:
+      - Successful industrial integration needs agreement on asset identifiers, units, timestamps, quality, state, command meaning, and ownership, not only a network connection.
+      - Nova Vector maps those semantics into its device, asset, telemetry, process, alarm, and command models, so every connected system works with the same operational picture.
+    image: /assets/img/v3/architecture/04-events-commands.png
+    image_alt: Nova Vector event and command flow between devices, services, and external systems
+    caption: Event and command paths define where each integration attaches and who owns each step.
+  - eyebrow: Enterprise systems
+    heading: Built for your data model, not a generic connector
+    paragraphs:
+      - There are no one-size-fits-all ERP or MES connectors. Each integration is designed for the customer's data model, authentication, and direction of data flow, typically work orders and products in, and produced, scrapped, and consumed quantities, stoppages, and maintenance records out.
+      - Integrations are built on the REST APIs, Node-RED flows, or custom functions, and external systems authenticate with their own service accounts and see only the records of their groups.
+    image: /assets/img/v3/features/11-automation-and-integration/open-api.png
+    image_alt: Nova Vector OpenAPI documentation
+    caption: Integrations use the same documented APIs as the Nova Vector console.
+  - eyebrow: Test before go-live
+    heading: Prove integrations against a simulated line
+    paragraphs:
+      - MES and ERP links are usually tested late, on the real line, and nobody can order a bad lot or a breakdown on demand. Nova Vector Simulators replace that guesswork with a simulated assembly or production line that speaks the same protocols as the real equipment.
+      - The simulated line has a known ground truth. Scripted scenarios, such as a bad parts lot that sends servers to rework or a serial used twice, check every step with expected results, so the records your MES and ERP integrations depend on are verified before production depends on them.
+    image: /assets/img/v3/features/10-simulators/assembly-line.png
+    image_alt: Nova Vector Simulators assembly line with stations, badge readers, and test results
+    caption: A simulated assembly line used to test integrations before go-live.
+  - eyebrow: Reliability
+    heading: Define what happens when a dependency is unavailable
+    paragraphs:
+      - Each interface documents persistence, retries, idempotency, timeouts, monitoring, and recovery behavior. Command submission stays distinct from asynchronous execution and the physical equipment's response.
+      - Nova Vector's team designs, builds, and supports the integration, so ownership does not end at go-live.
+related:
+  - label: Automation & Integration
+    url: /integrations/
+  - label: REST API
+    url: /api/
+  - label: Platform Architecture
+    url: /architecture/
+  - label: Professional Services
+    url: /professional-services/
+---

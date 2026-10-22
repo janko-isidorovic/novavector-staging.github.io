@@ -1,0 +1,80 @@
+---
+layout: v3
+permalink: /industrial-simulation/
+title: Process Replay & Industrial Simulators
+description: Replay recorded production through versioned process models, and test integrations, alarms, dashboards, and reports against protocol-level equipment simulators before go-live.
+summary: Test the improvement before you change the line, and prove the integration before the hardware arrives.
+eyebrow: Digital twin and testing
+theme: platform
+hero_image: /assets/img/v3/hero/industrial-simulation.jpg
+noindex: true
+sitemap: false
+video:
+  src: /assets/video/production-line.mp4
+  poster: /assets/video/production-line.jpg
+  title: Prove OEE before go-live
+  summary: Nova Vector Simulators run a production line that behaves like the real one, down to the protocol. Adapters, alarms, OEE reports, and maintenance workflows are set up and checked against it before the line goes live, including breakdowns you cannot order on demand.
+  duration: "4:14"
+content_sections:
+  - eyebrow: Process replay
+    heading: Test the improvement before you change the line
+    paragraphs:
+      - The process model is a live digital twin of your line, with every machine, its state, and the rules that link them. A replay runs recorded production through a copy of that model, faster than real time, so teams can investigate an incident or see how changed rules would have treated the same hour, day, or week.
+      - A replay can run against the current version, an older one, or a draft, over a window of up to 90 days. Replayed data is stored separately and labeled with its simulation, so live records are never mixed with test results.
+    image: /assets/img/v3/screens/process-replay-timeline.png
+    image_alt: A replay in Nova Vector with the recorded timeline on top and the replayed timeline filling in below
+    caption: An hour of recorded production replayed at sixty times real time, the recorded timeline on top and the replayed one below.
+  - eyebrow: Preflight
+    heading: Check the inputs before the run starts
+    paragraphs:
+      - Before a replay starts, a preflight check confirms that every data source in the model has recorded data for the chosen window, with the number of records and the time range per device.
+      - During the run, the simulator records each state change and the values that caused it, so the result can be explained rather than only observed.
+    image: /assets/img/v3/features/05-process-simulator/simulation-preflight.png
+    image_alt: Nova Vector preflight check before a replay, with all checks passed and the record count and time range for each device
+    caption: The preflight check lists the records and time range for each device before a replay runs.
+  - eyebrow: Compare
+    heading: Put runs and versions side by side
+    paragraphs:
+      - Two or more replays of a process can be compared, and two published versions of a process can be compared side by side. Teams see which version keeps the line running longer before anyone touches the live configuration.
+      - The model links machines by state rules. Buffer levels, cycle times, and throughput are not modeled, and OEE is reported by the reports module from the same machine data rather than by the replay itself.
+    image: /assets/img/v3/features/05-process-simulator/compare-runs.png
+    image_alt: Nova Vector comparison of two replays of the same process
+    caption: Run comparison shows how replays behave against comparable inputs.
+  - eyebrow: Nova Vector Simulators
+    heading: A production line that behaves like the real one, down to the protocol
+    paragraphs:
+      - Nova Vector Simulators present complete systems on the network as real equipment would, with PLCs, conveyors, an energy meter, and an andon board for the production line. The platform reads them exactly as it reads real devices, so it can be shown, configured, and tested before the hardware is available.
+      - A continuous scenario runs production orders, changeovers, breaks, and random stops around the clock, so dashboards, OEE reports, and alarms fill on their own. For a demonstration, the clock can be sped up to 600 times real time, paused, and stepped.
+    points:
+      - Demonstrations with realistic data, alarms, and production figures
+      - Pilots in which adapters, alarms, dashboards, and reports are checked first
+      - Acceptance tests for faults that are hard to create on real equipment
+    image: /assets/img/v3/features/10-simulators/production-line.png
+    image_alt: Nova Vector Simulators console for a production line with four PLCs, three conveyors, an energy meter, a hall sensor, and an andon, with its scenarios
+    caption: The production-line simulator with its scenarios, from a single breakdown to a full shift.
+  - eyebrow: Protocol simulators
+    heading: Exercise the real adapter path without waiting for production equipment
+    paragraphs:
+      - The simulators stand outside Nova Vector and communicate through real protocols. They emulate Modbus TCP devices and gateways, BACnet/IP devices, SNMP trap sources, and MQTT edge nodes, and an OPC UA test server covers OPC UA, so discovery, addressing, decoding, writes, alarms, and downstream workflows are tested through the same boundary used in production.
+      - Reference systems include a battery-energy-storage enclosure, a production line, and a serialized assembly line with RFID operators, and one command provisions the matching devices and connections on the platform.
+    image: /assets/img/v3/features/10-simulators/assembly-line.png
+    image_alt: Nova Vector serialized assembly-line simulator
+    caption: Reference systems provide repeatable device and production scenarios for integration testing.
+  - eyebrow: Fault and resilience testing
+    heading: Introduce failures deliberately before they happen in the field
+    paragraphs:
+      - Scenarios change signals, inject faults, and check expected outcomes in model time. Network impairment can add delay, jitter, packet loss, reordering, or a complete partition, so teams can see how the wider workflow behaves under difficult conditions.
+      - The simulators run on a trusted test network, separate from production systems.
+    image: /assets/img/v3/features/10-simulators/scenario-results.png
+    image_alt: Nova Vector simulator scenario results
+    caption: Scenario results compare the scripted event sequence with the expected response.
+related:
+  - label: Process Automation
+    url: /industrial-state-machine/
+  - label: Systems Integration
+    url: /systems-integration/
+  - label: Device Connectivity
+    url: /iot-device-management/
+  - label: Platform Architecture
+    url: /architecture/
+---

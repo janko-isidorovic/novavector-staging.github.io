@@ -1,0 +1,95 @@
+---
+layout: v3
+permalink: /manufacturing/
+title: Manufacturing Operations
+description: Lightweight MES and Industrial IoT for products, work orders, shift planning, production counted from line data, recipes, routings, material consumption, labels, attendance, and real-time OEE and reliability reports.
+summary: Connect machine data with the production records that explain what should be happening, what is actually happening, and where time or material is being lost.
+eyebrow: Industrial solution
+theme: platform
+hero_image: /assets/img/v3/hero/manufacturing.jpg
+noindex: true
+sitemap: false
+video:
+  src: /assets/video/edge-ai-assembly.mp4
+  poster: /assets/video/edge-ai-assembly.jpg
+  title: A governed AI model on an assembly line
+  summary: An electrostatic-discharge risk model on an AI-server assembly line, followed from the data scientist who builds it, through approval and deployment to the edge nodes, to the line supervisor who acts on its results.
+  duration: "4:31"
+content_sections:
+  - eyebrow: Products and KPIs
+    heading: Register each product once, with the speed each machine is approved to run
+    paragraphs:
+      - Each product is registered with its product code, the code the line's data and the ERP use, plus its packaging and weight. A KPI links a product to a machine with its validated speed in pieces per minute, which the planning board uses to work out how much fits into a shift.
+    image: /assets/img/v3/features/06-manufacturing-operations/products.png
+    image_alt: Product definitions with product codes
+    caption: Products with their codes, shared by the line's data and the ERP.
+  - eyebrow: Work orders and planning
+    heading: Turn demand into an executable shift plan
+    paragraphs:
+      - A work order carries the product, target quantity, dates, priority, and related production context. The shift planning board places approved work onto the right line and shift so supervisors have a practical operating plan for the day.
+      - Validated product speeds and planned stoppages such as changeovers, cleaning, or breaks set the capacity the board works with. A supervisor approves the plan before it runs.
+    image: /assets/img/v3/features/06-manufacturing-operations/shift-planning-board.png
+    image_alt: Nova Vector manufacturing shift planning board
+    caption: The planning board places work orders onto production lines and shifts before execution.
+  - eyebrow: Production execution
+    heading: Count production from the line, not from paper
+    paragraphs:
+      - For each approved plan linked to a work order, the platform adds up the machine's readings within the shift as good pieces, scrap, and rework. Figures update as readings arrive, and an edge node or decoder can turn a machine's running counter into such readings.
+      - The work order shows produced, scrap, rework, and final quantities with progress against the order, and moves to its completed status on its own when every item is produced. Production records entered by people can add to or correct the counted figures.
+    image: /assets/img/v3/features/06-manufacturing-operations/work-order-production.png
+    image_alt: Nova Vector work-order production view
+    caption: Work-order production connects current output with the order and production context responsible for it.
+  - eyebrow: Real-time reports
+    heading: See OEE and the biggest losses while the shift runs
+    paragraphs:
+      - The real-time line report shows production per minute by product, OEE against its target, and availability, performance, and quality. The Stoppage Pareto ranks stop time by reason, and the equipment reliability report shows MTBF and MTTR per station.
+      - These reports come as ready-made templates and can be adapted per line. See OEE and downtime for the full set, including maintenance team reports.
+    image: /assets/img/v3/screens/oee-realtime-report.png
+    image_alt: Real-time line report with production per minute and OEE
+    caption: The real-time line report, with output per minute, OEE against its target, and availability, performance, and quality.
+  - eyebrow: Recipes and routings
+    heading: Define what a product should consume and how it should be made
+    paragraphs:
+      - Versioned recipes describe required materials, while routings describe process steps and operations. Alternatives can be represented where the process allows substitution or more than one valid path.
+      - During execution, actual material, labor, machine time, or energy use can be recorded against the work order. Standard-versus-actual comparisons then show quantity and cost variance for the specific production order.
+    image: /assets/img/v3/features/06-manufacturing-operations/recipe.png
+    image_alt: Nova Vector manufacturing recipe
+    caption: Versioned recipes define the bill of material used as the standard for production and consumption comparison.
+  - eyebrow: Consumption
+    heading: Make material variance visible while the production record is still intact
+    paragraphs:
+      - Consumption records connect input lots and actual usage to the plan and work order that consumed them, so the expected recipe quantity can be compared with what was actually recorded on the shop floor.
+      - Connections to scales, ERP, or other shop-floor systems are implemented for the customer's environment rather than assumed to be universal built-in connectors. Work orders, plans, and production figures are available through the platform's API.
+    image: /assets/img/v3/features/06-manufacturing-operations/plan-consumption.png
+    image_alt: Nova Vector manufacturing plan consumption
+    caption: Consumption views compare expected and actual material use within the production plan.
+  - eyebrow: Downtime, people, and attendance
+    heading: Explain lost production with both machine state and human context
+    paragraphs:
+      - Reports derive stops from machine states, and people record the category and solution of stoppages on the plan. Each stoppage is also kept as a resolved task, so downtime, OEE, MTTR, and MTBF can be analyzed with the maintenance work behind them.
+      - Each plan lists the people on the shift and the shift leader. Where badge readers are part of the project, RFID badges at the line record check-in and check-out against the plan, and a badge scan at the machine marks when a technician arrives; the flow can be customized to match the customer's maintenance process.
+    image: /assets/img/v3/features/04-alerts-notifications-and-tasks/task-details.png
+    image_alt: Nova Vector operational task details
+    caption: Operational tasks keep the equipment and response context of a production issue.
+  - eyebrow: Assembly lines
+    heading: Track serialized assembly with live line data
+    paragraphs:
+      - The same building blocks apply to assembly lines with serialized products. A live line report can show units through each station, cycle times, rework, cart and station signals, and environmental conditions such as hall temperature and humidity.
+      - Edge AI can add a model next to the line, for example one that flags conditions associated with electrostatic-discharge risk. Every model version is approved before it is deployed to the edge nodes, and its results arrive as ordinary data for reports, alerts, and tasks.
+    image: /assets/img/v3/screens/assembly-line-live-report.png
+    image_alt: Live assembly line report with units per minute, cycle time, battery levels, and hall conditions
+    caption: A live assembly line report, with units per minute, cycle time, cart batteries, alarm codes, and hall temperature and humidity.
+  - eyebrow: Labels and shop-floor systems
+    heading: Print labels from the work order
+    paragraphs:
+      - Zebra label templates in ZPL fill in fields from the work order and the item, such as product, quantity, produced quantity, and order number. Printers are registered by network address, and the number of copies can be fixed, follow the item quantity, or come from the work order. Label printing is switched on for each project.
+related:
+  - label: OEE & Downtime
+    url: /manufacturing-oee-software/
+  - label: Device & Asset Management
+    url: /iot-device-management/
+  - label: Industrial AI
+    url: /edge-ai-industrial-iot/
+  - label: Industrial Edge
+    url: /edge-computing-platform/
+---

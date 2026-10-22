@@ -1,0 +1,76 @@
+---
+layout: v3
+permalink: /integrations/
+title: Automation & Integration
+description: Integrate Nova Vector with ERP, MES, SCADA, and existing tools through REST APIs, MQTT, HTTP, WebSocket, device commands, schedules, heartbeats, and Node-RED flows.
+summary: Connect operational data and actions with the systems you already run, without forcing every workflow into custom application code.
+eyebrow: Platform capability
+theme: platform
+hero_image: /assets/img/v3/hero/integrations.jpg
+noindex: true
+sitemap: false
+primary_label: Discuss your integration
+primary_url: /contact/
+show_capability_cards: true
+capability_eyebrow: Typical integrations
+capability_heading: Where Nova Vector meets your existing systems
+capabilities:
+  - title: ERP and MES
+    text: Bring work orders, products, and plans in; send produced, scrapped, and consumed quantities back, built on the APIs for your data model.
+  - title: SCADA and controllers
+    text: Read the same PLCs and controllers over OPC UA, Modbus TCP, or BACnet/IP, alongside your SCADA, and send commands where the project allows it.
+  - title: Maintenance and quality
+    text: Share alerts, tasks, MTBF and MTTR, and inspection results with maintenance and quality systems, or keep the workflow in Nova Vector tasks.
+content_sections:
+  - eyebrow: Integration model
+    heading: Keep external systems connected to the same operational resources
+    paragraphs:
+      - Integrations work against the same devices, channels, profiles, telemetry, tasks, production records, and commands used inside Nova Vector. That avoids an integration-only copy of the operating model that drifts away from what users see in the platform.
+      - REST is the request-response interface for platform records. MQTT, HTTP, and WebSocket carry device-level data where continuous or event-driven exchange fits better.
+    image: /assets/img/v3/features/11-automation-and-integration/open-api.png
+    image_alt: Nova Vector OpenAPI documentation
+    caption: Documented APIs expose the platform resource model to authenticated external applications.
+  - eyebrow: Commands, schedules, and heartbeats
+    heading: Turn repeatable device actions into managed operations
+    paragraphs:
+      - Device commands are defined once and reused with fixed or calculated values. Schedules run command jobs at fixed intervals, and heartbeats send a value every few seconds, constant, counting, or calculated, to keep a setpoint fresh or to test a device.
+      - Commands can also be sent by a user, by a process rule in the digital twin, or by the AI Assistant (preview) on request. Execution stays asynchronous; the final result depends on the network, adapter, edge node, and equipment involved.
+    image: /assets/img/v3/features/11-automation-and-integration/schedules.png
+    image_alt: Nova Vector scheduled operational jobs
+    caption: Schedules expose recurring operational actions as managed platform configuration.
+  - eyebrow: Low-code workflows
+    heading: Use Node-RED for project logic that does not justify a custom service
+    paragraphs:
+      - Node-RED is built into the console for project-specific transformations, routing, rules, and service calls. A flow can read platform data over MQTT or HTTP with an application identity, reshape it, call an external API, or react to a value with a command, without changing the core Nova Vector services.
+      - Low-code is still project logic. It is versioned, operated, and supported with the same discipline as other customer-specific integration code, and access to the editor is restricted to administrators in each installation.
+    image: /assets/img/v3/features/11-automation-and-integration/automation-result.png
+    image_alt: Nova Vector automation result
+    caption: Commands from a heartbeat and a schedule arriving on a device as ordinary data.
+  - eyebrow: Data out
+    heading: Share production and machine data with analytics and business systems
+    paragraphs:
+      - The data API returns readings, aggregates, and chart data for any time range. Native reports for OEE, stoppages, reliability, and team performance export any panel as a table, and device pages and lists export to CSV.
+      - Notifications from alerts and process events go out by e-mail. Calls into other systems are built as Node-RED flows or project integrations.
+    image: /assets/img/v3/screens/resources/stoppage-pareto.png
+    image_alt: Nova Vector Stoppage Pareto report with stop time by reason and a cumulative line
+    caption: Native reports such as the Stoppage Pareto can be exported panel by panel.
+  - eyebrow: Delivery
+    heading: Built and supported by the platform team
+    paragraphs:
+      - There are no one-size-fits-all ERP or MES connectors. Each integration is designed for the customer's data model, authentication, and direction of data flow, and built on the APIs, Node-RED, or a custom function.
+      - Nova Vector's engineers design, build, test, and support these integrations, and Nova Vector Simulators let the team test them against realistic equipment before go-live.
+  - eyebrow: Custom functions
+    heading: Keep preview capabilities separate from established integration paths
+    paragraphs:
+      - Nova Vector includes a custom-function workspace in preview, for project code written in languages such as Python, Go, or JavaScript. It is meant for administrators and is not yet positioned as a general serverless application platform.
+      - For production integrations, the REST, messaging, command, scheduling, and Node-RED paths remain the established foundation today.
+related:
+  - label: REST API
+    url: /api/
+  - label: Systems Integration
+    url: /systems-integration/
+  - label: Developers
+    url: /developers/
+  - label: Platform Architecture
+    url: /architecture/
+---

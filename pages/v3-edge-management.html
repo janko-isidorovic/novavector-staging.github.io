@@ -1,0 +1,97 @@
+---
+layout: v3
+permalink: /industrial-edge-management/
+title: Industrial Edge Management
+description: Import and install fleets of Nova Edge nodes, define approved software per node type, roll out updates in controlled batches, replicate devices, and operate sites with limited connectivity.
+summary: Manage distributed edge sites from one place, with fleet import, approved software catalogs, node types, block deployment, controlled rollouts, a local operator console, and an audit journal on every node.
+eyebrow: Nova Edge Agent
+theme: edge
+hero_image: /assets/img/v3/hero/industrial-edge-management.jpg
+noindex: true
+sitemap: false
+video:
+  src: /assets/video/edge-management.mp4
+  poster: /assets/video/edge-management.jpg
+  title: Every site, every edge node, updated from one place
+  summary: A walkthrough of edge fleet management, from importing and installing nodes to rolling out software, copying devices, and restoring a site when an update goes wrong.
+  duration: "4:28"
+content_sections:
+  - eyebrow: Fleet import
+    heading: Describe the fleet once and catch mistakes before installing
+    paragraphs:
+      - The fleet is listed in one CSV file, one row per edge node, with its name, group, node type, address, and architecture. The platform validates the whole file first, so duplicate names, unknown groups, invalid addresses, and unsupported architectures are listed with a reason, and nothing is created until every error is fixed.
+      - Applying the import registers each node in the device registry with its operations and telemetry channels, ready for installation.
+    image: /assets/img/v3/features/07-edge-management/fleet-import-validation.png
+    image_alt: Fleet import validation listing errors in a fleet file
+    caption: A fleet file with mistakes. Each error is listed with a code and a message, and the import stays blocked until they are fixed.
+  - eyebrow: Node types and catalog
+    heading: Treat edge software as an approved deployment artifact
+    paragraphs:
+      - A node type defines what a kind of edge node runs, for example EdgeX 4.0, the Edge AI runtime, and the local console, together with the agent preset that limits what the agent may deploy at all.
+      - Everything comes from the platform's own catalog. Each version moves from draft to candidate to approved, and only approved versions can be deployed. Every version carries a SHA-256 checksum that the node checks before it installs anything; bundle signature checking is also available and can be switched on.
+    image: /assets/img/v3/features/07-edge-management/node-types.png
+    image_alt: Node types with their software bundles and agent presets
+    caption: Node types, each with its bundles and agent preset.
+  - eyebrow: Block deployment
+    heading: Install whole groups of nodes in one pass
+    paragraphs:
+      - "Block Deployment installs the agent on every node of one or more groups over SSH: it installs the platform's certificate authority, enrolls each node with a one-time token, prepares the host, and starts the agent. A new node gets its software as soon as its agent connects."
+      - You set how many nodes install in parallel and a stop threshold, and can harden SSH after the install. SSH credentials are kept in memory for that batch only and are never stored or logged. In a lab run, three bare Ubuntu machines became running edge nodes in about fifteen minutes, without anyone logging in to them.
+    image: /assets/img/v3/features/07-edge-management/block-deployment-options.png
+    image_alt: Block deployment options for SSH access, pace, stop threshold, and hardening
+    caption: The SSH and policy step, with parallel installs, a stop threshold, hardening, and the site options.
+  - eyebrow: Controlled rollout
+    heading: Update groups of nodes in controlled batches
+    paragraphs:
+      - A rollout brings the software of a node type to the nodes of one or more groups, a set number at a time, and stops when the stop threshold is reached. Each bundle is retried up to three times, and a rollout can be retried from its board after a network problem is fixed.
+      - After each deployment the node checks that the new containers come up healthy. If they do not, the node restores the version it ran before. Moving a whole group back to an earlier version is done with a new rollout.
+    image: /assets/img/v3/features/07-edge-management/rollout-board.png
+    image_alt: Edge software rollout board in Nova Vector
+    caption: The rollout board shows every node and bundle with its phase, from requested to running, failed, or rolled back.
+  - eyebrow: Node status
+    heading: Compare what a node should run with what it actually runs
+    paragraphs:
+      - Each node has a status page with its runtime, agent version, and last report; the bundles and versions it should run; what it actually reports, with the health of each bundle; and the last good version of each bundle as a deployment baseline.
+    image: /assets/img/v3/features/07-edge-management/node-state.png
+    image_alt: Edge node status page with desired and reported state
+    caption: A node's status page, with its runtime, the Edge AI runtime, and the bundles of its node type running.
+  - eyebrow: Edge devices
+    heading: Set devices up once and copy them to other nodes
+    paragraphs:
+      - The devices on each node are visible on the platform, with the device service each one uses and the platform device it is linked to. EdgeX's own console opens inside the platform for creating and editing devices.
+      - Edge Device Replication copies device configurations from one node to others in five steps, creating any missing device profiles first and registering each device on the platform under its new node. It can copy from the platform's saved configuration even when the source node is offline.
+    image: /assets/img/v3/features/07-edge-management/replication-preview.png
+    image_alt: Preview before copying devices from one edge node to two others
+    caption: The preview before copying devices to other nodes, with the profiles to create and the action per device.
+  - eyebrow: Site resilience
+    heading: Keep software and operator access available at the site
+    paragraphs:
+      - Nodes pull their containers from a site registry that runs with the platform, not from the internet, so an isolated installation does not depend on external registry access. The agent install itself still needs the Ubuntu package repositories or a local mirror.
+      - Every node runs a local console with its dashboard, services, containers, logs, and configuration. When the platform cannot be reached, the console offers a local login.
+    image: /assets/img/v3/features/07-edge-management/site-registry.png
+    image_alt: Site registry listing the container images used by edge nodes
+    caption: The site registry with the EdgeX, Edge AI, console, and other images the nodes use.
+  - eyebrow: Security
+    heading: Signed commands and an audit journal on every node
+    paragraphs:
+      - Every command from the platform to a node carries a token signed by the platform's identity service and issued for that node only. The node checks the signature, the node name, the expiry, and the role the command needs, and refuses a command it has already seen.
+      - Each node records every command it receives, authorizes, rejects, executes, or fails in an audit journal shown in the local console.
+    image: /assets/img/v3/features/07-edge-management/audit-events.png
+    image_alt: Edge agent audit journal with deployment commands received, authorized, and executed
+    caption: The audit journal of an edge node, with each command, its target, and its actor.
+  - eyebrow: Network boundaries
+    heading: Know which functions need the platform to reach the site
+    paragraphs:
+      - Telemetry, node status, AI results, and deployment commands use the node's outbound MQTT session, which works through common NAT and firewall arrangements. Installation over SSH, EdgeX device setup, and browser access to site consoles still need the platform or the user's browser to reach the node's address.
+      - That distinction matters when designing VPNs, routing, and firewall rules. Edge management reduces the need for inbound service exposure, but it does not remove every platform-to-site dependency.
+    image: /assets/img/v3/architecture/01-high-level.png
+    image_alt: Nova Vector platform and edge network architecture
+    caption: The architecture separates node-initiated communication from functions that need direct reachability to the site.
+related:
+  - label: Nova Edge
+    url: /edge-computing-platform/
+  - label: EdgeX Foundry
+    url: /edgex-foundry-platform/
+  - label: Industrial AI
+    url: /edge-ai-industrial-iot/
+---

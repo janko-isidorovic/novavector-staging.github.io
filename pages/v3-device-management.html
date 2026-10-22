@@ -1,0 +1,69 @@
+---
+layout: v3
+permalink: /iot-device-management/
+title: Device & Asset Management
+description: Manage industrial devices, connections, reusable profiles, live data, hierarchy, status, and configuration in one operational workspace.
+summary: Give every connected machine, gateway, meter, controller, and sensor a durable identity, a reusable data model, a place in the asset hierarchy, and a direct path to live and historical data.
+eyebrow: Platform capability
+theme: platform
+hero_image: /assets/img/v3/hero/iot-device-management.jpg
+noindex: true
+sitemap: false
+content_sections:
+  - eyebrow: Device registry
+    heading: Build an equipment model that mirrors the real plant
+    paragraphs:
+      - Nova Vector does not treat connected equipment as an anonymous stream of measurements. Each device is registered with an identity, ownership group, status, profile, metadata, and parent relationship, so the platform can represent sites, areas, lines, machines, gateways, meters, sensors, and other assets in a practical hierarchy.
+      - That structure becomes the operating context for everything that follows. Live data, alerts, tasks, production records, reports, and integration logic all refer back to the same registered equipment instead of keeping parallel naming schemes in different applications.
+    points:
+      - Table and tree views with status, filters, and CSV export
+      - Site, line, machine, and sensor relationships in one hierarchy
+      - Devices created by hand, through the API, or from BACnet discovery
+    image: /assets/img/v3/features/02-devices-and-live-data/devices-tree.png
+    image_alt: Nova Vector device tree showing devices grouped under their line or process with their status
+    caption: The tree view organizes equipment by site and parent-child relationship rather than as a flat list.
+  - eyebrow: Industrial connectivity
+    heading: Connect the controllers, meters, and building systems you already run
+    paragraphs:
+      - Nova Vector reads industrial controllers and building systems directly over OPC UA, Modbus TCP, BACnet/IP, and SNMP traps, and accepts data from IoT devices over MQTT, HTTP, and WebSocket. Long-range, low-power sensors connect through LoRaWAN, which is in production use in smart agriculture. CoAP is in pilot.
+      - One connection serves every device behind a gateway or controller, and each connection can be switched on or off on its own. Edge nodes add further device protocols through EdgeX Foundry where equipment cannot reach the platform directly.
+    image: /assets/img/v3/features/01-device-connectivity/modbus-gateway.png
+    image_alt: A Modbus connection in Nova Vector serving several devices behind one gateway, each with its own switch and bound points
+    caption: One Modbus connection serves several devices behind the same gateway, each enabled on its own.
+  - eyebrow: Legacy equipment
+    heading: Bring older machines into the same data model
+    paragraphs:
+      - Machines without a readable controller do not have to be replaced. They can be retrofitted with sensors that deliver the same data set as modern equipment, such as machine state, counts, and energy, without major investment or production downtime.
+      - Once connected, a retrofitted machine uses the same profiles, dashboards, alerts, and reports as the rest of the line, so older and newer equipment can be compared on equal terms.
+  - eyebrow: Discovery and binding
+    heading: Find devices and data points instead of typing them in
+    paragraphs:
+      - A BACnet Who-Is broadcast finds the devices on the network, and the platform reads each device's object list with names and live values. Selected objects can be bound in bulk, with a poll rate and optional publish-on-change. OPC UA servers can be browsed and subscribed to; Modbus register maps live in the device profile.
+      - Report by exception keeps traffic and storage low. Modbus and BACnet values can be sent only when they change by more than a set deadband, with a maximum interval as a heartbeat; OPC UA applies its deadband at the server.
+    image: /assets/img/v3/features/01-device-connectivity/bacnet-device-discovery.png
+    image_alt: BACnet device discovery in Nova Vector listing the devices found on the network
+    caption: BACnet discovery lists the devices found on the network, ready to be added to the registry.
+  - eyebrow: Reusable profiles
+    heading: Describe a device type once, then apply it consistently
+    paragraphs:
+      - Device profiles define the measurements and properties that give raw protocol data meaning. A profile can describe metric names, engineering units, data types, ranges, protocol registers or objects, report-by-exception defaults, custom properties, and payload-decoding logic.
+      - Profiles are versioned, move through lifecycle states, and can be exported or imported. That makes them useful for repeated deployments of the same meter, PLC interface, machine family, or gateway without rebuilding the data model for every instance.
+    image: /assets/img/v3/features/02-devices-and-live-data/profile-catalog.png
+    image_alt: Nova Vector profile catalog filtered by type, protocol, lifecycle status, and tag
+    caption: The profile catalog lists reusable device types with their version, status, and tags.
+  - eyebrow: Live and historical data
+    heading: Move from a device record directly into its operating history
+    paragraphs:
+      - Each device has its own page with identity, configuration, a live chart of every value it sends, and each reading as it arrives. Users can filter by metric, adjust the time window, and open richer Grafana-based views when deeper analysis is needed.
+      - Historical readings are stored as time series and remain available to reports, the data API, process replay, and CSV export, without losing the equipment and profile context that explains what each signal represents.
+    image: /assets/img/v3/screens/machine-live-data.png
+    image_alt: One machine in Nova Vector with a live chart of its values and a table of incoming readings such as order, product, speed, and state
+    caption: One page per machine shows a live chart and each reading as it arrives.
+related:
+  - label: Real-Time Data
+    url: /iot-timeseries-analytics/
+  - label: Platform Architecture
+    url: /architecture/
+  - label: Integrations
+    url: /integrations/
+---

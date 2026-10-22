@@ -1,0 +1,66 @@
+---
+layout: v3
+permalink: /edgex-foundry-platform/
+title: Nova Vector + EdgeX Foundry
+description: Use EdgeX Foundry 2.3, 3.1, or 4.0 as a site-side device layer with Nova Edge, linked platform devices, readings on the platform, device replication, and managed deployment.
+summary: Extend industrial connectivity at the edge without creating a separate data model or an unmanaged software stack at each site.
+eyebrow: Open edge ecosystem
+theme: edge
+hero_image: /assets/img/v3/hero/edgex-foundry-platform.jpg
+noindex: true
+sitemap: false
+content_sections:
+  - eyebrow: Device services
+    heading: Keep equipment-specific protocol handling close to the site
+    paragraphs:
+      - EdgeX device services handle the protocol-facing work for the PLCs, meters, and sensors at a site, while EdgeX core and application services manage device data, commands, transformation, and export.
+      - Nova Vector uses EdgeX as the device layer of a Nova Edge node rather than as a separate user-facing platform. Each EdgeX device stays tied to the same central device registry and operational model as directly connected equipment.
+    image: /assets/img/v3/features/07-edge-management/edgex-devices.png
+    image_alt: EdgeX devices on an edge node, each linked to a platform device
+    caption: The EdgeX devices on one edge node, with the device service each one uses and the platform device it is linked to.
+  - eyebrow: Readings on the platform
+    heading: Store and chart edge readings beside the rest of the plant
+    paragraphs:
+      - The node exports its devices' readings to the platform, where they are stored under the node with the device and reading name. They can be charted, exported, and used on dashboards like data from any other source.
+      - "One boundary to plan for: readings produced by a payload decoder are stored and charted, but alerts, process models, and production counts do not use decoder-produced readings yet. Design edge alarm workflows with that in mind."
+    image: /assets/img/v3/features/07-edge-management/edge-device-data.png
+    image_alt: Readings from EdgeX devices charted on the Nova Vector platform
+    caption: Readings collected by EdgeX on an edge node and charted on the platform over the last hour.
+  - eyebrow: Inside the platform
+    heading: Open EdgeX's own console from the node's page
+    paragraphs:
+      - Devices are created and edited in EdgeX's own console, which opens inside the platform for each node. From the platform, devices can also be copied to other nodes and deleted.
+    image: /assets/img/v3/features/07-edge-management/edgex-ui.png
+    image_alt: EdgeX console for an edge node opened inside Nova Vector
+    caption: EdgeX's own console for an edge node, opened inside the platform.
+  - eyebrow: Device replication
+    heading: Set up a site once, then copy it to similar sites
+    paragraphs:
+      - Edge Device Replication copies device configurations from one node to others. Missing device profiles are created first, each device is registered on the platform under its new node, and devices that already exist on a target are skipped.
+    image: /assets/img/v3/features/07-edge-management/replication-preview.png
+    image_alt: Preview of copying EdgeX devices from one node to two others
+    caption: The preview before copying devices, with the profiles to create, the device service on each target, and the action per device.
+  - eyebrow: Managed bundles
+    heading: Deploy approved EdgeX stacks through Nova Edge
+    paragraphs:
+      - EdgeX 2.3, 3.1, and 4.0 are packaged as approved bundles in the catalog, with core services, the Modbus device service (and REST on 3.1 and 4.0), the rules engine, the EdgeX console, and the export of readings to the platform. Node types define which bundle belongs on a kind of node, and rollouts distribute it with the same stop threshold, retries, and health checks as other edge software.
+      - Switching a node type from one EdgeX release to another removes the bundles that are no longer part of it first. On arm64 hardware, EdgeX 3.1 runs today; EdgeX 2.3 and 4.0 run on amd64.
+    image: /assets/img/v3/features/07-edge-management/bundle-catalog.png
+    image_alt: Bundle catalog with an approved EdgeX version, its checksum, and lifecycle actions
+    caption: The bundle catalog with an approved EdgeX 4.0 version, its checksum, and the lifecycle actions.
+  - eyebrow: Operations
+    heading: Keep reading devices when the link is down
+    paragraphs:
+      - EdgeX keeps reading the devices while the connection to the platform is down. EdgeX's export service can store readings it cannot deliver and send them later; this store-and-forward option is switched on for each installation in the bundle settings.
+      - A site registry keeps the approved EdgeX images available inside restricted networks, and the local console gives technicians a site-side view of the services running on the node.
+    image: /assets/img/v3/features/07-edge-management/site-registry.png
+    image_alt: Site registry with the EdgeX images used by edge nodes
+    caption: The site registry keeps approved edge images available within restricted or isolated networks.
+related:
+  - label: Nova Edge
+    url: /edge-computing-platform/
+  - label: Industrial Edge Management
+    url: /industrial-edge-management/
+  - label: Documentation
+    url: /documentation/
+---

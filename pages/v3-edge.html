@@ -1,0 +1,71 @@
+---
+layout: v3
+permalink: /edge-computing-platform/
+title: Nova Edge Computing
+description: Industrial edge runtime for local device connectivity, EdgeX services, Edge AI inference, local operation during outages, workload monitoring, a local operator console, and central fleet management.
+summary: Place connectivity and selected processing next to industrial equipment, while the devices, software, and operational context stay connected to the central Nova Vector platform.
+eyebrow: Nova Edge
+theme: edge
+hero_image: /assets/img/v3/hero/edge-computing-platform.jpg
+noindex: true
+sitemap: false
+content_sections:
+  - eyebrow: Edge runtime
+    heading: Put site-side services next to the equipment that needs them
+    paragraphs:
+      - "Nova Edge runs on an industrial PC or another Ubuntu machine at the site, on amd64 or arm64 hardware. Each edge node combines the Nova Vector Edge Agent with the software the site needs: EdgeX device services, the Edge AI runtime, and the local operator console. The bundle is chosen for each node type rather than assumed to be identical everywhere."
+      - Use an edge node when equipment cannot reach the platform directly, when local processing reduces upstream traffic, or when the site must keep working while the link to the platform is down.
+    image: /assets/img/v3/features/07-edge-management/local-console.png
+    image_alt: Nova Edge local console showing the containers running on an edge node
+    caption: The local console of an edge node, opened inside the platform, with the EdgeX, Edge AI, and console containers it runs.
+  - eyebrow: Local device layer
+    heading: Read field devices through EdgeX on the node
+    paragraphs:
+      - EdgeX Foundry device services talk to the PLCs, meters, and sensors at the site and give the rest of the edge stack one device and command model. Nova Vector links each EdgeX device to a platform device, so the site does not become a separate data island.
+      - EdgeX releases 2.3, 3.1, and 4.0 are supported and packaged as approved bundles. The device-service set is chosen for each project rather than promising that every community device service works automatically.
+    image: /assets/img/v3/features/07-edge-management/edgex-devices.png
+    image_alt: EdgeX devices on an edge node, each linked to a platform device
+    caption: The EdgeX devices on one edge node, with the device service each one uses and the platform device it is linked to.
+  - eyebrow: Readings on the platform
+    heading: Chart edge readings beside directly connected equipment
+    paragraphs:
+      - The node exports its devices' readings to the platform, where they are stored under the node with the device and reading name. Dashboards, reports, and tasks then work with them like any other data.
+      - Local services can also filter, transform, and route selected data before it leaves the site, without turning the edge node into a disconnected second platform.
+    image: /assets/img/v3/features/07-edge-management/edge-device-data.png
+    image_alt: Readings from devices on an edge node charted on the platform
+    caption: Readings collected by EdgeX on an edge node and charted on the platform over the last hour.
+  - eyebrow: Edge AI
+    heading: Run approved AI models next to the machine
+    paragraphs:
+      - The Edge AI runtime loads an approved model on the node and runs it on every new reading of the bound device, with no round trip to the cloud. Results return to the platform as ordinary data, and can also act locally through EdgeX.
+      - Models run on the node's CPU today, one model per node. The platform checks each node's architecture, runtime, memory, and storage before it deploys a model.
+    image: /assets/img/v3/features/08-edge-ai/deployment-board.png
+    image_alt: Edge AI deployment board with each edge node, its model version, and health
+    caption: The Edge AI deployment board shows the active model version, runtime placement, and health on each edge node.
+    points:
+      - Model registry with versions and approval
+      - Compatibility check per edge node before deployment
+      - One-step rollback to the previous version
+  - eyebrow: When the link is down
+    heading: Keep reading the equipment during an outage
+    paragraphs:
+      - EdgeX keeps reading the devices while the connection to the platform is down. Where a project needs it, EdgeX's export service can store readings it cannot deliver and send them when the link is back. Store and forward is switched on per installation in the EdgeX bundle settings.
+      - The local console stays available on the node, with a local login when the platform cannot be reached, so technicians can check services, containers, and logs at the site.
+  - eyebrow: Managed operation
+    heading: Monitor workloads and update sites through the fleet pipeline
+    paragraphs:
+      - The Edge Agent monitors system services, Docker containers, and compose projects, and reports each node's state to the platform. Approved bundles are deployed through controlled rollouts with a stop threshold, retries, and health checks, and a node restores its previous version on its own when an update is not healthy.
+      - Edge management is set up for each project as part of a Nova Vector deployment. It manages the industrial edge stack; it is not a general-purpose replacement for enterprise device-management software.
+    image: /assets/img/v3/features/07-edge-management/rollout-board.png
+    image_alt: Nova Vector edge fleet rollout board
+    caption: The rollout board shows every node and bundle with its phase, from requested to running.
+related:
+  - label: Industrial Edge Management
+    url: /industrial-edge-management/
+  - label: EdgeX Foundry
+    url: /edgex-foundry-platform/
+  - label: Industrial AI
+    url: /edge-ai-industrial-iot/
+  - label: Platform Architecture
+    url: /architecture/
+---

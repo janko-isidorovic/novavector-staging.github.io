@@ -1,0 +1,78 @@
+---
+layout: v3
+permalink: /documentation/
+title: Documentation
+description: Nova Vector technical documentation for platform concepts, connectivity, reports, deployment, administration, APIs, edge integration, and troubleshooting.
+summary: Follow Nova Vector from system architecture and device connectivity through operations, deployment, security, and integration, using the same terminology as the platform.
+eyebrow: Developer resources
+theme: platform
+hero_image: /assets/img/v3/hero/documentation.jpg
+noindex: true
+sitemap: false
+primary_label: Request documentation access
+primary_url: mailto:info@novavector.com?subject=Nova%20Vector%20documentation
+content_sections:
+  - eyebrow: Platform concepts
+    heading: Begin with the objects users and services share
+    paragraphs:
+      - The core documentation describes devices, channels, profiles, time-series data, process state, alerts, tasks, manufacturing records, reports, edge nodes, and AI models. These are not isolated product features; they are related platform resources that appear across the console, the APIs, and the service architecture.
+      - Understanding those relationships first makes installation and integration guidance easier to follow, because each configuration step can be tied back to the resource it affects.
+    image: /assets/img/v3/features/02-devices-and-live-data/devices-tree.png
+    image_alt: Nova Vector device hierarchy used in documentation
+    caption: Device and asset relationships provide the foundation for the rest of the platform documentation.
+  - eyebrow: Feature documents
+    heading: One document per capability, written for clients and engineers
+    paragraphs:
+      - Fourteen feature documents explain what each part of the platform does, how it is configured, its current scope, and the questions to settle with a customer before a project starts.
+    points:
+      - Device connectivity and devices and live data
+      - Dashboards and reports, including OEE, stoppages, reliability, and team performance
+      - Alerts, notifications, tasks, and task workflows
+      - Process monitoring, digital twin, and replay
+      - Manufacturing operations, from work orders and recipes to shift plans
+      - Edge management and Edge AI
+      - Simulators, automation and integration, security and administration, and deployment options
+      - AI Assistant (preview)
+    image: /assets/img/v3/screens/resources/oee-realtime-report.png
+    image_alt: Nova Vector real-time line report with output per minute, OEE, availability, performance, and quality
+    caption: Each feature document is illustrated with the platform itself, such as this real-time line report.
+  - eyebrow: Connectivity
+    heading: Document protocol behavior instead of reducing connectivity to a logo list
+    paragraphs:
+      - The connectivity documentation explains which side starts the connection, how discovery works, how measurements are mapped, and which settings each protocol needs. The platform reads OPC UA, Modbus TCP, and BACnet/IP, receives SNMP traps, accepts MQTT, HTTP, and WebSocket, and connects long-range, low-power sensors through its LoRaWAN network server. CoAP is in pilot.
+      - Write behavior, security, discovery, and command handling differ per adapter and are documented for each one.
+    image: /assets/img/v3/features/01-device-connectivity/protocol-catalog.png
+    image_alt: Nova Vector protocol catalog
+    caption: Connectivity documentation follows the actual adapter and protocol configuration model.
+  - eyebrow: Deployment and operations
+    heading: Keep production guidance separate from the development installation
+    paragraphs:
+      - The scripted installation is meant for development and demonstration. Production deployments are prepared and hardened per project, including ports, secrets, certificates, administration consoles, monitoring, backups, and network access.
+      - The standard installation is Docker Compose on one x86-64 Linux server. Kubernetes, for example with Rancher, is delivered as a project service, and isolated or air-gapped networks are prepared per installation.
+    image: /assets/img/v3/architecture/01-high-level.png
+    image_alt: Nova Vector deployment architecture
+    caption: Deployment documentation distinguishes the central platform, edge nodes, field equipment, and external systems.
+  - eyebrow: Security
+    heading: Document what is enabled by default and what is designed for the project
+    paragraphs:
+      - Keycloak provides single sign-on, roles per module, and groups that keep plants and sites apart. Two-factor login is available for every user, and Keycloak can connect to LDAP, Active Directory, or another identity provider.
+      - Company-directory integration, password policy, audit requirements, certificate management, and access to administration tools are decided for each deployment, and the documentation lists them as part of the security review.
+    image: /assets/img/v3/features/12-security-and-administration/two-factor.png
+    image_alt: Nova Vector two-factor authentication settings
+    caption: Security documentation distinguishes available controls from controls enabled or enforced by default.
+  - eyebrow: Troubleshooting and integration
+    heading: Follow the path a message or command actually takes
+    paragraphs:
+      - Architecture diagrams for telemetry, events, commands, device authentication, and user authentication make troubleshooting concrete, because they show which component owns each step.
+      - The same approach applies to API and edge troubleshooting. Start from the resource and the message path, then inspect the adapter, service, broker, storage layer, or edge node responsible for that stage.
+    image: /assets/img/v3/architecture/03-telemetry-path.png
+    image_alt: Nova Vector telemetry path
+    caption: The telemetry diagram is a practical map for both implementation and troubleshooting.
+related:
+  - label: Developers
+    url: /developers/
+  - label: Platform Architecture
+    url: /architecture/
+  - label: REST API
+    url: /api/
+---

@@ -1,0 +1,34 @@
+name: Validate Jekyll build
+
+on:
+  push:
+    branches:
+      - dev
+  pull_request:
+    branches:
+      - dev
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.1"
+          bundler-cache: true
+
+      - name: Report build versions
+        run: |
+          ruby --version
+          bundle exec jekyll --version
+          bundle exec ruby -e 'puts Gem.loaded_specs.fetch("minima").full_name'
+
+      - name: Build Jekyll site
+        run: bundle exec jekyll build --trace

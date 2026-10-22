@@ -1,0 +1,68 @@
+---
+layout: v3
+permalink: /energy/
+title: Energy & Energy Storage
+description: Industrial IoT for distributed energy and battery-storage sites, with device and site hierarchy, edge connectivity, operating states, alerts, tasks, and simulation-based integration testing.
+summary: Use Nova Vector's device, time-series, process-state, edge, and simulation capabilities to build project-specific monitoring and integration for distributed energy assets.
+eyebrow: Industrial solution
+theme: edge
+hero_image: /assets/img/v3/hero/energy.jpg
+noindex: true
+sitemap: false
+content_sections:
+  - eyebrow: Distributed assets
+    heading: Keep site, equipment, and measurement context together
+    paragraphs:
+      - Energy projects organize sites, storage systems, battery management systems, inverters, meters, climate sensors, and network equipment in the same hierarchy used elsewhere in Nova Vector. Current and historical measurements stay tied to the asset and location that produced them.
+      - Nova Vector does not ship a universal BESS application package. Energy deployments use the platform building blocks and the project-specific interfaces that fit the equipment and control system involved.
+    image: /assets/img/v3/features/02-devices-and-live-data/devices-tree.png
+    image_alt: Device hierarchy with sites, systems, and devices
+    caption: The device tree keeps every device under its site, system, or line, with its current status.
+  - eyebrow: Edge connectivity
+    heading: Read remote equipment through an edge node at the site
+    paragraphs:
+      - At remote sites, an industrial PC running Nova Edge reads the battery management system, inverter, and climate sensors through EdgeX, and exports the readings to the platform. Charts, alerts, and tasks then use them like any other data.
+      - EdgeX keeps reading the devices when the link is down, and can store and forward the readings it cannot deliver where a project switches that option on. Device configurations set up on one edge node can be copied to the nodes of similar sites.
+    image: /assets/img/v3/features/07-edge-management/edge-device-data.png
+    image_alt: Battery system readings from an edge node charted on the platform
+    caption: Battery-system readings collected by EdgeX on an edge node and charted on the platform over the last hour.
+  - eyebrow: Operating state
+    heading: Represent an energy asset as more than a collection of tags
+    paragraphs:
+      - Process-state models interpret selected measurements as explicit operating modes and transitions, such as charging, discharging, idle, or fault. Alerts, notifications, and reports then work with a clear operating context instead of raw values alone.
+      - Where commands are part of an integration, the platform keeps the requested action separate from the control system's eventual physical response. That distinction matters for remote and safety-relevant infrastructure.
+    image: /assets/img/v3/features/05-process-simulator/production-line.png
+    image_alt: Nova Vector process-state model
+    caption: The same versioned process-model approach applies to project-specific equipment operating states.
+  - eyebrow: Alerts and response
+    heading: Turn an abnormal reading into owned work
+    paragraphs:
+      - Alert limits and no-data checks watch values such as cell temperature, enclosure climate, or communication loss. An alert can e-mail the configured recipients and open a task that keeps the device and alert context through assignment and resolution, and the task updates automatically when the condition clears.
+    image: /assets/img/v3/features/04-alerts-notifications-and-tasks/alert-limits.png
+    image_alt: Alert limits configured for a device value
+    caption: Alert limits on a device value, with warning and error thresholds.
+  - eyebrow: Remote sites
+    heading: Manage the edge nodes of every site from one place
+    paragraphs:
+      - Edge nodes are installed, updated, and monitored centrally, with approved software per node type, controlled rollouts, and a local console on each node. Direct site access is still needed for initial SSH installation and EdgeX device setup, so routing and VPN design remain part of the project architecture.
+    image: /assets/img/v3/architecture/01-high-level.png
+    image_alt: Nova Vector central platform and remote edge architecture
+    caption: Distributed sites combine local edge services with a central operational platform.
+  - eyebrow: Test before site commissioning
+    heading: Validate integration behavior against a reference battery-storage system
+    paragraphs:
+      - Nova Vector Simulators include a battery energy storage enclosure reference system. It reproduces device values, events, and scripted faults through the normal protocol path, which is useful for integration testing, operator training, and acceptance preparation before the real equipment is available.
+      - The reference system is a testing asset. It does not mean that every BESS vendor interface is supported out of the box.
+    image: /assets/img/v3/features/10-simulators/scenario-results.png
+    image_alt: Nova Vector simulator scenario results
+    caption: Scripted scenarios make integration checks and expected responses repeatable before commissioning.
+related:
+  - label: Nova Edge
+    url: /edge-computing-platform/
+  - label: Industrial Edge Management
+    url: /industrial-edge-management/
+  - label: Process Simulation
+    url: /industrial-simulation/
+  - label: Systems Integration
+    url: /systems-integration/
+---

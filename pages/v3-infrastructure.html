@@ -1,0 +1,63 @@
+---
+layout: v3
+permalink: /industrial-infrastructure/
+title: Industrial Infrastructure & Facilities
+description: Connect building systems, utilities, environmental sensors, network equipment, and distributed sites through BACnet/IP, SNMP, LoRaWAN, MQTT, and edge services, with dashboards, alerts, and tasks.
+summary: Bring building and infrastructure data into the same device, time-series, alert, and response model used by the rest of Nova Vector.
+eyebrow: Industrial solution
+theme: edge
+hero_image: /assets/img/v3/hero/industrial-infrastructure.jpg
+noindex: true
+sitemap: false
+content_sections:
+  - eyebrow: Building systems
+    heading: Connect building control through the protocols already in use
+    paragraphs:
+      - BACnet/IP discovery finds compatible building-control devices on the network and lets you browse their objects before adding them, so HVAC, lighting, and other systems join the device model without manual address lists.
+      - MQTT, HTTP, and WebSocket provide additional IoT paths, and edge nodes can be introduced where a site benefits from local connectivity or processing.
+    image: /assets/img/v3/features/01-device-connectivity/bacnet-device-discovery.png
+    image_alt: Nova Vector BACnet device discovery
+    caption: BACnet discovery brings compatible building-control devices into the platform device model.
+  - eyebrow: Network and infrastructure equipment
+    heading: Receive SNMP traps from network and power equipment
+    paragraphs:
+      - SNMP trap receivers turn traps from switches, UPS units, and other infrastructure equipment into readings and alarms, including SNMP v3 with authentication and encryption.
+    image: /assets/img/v3/features/01-device-connectivity/snmp-receivers.png
+    image_alt: SNMP trap receivers configured in Nova Vector
+    caption: SNMP trap receivers, each serving the infrastructure devices that send traps to it.
+  - eyebrow: Field sensors
+    heading: Cover large sites with long-range, low-power sensors
+    paragraphs:
+      - LoRaWAN connects battery-powered sensors across large sites and remote locations through the LoRaWAN network server bundled with the platform. It has been in production use for years in smart agriculture, and the same approach fits environmental, utility, and occupancy sensing in facilities.
+  - eyebrow: Asset context
+    heading: Organize facilities by place and equipment, not only by protocol address
+    paragraphs:
+      - Buildings, floors, rooms, utility systems, equipment, meters, and sensors are represented through the device hierarchy, so a user can move from a site view into a specific device and its live or historical data.
+      - Reusable profiles give repeated device types a consistent description, standardizing the meaning of measurements across similar meters, controllers, or sensors.
+    image: /assets/img/v3/features/02-devices-and-live-data/devices-tree.png
+    image_alt: Nova Vector device hierarchy
+    caption: The same hierarchy used for production equipment represents facilities, systems, and infrastructure devices.
+  - eyebrow: Monitoring and reports
+    heading: Compare operating periods without separating current and historical views
+    paragraphs:
+      - Device pages give direct access to current readings and history, with chart, PDF, PNG, and CSV exports. Embedded Grafana dashboards cover broader site and system views, such as energy and utility use per area or system.
+      - Facility reports are configured to the project's available data and objectives, rather than taken from a fixed library of building-management reports.
+    image: /assets/img/v3/features/03-dashboards-and-reports/grafana-dashboards.png
+    image_alt: Grafana dashboards embedded in Nova Vector
+    caption: Embedded dashboards give a broader view across many devices and operating periods.
+  - eyebrow: Alerts and response
+    heading: Turn abnormal conditions into a traceable operational workflow
+    paragraphs:
+      - Alert limits and no-data checks identify abnormal or missing measurements. Notifications are sent by e-mail to the configured recipients, and tasks keep the originating device and alert context through assignment and resolution.
+      - For infrastructure operations, the important outcome is not only showing an alarm, but making sure somebody owns and closes the resulting work.
+    image: /assets/img/v3/features/04-alerts-notifications-and-tasks/tasks-from-alerts.png
+    image_alt: Nova Vector tasks created from operational alerts
+    caption: Alert-generated tasks connect monitored infrastructure conditions with assigned follow-up work.
+related:
+  - label: Device Management
+    url: /iot-device-management/
+  - label: Time-Series Analytics
+    url: /iot-timeseries-analytics/
+  - label: Nova Edge
+    url: /edge-computing-platform/
+---

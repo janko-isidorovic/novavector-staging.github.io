@@ -1,0 +1,98 @@
+<!-- user-story -->
+<section class="user-story">
+    <script>
+        function setNavLinksHeight() {
+          const navLinks = document.querySelectorAll('.user-story .nav-tabs .nav-link');
+          let maxHeight = 0;
+
+          navLinks.forEach(link => {
+            const linkHeight = link.getBoundingClientRect().height;
+            maxHeight = Math.max(maxHeight, linkHeight);
+          });
+
+          navLinks.forEach(link => {
+            link.style.height = `${maxHeight}px`;
+          });
+        }
+
+        window.addEventListener('DOMContentLoaded', setNavLinksHeight);
+        window.addEventListener('resize', setNavLinksHeight);
+    </script>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="orange-text">Nova Vector Spans a Range of Industrial Use Cases</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+            <p class="black-text">The Nova Vector IoT &amp; Edge Computing platform serves organizations that want to digitize their data and digitalize their physical operations, helping them work smarter rather than harder.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Container for the image gallery -->
+    <div class="container-fluid">
+        <div class="container-box">
+            <!-- Tabs navs -->
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="nav-link active" id="nav-industry-tab" data-toggle="tab" href="#nav-industry" role="tab" aria-controls="nav-industry" aria-selected="true">
+                                                Manufacturing
+                                            </a>
+                    <a class="nav-link" id="nav-energy-tab" data-toggle="tab" href="#nav-energy" role="tab" aria-controls="nav-energy" aria-selected="false">
+                                                Smart Industry &amp; Automation
+                                            </a>
+                    <a class="nav-link" id="nav-edge-tab" data-toggle="tab" href="#nav-edge" role="tab" aria-controls="nav-edge" aria-selected="false">
+                                                Energy &amp; Distributed Assets
+                                            </a>
+                    <a class="nav-link" id="nav-agriculture-tab" data-toggle="tab" href="#nav-agriculture" role="tab" aria-controls="nav-agriculture" aria-selected="false">
+                                                Smart <br>Agriculture
+                                            </a>
+
+                </div>
+              </nav>
+              <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade" id="nav-agriculture" role="tabpanel" aria-labelledby="nav-agriculture-tab" style="background-image:url({{site.baseurl}}/assets/img/clients/agriculture-resized.png)">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                    <h4>24/7 Low-Power &amp; Long-Range Remote Monitoring</h4>
+                                    <p>Enable low-power, long-range, remote 24/7 tracking and monitoring of livestock, irrigation systems, and soil and environmental sensors. Connect distributed agricultural assets through long-range wireless infrastructure for remote locations and low-power devices. Centralize sensor data to monitor conditions and automate responses without constant site visits.</p>
+                                    <a href="{{ '/pages/smart-agriculture' | relative_url }}" class="btn">More details</a>
+                            </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade show active" id="nav-industry" role="tabpanel" aria-labelledby="nav-industry-tab" style="background-image:url({{site.baseurl}}/assets/img/clients/industry-resized.png)">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                    <h4>Unify All Manufacturing Operations</h4>
+                                    <p>Bring all manufacturing operations under one roof and track production, quality, and asset consumption in real time. Monitor work orders, recipes, and standard vs. actual consumption across each production cycle. Track plan attainment, downtime, and equipment performance to identify losses and improve productivity. Use live operational data, reporting, and lightweight MES capabilities to coordinate production from planning through execution.</p>
+                                    <a href="{{ '/manufacturing/' | relative_url }}" class="btn">More details</a>
+                            </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="nav-edge" role="tabpanel" aria-labelledby="nav-edge-tab" style="background-image:url({{site.baseurl}}/assets/img/products/nova-edge-computing.png)">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                    <h4>Digitize Asset Distribution and Energy Consumption</h4>
+                                    <p>Make energy consumption and asset distribution visible across pumping and remote sites, substations, and battery storage facilities. Monitor distributed equipment remotely through connected sensors, controllers, and edge devices. Maintain operational visibility across unreliable connections or isolated sites with local edge processing and remote site management.</p>
+                                    <a href="{{ '/energy/' | relative_url }}" class="btn">More details</a>
+                            </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="nav-energy" role="tabpanel" aria-labelledby="nav-energy-tab" style="background-image:url({{site.baseurl}}/assets/img/service/novavector-environment-monitoring.jpg)">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                    <h4>Full Process Control and Predictive Maintenance</h4>
+                                    <p>Connect modern and legacy industrial equipment using standards such as OPC UA, Modbus TCP, BACnet/IP, SNMP, and MQTT. Centralize operational data and automate workflows, alerts, and responses across connected systems. Model processes and equipment states to improve visibility, control, and day-to-day operational coordination. Use governed Edge AI and predictive analytics on local operational data for quality assurance and maintenance.</p>
+                                    <a href="{{ '/edge-computing-platform/' | relative_url }}" class="btn">More details</a>
+                            </div>
+                    </div>
+                </div>
+              </div>
+
+        </div>
+    </div>
+
+</section>

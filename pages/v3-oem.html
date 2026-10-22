@@ -1,0 +1,68 @@
+---
+layout: v3
+permalink: /industrial-oem/
+title: Industrial OEMs & Connected Products
+description: Connected-product foundation for industrial OEMs, with device profiles, installed-base hierarchy, telemetry, alerts and tasks, managed edge software, Edge AI, and APIs.
+summary: Use Nova Vector's device model, edge runtime, Edge AI, APIs, alerts, tasks, and dashboards as building blocks for project-specific connected-equipment services.
+eyebrow: Industrial solution
+theme: platform
+hero_image: /assets/img/v3/hero/industrial-oem.jpg
+noindex: true
+sitemap: false
+content_sections:
+  - eyebrow: Product profiles
+    heading: Describe a machine family once and reuse it for every unit
+    paragraphs:
+      - A device profile describes the metrics, properties, and payload decoder common to a machine family. Every installed unit of that type reuses it, and profiles carry versions and lifecycle states, so a change to the product's data model is controlled rather than copied by hand.
+    image: /assets/img/v3/features/02-devices-and-live-data/profile-catalog.png
+    image_alt: Device profile catalog with reusable device types
+    caption: The profile catalog, with reusable device types, their versions, and lifecycle states.
+  - eyebrow: Installed-base model
+    heading: Give every connected machine a durable digital identity
+    paragraphs:
+      - An OEM can represent customer sites, installed machines, gateways, sensors, and supporting devices in the same hierarchical registry used across Nova Vector. Each installed unit keeps its own identity and owner group.
+      - Nova Vector does not ship a packaged OEM portal or a ready-made multi-customer SaaS product, so customer separation and the service experience are designed for each OEM program.
+    image: /assets/img/v3/features/02-devices-and-live-data/devices-tree.png
+    image_alt: Nova Vector hierarchical device registry
+    caption: Hierarchical device relationships represent customer sites and installed equipment without flattening the installed base.
+  - eyebrow: Remote evidence
+    heading: Give service teams history before they decide to travel
+    paragraphs:
+      - Current and historical device data, alerts, operating state, and tasks show what a machine was doing before and during a reported problem. That gives service teams more context than a phone description or a single current value.
+      - The same data can be exposed through customer-specific dashboards or external applications using the documented APIs, depending on how the OEM wants to package the service.
+    image: /assets/img/v3/features/02-devices-and-live-data/device-live-data.png
+    image_alt: Nova Vector device live and historical data
+    caption: Device history gives support teams a direct view of the measurements of the installed asset.
+  - eyebrow: Service workflow
+    heading: Turn a machine alarm into a tracked service task
+    paragraphs:
+      - Alert limits and no-data checks watch each unit. An alert can e-mail the people responsible and open a task for the service team, so every problem has an owner and a history from the first alarm to resolution.
+    image: /assets/img/v3/features/04-alerts-notifications-and-tasks/tasks-from-alerts.png
+    image_alt: Tasks created automatically from device alerts
+    caption: Tasks opened from device alerts, each with its status, category, and group.
+  - eyebrow: Edge software and AI
+    heading: Manage approved site-side software and models as part of the product
+    paragraphs:
+      - Where the solution needs local device services or processing, an industrial PC running Nova Edge hosts approved workloads next to the machine. Node types, software bundles, controlled rollouts, and a local console give a managed path for maintaining that site-side stack. Edge management is set up for each project.
+      - OEMs can also ship machine-learning models to the edge nodes of their installed base. Each model version is approved before deployment, checked against every node, and rolled back in one step if needed; results return as ordinary data.
+    image: /assets/img/v3/features/08-edge-ai/deployment-board.png
+    image_alt: Edge AI deployment board with each edge node, its model version, and health
+    caption: The Edge AI deployment board shows the active model version and health on each edge node.
+  - eyebrow: Product integration
+    heading: Connect the OEM service model through APIs instead of database coupling
+    paragraphs:
+      - Customer applications, service portals, ERP systems, or engineering tools integrate through documented platform APIs and supported messaging paths. The device and operational identifiers used inside Nova Vector stay available to those integrations.
+      - Identity, customer isolation, audit, and administration boundaries are designed explicitly for multi-customer programs, because some administration tools work across the whole installation.
+    image: /assets/img/v3/features/11-automation-and-integration/open-api.png
+    image_alt: Nova Vector API documentation
+    caption: Documented APIs provide a clean boundary between Nova Vector resources and OEM-facing applications.
+related:
+  - label: Device Management
+    url: /iot-device-management/
+  - label: REST API
+    url: /api/
+  - label: Industrial Edge Management
+    url: /industrial-edge-management/
+  - label: Industrial AI
+    url: /edge-ai-industrial-iot/
+---

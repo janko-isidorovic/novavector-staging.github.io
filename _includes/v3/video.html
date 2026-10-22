@@ -1,0 +1,24 @@
+{% comment %}
+  Walkthrough video for a v3 page. Front matter:
+  video:
+    src: /assets/video/<name>.mp4
+    poster: /assets/video/<name>.jpg
+    title: Short heading
+    summary: One or two sentences about what the video shows.
+    duration: "4:30"
+{% endcomment %}
+<section class="v3-section v3-section--compact v3-video">
+  <div class="v3-shell v3-video__layout">
+    <div class="v3-video__copy">
+      <p class="v3-eyebrow">Watch{% if page.video.duration %} · {{ page.video.duration }} min{% endif %}</p>
+      <h2>{{ page.video.title }}</h2>
+      {% if page.video.summary %}<p>{{ page.video.summary }}</p>{% endif %}
+    </div>
+    <figure class="v3-video__player">
+      <video controls preload="none" playsinline poster="{{ page.video.poster | relative_url }}">
+        <source src="{{ page.video.src | relative_url }}" type="video/mp4">
+        Your browser does not play this video. <a href="{{ page.video.src | relative_url }}">Download it</a>.
+      </video>
+    </figure>
+  </div>
+</section>

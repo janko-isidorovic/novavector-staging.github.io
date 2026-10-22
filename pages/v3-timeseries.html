@@ -1,0 +1,74 @@
+---
+layout: v3
+permalink: /iot-timeseries-analytics/
+title: Real-Time Data, Reports & Time-Series Analytics
+description: Ingest, visualize, report, and export industrial telemetry, with ready-made OEE, stoppage, reliability, and team reports built on device, production, and maintenance context.
+summary: Keep current and historical measurements useful from the device page through live reports, dashboards, replay, APIs, and operational analysis.
+eyebrow: Platform capability
+theme: platform
+hero_image: /assets/img/v3/hero/iot-timeseries-analytics.jpg
+noindex: true
+sitemap: false
+content_sections:
+  - eyebrow: Live operational data
+    heading: See what equipment is doing now without losing where the data came from
+    paragraphs:
+      - Incoming measurements stay tied to the registered device, channel, metric, timestamp, and asset hierarchy that produced them. Operators move from a site or equipment view into current readings instead of working from a disconnected stream of tags.
+      - The device data view supports real-time inspection and configurable charting, while the platform home dashboard summarizes message activity, protocol traffic, device and channel totals, locations, and the most active channels across the connected estate.
+    image: /assets/img/v3/features/02-devices-and-live-data/device-live-data.png
+    image_alt: Nova Vector device page with the last hour of data, raw messages, and alerts for one device
+    caption: Device-level live data connects measurements to the equipment and metric definitions that generated them.
+  - eyebrow: Real-time OEE
+    heading: Standard OEE, calculated live from machine states and counts
+    paragraphs:
+      - Ready-made reports calculate availability, performance, and quality, and their product, OEE, per shift, product, run, line, day, or month. They are built on ISO 22400 KPI definitions, against planned shifts and validated line speeds, and refresh on their own as new readings arrive.
+      - The shift sees its losses while it can still act on them, instead of discovering them in an end-of-day spreadsheet.
+    points:
+      - Output and scrap per minute by product
+      - OEE against its target, with availability, performance, and quality trends
+      - Process states of every station on one timeline
+    image: /assets/img/v3/screens/oee-realtime-report.png
+    image_alt: Real-time line report in Nova Vector with output per minute by product, an OEE gauge, and availability, performance, and quality tiles
+    caption: The real-time line report shows output, OEE against its target, and the three OEE factors.
+  - eyebrow: Stoppage Pareto
+    heading: Every minute of downtime, named and counted
+    paragraphs:
+      - The Stoppage Pareto ranks stop time by reason, with the cumulative line and the number of stops behind each reason. Micro-stops, changeovers, and breakdowns are separated, so improvement starts with the biggest loss rather than the loudest one.
+      - Stop reasons come from the dominant machine state and from operator classification where signals alone cannot tell the cause.
+    image: /assets/img/v3/screens/stoppage-pareto-report.png
+    image_alt: Stoppage Pareto chart in Nova Vector ranking stop time by reason with a cumulative percentage line
+    caption: Stop time by reason with the cumulative line, ready to show where the time goes.
+  - eyebrow: Reliability and team reports
+    heading: Relate machine faults to the people who fix them
+    paragraphs:
+      - Equipment reliability reports show failures, Mean Time Between Failures (MTBF), Mean Time to Repair (MTTR), and availability per line and station, counted within planned shifts, with a Pareto of fault time per station.
+      - Maintenance and team reports add open and overdue work per person, response times, planned versus unplanned work, and utilization against the shift calendar.
+    image: /assets/img/v3/screens/equipment-reliability-report.png
+    image_alt: Equipment reliability report in Nova Vector with failures, MTBF, MTTR, availability, a table per station, and a fault-time Pareto
+    caption: Failures, MTBF, MTTR, and availability for the line, the same per station, and where the fault time goes.
+  - eyebrow: Your own reports
+    heading: Start from templates, then adapt reports to the way you work
+    paragraphs:
+      - OEE, real-time, stoppage, reliability, and team reports come as ready-made templates. Each can be adapted, or new reports can be designed in the browser from the same data sources, and any panel can be shown and exported as a table.
+      - Embedded Grafana remains available for device, infrastructure, and project-specific dashboards, with the same stored time-series data and the platform's single sign-on.
+    image: /assets/img/v3/features/03-dashboards-and-reports/home-dashboard.png
+    image_alt: Nova Vector home dashboard with message rates per protocol, device and channel counts, a site map, and the busiest channels
+    caption: The home dashboard summarizes current platform activity and connected assets.
+  - eyebrow: Historical use
+    heading: Reuse stored history for analysis, replay, and integration
+    paragraphs:
+      - Historical data is not limited to chart display. It can be read through the platform APIs, replayed through a process model, exported for external analysis, or supplied to data-science environments.
+      - The platform stores telemetry in TimescaleDB and compresses older data. Retention and deletion policy are defined for each project rather than imposed as a fixed platform rule.
+    image: /assets/img/v3/features/03-dashboards-and-reports/grafana-dashboards.png
+    image_alt: Grafana dashboards embedded in Nova Vector
+    caption: Embedded Grafana extends analysis while using the same stored operational data.
+related:
+  - label: OEE & Downtime
+    url: /manufacturing-oee-software/
+  - label: Device & Asset Management
+    url: /iot-device-management/
+  - label: Process Simulation
+    url: /industrial-simulation/
+  - label: REST API
+    url: /api/
+---

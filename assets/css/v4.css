@@ -1,0 +1,162 @@
+/*
+  Nova Vector design v4: the design language of the 2026 print brochure, applied to the website.
+  Loaded last, so it only overrides. Inter type, navy + orange palette, numbered kickers,
+  navy surfaces with the brochure-cover glow and grid, screenshots in rounded shadowed cards.
+*/
+@font-face { font-family: Inter; font-weight: 400; font-display: swap; src: url(../fonts/inter/inter-latin-400.woff2) format('woff2'); }
+@font-face { font-family: Inter; font-weight: 500; font-display: swap; src: url(../fonts/inter/inter-latin-500.woff2) format('woff2'); }
+@font-face { font-family: Inter; font-weight: 600; font-display: swap; src: url(../fonts/inter/inter-latin-600.woff2) format('woff2'); }
+@font-face { font-family: Inter; font-weight: 700; font-display: swap; src: url(../fonts/inter/inter-latin-700.woff2) format('woff2'); }
+@font-face { font-family: Inter; font-weight: 800; font-display: swap; src: url(../fonts/inter/inter-latin-800.woff2) format('woff2'); }
+
+:root {
+  --nv-ink: #1f2a44;
+  --nv-panel: #1b2747;
+  --nv-navy: #1b2747;
+  --nv-navy2: #26365f;
+  --nv-orange: #f26522;
+  --nv-orange-dark: #d9531a;
+  --nv-muted: #5d6680;
+  --nv-line: #d9deea;
+  --nv-soft: #f3f5f9;
+  --v4-grid: linear-gradient(rgba(255, 255, 255, .06) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .06) 1px, transparent 1px);
+  --v4-glow: radial-gradient(900px 520px at 100% 0%, rgba(242, 101, 34, .24), transparent 70%);
+  --v4-shadow: 0 10px 28px rgba(27, 39, 71, .12);
+}
+
+/* ---------- Type ---------- */
+body, .v3-page, .nv-home-v3, p, li, a, button, input,
+.v3-page h1, .v3-page h2, .v3-page h3, h1, h2, h3, h4, h5, h6 { font-family: Inter, "Segoe UI", Arial, sans-serif !important; }
+body { color: var(--nv-ink); }
+h1, h2, h3, h4, h5, h6, .v3-page h1, .v3-page h2, .v3-page h3 { color: var(--nv-navy); font-weight: 800; letter-spacing: -0.02em; }
+.v3-page p, .nv-home-v3 p { color: var(--nv-ink); line-height: 1.65; }
+.v3-page h2 { font-size: 34px; line-height: 1.15; }
+.v3-page h3 { font-weight: 700; letter-spacing: -0.01em; }
+.orange-text, .v3-page em, h1 em, h2 em { color: var(--nv-orange) !important; font-style: normal; }
+
+/* ---------- Kicker: number chip + uppercase label + rule (brochure page header) ---------- */
+.v3-eyebrow { color: var(--nv-orange); font-size: 12px !important; font-weight: 700; letter-spacing: .14em; }
+.v4-kicker { display: flex; align-items: center; gap: 12px; }
+.v4-kicker::after { content: ''; flex: 1; height: 1px; background: var(--nv-line); }
+.v4-kicker__num { display: inline-block; padding: 3px 7px; border-radius: 3px; background: var(--nv-orange); color: #fff; font-size: 12px; font-weight: 800; letter-spacing: .04em; line-height: 1.2; }
+
+/* ---------- Page banner: navy cover with glow and grid ---------- */
+.v3-hero { position: relative; overflow: hidden; text-shadow: none; }
+.v3-hero > * { position: relative; }
+.v3-hero__grid { text-align: left; }
+.v3-hero h1, .v3-hero .v3-lead { margin-left: 0; margin-right: 0; }
+.v3-hero h1 { color: #fff; font-size: 52px; line-height: 1.06; letter-spacing: -0.03em; max-width: 1100px; }
+.v3-hero h1 em { display: block; color: var(--nv-orange) !important; }
+.v3-hero .v3-lead { color: rgba(255, 255, 255, .86); font-size: 19px; max-width: 760px; }
+.v3-hero .v3-eyebrow { background: none; padding: 0; color: rgba(255, 255, 255, .7); letter-spacing: .18em; }
+.v3-hero .v3-actions { justify-content: flex-start; }
+.v3-draft-notice { background: #fde6da; }
+
+/* ---------- Buttons ---------- */
+.v3-button, .btn { border-radius: 4px !important; font-weight: 600 !important; letter-spacing: 0 !important; }
+.v3-button--primary, .main-menu ul li.navigation-cta > a { background: var(--nv-orange) !important; border-color: var(--nv-orange) !important; color: #fff !important; }
+.v3-button--primary:hover, .main-menu ul li.navigation-cta > a:hover { background: var(--nv-orange-dark) !important; }
+.v3-button--secondary { border: 1px solid rgba(255, 255, 255, .7) !important; background: transparent !important; color: #fff !important; }
+
+/* ---------- Sections ---------- */
+.v3-section--muted, .v3-section--proof { background: var(--nv-soft); }
+.v3-content__image, .v3-screenshots figure, .v3-video__player, .v3-platform-tour__visual img {
+  border: 1px solid var(--nv-line); border-radius: 10px; overflow: hidden; background: #fff; box-shadow: var(--v4-shadow);
+}
+.v3-content__image img { display: block; }
+.v3-content__media figcaption, .v3-screenshots figcaption, .v3-platform-tour__visual figcaption { color: var(--nv-muted); font-size: 13px; }
+.v3-video__player { padding: 0; }
+
+/* Benefit lists: small orange squares, as in the brochure */
+.v3-checklist li { padding-left: 22px; position: relative; }
+.v3-checklist li::before { content: '' !important; position: absolute; left: 0; top: .55em; width: 9px; height: 9px; border-radius: 2px; background: var(--nv-orange); border: 0 !important; transform: none !important; }
+
+/* Cards: tint panels with an orange top rule */
+.v3-card, .v3-capability, .v3-platform-difference article {
+  border: 0 !important; border-top: 3px solid var(--nv-orange) !important; border-radius: 0 0 8px 8px; background: #fff; box-shadow: var(--v4-shadow);
+}
+.v3-section--muted .v3-card, .v3-section--muted .v3-capability { background: #fff; }
+
+/* ---------- Navy surfaces: architecture, strip, CTA ---------- */
+.v3-section--dark, .v3-cta, .v3-platform-results {
+  background-color: var(--nv-navy) !important;
+  background-image: var(--v4-glow), var(--v4-grid) !important;
+  background-size: auto, 46px 46px, 46px 46px !important;
+}
+.v3-section--dark h2, .v3-section--dark h3, .v3-cta h2, .v3-platform-results h2, .v3-platform-results h3 { color: #fff !important; }
+.v3-section--dark p, .v3-cta p, .v3-platform-results p { color: rgba(255, 255, 255, .78) !important; }
+.v3-strip { background: var(--nv-navy2); border: 0; }
+.v3-strip__row strong { color: #fff; font-weight: 700; }
+.v3-strip__row span { color: rgba(255, 255, 255, .78); }
+
+/* ---------- Header ---------- */
+.main-menu ul li a { font-family: Inter, sans-serif !important; font-weight: 600; letter-spacing: -0.01em; font-size: 14px !important; }
+.main-menu ul li { margin-left: 22px !important; }
+.main-menu ul li.navigation-cta > a { padding: 9px 14px !important; white-space: nowrap; }
+.main-menu > nav > ul, .main-menu ul { white-space: nowrap; }
+@media (max-width: 1299px) { .main-menu ul li { margin-left: 16px !important; } .main-menu ul li a { font-size: 13px !important; } }
+.sticky-menu, #sticky-header.sticky-menu { background: var(--nv-navy) !important; }
+
+/* ---------- Homepage (legacy sections) ---------- */
+.nv-home-v3 .slider-content { position: relative; z-index: 2; transform: none; top: -24px; } /* offset via top, not transform: the slide animation owns transform */
+@media (max-width: 640px) { .nv-home-v3 .slider-content { top: 0; } }
+.nv-home-v3 .slider-content h1 { font-weight: 800; letter-spacing: -0.03em; line-height: 1.04; }
+.nv-home-v3 .slider-content h1 span { color: var(--nv-orange); }
+.nv-home-v3 h2, .nv-home-v3 .section-title h2, .nv-home-v3 .section-title h3 { font-weight: 800; letter-spacing: -0.02em; }
+.nv-home-v3 .container-grey, .nv-home-v3 .darker-grey-bg, .service-area.darker-grey-bg { background-color: var(--nv-soft) !important; }
+.nv-home-v3 #img-border { border-radius: 10px; box-shadow: var(--v4-shadow); border: 1px solid var(--nv-line); }
+.nv-home-v3 .paragraphs h3 { color: var(--nv-navy); font-weight: 800; }
+.nv-home-v3 .nv-home-journey span { display: inline-block; padding: 3px 7px; border-radius: 3px; background: var(--nv-orange); color: #fff !important; font-weight: 800; }
+.usecase-box-new { border-radius: 8px; overflow: hidden; box-shadow: var(--v4-shadow); }
+.usecase-box-new .card-body-new, .usecase-box-new .card-new { background: var(--nv-navy) !important; }
+.features-wrap { border-radius: 8px; border-top: 3px solid var(--nv-orange) !important; box-shadow: var(--v4-shadow); background: #fff; }
+.features-wrap:hover { background-image: none !important; background-color: var(--nv-navy) !important; }
+
+@media (max-width: 767px) {
+  .v3-hero h1 { font-size: 38px; }
+  .v3-page h2 { font-size: 28px; }
+}
+
+.v3-hero { min-height: 590px; }
+
+/* ---------- Dark sections keep light text (the global navy heading/text colours above must not reach them) ---------- */
+.nv-home-results { background-color: var(--nv-navy) !important; background-image: var(--v4-glow), var(--v4-grid); background-size: auto, 46px 46px, 46px 46px; }
+.nv-home-results h2:not(.orange-text), .nv-home-results h3, .nv-home-results strong + h3 { color: #fff !important; }
+.nv-home-results__heading p { color: rgba(255, 255, 255, .8) !important; }
+.nv-home-results__grid p { color: rgba(255, 255, 255, .72) !important; }
+.nv-home-results__category { color: rgba(255, 255, 255, .7) !important; }
+.nv-home-results__grid strong { color: var(--nv-orange) !important; font-weight: 800; letter-spacing: -0.02em; }
+.nv-home-results__note { color: rgba(255, 255, 255, .6) !important; }
+.nv-home-v3 .v3-section--dark h2, .nv-home-v3 .v3-section--dark h3, .nv-home-v3 .v3-section--dark h4 { color: #fff !important; }
+.nv-home-v3 .v3-section--dark p, .nv-home-v3 .v3-section--dark li, .nv-home-v3 .v3-section--dark span { color: rgba(255, 255, 255, .78) !important; }
+.nv-home-v3 .v3-section--dark .v3-eyebrow { color: var(--nv-orange) !important; }
+.cta-area h2, .cta-area h3, .cta-area h4, .cta-text h2, .cta-text h3, .cta-text h4, .cta-area p, .cta-text p { color: #fff !important; }
+
+/* Service cards: same underline in every card (fixed length and weight), titles aligned on one baseline */
+.features-wrap .section-title.service-title { min-height: 72px; display: flex; align-items: flex-end; justify-content: center; margin-bottom: 34px; }
+.features-wrap .section-title.service-title h4 { margin-bottom: 0; line-height: 1.15; }
+.features-wrap .section-title.service-title h4::before { width: 64px; height: 3px; bottom: -16px; left: 50%; right: auto; margin: 0; transform: translateX(-50%); background: var(--nv-orange); border-radius: 2px; }
+
+/* Homepage Platform Architecture: same navy, glow and grid as Measured Customer Outcomes, light text throughout */
+.nv-home-architecture { background-color: var(--nv-navy) !important; background-image: var(--v4-glow), var(--v4-grid); background-size: auto, 46px 46px, 46px 46px; }
+.nv-home-architecture h3, .nv-home-architecture h4, .nv-home-difference strong, .nv-technology-foundation strong { color: #fff !important; }
+.nv-home-architecture__copy p, .nv-home-difference p { color: rgba(255, 255, 255, .8) !important; }
+.nv-architecture-points p, .nv-technology-foundation span { color: rgba(255, 255, 255, .72) !important; }
+.nv-architecture-points article > span { display: inline-block; padding: 3px 7px; border-radius: 3px; background: var(--nv-orange); color: #fff !important; font-weight: 800; }
+.nv-home-architecture .nv-inline-link { color: #fff !important; }
+.nv-home-architecture__visual { border-radius: 10px; box-shadow: 0 12px 32px rgba(0, 0, 0, .3); }
+
+/* Homepage banner overlay matches the page banners (75 % black over the platform animation) */
+.nv-home-v3 .slider-bg::before { background: #000; opacity: .75; }
+
+/* Homepage banner text slides in from the right; clip so it does not overlap the page while moving */
+.nv-home-v3 .single-slider { overflow: hidden; }
+.nv-home-v3 .slider-content.animated { animation-duration: 1.4s; animation-timing-function: cubic-bezier(.22, .8, .3, 1); }
+.nv-home-v3 .slider-content.slideOutLeft { animation-duration: .9s; animation-timing-function: cubic-bezier(.6, 0, .8, .4); }
+
+/* Homepage banner: one muted looping video behind all slides (replaces the animated GIF) */
+.nv-home-v3 .slider-area { position: relative; overflow: hidden; background: #000; }
+.nv-banner-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: left top; z-index: 0; pointer-events: none; }
+.nv-home-v3 .slider-active { position: relative; z-index: 1; background-image: none !important; background-color: transparent; }
+.nv-home-v3 .single-slider.slider-bg { background-image: none !important; background-color: transparent; }
+@media (prefers-reduced-motion: reduce) { .nv-banner-video { display: none; } .nv-home-v3 .slider-area { background: #000 url(../img/slider/nv-banner-platform-first.jpg) left top / cover no-repeat; } }

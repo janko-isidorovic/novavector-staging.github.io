@@ -1,0 +1,69 @@
+---
+layout: v3
+permalink: /api/
+title: REST API & Platform Integration
+description: Integrate Nova Vector through REST APIs with single sign-on, application access over MQTT, HTTPS and WebSocket, the data API, commands, and edge workflows.
+summary: Work with the same devices, profiles, data, tasks, production records, and operational resources that Nova Vector applications use, instead of integrating against a separate reporting database.
+eyebrow: Developer resources
+theme: platform
+hero_image: /assets/img/v3/hero/api.jpg
+noindex: true
+sitemap: false
+primary_label: Discuss your integration
+primary_url: /contact/
+content_sections:
+  - eyebrow: OpenAPI
+    heading: Start from documented resources and operations
+    paragraphs:
+      - Every Nova Vector module exposes a REST API, the same one the web console uses, for resources such as devices, channels, profiles, telemetry, production records, alerts, tasks, commands, process simulation, and edge deployments. There is no separate integration model to keep in sync.
+      - An interactive OpenAPI page in the console documents the published operations, and coverage keeps growing with each release. External applications work with the same identifiers, ownership groups, and relationships that operators see inside Nova Vector.
+    image: /assets/img/v3/features/11-automation-and-integration/open-api.png
+    image_alt: Nova Vector OpenAPI documentation
+    caption: The interactive OpenAPI page documents published platform resources and operations.
+  - eyebrow: Authentication
+    heading: Integrate through the same identity boundary as the platform
+    paragraphs:
+      - API requests carry single sign-on tokens from Keycloak. Platform services validate each token and authorize the request with roles, permissions, and groups, so an external system sees and changes only the records of its groups, exactly like a user.
+      - Unattended systems use their own service account, set up for the project. Device-level integrations can instead use an application identity with its own key over MQTT, HTTPS, or secure WebSocket.
+    image: /assets/img/v3/architecture/06-user-authentication.png
+    image_alt: Nova Vector user and service authentication architecture
+    caption: API authorization sits within the same identity architecture as interactive platform access.
+  - eyebrow: Data out
+    heading: Read time series, aggregates, and reports for any time range
+    paragraphs:
+      - The data API returns readings, aggregates, and chart data for any device and time range, ready for a data lake, an analytics tool, or a customer application. Device pages and lists export to CSV, and every panel of a native report can be shown and exported as a table.
+      - Production, alert, task, and process records are available through their own APIs, so business systems can combine machine data with the operational context behind it.
+    image: /assets/img/v3/screens/resources/machine-live-data.png
+    image_alt: Nova Vector machine data with a live chart and the readings as they arrive
+    caption: The same readings shown on a machine's page are available through the data API.
+  - eyebrow: Commands
+    heading: Make remote actions observable instead of treating submission as success
+    paragraphs:
+      - Device commands are platform resources with fixed or calculated values, for example a setpoint limited to a safe range. A submitted command enters the command path and can be observed independently of the remote device's response.
+      - This distinction is deliberate. A successful HTTP request means the platform accepted the command; confirmation that the network, edge node, controller, or physical process carried it out comes from the device.
+    image: /assets/img/v3/features/11-automation-and-integration/commands.png
+    image_alt: Nova Vector device command definitions
+    caption: Reusable command definitions provide a managed entry point for device actions.
+  - eyebrow: Provisioning and automation
+    heading: Use APIs to build repeatable environments and integration workflows
+    paragraphs:
+      - Public APIs create profiles, devices, channels, industrial-adapter connections, and their bindings. Nova Vector Simulators use these same interfaces to provision and remove complete reference systems, so an integration can be tested repeatedly before it meets real equipment.
+      - Scheduled jobs, Node-RED flows, MQTT, HTTP, and WebSocket complement REST when an integration needs recurring, event-driven, or low-code behavior rather than a simple request and response.
+    image: /assets/img/v3/features/11-automation-and-integration/schedules.png
+    image_alt: Nova Vector scheduled jobs
+    caption: Schedules run command jobs at configured intervals.
+faq:
+  - question: Are there ready-made ERP or MES connectors?
+    answer: No. Each ERP, MES, quality, or maintenance integration is built for the project on the REST APIs, Node-RED, or a custom function, using the customer's own data model and authentication.
+  - question: How do external systems authenticate?
+    answer: With a service account set up for the project, using single sign-on tokens from Keycloak. Device-level applications use an application identity with its own key. Static API keys are not used.
+  - question: Can the platform call our systems when something happens?
+    answer: Alerts and process events send e-mail notifications. Calls to other systems are built with Node-RED flows or project integrations; outgoing webhooks are not a built-in feature.
+related:
+  - label: Automation & Integration
+    url: /integrations/
+  - label: Developers
+    url: /developers/
+  - label: Platform Architecture
+    url: /architecture/
+---

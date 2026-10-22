@@ -1,0 +1,55 @@
+---
+layout: v3
+permalink: /blog/
+title: Industrial IoT Technical Articles
+description: Technical articles about industrial IoT architecture, edge computing, edge AI, process modeling, OEE, reliability, time-series data, and integration.
+summary: Engineering notes for teams evaluating industrial data, edge computing, process modeling, OEE, reliability metrics, and integrations that keep working.
+eyebrow: Resources
+theme: edge
+hero_image: /assets/img/v3/hero/blog.jpg
+noindex: true
+sitemap: false
+primary_label: Suggest a topic
+primary_url: mailto:info@novavector.com?subject=Technical%20article%20topic
+show_capability_cards: true
+capability_eyebrow: Editorial tracks
+capability_heading: What we write about
+capabilities:
+  - title: Industrial edge architecture
+    text: EdgeX Foundry, edge-versus-cloud decisions, local processing, store and forward, fleet updates, and governed edge AI.
+  - title: Manufacturing data
+    text: OEE calculation, downtime detection and classification, MTBF and MTTR, process modeling, simulation, and replay.
+  - title: Platform engineering
+    text: MQTT and NATS patterns, time-series data, APIs, state machines, reliable edge-to-platform flows, and security boundaries.
+content_sections:
+  - eyebrow: First publication series
+    heading: Explain the engineering decisions behind industrial operations
+    paragraphs:
+      - Each article answers one technical question, sets out the tradeoffs, and links to the relevant Nova Vector capability. Examples state the product version they apply to and separate released behavior from plans.
+    points:
+      - "OEE from machine states: how availability, performance, and quality are calculated against planned shifts"
+      - "MTBF and MTTR without spreadsheets: reliability metrics from machine states and maintenance tasks"
+      - "Stoppage Pareto: finding the losses that matter first"
+      - "Replaying yesterday: testing a process change against recorded production"
+      - "Polling or push: OPC UA, Modbus, BACnet, MQTT, and SNMP in one plant"
+      - "Retrofitting older machines with sensors to get the same data set as modern equipment"
+      - "Governed edge AI: registering, approving, rolling out, and rolling back models on edge nodes"
+      - "Updating a fleet of edge nodes without a site visit"
+    image: /assets/img/v3/architecture/03-telemetry-path.png
+    image_alt: Nova Vector telemetry path from field devices through adapters and messaging to storage
+    caption: Articles follow the real paths data takes through the platform, such as the telemetry path.
+  - eyebrow: In practice
+    heading: Grounded in the running platform
+    paragraphs:
+      - Articles use screens and data from the platform itself, such as the equipment reliability report, so readers can see exactly how a metric is produced and presented.
+    image: /assets/img/v3/screens/resources/equipment-reliability-report.png
+    image_alt: Nova Vector equipment reliability report with failures, MTBF, MTTR, availability, and fault time per station
+    caption: The equipment reliability report, the subject of the MTBF and MTTR article. Screenshot from a demo installation.
+related:
+  - label: Developers
+    url: /developers/
+  - label: Case Studies
+    url: /case-studies/
+  - label: Architecture
+    url: /architecture/
+---

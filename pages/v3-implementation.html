@@ -1,0 +1,67 @@
+---
+layout: v3
+permalink: /platform-implementation/
+title: Platform Implementation
+description: Plan, install, configure, test, document, and hand over a supportable Nova Vector Industrial IoT deployment, on premises, in the cloud, or hybrid.
+summary: Move from architecture and requirements to a configured, integrated, tested, and supportable Nova Vector deployment, delivered by the team that develops the platform.
+eyebrow: Professional services
+theme: platform
+hero_image: /assets/img/v3/hero/platform-implementation.jpg
+noindex: true
+sitemap: false
+primary_label: Plan your implementation
+primary_url: /contact/
+show_capability_cards: true
+capability_eyebrow: Implementation phases
+capability_heading: Plan, configure, validate
+capabilities:
+  - title: Plan the deployment
+    text: Agree scope, environments, topology, responsibilities, security boundaries, milestones, and acceptance criteria before configuration begins.
+  - title: Configure the platform
+    text: Set up identity and groups, sites and assets, devices and edge nodes, reports, alerts, tasks, process rules, and verified integrations.
+  - title: Validate and hand over
+    text: Test normal operation and failure handling, document the deployment, train the responsible teams, and agree the support path.
+content_sections:
+  - eyebrow: Implementation sequence
+    heading: Move from one line to production operation
+    paragraphs:
+      - Work is divided into discovery, architecture, environment preparation, platform and edge configuration, integration, acceptance testing, and operational handover.
+      - A first line or pilot validates the highest-risk data and workflow assumptions. Production implementation then adds the security, resilience, monitoring, backup, recovery, and lifecycle responsibilities that the chosen topology requires.
+    image: /assets/img/v3/architecture/01-high-level.png
+    image_alt: Nova Vector deployment architecture with field equipment, edge nodes, the central platform, and external systems
+    caption: The deployment architecture defines what runs at the site, what runs centrally, and how external systems connect.
+  - eyebrow: Where it runs
+    heading: On premises, in the cloud, or hybrid
+    paragraphs:
+      - The standard installation is Docker Compose on one Linux server. Customers that run Kubernetes, for example with Rancher, get a Kubernetes deployment as a project service, and isolated or air-gapped networks are prepared per installation.
+      - High availability, backups, retention, and update windows are designed with the customer's IT for each project rather than assumed.
+  - eyebrow: Connect and configure
+    heading: The first line, from machine signals to live reports
+    paragraphs:
+      - Machines connect over the protocols they already speak, or through retrofit sensors where a controller cannot be read. Edge nodes are enrolled and managed centrally, devices are organized into sites, lines, and machines, and device profiles are reused for every machine of the same type.
+      - Reports for OEE, stoppages, reliability, and team performance start from ready-made templates and are adapted to the plant's shifts, products, and line speeds.
+    image: /assets/img/v3/screens/resources/oee-realtime-report.png
+    image_alt: Nova Vector real-time line report with output per minute, OEE, availability, performance, and quality
+    caption: A real-time line report configured during implementation. Screenshot from a demo installation.
+  - eyebrow: Acceptance
+    heading: Test data, state, commands, and failure paths before go-live
+    paragraphs:
+      - Acceptance covers normal operation and defined failures across devices, edge services, messaging, platform persistence, application behavior, and external integrations.
+      - Nova Vector Simulators make this repeatable. Scripted scenarios such as a breakdown, a changeover, or a full shift run against a simulated line with expected results, so reports, alerts, and integrations are proven before the real equipment is switched over.
+    image: /assets/img/v3/features/10-simulators/production-line-scenarios.png
+    image_alt: Nova Vector Simulators console with scripted scenarios for a simulated production line
+    caption: Scripted acceptance scenarios with expected results, run against a simulated production line.
+  - eyebrow: Handover
+    heading: A system your team can operate, and a team behind it
+    paragraphs:
+      - The deployment is documented, the responsible teams are trained by role, and the support path is agreed. Nova Vector stays involved for support, upgrades, and the next lines and sites.
+related:
+  - label: Professional Services
+    url: /professional-services/
+  - label: Systems Integration
+    url: /systems-integration/
+  - label: Training
+    url: /training/
+  - label: Support
+    url: /support/
+---

@@ -1,0 +1,181 @@
+{% include v3/deployment_strip.html %}
+
+<section class="v3-section v3-section--muted v3-platform-intro" id="platform-capabilities">
+  <div class="v3-shell">
+    <div class="v3-platform-intro__heading">
+      <p class="v3-eyebrow">What makes Nova Vector different</p>
+      <h2>Connect operational data with the work it needs to drive</h2>
+      <p>Nova Vector brings equipment signals, production context, process state, alarms, tasks, and commands into one operational model. Teams see not only what changed, but where it happened, what operation was active, and what needs to happen next.</p>
+    </div>
+    <div class="v3-platform-difference">
+      <article>
+        <span>01</span>
+        <h3>Mixed-generation equipment</h3>
+        <p>Connect compatible modern systems directly and retrofit viable legacy machines without replacing productive assets.</p>
+      </article>
+      <article>
+        <span>02</span>
+        <h3>More than monitoring</h3>
+        <p>Relate telemetry to plans, work orders, process state, alarms, assigned tasks, notifications, and team activity.</p>
+      </article>
+      <article>
+        <span>03</span>
+        <h3>One edge-to-enterprise model</h3>
+        <p>Use the same device, asset, event, and identity context across local sites, central operations, and business systems.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="v3-section v3-platform-path" aria-labelledby="platform-path-title">
+  <div class="v3-shell">
+    <p class="v3-eyebrow">A practical digitalization path</p>
+    <h2 id="platform-path-title">Start with operational value. Add capability as the business case grows.</h2>
+    <div class="v3-platform-journey">
+      <article><span>01</span><h3>Connect</h3><p>Machines, sensors, PLCs, and enterprise systems</p></article>
+      <article><span>02</span><h3>Digitalize operations</h3><p>Production plans, work orders, and process context</p></article>
+      <article><span>03</span><h3>Respond</h3><p>Alarms, assigned tasks, notifications, and commands</p></article>
+      <article><span>04</span><h3>Optimize</h3><p>OEE, downtime, reliability, and material variance</p></article>
+      <article><span>05</span><h3>AI-enable</h3><p>Contextualized data and governed edge inference</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="v3-section v3-section--muted v3-platform-tour" aria-labelledby="platform-tour-title">
+  <div class="v3-shell">
+    <div class="v3-platform-tour__heading">
+      <p class="v3-eyebrow">Platform walkthrough</p>
+      <h2 id="platform-tour-title">One workspace for equipment, operations, and response</h2>
+      <p>Each capability can deliver value independently. Together they preserve the operational context needed to improve performance across machines, lines, facilities, and remote sites.</p>
+    </div>
+
+    <article class="v3-platform-tour__row">
+      <figure class="v3-platform-tour__visual">
+        <img src="{{ '/assets/img/v3/screens/machine-live-data.png' | relative_url }}" alt="One machine in Nova Vector: a live chart of its values and each reading as it arrives" loading="lazy">
+        <figcaption>One page per machine: a live chart of every value it sends, and each reading as it arrives.</figcaption>
+      </figure>
+      <div class="v3-platform-tour__copy">
+        <span class="v3-platform-tour__index">01 · Connect and contextualize</span>
+        <h3>Bring modern and legacy equipment into one operational view</h3>
+        <p>Connect equipment directly through native industrial adapters or through Nova Edge. Older machines without a readable controller can be retrofitted with sensors that deliver the same data set. Reusable profiles describe metrics, registers, commands, and relationships so every signal has a consistent operational meaning.</p>
+        <ul class="v3-platform-tour__list">
+          <li>OPC UA, Modbus TCP, BACnet/IP, SNMP, MQTT, HTTP, WebSocket, LoRaWAN, and further device protocols through EdgeX on edge nodes</li>
+          <li>Device, asset, site, area, line, machine, and subsystem relationships</li>
+          <li>Telemetry, health, alarms, metadata, and command context</li>
+        </ul>
+        <a class="v3-inline-link" href="{{ '/iot-device-management/' | relative_url }}">Explore device and asset management <span aria-hidden="true">→</span></a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="v3-section v3-platform-tour">
+  <div class="v3-shell">
+    <article class="v3-platform-tour__row v3-platform-tour__row--reverse">
+      <figure class="v3-platform-tour__visual">
+        <img src="{{ '/assets/img/v3/screens/oee-realtime-report.png' | relative_url }}" alt="Real-time line report in Nova Vector: output per minute by product, OEE, availability, performance, and quality" loading="lazy">
+        <figcaption>Real-time line report: output and scrap per minute by product, OEE against its target, and availability, performance, and quality.</figcaption>
+      </figure>
+      <div class="v3-platform-tour__copy">
+        <span class="v3-platform-tour__index">02 · Digitalize and optimize</span>
+        <h3>See production losses while teams can still respond</h3>
+        <p>Combine live machine data with shifts, plans, products, work orders, scrap, rework, stoppage reasons, and consumption. Supervisors can compare actual performance with the current plan before the reporting period closes.</p>
+        <ul class="v3-platform-tour__list">
+          <li>Ready-made reports for real-time OEE, Stoppage Pareto, equipment reliability (MTBF and MTTR), and team work</li>
+          <li>Work-order output, quality, serials, and material variance</li>
+          <li>Equipment and workforce performance in the same operating context</li>
+        </ul>
+        <a class="v3-inline-link" href="{{ '/manufacturing/' | relative_url }}">Explore manufacturing operations <span aria-hidden="true">→</span></a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="v3-section v3-section--muted v3-platform-tour">
+  <div class="v3-shell">
+    <article class="v3-platform-tour__row">
+      <figure class="v3-platform-tour__visual"><img src="{{ '/assets/img/v3/features/04-alerts-notifications-and-tasks/tasks-from-alerts.png' | relative_url }}" alt="Nova Vector tasks created from operational alerts" loading="lazy"><figcaption>Alerts can create assigned tasks while preserving the originating equipment context.</figcaption></figure>
+      <div class="v3-platform-tour__copy">
+        <span class="v3-platform-tour__index">03 · Respond and automate</span>
+        <h3>Turn operational events into coordinated action</h3>
+        <p>Use explicit process states and guarded transitions to interpret equipment conditions. Route alarms to the right people, create assigned work, send e-mail notifications, and persist command requests for asynchronous execution.</p>
+        <ul class="v3-platform-tour__list">
+          <li>Threshold, no-data, stoppage, and process-state alarms</li>
+          <li>Task ownership and response tracking through resolution</li>
+          <li>Versioned process models with replay of recorded data</li>
+        </ul>
+        <a class="v3-inline-link" href="{{ '/industrial-state-machine/' | relative_url }}">Explore process automation <span aria-hidden="true">→</span></a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="v3-section v3-platform-tour">
+  <div class="v3-shell">
+    <article class="v3-platform-tour__row v3-platform-tour__row--reverse">
+      <figure class="v3-platform-tour__visual"><img src="{{ '/assets/img/v3/features/07-edge-management/rollout-board.png' | relative_url }}" alt="Nova Vector edge rollout board" loading="lazy"><figcaption>Controlled fleet rollout with node status, health checks, retry, and rollback visibility.</figcaption></figure>
+      <div class="v3-platform-tour__copy">
+        <span class="v3-platform-tour__index">04 · Operate from edge to enterprise</span>
+        <h3>Keep remote and restricted sites useful through limited connectivity</h3>
+        <p>Install, configure, and update edge nodes from one place. Each node collects and processes data close to the equipment, offers a local operator console, and can run approved AI models. Central teams see workloads, logs, node health, and equipment without constant site access.</p>
+        <p class="v3-platform-tour__qualification">Edge management is set up for each project. Edge AI deploys approved, checksum-verified ONNX models; model training stays in your data-science tools.</p>
+        <a class="v3-inline-link" href="{{ '/edge-computing-platform/' | relative_url }}">Explore Nova Edge <span aria-hidden="true">→</span></a>
+      </div>
+    </article>
+  </div>
+</section>
+
+{% include v3/architecture.html %}
+
+<section class="v3-section v3-section--muted v3-platform-deployment" aria-labelledby="platform-deployment-title">
+  <div class="v3-shell">
+    <p class="v3-eyebrow">Architecture and deployment</p>
+    <h2 id="platform-deployment-title">Fit the platform to operational and data requirements</h2>
+    <div class="v3-platform-deployment__grid">
+      <article>
+        <h3>Deploy where operations require</h3>
+        <p>Start with one line, facility, or remote site. Expand without replacing the device, asset, telemetry, identity, and event foundation.</p>
+        <div class="v3-platform-tags" aria-label="Deployment models"><span>Edge</span><span>On-premises</span><span>Private cloud</span><span>Cloud</span><span>Hybrid</span><span>Isolated networks — project-specific</span></div>
+      </article>
+      <article>
+        <h3>Integrate instead of creating another silo</h3>
+        <p>Connect operational context with business and engineering systems through authenticated APIs, messaging, identity integration, and deployment-specific connectors.</p>
+        <div class="v3-platform-tags" aria-label="Integration targets"><span>ERP</span><span>MES</span><span>CMMS</span><span>Analytics</span><span>REST APIs</span><span>OIDC / SSO</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="v3-platform-results" aria-labelledby="platform-results-title">
+  <div class="v3-shell">
+    <div class="v3-platform-results__heading">
+      <p class="v3-eyebrow">Measured customer outcomes</p>
+      <h2 id="platform-results-title">Operational improvements built on connected data</h2>
+      <p>These anonymized results reflect individual Nova Vector customer deployments.</p>
+    </div>
+    <div class="v3-platform-results__grid">
+      <article><strong>+35%</strong><h3>OEE improvement</h3><p>Over two years after micro-stoppage visibility guided operational improvements.</p></article>
+      <article><strong>75%</strong><h3>Shorter go-to-market timeline</h3><p>For an energy-storage monitoring and control solution.</p></article>
+      <article><strong>−17%</strong><h3>Operating cost</h3><p>Year over year after occupancy analysis supported targeted building-energy savings.</p></article>
+    </div>
+    <div class="v3-platform-results__footer">
+      <p>Results are deployment-specific and are not a guarantee of identical outcomes in other environments.</p>
+      <a class="v3-inline-link v3-inline-link--light" href="{{ '/case-studies/' | relative_url }}">Explore deployment scenarios <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="v3-section v3-platform-start" aria-labelledby="platform-start-title">
+  <div class="v3-shell v3-platform-start__grid">
+    <div>
+      <p class="v3-eyebrow">Start with one high-value use case</p>
+      <h2 id="platform-start-title">Prove operational value before expanding the scope</h2>
+      <p>Choose one measurable problem—a production loss, disconnected asset, remote-service challenge, or manual workflow. Establish the required data and operational context, validate the result, and reuse the same platform foundation as the deployment grows.</p>
+    </div>
+    <ol class="v3-platform-start__steps">
+      <li><span>01</span><div><strong>Define</strong><p>Agree on the operational problem, baseline, users, and measurable outcome.</p></div></li>
+      <li><span>02</span><div><strong>Connect and validate</strong><p>Integrate the necessary equipment and systems, then verify the workflow with real data, or with Nova Vector Simulators before the hardware is available.</p></div></li>
+      <li><span>03</span><div><strong>Expand</strong><p>Add equipment, sites, workflows, edge services, or analytics when the first use case proves its value.</p></div></li>
+    </ol>
+  </div>
+</section>

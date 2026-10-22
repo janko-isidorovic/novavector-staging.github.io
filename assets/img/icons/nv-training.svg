@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 112" width="150" height="105" role="img" aria-label="Training and enablement">
+  <rect x="10" y="8" width="96" height="64" rx="6" fill="#ffffff" stroke="#1b2747" stroke-width="3"/>
+  <rect x="22" y="46" width="12" height="16" rx="2" fill="#1b2747" opacity=".45"/>
+  <rect x="40" y="36" width="12" height="26" rx="2" fill="#1b2747" opacity=".7"/>
+  <rect x="58" y="26" width="12" height="36" rx="2" fill="#ff5e14"/>
+  <rect x="76" y="18" width="12" height="44" rx="2" fill="#ff5e14"/>
+  <path d="M30 80 l-8 22 M86 80 l8 22 M58 72 v30" stroke="#1b2747" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="132" cy="44" r="10" fill="#1b2747"/>
+  <path d="M116 100 v-18 a16 16 0 0 1 32 0 v18 z" fill="#1b2747"/>
+  <path d="M118 66 L100 52" stroke="#1b2747" stroke-width="4" stroke-linecap="round"/>
+  <path d="M120 26 l12 -6 12 6 -12 6 z" fill="#ff5e14"/>
+  <path d="M126 29 v5 c0 3 12 3 12 0 v-5" fill="#ff5e14"/>
+  <circle cx="148" cy="88" r="9" fill="#2e9d5b"/>
+  <polyline points="144,88 147,91 152,85" fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

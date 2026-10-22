@@ -1,0 +1,92 @@
+<footer class="footer-section">
+    <div class="container">
+        <div class="footer-cta pt-80 pb-20">
+            <div class="row">
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="cta-text">
+                            <h4>Find us</h4>
+                            <span>Generala Ljubomira Milica 10 <br>
+                                11041 Belgrade, Serbia</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <i class="fas fa-phone"></i>
+                        <div class="cta-text">
+                            <h4>Call us</h4>
+                            <span>(+381) 64 1151 256</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <i class="far fa-envelope-open"></i>
+                        <div class="cta-text">
+                            <h4>Mail us</h4>
+                            <span>info@novavector.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-content pt-50 pb-30">
+            <div class="footer-pattern">
+                <img src="{{site.baseurl}}/assets/img/footer/footer_map.png" alt="">
+            </div>
+            <div class="row">
+                <div class="col-xl-5 col-lg-5 mb-50">
+                    <div class="footer-widget">
+                        <div class="footer-logo">
+                            <h2>Nova Vector Industrial IoT &amp; Edge Computing Platform</h2>
+                        </div>
+                        <div class="footer-text">
+                            <p>If fragmented, out-of-context data prevents you from embracing the full potential of AI, Nova Vector offers an easy fix. Our platform connects your equipment and teams and digitizes your production to effectively transform your operational data into real ROI. We lay the foundation for your transition to AI. <strong><a href="{{ '/contact/#request-demo' | relative_url }}">Request a demo</a></strong> to start your digitalization journey today.</p>
+                        </div>
+                        {% if site.linkedin_url %}<div class="footer-social-icon">
+                            <span>Follow us</span>
+                            <a href="{{site.linkedin_url}}" target="_blank" rel="noopener noreferrer" aria-label="Nova Vector on LinkedIn"><i class="fab fa-linkedin-in linkedin-bg" aria-hidden="true"></i></a>
+                        </div>{% endif %}
+                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-7 mb-30">
+                    <div class="v3-footer-grid">
+                    {% for group in site.data.footer_links %}
+                    <div class="footer-widget mb-30">
+                        <div class="footer-widget-heading">
+                            <h4>{{ group.title }}</h4>
+                        </div>
+                        <ul>
+                            {% for link in group.links %}
+                            <li><a href="{{ link.url | relative_url }}">{{ link.text }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                    <div class="copyright-text">
+                        <p>Copyright &copy; {{ 'now' | date: "%Y" }}. All Rights Reserved. Nova Vector.</p>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                    <div class="footer-menu">
+                        <ul>
+                            <li><a href="{{ '/' | relative_url }}">Home</a></li>
+                            <li><a href="{{ '/contact/#request-demo' | relative_url }}">Request a Demo</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

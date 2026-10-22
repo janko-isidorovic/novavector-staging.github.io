@@ -1,0 +1,83 @@
+- text: Platform
+  url: /industrial-iot-platform/
+  submenu:
+  - text: Overview
+    url: /industrial-iot-platform/
+  - text: Architecture
+    url: /architecture/
+  - text: Device & Asset Management
+    url: /iot-device-management/
+  - text: Data & Time-Series Analytics
+    url: /iot-timeseries-analytics/
+  - text: Process Automation
+    url: /industrial-state-machine/
+  - text: Simulation & Replay
+    url: /industrial-simulation/
+  - text: Industrial AI
+    url: /edge-ai-industrial-iot/
+
+- text: Edge
+  url: /edge-computing-platform/
+  submenu:
+  - text: Nova Edge
+    url: /edge-computing-platform/
+  - text: Industrial Edge Management
+    url: /industrial-edge-management/
+  - text: EdgeX Foundry
+    url: /edgex-foundry-platform/
+
+- text: Solutions
+  url: /manufacturing/
+  submenu:
+  - text: Manufacturing
+    url: /manufacturing/
+  - text: OEE & Downtime
+    url: /manufacturing-oee-software/
+  - text: Energy & Energy Storage
+    url: /energy/
+  - text: Industrial OEMs
+    url: /industrial-oem/
+  - text: Industrial Infrastructure
+    url: /industrial-infrastructure/
+
+- text: Developers
+  url: /developers/
+  submenu:
+  - text: Developer Overview
+    url: /developers/
+  - text: Documentation
+    url: /documentation/
+  - text: REST API
+    url: /api/
+  - text: Integrations
+    url: /integrations/
+
+- text: Resources
+  url: /case-studies/
+  submenu:
+  - text: Case Studies
+    url: /case-studies/
+  - text: Technical Articles
+    url: /blog/
+
+- text: Company
+  url: /about/
+  submenu:
+  - text: About
+    url: /about/
+  - text: Professional Services
+    url: /professional-services/
+  - text: Platform Implementation
+    url: /platform-implementation/
+  - text: Systems Integration
+    url: /systems-integration/
+  - text: Support
+    url: /support/
+  - text: Training
+    url: /training/
+  - text: Contact
+    url: /contact/
+
+- text: Request a Demo
+  url: /contact/#request-demo
+  cta: true

@@ -1,0 +1,81 @@
+---
+layout: v3
+permalink: /manufacturing-oee-software/
+title: Production Monitoring, OEE & Downtime
+description: Real-time OEE, Stoppage Pareto, plan attainment, equipment reliability (MTBF and MTTR), and maintenance team reports, connected to machines, shifts, products, and work orders.
+summary: See not only the OEE number, but the plan, machine states, stops, products, and work orders that explain why performance changed, and how fast the team brings the line back.
+eyebrow: Manufacturing analytics
+theme: platform
+hero_image: /assets/img/v3/hero/manufacturing-oee-software.jpg
+noindex: true
+sitemap: false
+video:
+  src: /assets/video/reliability-team.mp4
+  poster: /assets/video/reliability-team.jpg
+  title: From the machine's fault to the team's shift
+  summary: How equipment reliability and maintenance team reports follow a failure from the machine state to the technician's work, and show which station costs the most.
+  duration: "4:32"
+content_sections:
+  - eyebrow: Real-time OEE
+    heading: Watch availability, performance, and quality while the shift runs
+    paragraphs:
+      - The real-time line report shows output and scrap per minute by product, OEE against its target, and availability, performance, and quality with their trends. It refreshes on its own as new readings arrive, so the shift sees its losses while it can still act on them.
+      - OEE is calculated from the production plans, planned stoppages, the line's per-minute production, and the validated speeds for each product and machine, so the same definitions apply on every line. Results are available per shift, product, run, line, day, or month.
+    image: /assets/img/v3/screens/oee-realtime-report.png
+    image_alt: Real-time line report with output per minute, OEE gauge, and availability, performance, and quality
+    caption: The real-time line report, with production per minute by product, OEE against its target, and availability, performance, and quality.
+  - eyebrow: Stoppage Pareto
+    heading: Start improvement with the biggest loss, not the loudest one
+    paragraphs:
+      - The Stoppage Pareto ranks stop time by reason, with the cumulative line, and shows how many stops sit behind each reason. A table lists the longest stops with their shift, product, and duration.
+      - Micro-stops, changeovers, and breakdowns appear side by side, so repeated short stops become visible next to the longer failures that are easier to notice but may matter less in total.
+    image: /assets/img/v3/screens/stoppage-pareto-report.png
+    image_alt: Stoppage Pareto chart of stop time by reason with a cumulative line
+    caption: Stop time by reason with the cumulative line, and the number of stops behind each reason.
+  - eyebrow: Equipment reliability
+    heading: Find the station that fails most often and takes longest to fix
+    paragraphs:
+      - The equipment reliability report counts failures and shows MTBF (mean time between failures) and MTTR (mean time to repair) for the line and for each station, calculated from machine states within the planned shifts. A Pareto of fault time per station shows where repair time goes.
+      - Failures per day and a failure timeline help separate a one-off breakdown from a pattern that needs a maintenance plan.
+    image: /assets/img/v3/screens/equipment-reliability-report.png
+    image_alt: Equipment reliability report with failures, MTBF, MTTR, availability, and fault time per station
+    caption: Failures, MTBF, MTTR, and availability for the line, the same per station, and a Pareto of fault time per station.
+  - eyebrow: Maintenance team
+    heading: Measure response and repair, not just the machine
+    paragraphs:
+      - Team reports show open and overdue work per person, lead time and on-time completion, response to machine problems, planned versus unplanned work, and team utilization against each person's shift calendar.
+      - Utilization uses the time people log on their tasks and, where nothing is logged, time estimated from the machine states. Where RFID readers are part of the project, a badge scan at the machine marks when the technician arrives, so response and repair times are measured rather than guessed; the flow can be customized to match the customer's maintenance process.
+    image: /assets/img/v3/screens/maintenance-work-board.png
+    image_alt: Maintenance work board with each technician's open work, load, and capacity
+    caption: The maintenance work board, with each technician's open work, estimated load and capacity, and overdue and urgent tasks.
+  - eyebrow: Plan attainment
+    heading: See whether the shift is producing what was approved
+    paragraphs:
+      - Nova Vector connects the approved shift plan with the work orders running on each line. Production is counted from the machine's readings within the shift, so supervisors compare target and output while there is still time to react.
+      - The same line can perform differently by product, order, speed target, changeover, and planned stoppage, so production views keep that context instead of showing a single counter.
+    image: /assets/img/v3/features/06-manufacturing-operations/work-order-production.png
+    image_alt: Work-order production with produced, scrap, rework, and progress
+    caption: Production on a work order, counted from the line's readings, with progress against the ordered quantity.
+  - eyebrow: Downtime reasons
+    heading: Combine machine states with the cause people know
+    paragraphs:
+      - Reports derive stops from the machines' states. Where the signals alone cannot explain a stop, people record the category and the solution on the plan, and each recorded stoppage is also kept as a resolved task, so stoppages and maintenance work are reported together.
+    image: /assets/img/v3/features/04-alerts-notifications-and-tasks/task-details.png
+    image_alt: Operational task detail with the machine and resolution
+    caption: A stoppage task keeps the machine, the category, and the resolution with the rest of the production history.
+  - eyebrow: Ready-made templates
+    heading: Start from standard reports, then adapt them
+    paragraphs:
+      - OEE, real-time, Stoppage Pareto, equipment reliability, and team reports come as ready-made templates. A designer can adapt a report in the browser, save it as a template for the installation, and create the same report for another line without rebuilding it. Any panel can be shown as a table or exported to CSV.
+    points:
+      - Time presets for today, this shift, the last 7 days, or a custom range
+      - Hiding a stop reason or product in one panel hides it in every panel
+      - Reports belong to an owner group, like the rest of the platform's records
+related:
+  - label: Manufacturing
+    url: /manufacturing/
+  - label: Time-Series Analytics
+    url: /iot-timeseries-analytics/
+  - label: Process Automation
+    url: /industrial-state-machine/
+---

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 112" width="150" height="105" role="img" aria-label="Platform support">
+  <rect x="12" y="10" width="108" height="70" rx="8" fill="#ffffff" stroke="#1b2747" stroke-width="3"/>
+  <rect x="20" y="18" width="92" height="54" rx="4" fill="#e9eef7"/>
+  <polyline points="24,50 40,50 47,36 56,62 64,44 70,50 88,50" fill="none" stroke="#ff5e14" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="94" y="26" width="12" height="5" rx="2.5" fill="#1b2747" opacity=".35"/>
+  <rect x="94" y="35" width="8" height="5" rx="2.5" fill="#1b2747" opacity=".35"/>
+  <path d="M58 80 h16 l4 14 h-24 z" fill="#1b2747"/>
+  <rect x="44" y="94" width="44" height="5" rx="2.5" fill="#1b2747"/>
+  <circle cx="126" cy="74" r="20" fill="#2e9d5b"/>
+  <polyline points="116,74 123,81 137,67" fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M128 22 a14 14 0 1 1 -7 26 l-8 4 3 -8 a14 14 0 0 1 12 -22 z" fill="#ff5e14"/>
+  <circle cx="122" cy="36" r="2.2" fill="#ffffff"/><circle cx="129" cy="36" r="2.2" fill="#ffffff"/><circle cx="136" cy="36" r="2.2" fill="#ffffff"/>
+</svg>

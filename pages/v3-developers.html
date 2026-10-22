@@ -1,0 +1,80 @@
+---
+layout: v3
+permalink: /developers/
+title: Nova Vector for Developers
+description: Developer resources for Nova Vector architecture, REST APIs, application access, platform concepts, industrial integrations, and Nova Edge.
+summary: Understand how devices, data, identity, messaging, services, edge nodes, and APIs fit together before you build an integration or extend a deployment.
+eyebrow: Developer resources
+theme: platform
+hero_image: /assets/img/v3/hero/developers.jpg
+noindex: true
+sitemap: false
+primary_label: Read the API overview
+primary_url: /api/
+content_sections:
+  - eyebrow: Architecture first
+    heading: Start with the system boundaries before choosing an endpoint
+    paragraphs:
+      - Nova Vector is made up of protocol adapters, messaging services, operational services, storage, identity, web applications, and optional edge nodes. Knowing those boundaries makes integrations easier, because it shows which service owns a resource and how data and commands move between components.
+      - The architecture documentation covers the platform layers, the telemetry path, the event and command flow, device authentication, and user authentication, together with the supported deployment topologies, from Docker Compose on one Linux server to Kubernetes delivered as a project service.
+    image: /assets/img/v3/architecture/02-platform.png
+    image_alt: Nova Vector platform architecture for developers
+    caption: The platform diagram separates adapters, messaging, services, storage, identity, and operations tooling.
+  - eyebrow: Resource model
+    heading: Build around devices, channels, profiles, and operational records
+    paragraphs:
+      - Devices have durable identities and ownership groups. Channels carry their messages. Profiles describe device types, metrics, properties, and decoding behavior. Production records, alerts, tasks, commands, and process state build on top of those resources.
+      - Integrations are easier to maintain when they use these relationships instead of inventing a second naming and identity scheme outside Nova Vector.
+    image: /assets/img/v3/features/02-devices-and-live-data/profile-metrics.png
+    image_alt: Nova Vector device profile metrics
+    caption: Device profiles provide the semantic layer between protocol data and application-level meaning.
+  - eyebrow: APIs and messaging
+    heading: Choose the interface that matches the integration pattern
+    paragraphs:
+      - Every module exposes a REST API, the same one the console uses, with single sign-on tokens and group-based access. MQTT, HTTP, and WebSocket serve continuous or event-driven exchange, and scheduled jobs and command resources provide a managed path for repeatable device actions.
+      - Prefer the API to direct database access. It preserves authorization, resource ownership, and service boundaries, and it keeps your integration valid across upgrades.
+    image: /assets/img/v3/features/11-automation-and-integration/open-api.png
+    image_alt: Nova Vector OpenAPI documentation for developers
+    caption: The interactive OpenAPI page in the console documents the published resource operations.
+  - eyebrow: Application access
+    heading: Give an external application its own identity
+    paragraphs:
+      - An application is a platform identity with its own key, like a device. It reads and sends device data over MQTT (with TLS where the installation publishes it), HTTPS, or secure WebSocket, so a gateway, a data pipeline, or a Node-RED flow does not need a user account.
+      - Systems that work with platform records rather than raw device data, such as an ERP or MES integration, use a service account set up for the project and see only the records of their groups.
+    image: /assets/img/v3/features/11-automation-and-integration/heartbeats.png
+    image_alt: Nova Vector heartbeat sending a command value to a device every few seconds
+    caption: Heartbeats send a command value to a device at a fixed interval, useful for testing a device, an adapter, or an integration.
+  - eyebrow: Edge development
+    heading: Treat the site runtime as a managed part of the platform
+    paragraphs:
+      - Nova Edge hosts EdgeX device services, application logic, a local operator console, and Edge AI on an industrial PC at the site. The Edge Agent connects each edge node to central node identity, software catalogs, rollout state, and audit records.
+      - Software reaches edge nodes as approved bundles. Design against the bundle and node type agreed for the project rather than assuming any EdgeX or container workload can be deployed without qualification.
+    image: /assets/img/v3/features/07-edge-management/node-state.png
+    image_alt: Nova Vector edge node state for developers
+    caption: Node state links site-side software with the central deployment model.
+  - eyebrow: Failure behavior
+    heading: Design for what happens when networks or services are unavailable
+    paragraphs:
+      - Industrial integrations have to expect restarts, overloads, and lost links. Edge nodes can hold machine readings while the link to the platform is down and deliver them when it returns, using EdgeX store and forward, which is switched on per installation. Plan reconnection and replay behavior explicitly for every other data path.
+      - Treat command submission and execution separately. An accepted API request means the platform took the request; confirmation that a remote site or a controller carried out the action comes from the device's own response.
+    image: /assets/img/v3/architecture/04-events-commands.png
+    image_alt: Nova Vector event and command flow
+    caption: Understanding asynchronous event and command paths is essential for reliable integration design.
+  - eyebrow: Reference environments
+    heading: Develop against realistic equipment before the hardware arrives
+    paragraphs:
+      - Nova Vector Simulators behave like real equipment on the wire, with Modbus PLCs and meters, BACnet HVAC, SNMP network gear, and MQTT edge nodes assembled into complete systems such as a production line, an assembly line, and a battery energy-storage enclosure.
+      - The simulators provision and remove their devices through the same public APIs your integration uses, and scripted scenarios with expected results make it possible to test an integration repeatedly, including breakdowns and changeovers you cannot order on a real line.
+    image: /assets/img/v3/features/10-simulators/production-line-scenarios.png
+    image_alt: Nova Vector Simulators console for a simulated production line with scripted scenarios
+    caption: Scripted scenarios such as a breakdown, a changeover, or a full shift, each with expected results, run against a simulated production line.
+related:
+  - label: REST API
+    url: /api/
+  - label: Automation & Integration
+    url: /integrations/
+  - label: Documentation
+    url: /documentation/
+  - label: Architecture
+    url: /architecture/
+---

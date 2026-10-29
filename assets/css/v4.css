@@ -190,3 +190,6 @@ h1, h2, h3, h4, h5, h6, .v3-page h1, .v3-page h2, .v3-page h3 { color: var(--nv-
 .nv-home-v3 .nv-architecture-points article:last-child { padding-bottom: 0; }
 @media (min-width: 992px) { .nv-home-v3 .nv-architecture-points article { padding-bottom: 0; } }
 .nv-home-v3 .use-cases .row:last-child::after { content: none; } /* the legacy clearfix became an empty third grid row */
+/* Grey feature rows: drop the legacy 5% indent so heading, text and link share the column edge, as in the white rows */
+.nv-home-v3 .paragraphs .container-grey h3,
+.nv-home-v3 .paragraphs .container-grey p { margin-left: 0; }

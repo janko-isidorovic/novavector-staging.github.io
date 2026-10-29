@@ -168,3 +168,25 @@ h1, h2, h3, h4, h5, h6, .v3-page h1, .v3-page h2, .v3-page h3 { color: var(--nv-
 .v3-platform-difference article:last-child { padding: 28px 30px !important; border-right: 0; }
 .v3-platform-difference span { display: inline-block; padding: 3px 7px; border-radius: 3px; background: var(--nv-orange); color: #fff; font-weight: 800; }
 @media (max-width: 991px) { .v3-platform-difference { gap: 16px; } }
+
+/* ---------- Homepage section rhythm: every content band gets the same space above and below ---------- */
+.nv-home-v3 { --nv-section-y: 72px; }
+@media (max-width: 1199px) { .nv-home-v3 { --nv-section-y: 56px; } }
+@media (max-width: 640px) { .nv-home-v3 { --nv-section-y: 48px; } }
+.nv-home-v3 .intro,
+.nv-home-v3 .nv-home-results,
+.nv-home-v3 .user-story,
+.nv-home-v3 .nv-capabilities-heading,
+.nv-home-v3 .nv-home-architecture,
+.nv-home-v3 .use-cases,
+.nv-home-v3 .service-area { margin-top: 0 !important; margin-bottom: 0 !important; padding-top: var(--nv-section-y) !important; padding-bottom: var(--nv-section-y) !important; }
+/* The alternating white and grey feature rows read as one list, so they sit closer together */
+.nv-home-v3 .paragraphs .container-grey,
+.nv-home-v3 .paragraphs .container-white { margin-top: 0 !important; margin-bottom: 0 !important; padding-top: calc(var(--nv-section-y) / 2) !important; padding-bottom: calc(var(--nv-section-y) / 2) !important; }
+/* Keep the band's padding as the only space at its edges */
+.nv-home-v3 .nv-home-results__heading h2:first-child,
+.nv-home-v3 .nv-capabilities-heading h2:first-child,
+.nv-home-v3 .service-area .service-title h3 { margin-top: 0; }
+.nv-home-v3 .nv-architecture-points article:last-child { padding-bottom: 0; }
+@media (min-width: 992px) { .nv-home-v3 .nv-architecture-points article { padding-bottom: 0; } }
+.nv-home-v3 .use-cases .row:last-child::after { content: none; } /* the legacy clearfix became an empty third grid row */

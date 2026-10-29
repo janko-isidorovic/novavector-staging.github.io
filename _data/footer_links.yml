@@ -33,19 +33,6 @@
   - text: Infrastructure
     url: /industrial-infrastructure/
 
-- title: Develop & Learn
-  links:
-  - text: Developers
-    url: /developers/
-  - text: Documentation
-    url: /documentation/
-  - text: API
-    url: /api/
-  - text: Integrations
-    url: /integrations/
-  - text: Technical Articles
-    url: /blog/
-
 - title: Company
   links:
   - text: About

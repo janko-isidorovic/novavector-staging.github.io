@@ -40,26 +40,6 @@
   - text: Industrial Infrastructure
     url: /industrial-infrastructure/
 
-- text: Developers
-  url: /developers/
-  submenu:
-  - text: Developer Overview
-    url: /developers/
-  - text: Documentation
-    url: /documentation/
-  - text: REST API
-    url: /api/
-  - text: Integrations
-    url: /integrations/
-
-- text: Resources
-  url: /case-studies/
-  submenu:
-  - text: Case Studies
-    url: /case-studies/
-  - text: Technical Articles
-    url: /blog/
-
 - text: Company
   url: /about/
   submenu:

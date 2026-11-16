@@ -1,10 +1,11 @@
 ---
 layout: v3
 permalink: /edge-ai-industrial-iot/
-title: Industrial AI & Edge Inference
-description: Run approved ONNX models on edge nodes next to the machine, with a model registry, approval, compatibility checks, safe rollout and rollback, and results returned as ordinary operational data.
-summary: Prepare industrial data for model development, then deploy approved models to the right edge nodes for local inference, without presenting Nova Vector as a full training or MLOps platform.
-eyebrow: AI-ready by design
+title: Industrial AI on the Platform and at the Edge
+title_accent: at the Edge
+description: Run AI models on the platform server or on edge nodes, detect anomalies without setting limits, and ask a private AI assistant about your plant's data.
+summary: One registry and one approval for every model, run where it fits best, on the platform server for many machines at once or on an edge node next to one. Anomaly detection and a private AI assistant work from the same operational data.
+eyebrow: Platform and Edge AI
 theme: edge
 hero_image: /assets/img/v3/hero/edge-ai-industrial-iot.jpg
 video:
@@ -15,65 +16,83 @@ video:
   duration: "4:24"
 content_sections:
   - eyebrow: AI-ready data
-    heading: Start with context before asking a model to interpret operations
+    heading: Data that keeps its context, and proof of what it holds
     paragraphs:
-      - Nova Vector keeps measurements tied to devices, assets, process state, alerts, tasks, and manufacturing records. That context matters because a model trained on isolated sensor values often lacks the information needed to tell one operating mode, product, shift, or machine condition from another.
-      - APIs and messaging interfaces supply this operational data to external notebooks, analytics systems, and model-development environments. Model training and broader MLOps stay in your data-science tools.
-    image: /assets/img/v3/features/03-dashboards-and-reports/home-dashboard.png
-    image_alt: Nova Vector operational dashboard with message rates, device counts, and the busiest channels
-    caption: Operational context is built before model deployment, so AI results can be related back to real equipment and workflows.
+      - Nova Vector keeps every reading tied to its device, asset, process state, alarms, tasks, and production records. A model can then tell one operating mode, product, or shift from another, instead of guessing from isolated sensor values.
+      - Dataset snapshots freeze a group's data for a time window as Parquet files with a manifest and SHA-256 hashes, so a model trained today can be checked months later on exactly the same records. The reasons people give when they acknowledge alarms, such as real fault, false alarm, or maintenance, can be included as labels, and every download is recorded.
+    image: /assets/img/v3/screens/ai/dataset-snapshot.webp
+    image_alt: Nova Vector dataset snapshot of one day of a production line, with its nine devices, purpose, retention, rows, size, and content hash
+    caption: One day of a production line frozen for model training, with its purpose, size, and a content hash that the manifest confirms.
   - eyebrow: Model registry
-    heading: Register and approve model versions before they reach edge nodes
+    heading: One registry and one approval for the platform and the edge
     paragraphs:
-      - Edge AI uses the standard ONNX format, as exported by PyTorch, TensorFlow, scikit-learn, and most other training tools. Each version is one package with the model, a manifest of inputs, outputs, and node requirements, pre- and post-processing, and checksums for every file. The platform checks the package on upload and again before approval.
-      - Versions move from draft to candidate to approved, and later to deprecated and retired. Only approved versions can be deployed, and each approval is recorded with who, when, and a note. Approval is a role today, without a second approver; model signing is available but switched off by default, while checksums are always verified.
-    image: /assets/img/v3/screens/edge-ai-model-registry.png
-    image_alt: Nova Vector model registry with an approved model version, its size and checksum, the manifest, and the approval history
-    caption: An approved model version with its checksum, manifest, and approval history.
-  - eyebrow: Deployment
-    heading: Check every edge node before anything is sent
+      - Models use the standard ONNX format, as exported by PyTorch, TensorFlow, scikit-learn, and most other training tools. Each version is one package with the model, a manifest of its inputs, outputs, and requirements, pre- and post-processing, and checksums for every file. The platform checks the package on upload and again before approval.
+      - Versions move from draft to candidate to approved, and later to deprecated and retired. Only approved versions can be deployed, to edge nodes or to the platform, and each approval is recorded with who, when, and a note.
+    image: /assets/img/v3/screens/ai/model-versions.webp
+    image_alt: Nova Vector model registry with two approved and signed versions of the anomaly model, each with its size and SHA-256 checksum
+    caption: Two approved, signed versions of a model, each with its size and SHA-256 checksum.
+  - eyebrow: Platform AI
+    heading: Run models on the platform server, without edge hardware
     paragraphs:
-      - A five-step wizard links one approved version to a set of edge nodes and to a machine on each node. Before deployment, the platform checks every target node's architecture, runtime version, execution tier, and free memory and storage. A node that does not meet the model's requirements is rejected with a reason.
-      - The binding chooses which readings of the machine feed the model input, in order, and is validated on the node itself. Results can go to the platform, back to the node as a virtual device for local logic, or both.
-    image: /assets/img/v3/screens/edge-ai-deployment-review.png
-    image_alt: Nova Vector deployment review with the model version, its source device, and a compatible verdict for each of three edge nodes
-    caption: The review shows the model version, its input, and a compatibility verdict for every edge node.
-  - eyebrow: Edge inference
-    heading: Run approved models next to the live data
+      - Server-side inference runs a model next to the data the platform already receives, whatever protocol brought it in, such as MQTT, OPC UA, Modbus, or LoRaWAN. One deployment scores many machines of a group, each with its own window of readings.
+      - Models run in inference pools on CPU, or on GPU where a GPU server is installed. The instances of a pool share the work, and when one stops, the others take over its machines. The deployment wizard checks the pool against the model's requirements before anything runs, and each deployment's page shows its throughput, latency, errors, memory, and hand-overs.
+    image: /assets/img/v3/screens/ai/platform-deployment-statistics.webp
+    image_alt: Nova Vector platform deployment statistics for the last hour, with status, throughput, latency, errors, pipeline time, memory, freshness, and hand-overs
+    caption: A classifier on the production hall's climate sensor, running on the CPU pool, with its throughput, latency, and memory over the last hour.
+  - eyebrow: Edge AI
+    heading: Run models next to the machine, even when the connection drops
     paragraphs:
-      - Each node runs the model on every new reading of the bound machine with ONNX Runtime on the node's CPU, with no round trip to the cloud. GPU acceleration is prepared but not yet available, and a node runs one model at a time.
-      - Once the model and runtime are on the node, inference keeps running without a cloud connection. Image models on camera pictures follow the same path and are in pilot.
-    image: /assets/img/v3/features/08-edge-ai/deploy-binding-numeric.png
-    image_alt: Nova Vector deployment binding with two machine readings feeding the model's two input fields, validated on the node
-    caption: Two readings of a machine fill the model's input, validated on the node.
+      - A wizard links one approved version to a set of edge nodes and to a machine on each node. Before anything is sent, the platform checks every node's architecture, runtime version, execution tier, and free memory and storage, and rejects a node that does not fit, with the reason.
+      - Each node runs the model on every new reading of its machine with ONNX Runtime, with no round trip to the cloud, and keeps running without a connection. Results can go to the platform, back to the node as a virtual device for local logic, or both. Image models on camera pictures follow the same path.
+    image: /assets/img/v3/screens/ai/edge-deploy-targets.webp
+    image_alt: Nova Vector edge deployment wizard, choosing three edge nodes with their architecture, EdgeX endpoint, runtime version, and free memory
+    caption: Choosing the edge nodes, each with its architecture, EdgeX endpoint, runtime version, and free memory.
   - eyebrow: Safe rollout and rollback
     heading: Update every node, and go back in one step
     paragraphs:
-      - Each node downloads the new version, checks it, switches to it, and checks its health. If the new version does not come up healthy, the node returns to the version it ran before. Nodes keep the active version, the previous one, and one staged version.
-      - The rollout board shows every node with its phase, active version, runtime, and health. A deployment can be rolled back for all its nodes together, or sent again to catch up a node that was offline.
-    image: /assets/img/v3/screens/edge-ai-rollout-board.png
-    image_alt: Nova Vector rollout board with three edge nodes running the model on the CPU, each healthy, with rollback and re-emit buttons
-    caption: The rollout board with every node running and healthy; rollback and re-send are one click away.
+      - Each node downloads the new version, checks it, switches to it, and checks its health. If the new version does not come up healthy, the node returns to the version it ran before. Platform deployments change version and roll back the same way.
+      - Every node and every machine shows its phase, active version, and health, and each step of a rollout is recorded. A deployment can be rolled back for all its nodes together, or sent again to catch up a node that was offline.
+    image: /assets/img/v3/screens/ai/platform-deployment-events.webp
+    image_alt: Nova Vector deployment events of a model, from requested and emitted to loading and running on an inference instance
+    caption: Each step of a rollout is recorded, from the request to the model running on its instance.
+  - eyebrow: Anomaly detection
+    heading: Models that learn what normal looks like for every reading
+    paragraphs:
+      - An anomaly rule needs no limits. A model on the platform learns each reading's level, daily rhythm, and noise, and scores every new minute against it. It catches spikes and noise within a minute or two, a stuck value in about ten minutes, and a slow drift in about two hours.
+      - On the platform's evaluation set of simulated plants with injected faults, rules at the default sensitivity caught 85 % of the faults and raised about one alarm every five days on normal data. Before a rule is saved, it runs over the last seven days of history to show where it would have fired.
+    image: /assets/img/v3/screens/ai/anomaly-deployment.webp
+    image_alt: Nova Vector anomaly model of the production line running on the CPU pool, managed by the group's anomaly rules
+    caption: The production line's anomaly model runs on the platform, created and kept in step by the group's anomaly rules.
   - eyebrow: Results
-    heading: Treat inference output as operational data, not as a separate AI application
+    heading: Treat model output as operational data, not as a separate AI application
     paragraphs:
-      - Results such as a class, a label, or a confidence value return through the normal data path on the deployment's own channel. They are stored and charted next to the measurements that produced them, and an alert on a numeric result opens a maintenance task like any other alarm.
-      - Current boundaries are worth knowing when planning a project. A new version gets a new results channel, so dashboards and alerts are re-pointed; inference latency is measured on the node but not yet shown on the platform; and switching a deployment off does not yet stop the model on the nodes.
-    image: /assets/img/v3/features/08-edge-ai/numeric-results.png
-    image_alt: Numeric Edge AI inference results in Nova Vector, charted per node with label, confidence, and class index
-    caption: Inference results return as platform telemetry so they can be viewed with other operational data.
-  - eyebrow: AI Assistant preview
-    heading: Use a local language model for supported platform questions and actions
+      - Results such as a class, a label, a score, or a confidence value return through the normal data path, on the deployment's own channel. They are stored and charted next to the measurements that produced them, and an alert on a result opens a maintenance task like any other alarm.
+      - Every platform deployment also appears as a model instance, a device of its own that publishes the model's health. Charts, alerts, and the API can watch a model the same way they watch a machine.
+    image: /assets/img/v3/screens/ai/inference-results.webp
+    image_alt: Nova Vector device page of the production hall sensor, charting the temperature with the classifier's confidence, and a table with the class, label, and confidence next to the readings
+    caption: The classifier's results sit next to the readings that produced them, on the sensor's own page.
+  - eyebrow: AI Assistant
+    heading: Ask about your plant in plain language
     paragraphs:
-      - The AI Assistant is a separate preview capability. Its language model runs on an Ollama server inside or alongside the customer deployment, and the assistant uses the signed-in user's platform access when calling supported APIs.
-      - For selected create, change, or delete operations, the assistant shows a confirmation step before the action is submitted. Its scope depends on the tools currently exposed to it and should not be described as unrestricted natural-language control of the platform.
-    image: /assets/img/v3/features/09-ai-assistant/confirm-create.png
-    image_alt: Nova Vector AI Assistant confirming a create operation
-    caption: The preview assistant asks for confirmation before selected write operations.
+      - The assistant answers from live platform data, such as devices and their readings, alarms and their state, tasks, production plans, and the OEE, stoppage, and reliability reports. It uses the platform's own definitions, so its OEE is the report's OEE. Answers come with tables, charts, and links, in English or Serbian, and a conversation can start from any device, alarm, or report.
+      - It works with the user's own login, so it sees and changes only what that user may. Creating, changing, or deleting devices, sending commands, and controlling simulations always wait for the user's approval.
+    image: /assets/img/v3/screens/ai/assistant-answer.webp
+    image_alt: Nova Vector AI Assistant answering a question about yesterday's OEE of a production line, with availability, performance, and quality, output per product, the best and worst shift, and the report's panels
+    caption: Asked about yesterday's OEE, the assistant reads the report, names availability as the bottleneck, and offers the Pareto report next.
+  - eyebrow: Private and governed
+    heading: Language models on your own servers, with limits and a full record
+    paragraphs:
+      - The language model runs on a model server in your own environment, and questions and data do not go to an outside AI service. Only models that pass a qualification test of 65 questions are used, including checks that the model ignores instructions hidden in the data, and every answer names the model that wrote it.
+      - Administrators set a daily limit for each group, see usage per group and model, and read an audit of every model call, function call, and setting change, without the text of the questions being stored. Users' own AI agents, such as Claude Code or VS Code, can connect over MCP to read the platform with their own permissions, once an administrator allows it.
+    image: /assets/img/v3/screens/ai/language-model-policies.webp
+    image_alt: Nova Vector group policies for the language models, with each group's mode and daily limit and the installation's switch for external agents
+    caption: Every call stays on local model servers, each group has its own policy, and external agents stay off until an administrator allows them.
 related:
-  - label: Industrial Edge Management
-    url: /industrial-edge-management/
-  - label: Time-Series Analytics
+  - label: Alerts & Tasks
+    url: /industrial-state-machine/
+  - label: Edge Computing
+    url: /edge-computing-platform/
+  - label: Reports & Analytics
     url: /iot-timeseries-analytics/
   - label: Platform Architecture
     url: /architecture/

@@ -5,10 +5,11 @@ redirect_from:
   - /pages/services-details.html
 layout: v3
 permalink: /professional-services/
-title: Professional Services
-description: Industrial IoT architecture, implementation, integration, training, and support for Nova Vector deployments, delivered by the team that develops the platform.
+title: Implementation and Integration
+title_accent: Integration
+description: Nova Vector implementation and integration services, on premises, in the cloud, or hybrid, with ERP and MES links built for your data model, delivered by the team that develops the platform.
 summary: Plan, deploy, configure, and integrate Nova Vector around your equipment, systems, and teams, with the engineers who build the platform.
-eyebrow: Company
+eyebrow: Services
 theme: platform
 hero_image: /assets/img/v3/hero/professional-services.jpg
 show_capability_cards: true
@@ -37,6 +38,19 @@ content_sections:
     image: /assets/img/v3/screens/resources/machine-live-data.png
     image_alt: Nova Vector machine page with a live chart of the machine's values and its readings as they arrive
     caption: One page per machine, with every value it sends charted live. Screenshot from a demo installation.
+  - eyebrow: Where it runs
+    heading: On premises, in the cloud, or hybrid
+    paragraphs:
+      - The standard installation is Docker Compose on one Linux server. Customers that run Kubernetes, for example with Rancher, get a Kubernetes deployment as a project service, and isolated or air-gapped networks are prepared per installation.
+      - High availability, backups, retention, and update windows are designed with the customer's IT for each project rather than assumed.
+  - eyebrow: Enterprise systems
+    heading: Built for your data model, not a generic connector
+    paragraphs:
+      - There are no one-size-fits-all ERP or MES connectors. Each integration is designed for the customer's data model, authentication, and direction of data flow, typically work orders and products in, and produced, scrapped, and consumed quantities, stoppages, and maintenance records out.
+      - Integrations are built on the REST APIs, Node-RED flows, or custom functions, and external systems authenticate with their own service accounts and see only the records of their groups.
+    image: /assets/img/v3/features/11-automation-and-integration/open-api.png
+    image_alt: Nova Vector OpenAPI documentation
+    caption: Integrations use the same documented APIs as the Nova Vector console.
   - eyebrow: Customize
     heading: Reports, processes, and workflows shaped to your plant
     paragraphs:
@@ -44,18 +58,24 @@ content_sections:
     image: /assets/img/v3/screens/resources/maintenance-work-board.png
     image_alt: Nova Vector maintenance work board with each technician's open work, load, and capacity
     caption: A maintenance work board configured around the team and its capacity. Screenshot from a demo installation.
+  - eyebrow: Test before go-live
+    heading: Prove integrations against a simulated line
+    paragraphs:
+      - MES and ERP links are usually tested late, on the real line, and nobody can order a bad lot or a breakdown on demand. Nova Vector Simulators replace that guesswork with a simulated assembly or production line that speaks the same protocols as the real equipment.
+      - The simulated line has a known ground truth. Scripted scenarios, such as a bad parts lot that sends servers to rework or a serial used twice, check every step with expected results, so the records your MES and ERP integrations depend on are verified before production depends on them.
+    image: /assets/img/v3/features/10-simulators/assembly-line.png
+    image_alt: Nova Vector Simulators assembly line with stations, badge readers, and test results
+    caption: A simulated assembly line used to test integrations before go-live.
   - eyebrow: Handover and support
     heading: Deliver a system the responsible team can operate
     paragraphs:
       - Implementation includes configuration, integration, testing, documentation, role-based training, and an agreed support path. Ownership is explicit across Nova Vector, customer infrastructure, equipment, and third-party systems.
       - After go-live, the same team supports the platform, plans upgrades, and extends it to more lines, sites, and use cases.
 related:
-  - label: Platform Implementation
-    url: /platform-implementation/
-  - label: Systems Integration
-    url: /systems-integration/
   - label: Training
     url: /training/
   - label: Support
     url: /support/
+  - label: Platform Overview
+    url: /industrial-iot-platform/
 ---

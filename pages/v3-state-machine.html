@@ -2,7 +2,7 @@
 layout: v3
 permalink: /industrial-state-machine/
 title: Process Automation, Alerts & Tasks
-description: Model operational state, detect abnormal conditions, notify the right people, create assigned work, and preserve event history through resolution.
+description: Model operational state, detect abnormal conditions with limits or learned anomaly detection, notify the right people, create assigned work, and keep the history.
 summary: Turn measurements into understandable process state, then connect abnormal conditions to notifications, tasks, commands, and a traceable response workflow.
 eyebrow: Operational automation
 theme: platform
@@ -19,31 +19,43 @@ content_sections:
     paragraphs:
       - A temperature, counter, pressure value, or machine bit often matters only because of the operating state around it. Nova Vector process models combine selected data sources with explicit states and guarded transitions, so the platform can tell whether equipment is running, idle, starved, blocked, stopped, or in another customer-defined condition.
       - Rules link machines to each other. Each machine's state drives the state of the line, and the line's state drives an andon board, so the reason behind a degraded line is visible on one diagram.
-    image: /assets/img/v3/screens/process-machine-to-machine.png
-    image_alt: Nova Vector process diagram with filler, capper, labeller, and packer linked by rules to the line state and the andon board
+    image: /assets/img/v3/screens/alerts/process-diagram.webp
+    image_alt: Nova Vector process diagram of a production line, with filler, capper, labeller, packer, and buffers linked by rules to the line state and the andon board, and the line's state timeline above
     caption: Rules link each machine's state to the line's state, and the line's state to the andon board.
   - eyebrow: Versioned logic
     heading: Know which rule caused every state change
     paragraphs:
       - Published process versions are immutable, so historical execution is interpreted against the exact logic that was active at the time instead of today's edited configuration.
       - Every state change is logged with its trigger, the values behind it, and the rule version that applied. The execution log exports to CSV for your own analysis.
-    image: /assets/img/v3/features/05-process-simulator/execution-log.png
+    image: /assets/img/v3/screens/alerts/execution-log.webp
     image_alt: Nova Vector execution log listing state changes with their trigger, version, and the values behind each change
     caption: The execution log records each state change with its trigger and rule version.
   - eyebrow: Alerts
     heading: Detect a condition and preserve the evidence around it
     paragraphs:
-      - Alert definitions watch configured values and no-data conditions. When the condition changes state, Nova Vector updates the affected device context and routes the result into notification and task workflows. Notifications are sent by e-mail to the configured recipients.
-      - Alert limits are defined in the platform rather than hard-coded into a dashboard. This keeps the detection rule connected to the equipment that owns it and gives teams one place to inspect current and historical alert state.
-    image: /assets/img/v3/features/04-alerts-notifications-and-tasks/alert-limits.png
-    image_alt: Nova Vector alert-limit configuration for a device metric
-    caption: Alert limits define the conditions the platform evaluates for a device or metric.
+      - Alert rules check a number against limits, a text value against conditions, a device that stops sending, or a reading against what the platform has learned is normal for it. When the condition changes state, Nova Vector updates the affected device context and routes the result into notification and task workflows. Notifications are sent by e-mail to the configured recipients.
+      - Alert rules are defined in the platform rather than hard-coded into a dashboard. This keeps the detection rule connected to the equipment that owns it and gives teams one place to inspect current and historical alert state. Operators acknowledge an alarm with a reason, such as maintenance, real fault, or false alarm, so every alarm can be classified afterwards.
+    image: /assets/img/v3/screens/alerts/alert-rule.webp
+    image_alt: Nova Vector threshold alert rule with its Warning and Error conditions and the last 24 hours of the reading against them
+    caption: A threshold rule with its state, its conditions, and the last 24 hours of the reading against the Warning and Error levels.
+  - eyebrow: Anomaly detection
+    heading: Catch the problems nobody set a limit for
+    paragraphs:
+      - An anomaly rule needs no limits. It learns what is normal for one reading of one device, its level, its daily rhythm, and its noise, and raises an alarm when the reading leaves that. It catches a value that drifts, gets stuck, or turns noisy while staying inside every sensible limit. Choose a sensitivity of High, Medium, or Low, and the rule learns for about three days before it raises anything.
+      - Before a rule is saved, Test on history runs it over the last seven days and shows where it would have fired at each sensitivity. A lasting change of operation becomes the new normal by itself; an alarm acknowledged as a real fault stays until the reading is back. Each group can set a daily budget of anomaly alarms, and the alert page shows when the budget is exceeded and which rules raise the most.
+    points:
+      - No limits to set, and a sensitivity in three steps
+      - Test on history before the rule is saved
+      - A threshold rule beside it for values that must never be passed
+    image: /assets/img/v3/screens/alerts/anomaly-rule-form.webp
+    image_alt: Nova Vector anomaly rule form for the production hall temperature, with the reading, the sensitivity, the seasonality, the level, test on history, and notifications per state
+    caption: An anomaly rule on the production hall temperature. Choose the reading, the sensitivity, and the level; the platform learns the rest.
   - eyebrow: From alarm to work
     heading: Convert an abnormal event into something a person can own
     paragraphs:
       - An alert can create a task from a configured template. The task keeps its category, assignee, status, history, and the source context that caused it, so maintenance or support teams do not have to reconstruct the original event from another system.
       - Where configured, clearing the source alert resolves the related task automatically. A technician can scan an RFID badge at the machine to record arrival, so response and repair times are measured rather than estimated; the flow can be customized to match your maintenance process.
-    image: /assets/img/v3/features/04-alerts-notifications-and-tasks/tasks-from-alerts.png
+    image: /assets/img/v3/screens/alerts/tasks-from-alarms.webp
     image_alt: Nova Vector task list showing tasks created from alerts, with status, duration, assignee, and category
     caption: Alert-generated tasks keep the originating context and are tracked through resolution.
   - eyebrow: Task workflows
@@ -55,9 +67,9 @@ content_sections:
       - Templates, sub-tasks, and recurring schedules
       - Boards by status, category, or person, with "my tasks" for everyone
       - Blockers and signed status changes for critical steps
-    image: /assets/img/v3/screens/task-kanban-board.png
-    image_alt: Nova Vector Kanban board with downtime, inspection, maintenance, and quality tasks by status, including blocked and overdue tasks
-    caption: A line Kanban board with sub-task progress, owners, and blocked or overdue tasks.
+    image: /assets/img/v3/screens/alerts/kanban-board.webp
+    image_alt: Nova Vector Kanban board of an assembly line with audit, test, rework, and paperwork tasks by status, including blocked and overdue tasks
+    caption: An assembly line Kanban board with owners, due dates, and blocked or overdue tasks.
   - eyebrow: Traceable response
     heading: Keep notification, task, and command behavior separate and observable
     paragraphs:
@@ -67,12 +79,12 @@ content_sections:
     image_alt: Nova Vector event, alert, task, and command architecture
     caption: Alerts, tasks, notifications, schedules, and commands use explicit service paths rather than one hidden automation chain.
 related:
-  - label: Process Simulation & Replay
+  - label: Simulation & Replay
     url: /industrial-simulation/
-  - label: Manufacturing
+  - label: Manufacturing & OEE
     url: /manufacturing/
   - label: OEE & Downtime
     url: /manufacturing-oee-software/
-  - label: Platform Architecture
-    url: /architecture/
+  - label: Platform & Edge AI
+    url: /edge-ai-industrial-iot/
 ---

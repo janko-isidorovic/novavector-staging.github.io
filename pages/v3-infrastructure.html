@@ -8,7 +8,8 @@ title: Industrial Infrastructure & Facilities
 description: Connect building systems, utilities, environmental sensors, network equipment, and distributed sites through BACnet/IP, SNMP, LoRaWAN, MQTT, and edge services, with dashboards, alerts, and tasks.
 summary: Bring building and infrastructure data into the same device, time-series, alert, and response model used by the rest of Nova Vector.
 eyebrow: Industrial solution
-theme: edge
+theme: edge
+
 hero_image: /assets/img/v3/hero/industrial-infrastructure.jpg
 content_sections:
   - eyebrow: Building systems
@@ -16,16 +17,16 @@ content_sections:
     paragraphs:
       - BACnet/IP discovery finds compatible building-control devices on the network and lets you browse their objects before adding them, so HVAC, lighting, and other systems join the device model without manual address lists.
       - MQTT, HTTP, and WebSocket provide additional IoT paths, and edge nodes can be introduced where a site benefits from local connectivity or processing.
-    image: /assets/img/v3/features/01-device-connectivity/bacnet-device-discovery.png
-    image_alt: Nova Vector BACnet device discovery
-    caption: BACnet discovery brings compatible building-control devices into the platform device model.
+    image: /assets/img/v3/screens/infrastructure/bacnet-objects.webp
+    image_alt: Nova Vector BACnet provisioning, listing the objects of a discovered HVAC unit with their present values before they are bound
+    caption: Discovery finds an HVAC unit and lists its objects, such as supply and return air, fan speed, and setpoint, before anything is added.
   - eyebrow: Network and infrastructure equipment
     heading: Receive SNMP traps from network and power equipment
     paragraphs:
       - SNMP trap receivers turn traps from switches, UPS units, and other infrastructure equipment into readings and alarms, including SNMP v3 with authentication and encryption.
-    image: /assets/img/v3/features/01-device-connectivity/snmp-receivers.png
-    image_alt: SNMP trap receivers configured in Nova Vector
-    caption: SNMP trap receivers, each serving the infrastructure devices that send traps to it.
+    image: /assets/img/v3/screens/infrastructure/snmp-receivers.webp
+    image_alt: Nova Vector SNMP trap receivers for v1, v2c, and v3, with security, trap count, and last trap for each
+    caption: Trap receivers for SNMP v1, v2c, and v3, each with its security, trap count, and last trap.
   - eyebrow: Field sensors
     heading: Cover large sites with long-range, low-power sensors
     paragraphs:
@@ -35,30 +36,30 @@ content_sections:
     paragraphs:
       - Buildings, floors, rooms, utility systems, equipment, meters, and sensors are represented through the device hierarchy, so a user can move from a site view into a specific device and its live or historical data.
       - Reusable profiles give repeated device types a consistent description, standardizing the meaning of measurements across similar meters, controllers, or sensors.
-    image: /assets/img/v3/features/02-devices-and-live-data/devices-tree.png
-    image_alt: Nova Vector device hierarchy
-    caption: The same hierarchy used for production equipment represents facilities, systems, and infrastructure devices.
+    image: /assets/img/v3/screens/infrastructure/site-hierarchy.webp
+    image_alt: Nova Vector device tree of a battery storage site, with its battery management system, power conversion system, climate sensors, enclosure controller, HVAC unit, network switch, and UPS
+    caption: A battery storage site with its HVAC unit, UPS, network switch, and climate sensors, in the same hierarchy used for production equipment.
   - eyebrow: Monitoring and reports
     heading: Compare operating periods without separating current and historical views
     paragraphs:
-      - Device pages give direct access to current readings and history, with chart, PDF, PNG, and CSV exports. Embedded Grafana dashboards cover broader site and system views, such as energy and utility use per area or system.
+      - Device pages give direct access to current readings and history, with chart, PDF, PNG, and CSV exports. Dashboards built in the platform, or in embedded Grafana, cover broader site and system views, such as energy and utility use per area or system.
       - Facility reports are configured to the project's available data and objectives, rather than taken from a fixed library of building-management reports.
-    image: /assets/img/v3/features/03-dashboards-and-reports/grafana-dashboards.png
-    image_alt: Grafana dashboards embedded in Nova Vector
-    caption: Embedded dashboards give a broader view across many devices and operating periods.
+    image: /assets/img/v3/screens/infrastructure/site-dashboard.webp
+    image_alt: Nova Vector live dashboard of a battery storage site, with state of charge, power, voltages, hottest cell, state of health, enclosure air temperature, and HVAC fan speed
+    caption: A battery storage site at a glance, with charge, power, cell limits, enclosure air, and HVAC fan speed, refreshed every 30 seconds.
   - eyebrow: Alerts and response
     heading: Turn abnormal conditions into a traceable operational workflow
     paragraphs:
       - Alert limits and no-data checks identify abnormal or missing measurements. Notifications are sent by e-mail to the configured recipients, and tasks keep the originating device and alert context through assignment and resolution.
       - For infrastructure operations, the important outcome is not only showing an alarm, but making sure somebody owns and closes the resulting work.
-    image: /assets/img/v3/features/04-alerts-notifications-and-tasks/tasks-from-alerts.png
-    image_alt: Nova Vector tasks created from operational alerts
-    caption: Alert-generated tasks connect monitored infrastructure conditions with assigned follow-up work.
+    image: /assets/img/v3/screens/infrastructure/task-from-alarm.webp
+    image_alt: Nova Vector task opened by a no-data alarm on a battery enclosure temperature sensor, with its device, group, category, and alert rule
+    caption: A task opened when an enclosure temperature sensor stopped sending, linked to its device and its alert rule.
 related:
-  - label: Device Management
+  - label: Devices & Connectivity
     url: /iot-device-management/
-  - label: Time-Series Analytics
+  - label: Reports & Analytics
     url: /iot-timeseries-analytics/
-  - label: Nova Edge
+  - label: Edge Computing
     url: /edge-computing-platform/
 ---

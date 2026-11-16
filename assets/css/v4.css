@@ -50,7 +50,6 @@ h1, h2, h3, h4, h5, h6, .v3-page h1, .v3-page h2, .v3-page h3 { color: var(--nv-
 .v3-hero .v3-lead { color: rgba(255, 255, 255, .86); font-size: 19px; max-width: 760px; }
 .v3-hero .v3-eyebrow { background: none; padding: 0; color: rgba(255, 255, 255, .7); letter-spacing: .18em; }
 .v3-hero .v3-actions { justify-content: flex-start; }
-.v3-draft-notice { background: #fde6da; }
 
 /* ---------- Buttons ---------- */
 .v3-button, .btn { border-radius: 4px !important; font-weight: 600 !important; letter-spacing: 0 !important; }

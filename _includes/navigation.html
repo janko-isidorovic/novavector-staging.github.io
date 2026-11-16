@@ -20,7 +20,7 @@
     {% endif %}
 
      <li{% if link.cta %} class="navigation-cta"{% endif %}>
-         <a href="{{ link.url | relative_url }}"{% if active %} class="menu-active" aria-current="page"{% endif %}>{{link.text}}{% if link.submenu %}<i class="icofont-simple-down" aria-hidden="true"></i><span class="sr-only"> menu</span>{% endif %}</a>
+         <a href="{{ link.url | relative_url }}"{% if active %} class="menu-active" aria-current="page"{% endif %}>{{link.text}}{% if link.submenu %}<svg class="nv-caret" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 6l4 4 4-4"/></svg><span class="sr-only"> menu</span>{% endif %}</a>
         {% if link.submenu %}
         <ul class="sub-menu">
             {% for sublink in link.submenu %}

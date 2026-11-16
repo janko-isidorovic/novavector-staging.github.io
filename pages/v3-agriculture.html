@@ -1,0 +1,86 @@
+---
+redirect_from:
+  - /pages/smart-agriculture.html
+layout: v3
+permalink: /smart-agriculture/
+title: Smart Agriculture and Farm Monitoring
+title_accent: Farm Monitoring
+description: Monitor soil and weather with off-the-shelf LoRaWAN sensors, watch pumps and farm machinery, detect anomalies automatically, and turn every problem into a task the team owns.
+summary: Off-the-shelf LoRaWAN sensors report soil and weather conditions from the field. Machinery joins through its controllers. Nova Vector learns what is normal, raises the problems, and tracks how the team responds.
+eyebrow: Industrial solution
+theme: edge
+hero_image: /assets/img/v3/hero/smart-agriculture.jpg
+primary_label: Discuss your farm
+primary_url: /contact/#request-demo
+content_sections:
+  - eyebrow: Weather in the field
+    heading: Weather stations that report from every part of the farm
+    paragraphs:
+      - LoRaWAN weather stations measure air temperature, humidity, rainfall, wind, and solar radiation where the crops grow, not at the nearest town. Long-range, low-power radio covers large fields and remote plots from a few gateways, and battery-powered stations keep reporting without cabling or mains power.
+      - The LoRaWAN network server is bundled with the platform. It has run in production for more than three years in a smart-agriculture deployment, with sensors reporting from the ground through every season.
+    image: /assets/img/v3/agriculture/soil-sensing.webp
+    image_alt: Soil with a young plant and icons for rain, sun, and wind
+    caption: Weather and soil conditions are measured where the crops grow, by battery-powered sensors in the field.
+  - eyebrow: Soil
+    heading: Soil moisture, temperature, EC, pH, and NPK from off-the-shelf sensors
+    paragraphs:
+      - Soil probes report moisture and temperature at one or more depths, together with electrical conductivity (EC), pH, and nitrogen, phosphorus, and potassium (NPK). Readings arrive every few minutes instead of from a laboratory sample taken a few times a year.
+      - Choose sensors from established LoRaWAN vendors; no proprietary hardware is needed. Each sensor model gets its payload decoder once, in its device profile, from a template or written for the vendor's format and tested with a sample payload. Every sensor of that model then uses it, and messages that cannot be decoded are kept apart instead of mixed into the data.
+    image: /assets/img/v3/agriculture/agri-dashboard.webp
+    image_alt: Nova Vector agriculture dashboard with air temperature and humidity, sunlight, soil temperature and moisture, soil NPK, and sensor battery level
+    caption: "One field's dashboard: air and soil conditions, NPK, and the battery level of every sensor."
+  - eyebrow: Machinery
+    heading: Watch pumps, irrigation, storage, and other farm equipment
+    paragraphs:
+      - Irrigation pumps, generators, cold stores, dryers, and other equipment with a controller connect over Modbus TCP or OPC UA. Machines without a readable controller can be retrofitted with sensors, for example power meters or LoRaWAN sensors, so they report too.
+      - An edge node at the farm reads local controllers next to the equipment and keeps reading when the connection to the platform drops. Readings from controllers become states such as running, stopped, or fault, so the team sees which machine needs attention, not only a list of numbers.
+    image: /assets/img/v3/agriculture/modbus-connections.webp
+    image_alt: Nova Vector Modbus TCP connections, each serving the devices behind one controller
+    caption: Controllers connect directly; every value they expose becomes a reading of the matching device.
+  - eyebrow: Anomaly detection
+    heading: Find the problems nobody set a limit for
+    paragraphs:
+      - An anomaly rule learns what is normal for one reading of one sensor, its level, its daily rhythm, and its noise, and raises an alarm when the reading leaves that. It catches a soil probe that stops changing, a weather station that turns noisy, or a pump that draws more power than it usually does, without anyone choosing a threshold first.
+      - Before a rule is saved, it runs over the last seven days of history, showing where it would have fired. Fixed limits and no-data checks are available beside it for the conditions the agronomist already knows, such as frost risk or a sensor that went silent.
+    image: /assets/img/v3/agriculture/anomaly-test-on-history.webp
+    image_alt: An anomaly rule tested on seven days of temperature history, with the learned expected value and band
+    caption: Test on history shows the learned expected value, its band, and the episode the rule would have raised.
+  - eyebrow: Tasks
+    heading: Every alarm becomes a task with an owner
+    paragraphs:
+      - An alarm can open a task automatically, with its category, its group, and the sensor and reading that caused it. The task closes itself when the condition clears, and e-mail notifications reach the people who need to know.
+      - Routine field work runs the same way. Templates and schedules create recurring tasks, such as checking sensors, cleaning a rain gauge, or servicing a pump, and boards show the open work of every team.
+    image: /assets/img/v3/agriculture/tasks-from-alerts.webp
+    image_alt: Nova Vector task list with tasks created by the alerts service
+    caption: Tasks created by alarms sit beside planned work, each with its status, category, and group.
+  - eyebrow: People
+    heading: See how the team responds, not only what the sensors say
+    paragraphs:
+      - Acknowledging an alarm records who did it, when, why, and with what comment. A task's history shows who took it, every status change, and the time logged on it, so every response can be traced from the alarm to the fix.
+      - Team reports show how quickly people respond and resolve problems, what is open or overdue for each person, and how the workload is shared, so managers can see where the farm needs more hands or better routines.
+  - eyebrow: Integration
+    heading: Connect the farm data with the systems you already use
+    paragraphs:
+      - Every module has a documented REST API, and applications can exchange data over MQTT or HTTPS with their own credentials. Readings and aggregates for any period are available through the data API, and reports export to CSV and PDF.
+      - Farm management, ERP, and weather-service integrations are built for each project by the team that develops the platform, using your own data model, so that field data, work orders, and records stay consistent.
+faq_eyebrow: Questions
+faq_heading: Before you start
+faq:
+  - question: Which LoRaWAN sensors can we use?
+    answer: Off-the-shelf sensors from any vendor whose payload format is documented. The decoder for each sensor model is set up once in its device profile and tested with a sample payload before the sensors go into the field.
+  - question: Is a LoRaWAN network included?
+    answer: The LoRaWAN network server is bundled with the platform. The farm needs LoRaWAN gateways with coverage over its fields; they are registered in the network server. The EU868 band is configured by default.
+  - question: Can Nova Vector switch irrigation on and off?
+    answer: Commands can be sent to controllers and MQTT devices, set up for each project. Sending commands down to LoRaWAN devices is not supported today.
+  - question: Do we need to set limits for every sensor?
+    answer: No. Anomaly rules learn what is normal for each reading. Fixed limits and no-data checks are available for the conditions you already know.
+related:
+  - label: Industrial Infrastructure
+    url: /industrial-infrastructure/
+  - label: Process Automation
+    url: /industrial-state-machine/
+  - label: Systems Integration
+    url: /systems-integration/
+  - label: Device Management
+    url: /iot-device-management/
+---

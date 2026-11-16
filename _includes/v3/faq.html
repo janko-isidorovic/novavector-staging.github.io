@@ -1,7 +1,7 @@
 <section class="v3-section v3-section--muted">
   <div class="v3-shell v3-faq">
-    <p class="v3-eyebrow">Technical questions</p>
-    <h2>Evaluation notes</h2>
+    <p class="v3-eyebrow">{{ page.faq_eyebrow | default: 'Technical questions' }}</p>
+    <h2>{{ page.faq_heading | default: 'Evaluation notes' }}</h2>
     {% for item in page.faq %}
     <details>
       <summary>{{ item.question }}</summary>

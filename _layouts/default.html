@@ -8,16 +8,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% if site.noindex or page.noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
     {% seo %}
+    {% if page.url == '/' %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": {{ site.title | jsonify }},
+      "url": {{ '/' | absolute_url | jsonify }},
+      "logo": {{ site.logo | absolute_url | jsonify }},
+      "email": {{ site.email | jsonify }},
+      "telephone": "+381 64 1151 256",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Generala Ljubomira Milica 10",
+        "postalCode": "11041",
+        "addressLocality": "Belgrade",
+        "addressCountry": "RS"
+      }
+    }
+    </script>
+    {% endif %}
+    {% comment %} The homepage and the new-design pages load only what they use; legacy pages keep the full theme. {% endcomment %}
+    {% assign nv_home = false %}{% if page.url == '/' %}{% assign nv_home = true %}{% endif %}
+    {% assign nv_legacy = true %}{% if nv_home or page.layout == 'v3' %}{% assign nv_legacy = false %}{% endif %}
     <link rel="icon" href="{{site.baseurl}}/assets/img/favicon.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{site.baseurl}}/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{site.baseurl}}/assets/css/fontawesome.min.css">
+    {% if nv_legacy %}
     <link rel="stylesheet" href="{{site.baseurl}}/assets/css/icofont.min.css">
     <link rel="stylesheet" href="{{site.baseurl}}/assets/css/linearicons.css">
-    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/slick.css">
     <link rel="stylesheet" href="{{site.baseurl}}/assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/animate.min.css">
 	<link rel="stylesheet" href="{{site.baseurl}}/assets/css/magnific-popup.css">
+    {% endif %}
+    {% if nv_home or nv_legacy %}
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/slick.css">
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/animate.min.css">
+    {% endif %}
     <link rel="stylesheet" href="{{site.baseurl}}/assets/css/meanmenu.css">
     <link rel="stylesheet" href="{{site.baseurl}}/assets/css/default.css">
     <link rel="stylesheet" href="{{site.baseurl}}/assets/css/style.css">
@@ -48,14 +75,16 @@
     <script src="{{site.baseurl}}/assets/js/vendor/jquery-1.12.4.min.js"></script>
     <script src="{{site.baseurl}}/assets/js/popper.min.js"></script>
     <script src="{{site.baseurl}}/assets/js/bootstrap.min.js"></script>
-    <script src="{{site.baseurl}}/assets/js/slick.min.js"></script>
+    {% if nv_home or nv_legacy %}<script src="{{site.baseurl}}/assets/js/slick.min.js"></script>{% endif %}
+    {% if nv_legacy %}
     <script src="{{site.baseurl}}/assets/js/isotope.pkgd.min.js"></script>
     <script src="{{site.baseurl}}/assets/js/imagesloaded.pkgd.min.js"></script>
     <script src="{{site.baseurl}}/assets/js/jquery.waypoints.min.js"></script>
     <script src="{{site.baseurl}}/assets/js/jquery.counterup.min.js"></script>
     <script src="{{site.baseurl}}/assets/js/owl.carousel.min.js"></script>
-    <script src="{{site.baseurl}}/assets/js/jquery.meanmenu.min.js"></script>
     <script src="{{site.baseurl}}/assets/js/jquery.magnific-popup.min.js"></script>
+    {% endif %}
+    <script src="{{site.baseurl}}/assets/js/jquery.meanmenu.min.js"></script>
     <script src="{{site.baseurl}}/assets/js/scrollup.min.js"></script>
     <script src="{{site.baseurl}}/assets/js/simple-jekyll-search.min.js"></script>
     <script src="{{site.baseurl}}/assets/js/main.js"></script>

@@ -11,19 +11,19 @@
 		overflow-x: hidden;
 	}
 
-	h1 {
+	h1, .slider-content .nv-slide-title {
 		font-size: 3rem !important;
 	}
 
-	h2 {
+	h2, .nv-home-label {
 		font-size: 1.2rem !important;
 	}
 
-	h3 {
+	h3, .nv-home-architecture__copy > h2, .service-area .service-title h2 {
 		font-size: 1.05rem !important;
 	}
 
-	h4 {
+	h4, .tab-pane h3, .card-title-new h3, .nv-architecture-points h3, .features-wrap .section-title h3, h2.meeting-text-p {
 		font-size: 0.9rem !important;
 	}
 
@@ -106,7 +106,7 @@
 		margin: 25% auto auto auto;
 	}
 
-	.slider-content h1 {
+	.slider-content h1, .slider-content .nv-slide-title {
 		line-height: 1.2;
 	}
 
@@ -158,7 +158,7 @@
 		margin: 7% auto 7% auto;
 	}
 
-	.user-story h3 {
+	.user-story h3:not(:where(.tab-pane h3)) {
 		margin: 5% auto 10% auto;
 	}
 
@@ -207,7 +207,7 @@
 		box-shadow: inset 0 0 0 333.333rem rgba(0, 0, 0, 0.5);
 	}
 
-	.tab-content .tab-pane h4 {
+	.tab-content .tab-pane h4, .tab-content .tab-pane h3 {
 		margin: 1% auto auto 2%;
 	}
 
@@ -390,7 +390,7 @@
 		margin: 10% auto auto 5%;
 	}
 
-	.card-title-new h4 {
+	.card-title-new h4, .card-title-new h3 {
 		margin: 1% auto 6% 5%;
 	}
 
@@ -400,7 +400,7 @@
 		padding: 10% auto auto auto;
 	}
 
-	.service-area h3 {
+	.service-area h3:not(:where(.features-wrap h3)), .service-area .service-title h2 {
 		margin: 5% auto auto auto;
 	}
 
@@ -420,7 +420,7 @@
 		margin: auto auto 10% auto;
 	}
 
-	.features-wrap h4 {
+	.features-wrap h4, .features-wrap h3 {
 		margin: auto auto 2rem auto;
 	}
 

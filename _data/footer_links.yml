@@ -28,6 +28,8 @@
     url: /manufacturing/
   - text: Energy & Storage
     url: /energy/
+  - text: Agriculture
+    url: /smart-agriculture/
   - text: Industrial OEMs
     url: /industrial-oem/
   - text: Infrastructure

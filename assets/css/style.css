@@ -101,7 +101,7 @@ button {
 	color: #1696e7;
 	outline: medium none;
 }
-button:focus,input:focus,input:focus,textarea,textarea:focus{outline: 0}
+button:focus, input:focus, textarea, textarea:focus{outline: 0}
 .uppercase {
 	text-transform: uppercase;
 }
@@ -129,17 +129,17 @@ h5 a,
 h6 a {
 	color: inherit;
 }
-h1 {
+h1, .slider-content .nv-slide-title {
 	font-size: 32px;
 	font-weight: bold;
 }
-h2 {
+h2, .nv-home-label {
 	font-size: 28px;
 }
-h3 {
+h3, .nv-home-architecture__copy > h2, .service-area .service-title h2 {
 	font-size: 24px;
 }
-h4 {
+h4, .tab-pane h3, .card-title-new h3, .nv-architecture-points h3, .features-wrap .section-title h3, h2.meeting-text-p {
 	font-size: 20px;
 }
 h5 {
@@ -691,7 +691,7 @@ label {
 	background: #ff5e14;
 	bottom: -25px;
 }
-.section-title h4 {
+.section-title h4, :where(.features-wrap) .section-title h3 {
 	position: relative;
 	margin-bottom: 35px;
 	display: inline-block;
@@ -701,7 +701,7 @@ label {
 	font-weight: 600;
 	line-height: 1;
 }
-.section-title h4::before {
+.section-title h4::before, :where(.features-wrap) .section-title h3::before {
 	content: "";
 	position: absolute;
 	left: 0;
@@ -1714,7 +1714,7 @@ blockquote {
 	font-family: 'Lato', sans-serif;
   }
 
-  .container h3{
+  .container h3:not(:where(.card-title-new h3, .nv-architecture-points h3, .tab-pane h3, .features-wrap h3)), .service-area .service-title h2, .nv-home-architecture__copy > h2 {
 	position: relative;
 	margin-bottom: 45px;
 	display: inline-block;
@@ -1724,7 +1724,7 @@ blockquote {
 	font-family: 'Lato', sans-serif;
 }
 
-.container h3::before {
+.container h3:not(:where(.card-title-new h3, .nv-architecture-points h3, .tab-pane h3, .features-wrap h3))::before, .service-area .service-title h2::before, .nv-home-architecture__copy > h2::before {
 	content: "";
 	position: absolute;
 	left: 0;
@@ -1847,14 +1847,14 @@ blockquote {
 	background: #000;
 	opacity: .4;
 }
-.slider-content h1 {
+.slider-content h1, .slider-content .nv-slide-title {
 	font-size: 72px;
 	font-weight: 800;
 	color: #fff;
 	line-height: 1;
 	margin-bottom: 20px;
 }
-.slider-content h1 span {
+.slider-content h1 span, .slider-content .nv-slide-title span {
 	color: #ff5e14;
 }
 .slider-content a.btn {
@@ -1939,7 +1939,7 @@ blockquote {
 	background: #FFFFFF;
 }
 
-.user-story h3 {
+.user-story h3:not(:where(.tab-pane h3)) {
 	text-transform: capitalize;
 	color: #363636;
 }
@@ -1989,12 +1989,12 @@ blockquote {
 	border-bottom: 2px solid #ff5a14 !important;
 }
 
-.tab-content .tab-pane h4 {
+.tab-content .tab-pane h4, .tab-content .tab-pane h3 {
 	color: #ffffff;
 	font-weight: bold;
 }
 
-.tab-content .tab-pane h4::before {
+.tab-content .tab-pane h4::before, .tab-content .tab-pane h3::before {
 	color: transparent;
 }
 
@@ -2111,12 +2111,12 @@ blockquote {
 	color: #D8D8D8;
 }
 
-.card-title-new h4 {
+.card-title-new h4, .card-title-new h3 {
 	background-color: #363636;
 	color: #D8D8D8;
 }
 
-.service-title h3::before {
+.service-title h3:not(:where(.features-wrap h3))::before, .service-area .service-title h2::before {
 	content: "";
 	background: transparent;
 }
@@ -2134,7 +2134,7 @@ blockquote {
 	color: #363636;
 }
 
-.features-wrap h4 {
+.features-wrap h4, .features-wrap h3 {
 	font-weight: bold;
 	color: #000000;
 }
@@ -3119,6 +3119,6 @@ blockquote {
 }
 
 /* Platform Architecture subheading */
-.nv-home-architecture__copy > h3 {
+.nv-home-architecture__copy > h3, .nv-home-architecture__copy > h2 {
   font-size: 20px;
 }

@@ -1,6 +1,13 @@
 (function($) {
   "use strict";
 
+  // Pages on the new design load only the plugins they use; the legacy calls below then do nothing.
+  ["slick", "imagesLoaded", "isotope", "counterUp", "owlCarousel", "magnificPopup"].forEach(function(name) {
+    if (!$.fn[name]) {
+      $.fn[name] = function() { return this; };
+    }
+  });
+
   // Keep an optional mobile-menu failure from blocking the homepage carousel.
   if ($.fn.meanmenu) {
     try {
@@ -254,7 +261,7 @@
     animation: "fade", // Fade, slide, none
     animationInSpeed: 1000, // Animation in speed (ms)
     animationOutSpeed: 1000, // Animation out speed (ms)
-    scrollText: '<span class="lnr lnr-chevron-up"></span>' // Text for element
+    scrollText: '<svg class="nv-scrollup-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 10.5l5-5 5 5"/></svg><span class="sr-only">Back to top</span>' // Text for element
   });
 
   if($("#search-input").length >0){

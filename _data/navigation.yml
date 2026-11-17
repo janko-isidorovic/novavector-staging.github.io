@@ -13,6 +13,8 @@
     url: /edge-ai-industrial-iot/
   - text: Edge Computing
     url: /edge-computing-platform/
+  - text: Equipment Simulators
+    url: /industrial-equipment-simulators/
 
 - text: Solutions
   url: /manufacturing/

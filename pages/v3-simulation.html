@@ -39,10 +39,10 @@ content_sections:
     image_alt: Nova Vector comparison of two replays of the same process
     caption: Run comparison shows how replays behave against comparable inputs.
   - eyebrow: Nova Vector Simulators
-    heading: A production line that behaves like the real one, down to the protocol
+    heading: Prove the integration before the hardware arrives
     paragraphs:
-      - Nova Vector Simulators present complete systems on the network as real equipment would, with PLCs, conveyors, an energy meter, and an andon board for the production line. The platform reads them exactly as it reads real devices, so it can be shown, configured, and tested before the hardware is available.
-      - A continuous scenario runs production orders, changeovers, breaks, and random stops around the clock, so dashboards, OEE reports, and alarms fill on their own. For a demonstration, the clock can be sped up to 600 times real time, paused, and stepped.
+      - Nova Vector Simulators put whole systems on the network as real equipment would, such as a production line with PLCs, conveyors, an energy meter, and an andon board. They speak Modbus TCP, BACnet/IP, SNMP, and MQTT, so the platform reads them exactly as it reads real devices, and adapters, alarms, dashboards, and OEE reports can be set up and checked before go-live.
+      - Scenarios run production around the clock, inject breakdowns and faults that are hard to create on real equipment, and check the expected outcome. The simulators also work with any other SCADA, BMS, or IoT platform.
     points:
       - Demonstrations with realistic data, alarms, and production figures
       - Pilots in which adapters, alarms, dashboards, and reports are checked first
@@ -50,22 +50,9 @@ content_sections:
     image: /assets/img/v3/features/10-simulators/production-line.png
     image_alt: Nova Vector Simulators console for a production line with four PLCs, three conveyors, an energy meter, a hall sensor, and an andon, with its scenarios
     caption: The production-line simulator with its scenarios, from a single breakdown to a full shift.
-  - eyebrow: Protocol simulators
-    heading: Exercise the real adapter path without waiting for production equipment
-    paragraphs:
-      - The simulators stand outside Nova Vector and communicate through real protocols. They emulate Modbus TCP devices and gateways, BACnet/IP devices, SNMP trap sources, and MQTT edge nodes, and an OPC UA test server covers OPC UA, so discovery, addressing, decoding, writes, alarms, and downstream workflows are tested through the same boundary used in production.
-      - Reference systems include a battery-energy-storage enclosure, a production line, and a serialized assembly line with RFID operators, and one command provisions the matching devices and connections on the platform.
-    image: /assets/img/v3/features/10-simulators/assembly-line.png
-    image_alt: Nova Vector serialized assembly-line simulator
-    caption: Reference systems provide repeatable device and production scenarios for integration testing.
-  - eyebrow: Fault and resilience testing
-    heading: Introduce failures deliberately before they happen in the field
-    paragraphs:
-      - Scenarios change signals, inject faults, and check expected outcomes in model time. Network impairment can add delay, jitter, packet loss, reordering, or a complete partition, so teams can see how the wider workflow behaves under difficult conditions.
-      - The simulators run on a trusted test network, separate from production systems.
-    image: /assets/img/v3/features/10-simulators/scenario-results.png
-    image_alt: Nova Vector simulator scenario results
-    caption: Scenario results compare the scripted event sequence with the expected response.
+    link:
+      text: More about the simulators
+      url: /industrial-equipment-simulators/
 related:
   - label: Alerts & Tasks
     url: /industrial-state-machine/
@@ -73,6 +60,6 @@ related:
     url: /professional-services/
   - label: Devices & Connectivity
     url: /iot-device-management/
-  - label: Platform Architecture
-    url: /architecture/
+  - label: Equipment Simulators
+    url: /industrial-equipment-simulators/
 ---

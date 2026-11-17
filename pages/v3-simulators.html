@@ -1,0 +1,108 @@
+---
+layout: v3
+permalink: /industrial-equipment-simulators/
+title: Industrial Equipment Simulators
+title_accent: Simulators
+description: Test a SCADA, BMS, historian, MQTT broker, or IoT platform before the hardware arrives. Simulated BESS sites and production lines on Modbus TCP, BACnet/IP, SNMP, and MQTT, with repeatable scenarios and fault injection.
+summary: Whole plants that behave like the real ones, down to the protocol. Configure, demonstrate, and accept the system that watches your equipment before that equipment is in the lab.
+eyebrow: Nova Vector Simulators
+theme: platform
+hero_image: /assets/img/v3/hero/industrial-equipment-simulators.jpg
+video:
+  src: /assets/video/production-line.mp4
+  poster: /assets/video/production-line.jpg
+  title: Prove OEE before go-live
+  summary: A simulated production line that behaves like the real one, down to the protocol. Adapters, alarms, OEE reports, and maintenance workflows are set up and checked against it before the line goes live, including breakdowns you cannot order on demand.
+  duration: "4:14"
+content_sections:
+  - eyebrow: Systems, not separate devices
+    heading: Devices that share one model of the plant
+    paragraphs:
+      - Each simulator system couples its devices through one model, so they behave causally. When the HVAC unit of a battery enclosure fails, the enclosure heats up, the BMS reports over-temperature, and the inverter derates. When one machine on a production line breaks down, the machines after it starve and the ones before it block.
+      - Random values on independent devices cannot tell that story. Cross-device alarms, data-quality handling, and work-order features need devices that react to each other the way real equipment does.
+    image: /assets/img/v3/screens/simulators/system-devices.webp
+    image_alt: Nova Vector Simulators console of a battery storage enclosure with its BMS, temperature and humidity sensors, enclosure controller, HVAC unit, inverter, network switch, and UPS, all running
+    caption: A battery storage enclosure with ten devices, from the BMS and inverter to the HVAC unit and UPS, driven by one model.
+  - eyebrow: Real protocols
+    heading: On the wire, where the field equipment would be
+    paragraphs:
+      - The simulators speak the protocols your system already reads. Any client that speaks them can connect, whether a SCADA, a building management system, a historian, an MQTT broker, or an IoT platform. None of them needs Nova Vector.
+      - Device maps are plain configuration files. A device file mirrors the vendor's manual, including its peculiarities, so the gateways with many unit IDs, the unusual register encodings, and the protocol corners where clients fail in the field can be tested before go-live.
+    points:
+      - Modbus TCP devices and gateways, with every common register encoding
+      - BACnet/IP devices with discovery, priority arrays, and segmentation
+      - SNMP v1, v2c, and v3 traps and informs
+      - MQTT edge nodes with SenML or Sparkplug B, and OPC UA through a test server
+    image: /assets/img/v3/screens/simulators/modbus-register-map.webp
+    image_alt: Nova Vector Simulators Modbus console with four PLCs, three conveyors, a meter, and a sensor behind one gateway, and the register map of one PLC with addresses, encodings, values, and quality
+    caption: Nine devices behind one Modbus gateway, and the register map of one PLC, with its strings, counters, product code, and order number.
+  - eyebrow: Reference systems
+    heading: Four plants that run from one folder
+    paragraphs:
+      - Four reference systems come ready to run, with 47 simulated devices and 27 scenarios between them. A battery energy storage enclosure on four protocols, the same enclosure driven by an external battery model, a production line with PLCs, conveyors, an energy meter, and an andon board, and an AI-server assembly line that builds serialized servers into racks.
+      - The lines produce the data that manufacturing features need, such as counters, per-minute counts, product codes, order numbers, serial numbers, operator badges, and rack dispatches. A ground-truth export lets you check what your system recorded against what actually happened.
+    points:
+      - BESS enclosure, with and without an external battery model
+      - Production line with orders, changeovers, breaks, and stoppages
+      - Assembly line with serial numbers, lots, operators, and racks
+    image: /assets/img/v3/screens/simulators/assembly-rack-station.webp
+    image_alt: Nova Vector Simulators console of the rack integration station of an assembly line, with its alarm code, badge, product code, rack serial number, slots, and racks done
+    caption: The rack integration station of the assembly line, with the product, the rack's serial number, and the slots filled so far.
+  - eyebrow: Repeatable scenarios
+    heading: Acceptance tests and demonstrations become the same thing
+    paragraphs:
+      - A scenario changes signals, injects faults, and checks the expected outcome step by step, with a pass or fail result. The HVAC failure scenario on the battery enclosure, for example, checks eleven outcomes across BACnet, Modbus, and SNMP, and it runs the same way in the lab, in a customer meeting, and in continuous integration.
+      - Every reference system runs an endless scenario on the wall clock, with shifts, breaks, product changes, charge and discharge cycles, and random stops, so dashboards and reports always have data. For a short demonstration or a test run, the model clock runs from 0.1 to 600 times real time, and can be paused and stepped.
+    image: /assets/img/v3/screens/simulators/scenarios.webp
+    image_alt: Nova Vector Simulators system page of a battery storage enclosure, with the model clock, the rate, and the scenarios, from communication loss and grid outage to HVAC failure and network impairment
+    caption: The scenarios of the battery enclosure, from an endless day of operation to an HVAC failure, a grid outage, and a network partition.
+  - eyebrow: Faults and data quality
+    heading: Break things on purpose, before they break in the field
+    paragraphs:
+      - Any device or signal can be taken offline, made stale, or given uncertain or bad quality, by hand from the console or from a scenario. Modbus clients receive real exception codes, and SNMP devices send the matching traps.
+      - Network impairment adds latency, jitter, packet loss, or a complete partition between the simulators and your system. You see how alarms, trends, and data-quality handling behave when the connection is poor, and how they recover.
+    image: /assets/img/v3/screens/simulators/faults.webp
+    image_alt: Nova Vector Simulators fault page with a stale sensor, a humidity reading of uncertain quality, and an offline UPS, each with its duration
+    caption: Three active faults on a battery enclosure, a stale sensor, a humidity reading of uncertain quality, and an offline UPS.
+  - eyebrow: Your own models
+    heading: Bring your engineering model to the protocols operators see
+    paragraphs:
+      - A battery, process, or equipment model built in Simulink, Modelica, or another modelling tool can drive the simulated devices. Exported as an FMU, in FMI 2.0 or 3.0 co-simulation, it replaces that part of the physics, and its results appear in the registers, objects, and telemetry your system reads.
+      - The modeller exports the model once. To add it to a system, a technician copies two files and edits one entry. Model parameters can be changed from the console or from a scenario, for example to show how an aged battery pack runs hotter. A modelling tool licence is needed to export the model, not to run it.
+    image: /assets/img/v3/screens/simulators/external-model.webp
+    image_alt: Nova Vector Simulators external model card with a battery FMU in FMI 3.0, its step cost, the signals it reads and drives, and its parameters
+    caption: A battery model in FMI 3.0 drives the BMS of the simulated enclosure, with its inputs, outputs, and parameters on one card.
+  - eyebrow: Scale
+    heading: Find out where the system breaks before the roll-out does
+    paragraphs:
+      - MQTT fleets simulate hundreds or thousands of edge nodes, each with its own login and topic. Load operations ramp the fleet up, send bursts, set off alarm storms or reconnect storms, and step the report rate, while the console measures publish latency, errors, and dropped messages.
+    image: /assets/img/v3/screens/simulators/mqtt-fleet.webp
+    image_alt: Nova Vector Simulators MQTT console with the run summary, publish latency percentiles, load operations, and edge nodes with their connection state and message counts
+    caption: A fleet of MQTT edge nodes with its publish latency and the load operations, from a ramp to a reconnect storm.
+  - eyebrow: Deployment
+    heading: One folder, wherever the test needs to run
+    paragraphs:
+      - Each system starts with one command, on a laptop beside the system under test, on a separate virtual machine with a real network in between, or on an edge node. The simulators are containers published as versioned images, so no source code or build tools are needed on site.
+      - The simulators come with every Nova Vector platform licence, and are also licensed on their own for testing another SCADA, BMS, historian, broker, or IoT platform. A usual first project adapts a reference system to the customer's device mix, scenarios, and models.
+    points:
+      - Docker on Linux, Windows, or macOS
+      - A single host, a lab network, or an edge node
+      - Included with the platform, or licensed on its own
+  - eyebrow: With Nova Vector
+    heading: The platform sets itself up for the simulated plant
+    paragraphs:
+      - With a Nova Vector platform, one command creates everything the plant needs through the platform's public APIs, such as devices and their connections, alarm rules, task boards, processes, dashboards, OEE reports, products, recipes, operators with badges, work orders, and a month of shift plans. Another command removes it all.
+      - The platform's edge fleet management can roll a simulated system out to an edge node, check its health, and roll it back. On the assembly line, the platform counts production, consumes materials, and builds the genealogy of every server from the line's trace events.
+    image: /assets/img/v3/screens/simulators/platform-genealogy.webp
+    image_alt: Nova Vector genealogy of one server built on the simulated assembly line, with its part number, work order, birth station and operator, and the fitted chassis with its serial number and lot
+    caption: The genealogy a Nova Vector platform built for one server of the simulated assembly line, from its work order to the chassis fitted at the first station.
+related:
+  - label: Simulation & Replay
+    url: /industrial-simulation/
+  - label: Devices & Connectivity
+    url: /iot-device-management/
+  - label: Implementation & Integration
+    url: /professional-services/
+  - label: Energy
+    url: /energy/
+---

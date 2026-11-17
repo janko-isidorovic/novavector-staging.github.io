@@ -138,9 +138,9 @@ h1, h2, h3, h4, h5, h6, .v3-page h1, .v3-page h2, .v3-page h3 { color: var(--nv-
 
 /* Homepage Platform Architecture: same navy, glow and grid as Measured Customer Outcomes, light text throughout */
 .nv-home-architecture { background-color: var(--nv-navy) !important; background-image: var(--v4-glow), var(--v4-grid); background-size: auto, 46px 46px, 46px 46px; }
-.nv-home-architecture h3, .nv-home-architecture h2, .nv-home-architecture h4, .nv-home-difference strong, .nv-technology-foundation strong { color: #fff !important; }
+.nv-home-architecture h3, .nv-home-architecture h2, .nv-home-architecture h4, .nv-home-difference strong { color: #fff !important; }
 .nv-home-architecture__copy p, .nv-home-difference p { color: rgba(255, 255, 255, .8) !important; }
-.nv-architecture-points p, .nv-technology-foundation span { color: rgba(255, 255, 255, .72) !important; }
+.nv-architecture-points p { color: rgba(255, 255, 255, .72) !important; }
 .nv-architecture-points article > span { display: inline-block; padding: 3px 7px; border-radius: 3px; background: var(--nv-orange); color: #fff !important; font-weight: 800; }
 .nv-home-architecture .nv-inline-link { color: #fff !important; }
 .nv-home-architecture__visual { border-radius: 10px; box-shadow: 0 12px 32px rgba(0, 0, 0, .3); }

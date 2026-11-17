@@ -14,6 +14,7 @@
           {% for point in section.points %}<li>{{ point }}</li>{% endfor %}
         </ul>
         {% endif %}
+        {% if section.link %}<a class="nv-inline-link" href="{{ section.link.url | relative_url }}">{{ section.link.text }} <span aria-hidden="true">→</span></a>{% endif %}
       </div>
       {% if section.image %}
       <figure class="v3-content__media">

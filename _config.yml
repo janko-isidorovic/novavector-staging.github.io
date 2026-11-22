@@ -121,3 +121,4 @@ exclude:
   - tools   # release scripts
   - assets/fonts/lato-regular-demo.html   # font kit demo page
   - tmp   # internal source material (feature and architecture docs); never publish
+  - assets/img/service/CARD-PHOTO-CREDITS.md   # internal licence notes (public domain / CC0); not a page

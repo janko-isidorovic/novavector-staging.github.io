@@ -4,7 +4,7 @@ permalink: /privacy-policy/
 title: Privacy Policy
 title_accent: Policy
 eyebrow: Legal
-description: How Nova Vector processes personal data on www.novavector.com, which cookies the site uses, how Google Analytics works here, and how to exercise your rights under the GDPR.
+description: "How Nova Vector handles personal data on www.novavector.com: cookies, Google Analytics by consent, and your rights under the GDPR."
 summary: How we process personal data on this website, which cookies we use, and the rights you have under the GDPR.
 ---
 

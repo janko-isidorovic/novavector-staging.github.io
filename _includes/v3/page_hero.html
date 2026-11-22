@@ -3,7 +3,9 @@
   <div class="v3-shell v3-hero__grid">
     <div>
       <p class="v3-eyebrow">{{ page.eyebrow | default: 'Nova Vector' }}</p>
-      {% if page.title_accent %}{% assign accent = page.title_accent %}{% assign lead_text = page.title | remove: page.title_accent | strip %}{% else %}{% assign words = page.title | split: ' ' %}{% if words.size > 1 %}{% assign take = 2 %}{% if words.size == 2 %}{% assign take = 1 %}{% endif %}{% assign cut = words.size | minus: take %}{% assign lead_text = words | slice: 0, cut | join: ' ' %}{% assign accent = words | slice: cut, take | join: ' ' %}{% else %}{% assign lead_text = page.title %}{% assign accent = '' %}{% endif %}{% endif %}
+      {% comment %} hero_title = the visible heading when the SEO <title> (page.title) is worded for search. {% endcomment %}
+      {% assign hero_title = page.hero_title | default: page.title %}
+      {% if page.title_accent %}{% assign accent = page.title_accent %}{% assign lead_text = hero_title | remove: page.title_accent | strip %}{% else %}{% assign words = hero_title | split: ' ' %}{% if words.size > 1 %}{% assign take = 2 %}{% if words.size == 2 %}{% assign take = 1 %}{% endif %}{% assign cut = words.size | minus: take %}{% assign lead_text = words | slice: 0, cut | join: ' ' %}{% assign accent = words | slice: cut, take | join: ' ' %}{% else %}{% assign lead_text = hero_title %}{% assign accent = '' %}{% endif %}{% endif %}
       <h1>{{ lead_text }}{% if accent != '' %} <em>{{ accent }}</em>{% endif %}</h1>
       <p class="v3-lead">{{ page.summary }}</p>
       <div class="v3-actions">

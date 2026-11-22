@@ -9,10 +9,10 @@
     url: /iot-timeseries-analytics/
   - text: Alerts & Tasks
     url: /industrial-state-machine/
-  - text: Platform & Edge AI
-    url: /edge-ai-industrial-iot/
   - text: Edge Computing
     url: /edge-computing-platform/
+  - text: Platform & Edge AI
+    url: /edge-ai-industrial-iot/
   - text: Equipment Simulators
     url: /industrial-equipment-simulators/
 

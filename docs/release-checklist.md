@@ -7,7 +7,16 @@ decides for the whole site. Hidden pages use `published: false`.
 
 ## Before the push to production
 
-1. Create the release branch from `new-design-v4`.
+1. Update the release branch. The production repository has no history in common with staging, so
+   the release branch sits on top of production `v4.0` and takes the staging files as a new commit.
+   In a checkout of the production repository with staging added as remote `staging`:
+
+   ```sh
+   git fetch origin && git fetch staging
+   git switch -c release origin/v4.0     # or switch to the existing release branch and pull
+   git rm -rq . && git checkout staging/new-design-v4 -- .
+   ```
+
 2. Run `tools/release/prepare-production.sh`. It sets `url: "https://www.novavector.com"`,
    `baseurl: ""`, `noindex: false`, `google_analytics: "G-543RQBFBY7"` (GA4 stream
    "Nova Vector - GA4") and writes `CNAME` (`www.novavector.com`). Staging keeps
@@ -18,14 +27,18 @@ decides for the whole site. Hidden pages use `published: false`.
    - canonical links, `og:url` and structured data use `https://www.novavector.com`;
    - `sitemap.xml` lists the new pages and none of the hidden ones;
    - old URLs redirect (see below);
-   - pages load `googletagmanager.com/gtag/js?id=G-543RQBFBY7` (build with `JEKYLL_ENV=production`,
-     as GitHub Pages does; `jekyll serve` leaves it out).
+   - pages carry the consent loader with `var GA = "G-543RQBFBY7"` and the cookie banner
+     (`id="nv-cookie"`); build with `JEKYLL_ENV=production`, as GitHub Pages does (`jekyll serve`
+     leaves the ID out);
    - no page contacts a third party before consent (Google Analytics loads only after Accept in the
      cookie banner; fonts are self-hosted; Calendly loads only when "Discuss Your Use Case" is clicked);
    - `/privacy-policy/` names the right company (`legal_name`) and GA4 retention
      (`google_analytics_retention`, must match GA4 Admin > Data retention). Any new third-party service,
      cookie or form needs a section in `pages/privacy-policy.md` and a new `privacy_policy_updated` date.
-4. Push the release branch to `master` of `github.com/novavector/novavector.github.io`.
+4. Commit, then push the release branch to `v4.0` of `github.com/novavector/novavector.github.io`:
+   `git push origin release:v4.0`. GitHub Pages publishes www.novavector.com from `v4.0`.
+   Never push to `master`: it keeps the previous site (before the v4 design) as the fallback. The push
+   is a fast-forward; it never needs `--force`.
 
 ## Old URLs
 

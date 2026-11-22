@@ -15,9 +15,27 @@
                         </div>
                         <div class="col-12 col-lg-4">
 
-                        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-                        <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-                        <a class="btn" href="{{ '/contact/#request-demo' | relative_url }}" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/novavector/30min'});return false;">Discuss Your Use Case</a>
+                        <a class="btn" href="{{ '/contact/#request-demo' | relative_url }}" data-calendly="https://calendly.com/novavector/30min">Discuss Your Use Case</a>
+                        <script>
+                        // Calendly loads only when the visitor asks for the scheduler (no third-party request on page load; see the Privacy Policy).
+                        document.addEventListener('click', function (e) {
+                            var link = e.target.closest('[data-calendly]');
+                            if (!link) return;
+                            e.preventDefault();
+                            var url = link.getAttribute('data-calendly');
+                            function open() { window.Calendly.initPopupWidget({ url: url }); }
+                            if (window.Calendly) return open();
+                            var css = document.createElement('link');
+                            css.rel = 'stylesheet';
+                            css.href = 'https://assets.calendly.com/assets/external/widget.css';
+                            document.head.appendChild(css);
+                            var js = document.createElement('script');
+                            js.src = 'https://assets.calendly.com/assets/external/widget.js';
+                            js.onload = open;
+                            js.onerror = function () { window.location.href = link.href; };
+                            document.head.appendChild(js);
+                        });
+                        </script>
                         </div>
                     </div>
                     </div>

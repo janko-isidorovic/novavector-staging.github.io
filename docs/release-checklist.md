@@ -20,6 +20,11 @@ decides for the whole site. Hidden pages use `published: false`.
    - old URLs redirect (see below);
    - pages load `googletagmanager.com/gtag/js?id=G-543RQBFBY7` (build with `JEKYLL_ENV=production`,
      as GitHub Pages does; `jekyll serve` leaves it out).
+   - no page contacts a third party before consent (Google Analytics loads only after Accept in the
+     cookie banner; fonts are self-hosted; Calendly loads only when "Discuss Your Use Case" is clicked);
+   - `/privacy-policy/` names the right company (`legal_name`) and GA4 retention
+     (`google_analytics_retention`, must match GA4 Admin > Data retention). Any new third-party service,
+     cookie or form needs a section in `pages/privacy-policy.md` and a new `privacy_policy_updated` date.
 4. Push the release branch to `master` of `github.com/novavector/novavector.github.io`.
 
 ## Old URLs

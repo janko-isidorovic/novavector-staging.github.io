@@ -13,6 +13,11 @@ mailchimp_input_name: ""
 noindex: true
 # Add an approved GA4 measurement ID (G-XXXXXXXXXX) when available.
 google_analytics: ""
+# Privacy Policy (/privacy-policy/) facts. Keep them true: legal_name is the company as registered;
+# the retention must match GA4 Admin > Data collection and modification > Data retention.
+legal_name: "Nova Vector"
+google_analytics_retention: "2 months"
+privacy_policy_updated: 2026-11-22
 
 permalink: "/:title"
 

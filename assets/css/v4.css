@@ -8,6 +8,10 @@
 @font-face { font-family: Inter; font-weight: 600; font-display: swap; src: url(../fonts/inter/inter-latin-600.woff2) format('woff2'); }
 @font-face { font-family: Inter; font-weight: 700; font-display: swap; src: url(../fonts/inter/inter-latin-700.woff2) format('woff2'); }
 @font-face { font-family: Inter; font-weight: 800; font-display: swap; src: url(../fonts/inter/inter-latin-800.woff2) format('woff2'); }
+/* Lato for the legacy theme rules, self-hosted: no request to Google Fonts (GDPR) */
+@font-face { font-family: Lato; font-weight: 300; font-display: swap; src: url(../fonts/lato/lato-latin-300.woff2) format('woff2'); }
+@font-face { font-family: Lato; font-weight: 400; font-display: swap; src: url(../fonts/lato/lato-latin-400.woff2) format('woff2'); }
+@font-face { font-family: Lato; font-weight: 700; font-display: swap; src: url(../fonts/lato/lato-latin-700.woff2) format('woff2'); }
 
 :root {
   --nv-ink: #1f2a44;
@@ -220,3 +224,45 @@ h1, h2, h3, h4, h5, h6, .v3-page h1, .v3-page h2, .v3-page h3 { color: var(--nv-
   .nv-cookie p.nv-cookie__text { font-size: 14px; }
   .nv-cookie__actions .nv-cookie__btn { flex: 1 1 0; }
 }
+/* Legal pages (_layouts/legal.html): shorter hero, readable text column */
+.v3-hero--legal { min-height: 380px; text-align: center; }
+.v3-hero--legal .v3-shell { text-align: center; }
+.nv-legal { max-width: 860px; padding: 56px 0 72px; }
+.v3-page .nv-legal p, .v3-page .nv-legal li { color: var(--nv-ink); font-size: 16px; line-height: 1.7; }
+.v3-page .nv-legal p { margin: 0 0 16px; }
+.v3-page .nv-legal ul { margin: 0 0 18px; padding-left: 22px; list-style: disc; }
+.v3-page .nv-legal li { margin-bottom: 6px; list-style: disc; }
+.v3-page .nv-legal h2 { max-width: none; margin: 44px 0 14px; padding-top: 22px; border-top: 1px solid var(--nv-line); color: var(--nv-navy); font: 700 24px/1.3 Inter, sans-serif; }
+.v3-page .nv-legal h3 { margin: 28px 0 10px; color: var(--nv-navy); font: 700 18px/1.35 Inter, sans-serif; }
+.v3-page .nv-legal a { color: var(--nv-orange-dark); text-decoration: underline; }
+.v3-page .nv-legal a:hover { color: var(--nv-orange); }
+.v3-page .nv-legal code { padding: 1px 5px; border-radius: 3px; background: var(--nv-soft); color: var(--nv-ink); font-size: 14px; }
+.v3-page .nv-legal p.nv-legal__updated { color: var(--nv-muted); font-size: 14px; }
+.nv-legal .nv-legal__inline-button { color: var(--nv-orange-dark); font-size: inherit; font-weight: 600; text-decoration: underline; }
+.nv-legal .nv-legal__inline-button:hover { color: var(--nv-orange); }
+.nv-legal__table { width: 100%; margin: 8px 0 20px; border-collapse: collapse; font-size: 15px; }
+.nv-legal__table th, .nv-legal__table td { padding: 10px 12px; border: 1px solid var(--nv-line); vertical-align: top; text-align: left; color: var(--nv-ink); line-height: 1.5; }
+.nv-legal__table th { background: var(--nv-soft); color: var(--nv-navy); font-weight: 700; }
+@media (max-width: 767px) {
+  .v3-hero--legal { min-height: auto; }
+  .nv-legal { padding: 36px 0 56px; }
+  .v3-page .nv-legal h2 { margin-top: 32px; font-size: 21px; }
+  /* Cookie table as one card per row on phones; labels follow the column order of the table */
+  .nv-legal__table, .nv-legal__table tbody, .nv-legal__table tr, .nv-legal__table td { display: block; width: 100%; }
+  .nv-legal__table thead { display: none; }
+  .nv-legal__table tr { margin-bottom: 14px; border: 1px solid var(--nv-line); border-radius: 6px; overflow: hidden; }
+  .nv-legal__table td { position: relative; padding-left: 118px; border: 0; border-bottom: 1px solid var(--nv-line); font-size: 14px; }
+  .nv-legal__table td:last-child { border-bottom: 0; }
+  .nv-legal__table td:first-child { background: var(--nv-soft); }
+  .nv-legal__table td::before { position: absolute; top: 10px; left: 12px; width: 96px; color: var(--nv-muted); font-weight: 700; }
+  .nv-legal__table td:nth-child(1)::before { content: 'Name'; }
+  .nv-legal__table td:nth-child(2)::before { content: 'Provider'; }
+  .nv-legal__table td:nth-child(3)::before { content: 'Purpose'; }
+  .nv-legal__table td:nth-child(4)::before { content: 'Duration'; }
+  .nv-legal__table td:nth-child(5)::before { content: 'Stored'; }
+  .nv-legal__table code { word-break: break-all; }
+}
+.nv-cookie p.nv-cookie__text a { color: #fff; text-decoration: underline; }
+.nv-cookie p.nv-cookie__text a:hover { color: var(--nv-orange); }
+.copyright-area .copyright-text p a { color: #878787; }
+.copyright-area .copyright-text p a:hover { color: #ff5e14; }

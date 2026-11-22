@@ -1,0 +1,19 @@
+---
+layout: default
+---
+{% include header_3.html %}
+{% assign hero_image = page.hero_image | default: '/assets/img/v3/hero/about.jpg' %}
+{% assign accent = page.title_accent | default: '' %}
+{% assign lead_text = page.title %}{% if accent != '' %}{% assign lead_text = page.title | remove: accent | strip %}{% endif %}
+<main class="v3-page v3-page--legal">
+  <section class="v3-hero v3-hero--legal" style="background-image: linear-gradient(rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url('{{ hero_image | relative_url }}')">
+    <div class="v3-shell">
+      <p class="v3-eyebrow">{{ page.eyebrow | default: 'Legal' }}</p>
+      <h1>{{ lead_text }}{% if accent != '' %} <em>{{ accent }}</em>{% endif %}</h1>
+      {% if page.summary %}<p class="v3-lead">{{ page.summary }}</p>{% endif %}
+    </div>
+  </section>
+  <article class="v3-shell nv-legal">
+    {{ content }}
+  </article>
+</main>

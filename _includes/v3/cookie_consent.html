@@ -1,0 +1,28 @@
+<div class="nv-cookie" id="nv-cookie" role="region" aria-label="Cookie consent" hidden>
+    <div class="container nv-cookie__inner">
+        <p class="nv-cookie__text"><strong>Cookies</strong> We use Google Analytics cookies to see how visitors use this site, so we can improve it. They are set only if you accept. You can change your choice at any time with <em>Cookie settings</em> at the bottom of every page.</p>
+        <div class="nv-cookie__actions">
+            <button type="button" class="nv-cookie__btn nv-cookie__btn--ghost" data-consent="denied">Reject</button>
+            <button type="button" class="nv-cookie__btn" data-consent="granted">Accept</button>
+        </div>
+    </div>
+</div>
+<script>
+(function () {
+    var banner = document.getElementById('nv-cookie');
+    if (!banner || !window.nvConsent) return;
+    if (!window.nvConsent.get()) banner.hidden = false;
+    banner.addEventListener('click', function (e) {
+        var button = e.target.closest('[data-consent]');
+        if (!button) return;
+        window.nvConsent.set(button.getAttribute('data-consent'));
+        banner.hidden = true;
+    });
+    document.addEventListener('click', function (e) {
+        if (!e.target.closest('[data-cookie-settings]')) return;
+        e.preventDefault();
+        banner.hidden = false;
+        banner.querySelector('button').focus();
+    });
+})();
+</script>

@@ -199,3 +199,24 @@ h1, h2, h3, h4, h5, h6, .v3-page h1, .v3-page h2, .v3-page h3 { color: var(--nv-
 .nv-home-v3 .meeting img { height: auto; }
 /* "Explore ..." links inherit the root size, which the legacy breakpoint files shrink to 8px on small phones */
 @media (max-width: 767px) { .nv-home-v3 .nv-inline-link { font-size: 17px; } }
+/* Cookie consent banner (_includes/v3/cookie_consent.html): Reject and Accept carry equal weight */
+.nv-cookie { position: fixed; left: 0; right: 0; bottom: 0; z-index: 10000; background: var(--nv-navy); color: #fff; box-shadow: 0 -8px 24px rgba(15, 23, 42, .25); font-family: Inter, sans-serif; }
+.nv-cookie[hidden] { display: none; }
+.nv-cookie__inner { display: flex; align-items: center; gap: 24px; padding-top: 18px; padding-bottom: 18px; }
+.nv-cookie p.nv-cookie__text { flex: 1 1 auto; margin: 0; color: #dfe4f0; font-size: 15px; line-height: 1.55; }
+.nv-cookie p.nv-cookie__text strong { margin-right: 6px; color: #fff; }
+.nv-cookie__actions { display: flex; flex: 0 0 auto; gap: 12px; }
+.nv-cookie__btn { min-width: 112px; padding: 11px 22px; border: 2px solid var(--nv-orange); border-radius: 4px; background: var(--nv-orange); color: #fff; font: 600 15px/1.2 Inter, sans-serif; cursor: pointer; }
+.nv-cookie__btn:hover { border-color: var(--nv-orange-dark); background: var(--nv-orange-dark); }
+.nv-cookie__btn--ghost { border-color: rgba(255, 255, 255, .75); background: transparent; }
+.nv-cookie__btn--ghost:hover { border-color: #fff; background: rgba(255, 255, 255, .1); }
+.nv-cookie__btn:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+.nv-cookie-link { padding: 0; border: 0; background: none; color: #878787; font: inherit; font-size: 14px; cursor: pointer; }
+.nv-cookie-link:hover, .nv-cookie-link:focus-visible { color: #ff5e14; }
+/* The copyright line keeps the footer grey; the new-design paragraph colour made it near-invisible on the dark footer */
+.copyright-area .copyright-text p { color: #878787; font-size: 14px; }
+@media (max-width: 767px) {
+  .nv-cookie__inner { flex-direction: column; align-items: stretch; gap: 14px; padding-top: 16px; padding-bottom: 16px; }
+  .nv-cookie p.nv-cookie__text { font-size: 14px; }
+  .nv-cookie__actions .nv-cookie__btn { flex: 1 1 0; }
+}

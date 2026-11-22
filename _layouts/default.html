@@ -51,15 +51,56 @@
     <link rel="stylesheet" href="{{site.baseurl}}/assets/css/v3.css">
     <link rel="stylesheet" href="{{site.baseurl}}/assets/css/responsive.css">
     <link rel="stylesheet" href="{{site.baseurl}}/assets/css/v4.css">
-    {% if jekyll.environment == "production" and site.google_analytics != "" %}
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+    {% comment %} Google Analytics loads only after the visitor accepts in the cookie banner (_includes/v3/cookie_consent.html). {% endcomment %}
+    {% assign nv_ga_id = "" %}{% if jekyll.environment == "production" %}{% assign nv_ga_id = site.google_analytics %}{% endif %}
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', '{{ site.google_analytics }}');
+    (function () {
+      var GA = {{ nv_ga_id | jsonify }}, KEY = 'nv-cookie-consent', MAX_AGE = 365 * 24 * 3600 * 1000;
+      function read() {
+        try {
+          var v = JSON.parse(localStorage.getItem(KEY));
+          if (v && (v.c === 'granted' || v.c === 'denied') && Date.now() - v.t < MAX_AGE) return v.c;
+        } catch (e) {}
+        return null;
+      }
+      function loadGA() {
+        if (!GA) return;
+        window['ga-disable-' + GA] = false;
+        if (window.nvGaLoaded) { window.gtag('consent', 'update', { analytics_storage: 'granted' }); return; }
+        window.nvGaLoaded = true;
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () { window.dataLayer.push(arguments); };
+        window.gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'granted' });
+        window.gtag('js', new Date());
+        window.gtag('config', GA);
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GA);
+        document.head.appendChild(s);
+      }
+      function stopGA() {
+        if (GA) window['ga-disable-' + GA] = true;
+        if (window.gtag) window.gtag('consent', 'update', { analytics_storage: 'denied' });
+        var parts = location.hostname.split('.');
+        document.cookie.split(';').forEach(function (c) {
+          var name = c.split('=')[0].trim();
+          if (name !== '_ga' && name !== '_gid' && name !== '_gat' && name.indexOf('_ga_') !== 0) return;
+          document.cookie = name + '=; Max-Age=0; path=/';
+          for (var i = 0; i < parts.length - 1; i++) {
+            document.cookie = name + '=; Max-Age=0; path=/; domain=.' + parts.slice(i).join('.');
+          }
+        });
+      }
+      window.nvConsent = {
+        get: read,
+        set: function (choice) {
+          try { localStorage.setItem(KEY, JSON.stringify({ c: choice, t: Date.now() })); } catch (e) {}
+          if (choice === 'granted') loadGA(); else stopGA();
+        }
+      };
+      if (read() === 'granted') loadGA();
+    })();
     </script>
-    {% endif %}
 
     {% feed_meta %}
 </head>
@@ -69,6 +110,7 @@
     {{content}}
 
     {% include footer.html %}
+    {% include v3/cookie_consent.html %}
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

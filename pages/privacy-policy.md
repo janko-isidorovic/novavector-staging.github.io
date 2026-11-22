@@ -15,12 +15,13 @@ summary: How we process personal data on this website, which cookies we use, and
 <p class="nv-legal__updated">Last updated: {{ updated }}</p>
 
 This policy explains how {{ site.legal_name }} ("we", "us") processes personal data when you visit
-**www.novavector.com** or contact us through it. It follows the EU General Data Protection Regulation
+**www.novavector.com**. It follows the EU General Data Protection Regulation
 (Regulation (EU) 2016/679, "GDPR") and the Law on Personal Data Protection of the Republic of Serbia
 (Official Gazette of the RS, No. 87/2018).
 
-This policy covers the website only. Personal data in Nova Vector platform installations that we run or
-support for customers is processed under the contract with each customer.
+This policy covers the website only. Business enquiries you send us by email or phone are not part of
+the website. Personal data in Nova Vector platform installations that we run or support for customers is
+processed under the contract with each customer.
 
 ## 1. Who is responsible
 
@@ -37,10 +38,12 @@ Send any question about this policy, or any request to exercise your rights, to
 
 ## 2. Summary
 
-- **The website does not save personal data about you, unless you schedule a meeting.** It has no
-  forms, user accounts or database. If you book a meeting through the scheduler, the details you enter
-  are saved by Calendly (section 3.4). If you accept analytics cookies, Google Analytics stores
-  pseudonymous usage data that does not identify you by name (section 3.2).
+- **{{ site.legal_name }} does not save personal data about visitors to this website.** The website
+  has no forms, user accounts or database. Data about a visit is stored only by these services:
+  - **Google**, only if you accept analytics cookies. The data is pseudonymous and does not identify you
+    by name (section 3.2).
+  - **Calendly**, only if you book a meeting through the scheduler (section 3.3).
+  - **GitHub**, which hosts the website, in its technical access logs (section 3.1).
 - You can use the whole website without accepting cookies.
 - We use **Google Analytics** only if you click **Accept** in the cookie banner. You can withdraw that
   consent at any time with <button type="button" class="nv-cookie-link nv-legal__inline-button" data-cookie-settings>Cookie settings</button>,
@@ -98,20 +101,7 @@ with other data about you and cannot identify you from it.
 - **More information:** [Google Privacy Policy](https://policies.google.com/privacy) and
   [How Google uses information from sites that use its services](https://policies.google.com/technologies/partner-sites).
 
-### 3.3 Contacting us by email or phone
-
-When you write to us or call us, for example to request a demo, we process your name, contact details,
-company, and the content of your message.
-
-- **Purpose:** to answer your enquiry and, if you ask for it, to prepare a demo or an offer.
-- **Legal basis:** steps taken at your request before entering into a contract (Art. 6(1)(b) GDPR) and
-  our legitimate interest in answering enquiries (Art. 6(1)(f) GDPR).
-- **Retention:** until your enquiry is settled. If a business relationship follows, we keep the
-  correspondence for as long as the law requires us to keep business records.
-- **Processor:** our email runs on Microsoft 365, provided by Microsoft Ireland Operations Limited,
-  One Microsoft Place, South County Business Park, Leopardstown, Dublin 18, Ireland.
-
-### 3.4 Scheduling a meeting with Calendly
+### 3.3 Scheduling a meeting with Calendly
 
 The **Discuss Your Use Case** button on the homepage opens a scheduler from Calendly LLC, 115 E Main St,
 Ste A1B, Buford, GA 30518, USA. Nothing is loaded from Calendly until you click that button. When you
@@ -127,7 +117,7 @@ address, your answers and the time you choose) and may set its own cookies.
 
 If you prefer not to use Calendly, email us at [info@novavector.com](mailto:info@novavector.com).
 
-### 3.5 Links to LinkedIn and other websites
+### 3.4 Links to LinkedIn and other websites
 
 The website contains ordinary links, for example to our LinkedIn page. LinkedIn receives no data from
 this website until you follow such a link. From then on, the privacy policy of that website applies.
@@ -147,9 +137,8 @@ delete cookies and local storage in your browser settings at any time; the banne
 
 ## 5. Who receives your data
 
-Your data is processed by our staff who need it for the purposes above, and by the providers named in
-section 3 (GitHub, Google, Microsoft and Calendly). We disclose data to public authorities only where
-the law requires us to. We do not sell personal data or pass it on for advertising.
+{{ site.legal_name }} does not store data about your visit. It is processed only by the providers named
+in section 3: GitHub, Google and Calendly. We do not sell personal data or pass it on for advertising.
 
 ## 6. Your rights
 
@@ -167,9 +156,10 @@ Under the GDPR and the Serbian Law on Personal Data Protection you have the righ
 To exercise a right, email [info@novavector.com](mailto:info@novavector.com). We answer within one
 month. We may ask you to confirm your identity first.
 
-**How we handle a request.** Most data we hold about you is in emails you sent us or meetings you
-booked; we find it by your email address. Google Analytics data is pseudonymous and we cannot link it
-to you by name. Under Art. 11 GDPR we cannot answer access, correction or erasure requests for it unless
+**How we handle a request.** {{ site.legal_name }} does not store data about your visit, so in most
+cases there is nothing for us to give you or delete. A meeting booked through the scheduler is stored
+by Calendly; we can find and delete it by the email address you used. Google Analytics data is
+pseudonymous and we cannot link it to you by name. Under Art. 11 GDPR we cannot answer access, correction or erasure requests for it unless
 you send us your Google Analytics client ID (the value of the `_ga` cookie in your browser). You can
 also delete it yourself: <button type="button" class="nv-cookie-link nv-legal__inline-button" data-cookie-settings>Cookie settings</button>
 → **Reject** removes the cookies, and Google deletes all analytics data after
@@ -182,8 +172,7 @@ EU or EEA, you can also contact the data protection authority of your country.
 
 ## 7. Do you have to provide data?
 
-No. You can use the website without providing any personal data and without accepting cookies. We need
-your contact details only if you want us to answer you.
+No. You can use the website without providing any personal data and without accepting cookies.
 
 ## 8. Security
 

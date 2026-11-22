@@ -18,10 +18,11 @@ google_analytics: ""
 legal_name: "Nova Vector d.o.o."
 google_analytics_retention: "2 months"
 privacy_policy_updated: 2026-11-22
-# Company profiles for the Organization JSON-LD (sameAs). Add the YouTube channel when it exists.
+# Company profiles for the Organization JSON-LD (sameAs).
 same_as:
   - "https://www.linkedin.com/company/nova-vector"
   - "https://github.com/novavector"
+  - "https://www.youtube.com/@novavector-iot"
 
 permalink: "/:title"
 

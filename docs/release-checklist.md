@@ -1,6 +1,6 @@
 # Production release checklist
 
-Staging (`janko-isidorovic/novavector-staging.github.io`, branch `new-design-v4`) is never indexed:
+Staging (`janko-isidorovic/novavector-staging.github.io`, branch `v4.1`) is never indexed:
 `_config.yml` has `noindex: true`, which adds `noindex, nofollow` to every page and makes
 `robots.txt` disallow everything. Pages themselves carry no indexing flags, so this one switch
 decides for the whole site. Hidden pages use `published: false`.
@@ -8,13 +8,13 @@ decides for the whole site. Hidden pages use `published: false`.
 ## Before the push to production
 
 1. Update the release branch. The production repository has no history in common with staging, so
-   the release branch sits on top of production `v4.0` and takes the staging files as a new commit.
+   the release branch sits on top of production `v4.1` and takes the staging files as a new commit.
    In a checkout of the production repository with staging added as remote `staging`:
 
    ```sh
    git fetch origin && git fetch staging
-   git switch -c release origin/v4.0     # or switch to the existing release branch and pull
-   git rm -rq . && git checkout staging/new-design-v4 -- .
+   git switch -c release origin/v4.1     # or switch to the existing release branch and pull
+   git rm -rq . && git checkout staging/v4.1 -- .
    ```
 
 2. Run `tools/release/prepare-production.sh`. It sets `url: "https://www.novavector.com"`,
@@ -35,8 +35,9 @@ decides for the whole site. Hidden pages use `published: false`.
    - `/privacy-policy/` names the right company (`legal_name`) and GA4 retention
      (`google_analytics_retention`, must match GA4 Admin > Data retention). Any new third-party service,
      cookie or form needs a section in `pages/privacy-policy.md` and a new `privacy_policy_updated` date.
-4. Commit, then push the release branch to `v4.0` of `github.com/novavector/novavector.github.io`:
-   `git push origin release:v4.0`. GitHub Pages publishes www.novavector.com from `v4.0`.
+4. Commit, then push the release branch to `v4.1` of `github.com/novavector/novavector.github.io`:
+   `git push origin release:v4.1`. GitHub Pages publishes www.novavector.com from `v4.1` (since
+   2026-11-22; `v4.0` is the previous release). If Pages is switched to another branch, update this line.
    Never push to `master`: it keeps the previous site (before the v4 design) as the fallback. The push
    is a fast-forward; it never needs `--force`.
 
@@ -64,4 +65,8 @@ Still on the old design, without a new page: `/pages/smart-city`, `/pages/educat
 ## After the push
 
 - Open a few old URLs on www.novavector.com and confirm they land on the new pages.
-- Submit `https://www.novavector.com/sitemap.xml` in Google Search Console.
+- Run `tools/release/indexnow.sh` (every sitemap URL) or `tools/release/indexnow.sh /path/ ...`
+  (only the changed pages). It tells Bing and the other IndexNow engines to recrawl; it needs the
+  `<key>.txt` file at the site root to be live.
+- Google does not use IndexNow: in Google Search Console, resubmit `https://www.novavector.com/sitemap.xml`
+  and use URL Inspection > Request indexing for the most important changed pages.

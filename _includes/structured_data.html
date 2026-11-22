@@ -1,0 +1,113 @@
+{% comment %}
+  Schema.org JSON-LD next to the WebSite / WebPage block jekyll-seo-tag writes:
+  - Organization on the homepage, with the company profiles from site.same_as;
+  - BreadcrumbList on every v3 page, named as in the main navigation;
+  - VideoObject on a page with a walkthrough video (front matter video.uploaded is the date of the MP4);
+  - FAQPage on a page with an FAQ;
+  - SoftwareApplication on a page with front matter software_application (the platform page).
+{% endcomment %}
+{% assign nv_home_url = '/' | absolute_url %}
+{% assign nv_org_id = nv_home_url | append: '#organization' %}
+{% if page.url == '/' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": {{ nv_org_id | jsonify }},
+  "name": {{ site.title | jsonify }},
+  "legalName": {{ site.legal_name | jsonify }},
+  "description": {{ site.description | strip | jsonify }},
+  "url": {{ nv_home_url | jsonify }},
+  "logo": {{ site.logo | absolute_url | jsonify }},
+  "email": {{ site.email | jsonify }},
+  "telephone": "+381 64 1151 256",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Generala Ljubomira Milica 10",
+    "postalCode": "11041",
+    "addressLocality": "Belgrade",
+    "addressCountry": "RS"
+  }{% if site.same_as and site.same_as.size > 0 %},
+  "sameAs": {{ site.same_as | jsonify }}{% endif %}
+}
+</script>
+{% endif %}
+{% if page.layout == 'v3' and page.url != '/' %}
+{% assign nv_crumb_name = nil %}
+{% assign nv_crumb_section = nil %}
+{% for item in site.data.navigation %}
+  {% if item.url == page.url %}{% assign nv_crumb_name = item.text %}{% endif %}
+  {% for sub in item.submenu %}
+    {% if sub.url == page.url %}
+      {% assign nv_first = item.submenu | first %}
+      {% if sub.text == 'Overview' %}
+        {% assign nv_crumb_name = item.text %}
+      {% else %}
+        {% assign nv_crumb_name = sub.text %}
+        {% comment %} A middle level only where the section has its own overview page. {% endcomment %}
+        {% if nv_first.text == 'Overview' %}{% assign nv_crumb_section = item %}{% endif %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+{% assign nv_heading = page.hero_title | default: page.title %}
+{% assign nv_crumb_name = nv_crumb_name | default: nv_heading %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": {{ site.title | jsonify }}, "item": {{ nv_home_url | jsonify }}},{% if nv_crumb_section %}
+    {"@type": "ListItem", "position": 2, "name": {{ nv_crumb_section.text | jsonify }}, "item": {{ nv_crumb_section.url | absolute_url | jsonify }}},
+    {"@type": "ListItem", "position": 3, "name": {{ nv_crumb_name | jsonify }}, "item": {{ page.url | absolute_url | jsonify }}}{% else %}
+    {"@type": "ListItem", "position": 2, "name": {{ nv_crumb_name | jsonify }}, "item": {{ page.url | absolute_url | jsonify }}}{% endif %}
+  ]
+}
+</script>
+{% if page.video and page.video.uploaded %}
+{% assign nv_duration = page.video.duration | split: ':' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": {{ page.video.title | default: nv_heading | jsonify }},
+  "description": {{ page.video.summary | default: page.description | strip | jsonify }},
+  "thumbnailUrl": {{ page.video.poster | absolute_url | jsonify }},
+  "contentUrl": {{ page.video.src | absolute_url | jsonify }},
+  "uploadDate": {{ page.video.uploaded | date: '%Y-%m-%d' | jsonify }},{% if nv_duration.size == 2 %}
+  "duration": "PT{{ nv_duration[0] | plus: 0 }}M{{ nv_duration[1] | plus: 0 }}S",{% endif %}
+  "inLanguage": "en",
+  "publisher": {"@id": {{ nv_org_id | jsonify }}}
+}
+</script>
+{% endif %}
+{% if page.faq and page.faq.size > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{% for item in page.faq %}
+    {"@type": "Question", "name": {{ item.question | jsonify }}, "acceptedAnswer": {"@type": "Answer", "text": {{ item.answer | strip | jsonify }}}}{% unless forloop.last %},{% endunless %}{% endfor %}
+  ]
+}
+</script>
+{% endif %}
+{% if page.software_application %}
+{% assign nv_app = page.software_application %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": {{ nv_app.name | jsonify }},
+  "applicationCategory": {{ nv_app.category | jsonify }},
+  "applicationSubCategory": {{ nv_app.subcategory | jsonify }},
+  "operatingSystem": {{ nv_app.operating_system | jsonify }},
+  "description": {{ page.description | strip | jsonify }},
+  "url": {{ page.url | absolute_url | jsonify }},{% if page.hero_image %}
+  "image": {{ page.hero_image | absolute_url | jsonify }},{% endif %}
+  "featureList": {{ nv_app.features | jsonify }},
+  "publisher": {"@id": {{ nv_org_id | jsonify }}}
+}
+</script>
+{% endif %}
+{% endif %}

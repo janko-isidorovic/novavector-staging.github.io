@@ -37,6 +37,10 @@ Send any question about this policy, or any request to exercise your rights, to
 
 ## 2. Summary
 
+- **The website does not save personal data about you, unless you schedule a meeting.** It has no
+  forms, user accounts or database. If you book a meeting through the scheduler, the details you enter
+  are saved by Calendly (section 3.4). If you accept analytics cookies, Google Analytics stores
+  pseudonymous usage data that does not identify you by name (section 3.2).
 - You can use the whole website without accepting cookies.
 - We use **Google Analytics** only if you click **Accept** in the cookie banner. You can withdraw that
   consent at any time with <button type="button" class="nv-cookie-link nv-legal__inline-button" data-cookie-settings>Cookie settings</button>,
@@ -162,6 +166,14 @@ Under the GDPR and the Serbian Law on Personal Data Protection you have the righ
 
 To exercise a right, email [info@novavector.com](mailto:info@novavector.com). We answer within one
 month. We may ask you to confirm your identity first.
+
+**How we handle a request.** Most data we hold about you is in emails you sent us or meetings you
+booked; we find it by your email address. Google Analytics data is pseudonymous and we cannot link it
+to you by name. Under Art. 11 GDPR we cannot answer access, correction or erasure requests for it unless
+you send us your Google Analytics client ID (the value of the `_ga` cookie in your browser). You can
+also delete it yourself: <button type="button" class="nv-cookie-link nv-legal__inline-button" data-cookie-settings>Cookie settings</button>
+→ **Reject** removes the cookies, and Google deletes all analytics data after
+{{ site.google_analytics_retention }}. Hosting logs are held by GitHub; we have no access to them.
 
 You also have the right to lodge a complaint with a supervisory authority. In Serbia this is the
 **Commissioner for Information of Public Importance and Personal Data Protection**, Bulevar kralja

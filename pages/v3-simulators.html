@@ -9,12 +9,20 @@ eyebrow: Nova Vector Simulators
 theme: platform
 hero_image: /assets/img/v3/hero/industrial-equipment-simulators.jpg
 video:
-  src: /assets/video/production-line.mp4
-  poster: /assets/video/production-line.jpg
-  title: Prove OEE before go-live
-  summary: A simulated production line that behaves like the real one, down to the protocol. Adapters, alarms, OEE reports, and maintenance workflows are set up and checked against it before the line goes live, including breakdowns you cannot order on demand.
-  duration: "4:14"
+  src: /assets/video/equipment-simulators.mp4
+  poster: /assets/video/equipment-simulators.jpg
+  title: From one device to a whole plant
+  summary: One Modbus energy meter from a plain device file, read by a standard client while values are held and faults injected, then the simulator engine running a battery storage enclosure on four protocols through a hot-day HVAC failure that overheats the battery and derates the inverter, a production-line breakdown, faults across the system, and an impaired network.
+  duration: "4:16"
 content_sections:
+  - eyebrow: One device
+    heading: Start with one device on the wire
+    paragraphs:
+      - A simulator starts from a plain device file written from the vendor's manual, with the unit ID, the register addresses, and the encoding and scale of every value. One command starts it, and any Modbus client can read it, from a command-line tool to a SCADA driver.
+      - The console shows the register map as the client sees it, down to the raw words on the wire, and a request log of every read with its address range and answer, the quickest way to check that a driver reads the right unit and addresses. Any value can be set once, or held until it is released, and the client reads exactly that value.
+    image: /assets/img/v3/screens/simulators/meter-client.webp
+    image_alt: Nova Vector Simulators console of a three-phase energy meter with the voltage of phase 1 held at 253 V, and a command-line Modbus client reading 253 from the same register
+    caption: A simulated energy meter with one voltage held at 253 V, and a standard Modbus client reading exactly that value.
   - eyebrow: Systems, not separate devices
     heading: Devices that share one model of the plant
     paragraphs:
@@ -36,22 +44,10 @@ content_sections:
     image: /assets/img/v3/screens/simulators/modbus-register-map.webp
     image_alt: Nova Vector Simulators Modbus console with four PLCs, three conveyors, a meter, and a sensor behind one gateway, and the register map of one PLC with addresses, encodings, values, and quality
     caption: Nine devices behind one Modbus gateway, and the register map of one PLC, with its strings, counters, product code, and order number.
-  - eyebrow: Reference systems
-    heading: Four plants that run from one folder
-    paragraphs:
-      - Four reference systems come ready to run, with 47 simulated devices and 27 scenarios between them. A battery energy storage enclosure on four protocols, the same enclosure driven by an external battery model, a production line with PLCs, conveyors, an energy meter, and an andon board, and an AI-server assembly line that builds serialized servers into racks.
-      - The lines produce the data that manufacturing features need, such as counters, per-minute counts, product codes, order numbers, serial numbers, operator badges, and rack dispatches. A ground-truth export lets you check what your system recorded against what actually happened.
-    points:
-      - BESS enclosure, with and without an external battery model
-      - Production line with orders, changeovers, breaks, and stoppages
-      - Assembly line with serial numbers, lots, operators, and racks
-    image: /assets/img/v3/screens/simulators/assembly-rack-station.webp
-    image_alt: Nova Vector Simulators console of the rack integration station of an assembly line, with its alarm code, badge, product code, rack serial number, slots, and racks done
-    caption: The rack integration station of the assembly line, with the product, the rack's serial number, and the slots filled so far.
   - eyebrow: Repeatable scenarios
     heading: Acceptance tests and demonstrations become the same thing
     paragraphs:
-      - A scenario changes signals, injects faults, and checks the expected outcome step by step, with a pass or fail result. The HVAC failure scenario on the battery enclosure, for example, checks eleven outcomes across BACnet, Modbus, and SNMP, and it runs the same way in the lab, in a customer meeting, and in continuous integration.
+      - A scenario changes signals, injects faults, and checks the expected outcome step by step, with a pass or fail result. The HVAC failure scenario on the battery enclosure, for example, checks fifteen outcomes across BACnet, Modbus, and SNMP, and it runs the same way in the lab, in a customer meeting, and in continuous integration.
       - Every reference system runs an endless scenario on the wall clock, with shifts, breaks, product changes, charge and discharge cycles, and random stops, so dashboards and reports always have data. For a short demonstration or a test run, the model clock runs from 0.1 to 600 times real time, and can be paused and stepped.
     image: /assets/img/v3/screens/simulators/scenarios.webp
     image_alt: Nova Vector Simulators system page of a battery storage enclosure, with the model clock, the rate, and the scenarios, from communication loss and grid outage to HVAC failure and network impairment
@@ -59,8 +55,9 @@ content_sections:
   - eyebrow: Faults and data quality
     heading: Break things on purpose, before they break in the field
     paragraphs:
-      - Any device or signal can be taken offline, made stale, or given uncertain or bad quality, by hand from the console or from a scenario. Modbus clients receive real exception codes, and SNMP devices send the matching traps.
-      - Network impairment adds latency, jitter, packet loss, or a complete partition between the simulators and your system. You see how alarms, trends, and data-quality handling behave when the connection is poor, and how they recover.
+      - Any device or signal can be taken offline, slowed down, made to drop requests or answer with an error code, frozen, made noisy or drifting, or given uncertain or bad quality, by hand from the console or from a scenario. Each fault ends on its own after the time you set.
+      - The client sees what it would see in the field. A Modbus client's reads time out when the device answers too late, a gateway answers with exception 0x0B when its device is offline, and a value of bad quality fails every read that includes it with a device failure. An offline SNMP device stops sending traps, and an offline MQTT node disconnects.
+      - Network impairment adds latency, jitter, packet loss, or a complete partition between the simulators and your system. The client's connections time out while the link is impaired and its reads succeed again when the link is back, so you see how alarms, trends, and data-quality handling behave when the connection is poor, and how they recover.
     image: /assets/img/v3/screens/simulators/faults.webp
     image_alt: Nova Vector Simulators fault page with a stale sensor, a humidity reading of uncertain quality, and an offline UPS, each with its duration
     caption: Three active faults on a battery enclosure, a stale sensor, a humidity reading of uncertain quality, and an offline UPS.
@@ -79,6 +76,18 @@ content_sections:
     image: /assets/img/v3/screens/simulators/mqtt-fleet.webp
     image_alt: Nova Vector Simulators MQTT console with the run summary, publish latency percentiles, load operations, and edge nodes with their connection state and message counts
     caption: A fleet of MQTT edge nodes with its publish latency and the load operations, from a ramp to a reconnect storm.
+  - eyebrow: Reference systems
+    heading: Four plants that run from one folder
+    paragraphs:
+      - Four reference systems come ready to run, with 57 simulated devices and 33 scenarios between them. A battery energy storage enclosure on four protocols, the same enclosure driven by an external battery model, a production line with PLCs, conveyors, an energy meter, and an andon board, and an AI-server assembly line that builds serialized servers into racks and tests them under a site power limit.
+      - The lines produce the data that manufacturing features need, such as counters, per-minute counts, product codes, order numbers, serial numbers, operator badges, and rack dispatches. A ground-truth export lets you check what your system recorded against what actually happened.
+    points:
+      - BESS enclosure, with and without an external battery model
+      - Production line with orders, changeovers, breaks, and stoppages
+      - Assembly line with serial numbers, lots, operators, racks, and a rack test area under a power limit
+    image: /assets/img/v3/screens/simulators/assembly-rack-station.webp
+    image_alt: Nova Vector Simulators console of the rack integration station of an assembly line, with its alarm code, badge, product code, rack serial number, slots, and racks done
+    caption: The rack integration station of the assembly line, with the product, the rack's serial number, and the slots filled so far.
   - eyebrow: Deployment
     heading: One folder, wherever the test needs to run
     paragraphs:

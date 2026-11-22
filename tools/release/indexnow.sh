@@ -30,7 +30,10 @@ url_list=$(printf '%s\n' "$urls" | sed 's/.*/"&"/' | paste -sd, -)
 body="{\"host\":\"$host\",\"key\":\"$key\",\"keyLocation\":\"https://$host/$key_file\",\"urlList\":[$url_list]}"
 
 echo "Submitting $(printf '%s\n' "$urls" | wc -l) URL(s) to IndexNow"
-code=$(curl -sS -o /dev/stderr -w '%{http_code}' -X POST "https://api.indexnow.org/indexnow" \
+resp=$(mktemp)
+trap 'rm -f "$resp"' EXIT
+code=$(curl -sS -o "$resp" -w '%{http_code}' -X POST "https://api.indexnow.org/indexnow" \
   -H 'Content-Type: application/json; charset=utf-8' --data "$body")
 echo "HTTP $code (200 or 202 = accepted)"
+[ -s "$resp" ] && { cat "$resp"; echo; }
 [ "$code" = 200 ] || [ "$code" = 202 ]

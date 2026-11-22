@@ -9,13 +9,17 @@ decides for the whole site. Hidden pages use `published: false`.
 
 1. Create the release branch from `new-design-v4`.
 2. Run `tools/release/prepare-production.sh`. It sets `url: "https://www.novavector.com"`,
-   `baseurl: ""`, `noindex: false` and writes `CNAME` (`www.novavector.com`).
+   `baseurl: ""`, `noindex: false`, `google_analytics: "G-543RQBFBY7"` (GA4 stream
+   "Nova Vector - GA4") and writes `CNAME` (`www.novavector.com`). Staging keeps
+   `google_analytics` empty so test visits are not counted.
 3. Build locally and check:
    - `robots.txt` allows crawling and names `https://www.novavector.com/sitemap.xml`;
    - pages have no `noindex` meta tag;
    - canonical links, `og:url` and structured data use `https://www.novavector.com`;
    - `sitemap.xml` lists the new pages and none of the hidden ones;
-   - old URLs redirect (see below).
+   - old URLs redirect (see below);
+   - pages load `googletagmanager.com/gtag/js?id=G-543RQBFBY7` (build with `JEKYLL_ENV=production`,
+     as GitHub Pages does; `jekyll serve` leaves it out).
 4. Push the release branch to `master` of `github.com/novavector/novavector.github.io`.
 
 ## Old URLs

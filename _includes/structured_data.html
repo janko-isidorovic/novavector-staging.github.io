@@ -74,7 +74,7 @@
   "description": {{ page.video.summary | default: page.description | strip | jsonify }},
   "thumbnailUrl": {{ page.video.poster | absolute_url | jsonify }},
   "contentUrl": {{ page.video.src | absolute_url | jsonify }},
-  "uploadDate": {{ page.video.uploaded | date: '%Y-%m-%d' | jsonify }},{% if nv_duration.size == 2 %}
+  "uploadDate": {{ page.video.uploaded | date_to_xmlschema | jsonify }},{% if nv_duration.size == 2 %}
   "duration": "PT{{ nv_duration[0] | plus: 0 }}M{{ nv_duration[1] | plus: 0 }}S",{% endif %}
   "inLanguage": "en",
   "publisher": {"@id": {{ nv_org_id | jsonify }}}

@@ -1,0 +1,92 @@
+---
+layout: v3
+permalink: /sr/industrial-state-machine/
+lang: sr-Latn
+title: Automatizacija procesa, alarmi i zadaci
+description: Modelujte stanje procesa, otkrijte nenormalne uslove pomoću granica ili detekcije anomalija koja uči, obavestite prave ljude i pretvorite alarme u zadatke.
+summary: Pretvorite merenja u razumljivo stanje procesa, a zatim povežite nenormalne uslove sa obaveštenjima, zadacima, komandama i sledljivim tokom reagovanja.
+eyebrow: Operativna automatizacija
+theme: platform
+hero_image: /assets/img/v3/hero/industrial-state-machine.jpg
+video:
+  src: /assets/video/process-alarms-tasks.mp4
+  poster: /assets/video/process-alarms-tasks.jpg
+  title: Od stanja procesa do zaduženja
+  summary: Kanban table za posao tima, sa glavnim zadacima čiji se koraci otvaraju kao tabela ili kao tabla. Iza njih, model procesa pretvara telemetriju u stanje mašina i linije uživo i reprodukuje snimljene podatke kako biste istražili incident ili isprobali novu konfiguraciju. Alarmi otvaraju zadatke sa odgovornom osobom, a zadaci se vraćaju na tablu.
+  duration: "2:09"
+  uploaded: 2026-11-22
+content_sections:
+  - eyebrow: Stanje procesa
+    heading: Dajte sirovim signalima operativno značenje
+    paragraphs:
+      - Temperatura, brojač, vrednost pritiska ili bit mašine često su važni samo zbog radnog stanja u kojem nastaju. Modeli procesa u platformi Nova Vector kombinuju izabrane izvore podataka sa eksplicitnim stanjima i uslovljenim prelazima, pa platforma može da utvrdi da li oprema radi, miruje, čeka materijal, blokirana je, zaustavljena ili je u nekom drugom stanju koje definiše korisnik.
+      - Pravila povezuju mašine međusobno. Stanje svake mašine određuje stanje linije, a stanje linije pokreće andon tablu, pa se razlog zbog kog linija radi otežano vidi na jednom dijagramu.
+    image: /assets/img/v3/screens/alerts/process-diagram.webp
+    image_alt: Dijagram procesa proizvodne linije u platformi Nova Vector, sa punilicom, mašinom za zatvaranje, etiketirkom, pakericom i baferima povezanim pravilima sa stanjem linije i andon tablom, i vremenskom linijom stanja linije iznad
+    caption: Pravila povezuju stanje svake mašine sa stanjem linije, a stanje linije sa andon tablom.
+  - eyebrow: Verzionisana logika
+    heading: Znajte koje je pravilo izazvalo svaku promenu stanja
+    paragraphs:
+      - Objavljene verzije procesa ne mogu se menjati, pa se ranije izvršavanje tumači prema tačno onoj logici koja je tada bila aktivna, a ne prema današnjoj izmenjenoj konfiguraciji.
+      - Svaka promena stanja beleži se sa okidačem, vrednostima koje su do nje dovele i verzijom pravila koja je važila. Dnevnik izvršavanja izvozi se u CSV za vašu analizu.
+    image: /assets/img/v3/screens/alerts/execution-log.webp
+    image_alt: Dnevnik izvršavanja u platformi Nova Vector sa promenama stanja, njihovim okidačem, verzijom i vrednostima iza svake promene
+    caption: Dnevnik izvršavanja beleži svaku promenu stanja sa okidačem i verzijom pravila.
+  - eyebrow: Alarmi
+    heading: Otkrijte uslov i sačuvajte dokaze koji ga prate
+    paragraphs:
+      - Pravila alarma proveravaju broj u odnosu na granice, tekstualnu vrednost u odnosu na uslove, uređaj koji prestane da šalje podatke ili očitavanje u odnosu na ono što je platforma naučila da je za njega normalno. Kada uslov promeni stanje, Nova Vector ažurira kontekst pogođenog uređaja i prosleđuje rezultat u tokove obaveštenja i zadataka. Obaveštenja se šalju e-poštom podešenim primaocima.
+      - Pravila alarma definišu se u platformi, a ne ugrađuju fiksno u kontrolnu tablu. Tako pravilo detekcije ostaje vezano za opremu kojoj pripada, a timovi imaju jedno mesto za pregled trenutnog i istorijskog stanja alarma. Operateri potvrđuju alarm uz razlog, kao što su održavanje, stvarni kvar ili lažni alarm, pa se svaki alarm kasnije može klasifikovati.
+    image: /assets/img/v3/screens/alerts/alert-rule.webp
+    image_alt: Pravilo alarma sa pragom u platformi Nova Vector, sa uslovima upozorenja i greške i očitavanjem iz poslednja 24 sata u odnosu na njih
+    caption: Pravilo sa pragom, sa svojim stanjem, uslovima i očitavanjem iz poslednja 24 sata u odnosu na nivoe upozorenja i greške.
+  - eyebrow: Detekcija anomalija
+    heading: Uočite probleme za koje niko nije postavio granicu
+    paragraphs:
+      - Pravilu anomalije nisu potrebne granice. Ono uči šta je normalno za jedno očitavanje jednog uređaja, njegov nivo, dnevni ritam i šum, i podiže alarm kada očitavanje izađe iz tih okvira. Otkriva vrednost koja postepeno odstupa, zaglavi se ili postane šumovita, a pri tome ostaje unutar svake razumne granice. Izaberite visoku, srednju ili nisku osetljivost, a pravilo uči oko tri dana pre nego što bilo šta prijavi.
+      - Pre nego što se pravilo sačuva, Test na istoriji ga pokreće nad poslednjih sedam dana i pokazuje gde bi se aktiviralo pri svakoj osetljivosti. Trajna promena rada sama postaje nova normala; alarm potvrđen kao stvarni kvar ostaje dok se očitavanje ne vrati. Svaka grupa može da postavi dnevni budžet alarma anomalija, a stranica alarma pokazuje kada je budžet prekoračen i koja pravila podižu najviše alarma.
+    points:
+      - Bez granica za podešavanje, uz osetljivost u tri koraka
+      - Test na istoriji pre nego što se pravilo sačuva
+      - Pored njega pravilo sa pragom za vrednosti koje nikada ne smeju biti prekoračene
+    image: /assets/img/v3/screens/alerts/anomaly-rule-form.webp
+    image_alt: Obrazac pravila anomalije u platformi Nova Vector za temperaturu proizvodne hale, sa očitavanjem, osetljivošću, sezonalnošću, nivoom, testom na istoriji i obaveštenjima po stanju
+    caption: Pravilo anomalije za temperaturu proizvodne hale. Izaberite očitavanje, osetljivost i nivo; platforma nauči ostalo.
+  - eyebrow: Od alarma do posla
+    heading: Pretvorite nenormalan događaj u posao za koji je neko zadužen
+    paragraphs:
+      - Alarm može da kreira zadatak iz podešenog šablona. Zadatak čuva kategoriju, izvršioca, status, istoriju i izvorni kontekst koji ga je izazvao, pa timovi održavanja ili podrške ne moraju da rekonstruišu prvobitni događaj iz drugog sistema.
+      - Gde je tako podešeno, prestanak izvornog alarma automatski rešava povezani zadatak. Tehničar može da očita RFID karticu na mašini i tako zabeleži dolazak, pa se vreme odziva i popravke meri, a ne procenjuje; tok se može prilagoditi vašem procesu održavanja.
+    image: /assets/img/v3/screens/alerts/tasks-from-alarms.webp
+    image_alt: Lista zadataka u platformi Nova Vector sa zadacima kreiranim iz alarma, sa statusom, trajanjem, izvršiocem i kategorijom
+    caption: Zadaci nastali iz alarma čuvaju izvorni kontekst i prate se do rešenja.
+  - eyebrow: Tokovi zadataka
+    heading: Ponovljive poslove vodite iz šablona na zajedničkim tablama
+    paragraphs:
+      - Inspekcije, promene proizvoda, kontrole kvaliteta i preventivno održavanje pokreću se iz šablona sa podzadacima i periodičnim rasporedima. Kanban table grupišu posao po statusu, kategoriji ili osobi, a kiosk table prikazuju isti pregled na ekranima u pogonu.
+      - Pravila i blokade drže kritične korake u ispravnom redosledu. Šarža ne može da se pusti dok je neka provera još otvorena, a za izabrane promene statusa traže se potpis lozinkom i razlog.
+    points:
+      - Šabloni, podzadaci i periodični rasporedi
+      - Table po statusu, kategoriji ili osobi, sa pregledom „moji zadaci“ za svakoga
+      - Blokade i potpisane promene statusa za kritične korake
+    image: /assets/img/v3/screens/alerts/kanban-board.webp
+    image_alt: Kanban tabla montažne linije u platformi Nova Vector sa zadacima revizije, testiranja, dorade i dokumentacije po statusu, uključujući blokirane i zakasnele zadatke
+    caption: Kanban tabla montažne linije sa odgovornim osobama, rokovima i blokiranim ili zakasnelim zadacima.
+  - eyebrow: Sledljiva reakcija
+    heading: Držite obaveštenja, zadatke i komande odvojeno i pod nadzorom
+    paragraphs:
+      - Obaveštenja informišu podešene primaoce, zadaci predstavljaju posao za koji je neko zadužen, a komande predstavljaju zahteve za akciju na uređaju. Kada su razdvojeni, jasno je da li je uslov otkriven, da li je neko zadužen za njega i da li je zatražena automatska akcija.
+      - Komande se izvršavaju asinhrono, kroz putanju komandi platforme. To što je softverski zahtev sačuvan ne znači da je udaljeni kontroler ili fizički proces delovao atomski, a to je važna razlika u industrijskim sistemima.
+    image: /assets/img/v3/architecture/04-events-commands.png
+    image_alt: Arhitektura događaja, alarma, zadataka i komandi u platformi Nova Vector
+    caption: Alarmi, zadaci, obaveštenja, rasporedi i komande koriste jasne servisne putanje, a ne jedan skriveni lanac automatizacije.
+related:
+  - label: Simulacija i reprodukcija
+    url: /sr/industrial-simulation/
+  - label: Proizvodnja i OEE
+    url: /sr/manufacturing/
+  - label: OEE i zastoji
+    url: /sr/manufacturing-oee-software/
+  - label: AI na platformi i edge-u
+    url: /sr/edge-ai-industrial-iot/
+---

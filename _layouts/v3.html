@@ -8,7 +8,7 @@ layout: default
     {% include v3/video.html %}
   {% endif %}
   {% if page.platform_overview %}
-    {% include v3/platform_overview.html %}
+    {% if page.lang == 'sr-Latn' %}{% include sr/platform_overview.html %}{% else %}{% include v3/platform_overview.html %}{% endif %}
   {% else %}
   {% include v3/content_sections.html %}
   {% if page.show_capability_cards %}

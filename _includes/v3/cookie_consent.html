@@ -1,9 +1,10 @@
-<div class="nv-cookie" id="nv-cookie" role="region" aria-label="Cookie consent" hidden>
+{% include lang.html %}
+<div class="nv-cookie" id="nv-cookie" role="region" aria-label="{{ t.cookie_region }}" hidden>
     <div class="container nv-cookie__inner">
-        <p class="nv-cookie__text"><strong>Cookies</strong> We use Google Analytics cookies to see how visitors use this site, so we can improve it. They are set only if you accept. You can change your choice at any time with <em>Cookie settings</em> at the bottom of every page. Details are in our <a href="{{ '/privacy-policy/' | relative_url }}">Privacy Policy</a>.</p>
+        <p class="nv-cookie__text"><strong>{{ t.cookie_title }}</strong> {{ t.cookie_text }} <a href="{{ t.privacy_url | relative_url }}">{{ t.privacy_policy }}</a>.</p>
         <div class="nv-cookie__actions">
-            <button type="button" class="nv-cookie__btn nv-cookie__btn--ghost" data-consent="denied">Reject</button>
-            <button type="button" class="nv-cookie__btn" data-consent="granted">Accept</button>
+            <button type="button" class="nv-cookie__btn nv-cookie__btn--ghost" data-consent="denied">{{ t.cookie_reject }}</button>
+            <button type="button" class="nv-cookie__btn" data-consent="granted">{{ t.cookie_accept }}</button>
         </div>
     </div>
 </div>

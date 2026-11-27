@@ -1,0 +1,71 @@
+---
+layout: v3
+permalink: /sr/industrial-infrastructure/
+lang: sr-Latn
+title: Nadzor objekata preko BACnet, SNMP i LoRaWAN
+hero_title: Industrijska infrastruktura i objekti
+description: Nadzor zgrada, komunalnih sistema i udaljenih lokacija preko BACnet/IP, SNMP, LoRaWAN i MQTT, sa kontrolnim tablama, alarmima i zadacima na jednom mestu.
+summary: Podatke iz zgrada i infrastrukture uvedite u isti model uređaja, vremenskih serija, alarma i odziva koji koristi ostatak platforme Nova Vector.
+eyebrow: Industrijsko rešenje
+theme: edge
+
+hero_image: /assets/img/v3/hero/industrial-infrastructure.jpg
+video:
+  src: /assets/video/industrial-infrastructure.mp4
+  poster: /assets/video/industrial-infrastructure.jpg
+  title: Kako se vaše zgrade koriste i koliko košta njihov rad
+  summary: LoRaWAN senzori u prostorijama sa temperaturom, vlažnošću, CO₂, kvalitetom vazduha i pokretom, kontrolne table prostorija koje prikazuju zauzetost i komfor, potrošnja grejanja, hlađenja i vode po brojilu, mesecu i smeni, i granice komfora koje otvaraju zadatke za osoblje objekta.
+  duration: "2:03"
+  uploaded: 2026-11-22
+content_sections:
+  - eyebrow: Sistemi zgrade
+    heading: Povežite upravljanje zgradom kroz protokole koji se već koriste
+    paragraphs:
+      - BACnet/IP otkrivanje pronalazi kompatibilne uređaje za upravljanje zgradom na mreži i omogućava pregled njihovih objekata pre dodavanja, pa se HVAC, rasveta i drugi sistemi uključuju u model uređaja bez ručnih lista adresa.
+      - MQTT, HTTP i WebSocket pružaju dodatne IoT putanje, a edge čvorovi se mogu uvesti tamo gde lokaciji koristi lokalno povezivanje ili obrada.
+    image: /assets/img/v3/screens/infrastructure/bacnet-objects.webp
+    image_alt: Dodavanje BACnet uređaja u platformi Nova Vector, sa listom objekata otkrivene HVAC jedinice i njihovim trenutnim vrednostima pre povezivanja
+    caption: Otkrivanje pronalazi HVAC jedinicu i prikazuje njene objekte, kao što su dovodni i povratni vazduh, brzina ventilatora i zadata vrednost, pre nego što se bilo šta doda.
+  - eyebrow: Mrežna i infrastrukturna oprema
+    heading: Primajte SNMP trapove sa mrežne opreme i opreme za napajanje
+    paragraphs:
+      - Prijemnici SNMP trapova pretvaraju trapove sa svičeva, UPS uređaja i druge infrastrukturne opreme u očitavanja i alarme, uključujući SNMP v3 sa autentifikacijom i šifrovanjem.
+    image: /assets/img/v3/screens/infrastructure/snmp-receivers.webp
+    image_alt: Prijemnici SNMP trapova u platformi Nova Vector za v1, v2c i v3, sa bezbednošću, brojem trapova i poslednjim trapom za svaki
+    caption: Prijemnici trapova za SNMP v1, v2c i v3, svaki sa svojim podešavanjem bezbednosti, brojem trapova i poslednjim trapom.
+  - eyebrow: Senzori na terenu
+    heading: Pokrijte velike lokacije senzorima dugog dometa i male potrošnje
+    paragraphs:
+      - LoRaWAN povezuje senzore na baterije na velikim lokacijama i udaljenim mestima, preko LoRaWAN mrežnog servera koji dolazi uz platformu. Godinama je u realnoj upotrebi u pametnoj poljoprivredi, a isti pristup odgovara merenju uslova sredine, potrošnje energenata i zauzetosti prostora u objektima.
+  - eyebrow: Kontekst opreme
+    heading: Organizujte objekte po mestu i opremi, a ne samo po adresi protokola
+    paragraphs:
+      - Zgrade, spratovi, prostorije, komunalni sistemi, oprema, brojila i senzori predstavljeni su kroz hijerarhiju uređaja, pa korisnik može da pređe iz pregleda lokacije na određeni uređaj i njegove podatke uživo ili istorijske podatke.
+      - Profili za višekratnu upotrebu daju ponovljenim tipovima uređaja dosledan opis i standardizuju značenje merenja kod sličnih brojila, kontrolera ili senzora.
+    image: /assets/img/v3/screens/infrastructure/site-hierarchy.webp
+    image_alt: Stablo uređaja u platformi Nova Vector za lokaciju baterijskog skladišta, sa sistemom za upravljanje baterijama, sistemom za konverziju snage, senzorima klime, kontrolerom kućišta, HVAC jedinicom, mrežnim svičem i UPS-om
+    caption: Lokacija baterijskog skladišta sa HVAC jedinicom, UPS-om, mrežnim svičem i senzorima klime, u istoj hijerarhiji koja se koristi za proizvodnu opremu.
+  - eyebrow: Nadzor i izveštaji
+    heading: Uporedite periode rada bez razdvajanja trenutnog i istorijskog prikaza
+    paragraphs:
+      - Stranice uređaja daju direktan pristup trenutnim očitavanjima i istoriji, sa izvozom grafikona i izvozom u PDF, PNG i CSV. Kontrolne table napravljene u platformi ili u ugrađenom alatu Grafana pokrivaju šire prikaze lokacije i sistema, kao što je potrošnja energije i energenata po zoni ili sistemu.
+      - Izveštaji za objekte podešavaju se prema podacima i ciljevima projekta, a ne uzimaju se iz fiksne biblioteke izveštaja za upravljanje zgradama.
+    image: /assets/img/v3/screens/infrastructure/site-dashboard.webp
+    image_alt: Kontrolna tabla uživo u platformi Nova Vector za lokaciju baterijskog skladišta, sa stanjem napunjenosti, snagom, naponima, najtoplijom ćelijom, stanjem zdravlja baterije, temperaturom vazduha u kućištu i brzinom ventilatora HVAC jedinice
+    caption: Lokacija baterijskog skladišta na jedan pogled, sa napunjenošću, snagom, graničnim vrednostima ćelija, vazduhom u kućištu i brzinom ventilatora HVAC jedinice, uz osvežavanje na svakih 30 sekundi.
+  - eyebrow: Alarmi i odziv
+    heading: Pretvorite nenormalne uslove u operativni tok rada koji se može pratiti
+    paragraphs:
+      - Granice alarma i provere izostanka podataka otkrivaju nenormalna ili nedostajuća merenja. Obaveštenja se šalju e-poštom podešenim primaocima, a zadaci kroz dodelu i rešavanje zadržavaju kontekst uređaja i alarma iz kog su nastali.
+      - U radu infrastrukture nije bitno samo prikazati alarm, već obezbediti da neko preuzme i zatvori posao koji iz njega proizlazi.
+    image: /assets/img/v3/screens/infrastructure/task-from-alarm.webp
+    image_alt: Zadatak u platformi Nova Vector otvoren alarmom izostanka podataka na senzoru temperature u kućištu baterije, sa uređajem, grupom, kategorijom i pravilom alarma
+    caption: Zadatak otvoren kada je senzor temperature u kućištu prestao da šalje podatke, povezan sa svojim uređajem i pravilom alarma.
+related:
+  - label: Uređaji i povezivanje
+    url: /sr/iot-device-management/
+  - label: Izveštaji i analitika
+    url: /sr/iot-timeseries-analytics/
+  - label: Edge računarstvo
+    url: /sr/edge-computing-platform/
+---

@@ -1,6 +1,7 @@
-<nav id="mobile-menu" aria-label="Primary navigation">
+{% include lang.html %}{% if nv_lang == 'sr-Latn' %}{% assign nv_nav = site.data.navigation_sr %}{% else %}{% assign nv_nav = site.data.navigation %}{% endif %}
+<nav id="mobile-menu" aria-label="{{ t.nav_label }}">
 <ul>
-    {% for link in site.data.navigation %}
+    {% for link in nv_nav %}
     {% assign active = nil %}
     {% assign link_path = link.url | split: '#' | first %}
 
@@ -20,7 +21,7 @@
     {% endif %}
 
      <li{% if link.cta %} class="navigation-cta"{% endif %}>
-         <a href="{{ link.url | relative_url }}"{% if active %} class="menu-active" aria-current="page"{% endif %}>{{link.text}}{% if link.submenu %}<svg class="nv-caret" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 6l4 4 4-4"/></svg><span class="sr-only"> menu</span>{% endif %}</a>
+         <a href="{{ link.url | relative_url }}"{% if active %} class="menu-active" aria-current="page"{% endif %}>{{link.text}}{% if link.submenu %}<svg class="nv-caret" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 6l4 4 4-4"/></svg><span class="sr-only"> {{ t.menu_sr }}</span>{% endif %}</a>
         {% if link.submenu %}
         <ul class="sub-menu">
             {% for sublink in link.submenu %}
@@ -31,5 +32,7 @@
         {% endif %}
     </li>
     {% endfor %}
+    {% if nv_alt %}{% assign nv_switch_url = nv_alt.url %}{% else %}{% assign nv_switch_url = t.home_url | replace: '/sr/', '/' %}{% if nv_lang == 'en' %}{% assign nv_switch_url = '/sr/' %}{% endif %}{% endif %}
+    <li class="nv-lang-switch"><a href="{{ nv_switch_url | relative_url }}" hreflang="{% if nv_lang == 'sr-Latn' %}en{% else %}sr-Latn{% endif %}" lang="{% if nv_lang == 'sr-Latn' %}en{% else %}sr-Latn{% endif %}" title="{{ t.lang_switch_title }}"><span aria-hidden="true">{{ t.lang_switch_short }}</span><span class="sr-only">{{ t.lang_switch_label }}</span></a></li>
 </ul>
 </nav>

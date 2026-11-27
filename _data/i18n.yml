@@ -1,0 +1,97 @@
+# Labels shared by the layouts and includes, per page language (front matter `lang`, default `en`).
+# Serbian pages use lang: sr-Latn. Page text itself lives in each page's front matter.
+en:
+  home_url: /
+  platform_url: /industrial-iot-platform/
+  contact_demo_url: /contact/#request-demo
+  privacy_url: /privacy-policy/
+  home: Home
+  request_demo: Request a Demo
+  request_demo_inline: Request a demo
+  explore_platform: Explore the Platform
+  continue_evaluating: Continue evaluating
+  cta_eyebrow: Discuss your architecture
+  cta_heading: Connect industrial systems without losing operational context.
+  cta_mail_subject: Nova%20Vector%20demo%20request
+  faq_eyebrow: Technical questions
+  faq_heading: Evaluation notes
+  capability_eyebrow: Page structure
+  capability_heading: Core capabilities
+  video_watch: Watch
+  video_minutes: min
+  video_fallback: Your browser does not play this video.
+  video_download: Download it
+  nav_label: Primary navigation
+  menu_sr: menu
+  search_label: Search the Nova Vector website
+  search_placeholder: Search the website
+  search_button: Search
+  lang_switch_label: Srpski
+  lang_switch_short: SR
+  lang_switch_title: Ova stranica na srpskom
+  find_us: Find us
+  address_city: 11041 Belgrade, Serbia
+  call_us: Call us
+  mail_us: Mail us
+  footer_heading: Nova Vector Industrial IoT &amp; Edge Computing Platform
+  footer_text: If fragmented, out-of-context data prevents you from embracing the full potential of AI, Nova Vector offers an easy fix. Our platform connects your equipment and teams and digitizes your production to effectively transform your operational data into real ROI. We lay the foundation for your transition to AI.
+  footer_text_end: to start your digitalization journey today.
+  follow_us: Follow us
+  linkedin_label: Nova Vector on LinkedIn
+  rights: All Rights Reserved.
+  privacy_policy: Privacy Policy
+  cookie_settings: Cookie settings
+  cookie_region: Cookie consent
+  cookie_title: Cookies
+  cookie_text: We use Google Analytics cookies to see how visitors use this site, so we can improve it. They are set only if you accept. You can change your choice at any time with <em>Cookie settings</em> at the bottom of every page. Details are in our
+  cookie_reject: Reject
+  cookie_accept: Accept
+  video_language: en
+
+sr-Latn:
+  home_url: /sr/
+  platform_url: /sr/industrial-iot-platform/
+  contact_demo_url: /sr/contact/#request-demo
+  privacy_url: /sr/privacy-policy/
+  home: Početna
+  request_demo: Zatražite demo
+  request_demo_inline: Zatražite demo
+  explore_platform: Upoznajte platformu
+  continue_evaluating: Nastavite procenu
+  cta_eyebrow: Razgovarajmo o vašoj arhitekturi
+  cta_heading: Povežite industrijske sisteme bez gubitka operativnog konteksta.
+  cta_mail_subject: Zahtev%20za%20demo%20Nova%20Vector
+  faq_eyebrow: Tehnička pitanja
+  faq_heading: Napomene za procenu
+  capability_eyebrow: Struktura stranice
+  capability_heading: Ključne mogućnosti
+  video_watch: Pogledajte
+  video_minutes: min
+  video_fallback: Vaš pregledač ne može da reprodukuje ovaj video.
+  video_download: Preuzmite ga
+  nav_label: Glavna navigacija
+  menu_sr: meni
+  search_label: Pretraga sajta Nova Vector
+  search_placeholder: Pretražite sajt
+  search_button: Pretraga
+  lang_switch_label: English
+  lang_switch_short: EN
+  lang_switch_title: This page in English
+  find_us: Pronađite nas
+  address_city: 11041 Beograd, Srbija
+  call_us: Pozovite nas
+  mail_us: Pišite nam
+  footer_heading: Nova Vector, industrijska IoT i edge platforma
+  footer_text: Ako vam raštrkani podaci bez konteksta ne dozvoljavaju da iskoristite pun potencijal veštačke inteligencije, Nova Vector nudi jednostavno rešenje. Naša platforma povezuje vašu opremu i timove i digitalizuje proizvodnju, kako bi operativni podaci doneli stvaran povraćaj ulaganja. Postavljamo temelje za vaš prelazak na AI.
+  footer_text_end: i započnite digitalizaciju već danas.
+  follow_us: Pratite nas
+  linkedin_label: Nova Vector na LinkedIn-u
+  rights: Sva prava zadržana.
+  privacy_policy: Politika privatnosti
+  cookie_settings: Podešavanja kolačića
+  cookie_region: Saglasnost za kolačiće
+  cookie_title: Kolačići
+  cookie_text: Koristimo kolačiće Google Analytics da bismo videli kako posetioci koriste sajt i da bismo ga poboljšali. Postavljaju se samo ako ih prihvatite. Izbor možete promeniti u svakom trenutku preko <em>Podešavanja kolačića</em> na dnu svake stranice. Detalji su u našoj
+  cookie_reject: Odbij
+  cookie_accept: Prihvati
+  video_language: en

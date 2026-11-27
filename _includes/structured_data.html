@@ -6,7 +6,9 @@
   - FAQPage on a page with an FAQ;
   - SoftwareApplication on a page with front matter software_application (the platform page).
 {% endcomment %}
+{% include lang.html %}{% if nv_lang == 'sr-Latn' %}{% assign nv_crumb_nav = site.data.navigation_sr %}{% assign nv_overview = 'Pregled' %}{% else %}{% assign nv_crumb_nav = site.data.navigation %}{% assign nv_overview = 'Overview' %}{% endif %}
 {% assign nv_home_url = '/' | absolute_url %}
+{% assign nv_lang_home_url = t.home_url | absolute_url %}
 {% assign nv_org_id = nv_home_url | append: '#organization' %}
 {% if page.url == '/' %}
 <script type="application/ld+json">
@@ -35,17 +37,17 @@
 {% if page.layout == 'v3' and page.url != '/' %}
 {% assign nv_crumb_name = nil %}
 {% assign nv_crumb_section = nil %}
-{% for item in site.data.navigation %}
+{% for item in nv_crumb_nav %}
   {% if item.url == page.url %}{% assign nv_crumb_name = item.text %}{% endif %}
   {% for sub in item.submenu %}
     {% if sub.url == page.url %}
       {% assign nv_first = item.submenu | first %}
-      {% if sub.text == 'Overview' %}
+      {% if sub.text == nv_overview %}
         {% assign nv_crumb_name = item.text %}
       {% else %}
         {% assign nv_crumb_name = sub.text %}
         {% comment %} A middle level only where the section has its own overview page. {% endcomment %}
-        {% if nv_first.text == 'Overview' %}{% assign nv_crumb_section = item %}{% endif %}
+        {% if nv_first.text == nv_overview %}{% assign nv_crumb_section = item %}{% endif %}
       {% endif %}
     {% endif %}
   {% endfor %}
@@ -57,7 +59,7 @@
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": {{ site.title | jsonify }}, "item": {{ nv_home_url | jsonify }}},{% if nv_crumb_section %}
+    {"@type": "ListItem", "position": 1, "name": {{ site.title | jsonify }}, "item": {{ nv_lang_home_url | jsonify }}},{% if nv_crumb_section %}
     {"@type": "ListItem", "position": 2, "name": {{ nv_crumb_section.text | jsonify }}, "item": {{ nv_crumb_section.url | absolute_url | jsonify }}},
     {"@type": "ListItem", "position": 3, "name": {{ nv_crumb_name | jsonify }}, "item": {{ page.url | absolute_url | jsonify }}}{% else %}
     {"@type": "ListItem", "position": 2, "name": {{ nv_crumb_name | jsonify }}, "item": {{ page.url | absolute_url | jsonify }}}{% endif %}
@@ -76,7 +78,7 @@
   "contentUrl": {{ page.video.src | absolute_url | jsonify }},
   "uploadDate": {{ page.video.uploaded | date_to_xmlschema | jsonify }},{% if nv_duration.size == 2 %}
   "duration": "PT{{ nv_duration[0] | plus: 0 }}M{{ nv_duration[1] | plus: 0 }}S",{% endif %}
-  "inLanguage": "en",
+  "inLanguage": {{ t.video_language | jsonify }},
   "publisher": {"@id": {{ nv_org_id | jsonify }}}
 }
 </script>

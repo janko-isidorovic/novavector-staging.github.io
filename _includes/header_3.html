@@ -1,3 +1,4 @@
+{% include lang.html %}
 <header>
     <div class="container">
     <div id="sticky-header" class="menu-area transparent-bg">
@@ -5,7 +6,7 @@
             <div id="menu-items" class="row align-items-center">
                 <div class="col-xl-2 col-lg-2 col-md-3 col-sm-5">
                     <div class="logo">
-                        <a href="{{ '/' | relative_url }}"><img width="160" height="23" src="{{ '/assets/img/logo/logo_2.png' | relative_url }}" class="img-fluid" alt="{{site.title}}"></a>
+                        <a href="{{ t.home_url | relative_url }}"><img width="160" height="23" src="{{ '/assets/img/logo/logo_2.png' | relative_url }}" class="img-fluid" alt="{{site.title}}"></a>
                     </div>
                 </div>
                 <div class="col-xl-9 col-lg-9 text-right">
@@ -26,9 +27,9 @@
     <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
             <form role="search">
-                <label class="sr-only" for="search-input">Search the Nova Vector website</label>
-                <input type="search" id="search-input" placeholder="Search the website">
-                <button type="button" aria-label="Search"><i class="fa fa-search" aria-hidden="true"></i></button>
+                <label class="sr-only" for="search-input">{{ t.search_label }}</label>
+                <input type="search" id="search-input" placeholder="{{ t.search_placeholder }}">
+                <button type="button" aria-label="{{ t.search_button }}"><i class="fa fa-search" aria-hidden="true"></i></button>
             </form>
             <ul id="results-container"></ul>
         </div>

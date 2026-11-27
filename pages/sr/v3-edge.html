@@ -1,0 +1,76 @@
+---
+layout: v3
+permalink: /sr/edge-computing-platform/
+lang: sr-Latn
+title: Industrijsko edge računarstvo uz EdgeX
+hero_title: Nova Edge računarstvo
+description: "Industrijska edge platforma: lokalno povezivanje uređaja kroz EdgeX, AI na edge-u, rad tokom prekida veze i centralno upravljanje svim čvorovima."
+summary: Povezivanje i izabranu obradu podataka postavite uz industrijsku opremu, dok uređaji, softver i operativni kontekst ostaju povezani sa centralnom platformom Nova Vector.
+eyebrow: Nova Edge
+theme: edge
+hero_image: /assets/img/v3/hero/edge-computing-platform.jpg
+video:
+  src: /assets/video/edge-computing.mp4
+  poster: /assets/video/edge-computing.jpg
+  title: Pored mašine, a upravlja se sa platforme
+  summary: Tri edge čvora uvezena i instalirana u jednom prolazu, brojilo energije na liniji očitano kroz EdgeX i povezano sa platformom, konzola i logovi čvora otvoreni sa platforme, SSH sesija i otpremanje fajla na čvor iz pregledača, ažuriranje softvera uvedeno uz provere na svakom čvoru, i ono što nastavlja da radi kada veza padne.
+  duration: "2:58"
+  uploaded: 2026-11-22
+content_sections:
+  - eyebrow: Edge okruženje
+    heading: Servise lokacije postavite uz opremu kojoj su potrebni
+    paragraphs:
+      - "Nova Edge radi na industrijskom PC-ju ili drugoj Ubuntu mašini na lokaciji, na amd64 ili arm64 hardveru. Svaki edge čvor kombinuje Nova Vector Edge Agent sa softverom koji je lokaciji potreban: EdgeX servisima za uređaje, izvršnim okruženjem za AI na edge-u i lokalnom konzolom za operatere. Paket se bira za svaki tip čvora, a ne podrazumeva se da je svuda isti."
+      - Edge čvor koristite kada oprema ne može direktno da pristupi platformi, kada lokalna obrada smanjuje saobraćaj ka platformi ili kada lokacija mora da nastavi rad dok je veza sa platformom prekinuta.
+    image: /assets/img/v3/features/07-edge-management/local-console.png
+    image_alt: Lokalna konzola Nova Edge sa kontejnerima koji rade na edge čvoru
+    caption: Lokalna konzola edge čvora, otvorena unutar platforme, sa kontejnerima EdgeX, Edge AI i konzole koje čvor pokreće.
+  - eyebrow: Lokalni sloj uređaja
+    heading: Očitavajte uređaje na terenu kroz EdgeX na čvoru
+    paragraphs:
+      - EdgeX Foundry servisi za uređaje komuniciraju sa PLC-ovima, brojilima i senzorima na lokaciji i ostatku edge steka daju jedinstven model uređaja i komandi. Nova Vector povezuje svaki EdgeX uređaj sa uređajem na platformi, pa lokacija ne postaje izdvojeno ostrvo podataka.
+      - Podržana su izdanja EdgeX 2.3, 3.1 i 4.0, spakovana kao odobreni paketi. Skup servisa za uređaje bira se za svaki projekat, umesto da se obećava da će svaki servis za uređaje iz zajednice automatski raditi.
+    image: /assets/img/v3/features/07-edge-management/edgex-devices.png
+    image_alt: EdgeX uređaji na edge čvoru, svaki povezan sa uređajem na platformi
+    caption: EdgeX uređaji na jednom edge čvoru, sa servisom za uređaje koji svaki od njih koristi i uređajem na platformi sa kojim je povezan.
+  - eyebrow: Očitavanja na platformi
+    heading: Edge očitavanja na grafikonu uz direktno povezanu opremu
+    paragraphs:
+      - Čvor izvozi očitavanja svojih uređaja na platformu, gde se čuvaju pod čvorom, sa nazivom uređaja i nazivom očitavanja. Kontrolne table, izveštaji i zadaci zatim rade sa njima kao sa svim drugim podacima.
+      - Lokalni servisi mogu i da filtriraju, transformišu i usmere izabrane podatke pre nego što napuste lokaciju, a da edge čvor ne postane odvojena, nepovezana druga platforma.
+    image: /assets/img/v3/features/07-edge-management/edge-device-data.png
+    image_alt: Očitavanja sa uređaja na edge čvoru prikazana na grafikonu na platformi
+    caption: Očitavanja koja EdgeX prikuplja na edge čvoru, prikazana na grafikonu na platformi za poslednjih sat vremena.
+  - eyebrow: AI na edge-u
+    heading: Pokrenite odobrene AI modele pored mašine
+    paragraphs:
+      - Izvršno okruženje za AI na edge-u učitava odobreni model na čvoru i pokreće ga na svakom novom očitavanju povezanog uređaja, bez odlaska do oblaka i nazad. Rezultati se vraćaju na platformu kao obični podaci, a mogu i lokalno da deluju kroz EdgeX.
+      - Modeli danas rade na CPU-u čvora, jedan model po čvoru. Pre nego što rasporedi model, platforma proverava arhitekturu, izvršno okruženje, memoriju i skladišni prostor svakog čvora.
+    image: /assets/img/v3/features/08-edge-ai/deployment-board.png
+    image_alt: Tabla za raspoređivanje AI modela na edge-u, sa svakim edge čvorom, verzijom modela i stanjem
+    caption: Tabla za raspoređivanje AI na edge-u prikazuje aktivnu verziju modela, mesto izvršavanja i stanje na svakom edge čvoru.
+    points:
+      - Registar modela sa verzijama i odobravanjem
+      - Provera kompatibilnosti za svaki edge čvor pre raspoređivanja
+      - Vraćanje na prethodnu verziju u jednom koraku
+  - eyebrow: Kada veza padne
+    heading: Oprema se očitava i tokom prekida veze
+    paragraphs:
+      - EdgeX nastavlja da očitava uređaje dok je veza sa platformom prekinuta. Gde projekat to zahteva, EdgeX servis za izvoz može da sačuva očitavanja koja ne može da isporuči i pošalje ih kada se veza vrati. Čuvanje i prosleđivanje (store and forward) uključuje se po instalaciji, u podešavanjima EdgeX paketa.
+      - Lokalna konzola ostaje dostupna na čvoru, sa lokalnom prijavom kada platforma nije dostupna, pa tehničari mogu na lokaciji da provere servise, kontejnere i logove.
+  - eyebrow: Upravljan rad
+    heading: Nadzirite servise i ažurirajte lokacije kroz uvođenja na flotu
+    paragraphs:
+      - Edge Agent nadzire sistemske servise, Docker kontejnere i compose projekte i javlja platformi stanje svakog čvora. Odobreni paketi se raspoređuju kroz kontrolisana uvođenja sa pragom zaustavljanja, ponovnim pokušajima i proverama ispravnosti, a čvor sam vraća prethodnu verziju kada ažuriranje ne radi ispravno.
+      - Upravljanje edge čvorovima podešava se za svaki projekat, kao deo instalacije platforme Nova Vector. Ono upravlja industrijskim edge stekom; nije zamena opšte namene za softver za upravljanje uređajima u preduzeću.
+    image: /assets/img/v3/features/07-edge-management/rollout-board.png
+    image_alt: Tabla uvođenja za flotu edge čvorova u platformi Nova Vector
+    caption: Tabla uvođenja prikazuje svaki čvor i paket sa njegovom fazom, od zahteva do rada.
+related:
+  - label: AI na platformi i edge-u
+    url: /sr/edge-ai-industrial-iot/
+  - label: Arhitektura platforme
+    url: /sr/architecture/
+  - label: Uređaji i povezivanje
+    url: /sr/iot-device-management/
+---

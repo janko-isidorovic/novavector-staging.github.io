@@ -1,0 +1,46 @@
+# Serbian footer columns: same structure as footer_links.yml, URLs under /sr/.
+- title: Platforma
+  links:
+  - text: Pregled
+    url: /sr/industrial-iot-platform/
+  - text: Uređaji i povezivanje
+    url: /sr/iot-device-management/
+  - text: Izveštaji i analitika
+    url: /sr/iot-timeseries-analytics/
+  - text: Alarmi i zadaci
+    url: /sr/industrial-state-machine/
+  - text: Edge računarstvo
+    url: /sr/edge-computing-platform/
+  - text: AI na platformi i edge-u
+    url: /sr/edge-ai-industrial-iot/
+  - text: Simulatori opreme
+    url: /sr/industrial-equipment-simulators/
+
+- title: Rešenja
+  links:
+  - text: Proizvodnja i OEE
+    url: /sr/manufacturing/
+  - text: Energetika
+    url: /sr/energy/
+  - text: Poljoprivreda
+    url: /sr/smart-agriculture/
+  - text: Zgrade i infrastruktura
+    url: /sr/industrial-infrastructure/
+
+- title: Usluge
+  links:
+  - text: Implementacija i integracija
+    url: /sr/professional-services/
+  - text: Podrška
+    url: /sr/support/
+  - text: Obuka
+    url: /sr/training/
+
+- title: Kompanija
+  links:
+  - text: O nama
+    url: /sr/about/
+  - text: Kontakt
+    url: /sr/contact/
+  - text: Politika privatnosti
+    url: /sr/privacy-policy/

@@ -1,0 +1,96 @@
+---
+layout: v3
+permalink: /sr/manufacturing/
+lang: sr-Latn
+title: Lagani MES za radne naloge i proizvodnju
+hero_title: Upravljanje proizvodnjom
+description: "Lagani MES: proizvodi, radni nalozi, planovi smena, proizvodnja brojana sa linije, recepti, utrošak materijala i OEE izveštaji u realnom vremenu."
+summary: Povežite podatke sa mašina sa proizvodnim evidencijama koje objašnjavaju šta bi trebalo da se dešava, šta se zaista dešava i gde se gubi vreme ili materijal.
+eyebrow: Industrijsko rešenje
+theme: platform
+hero_image: /assets/img/v3/hero/manufacturing.jpg
+video:
+  src: /assets/video/manufacturing.mp4
+  poster: /assets/video/manufacturing.jpg
+  title: Ispunite plan, a kada ne uspete, znajte zašto
+  summary: Proizvedeno u odnosu na plan po proizvodu i smeni, izbrojano sa linije; radni nalozi koji se sami popunjavaju i zatvaraju; gde je otišao manjak i koja mašina ograničava proizvodnju; utrošak materijala u odnosu na recept, sa odstupanjem; zastoji koji postaju zadaci za pravi tim; i planovi napravljeni prema onome što linija može da proizvede.
+  duration: "2:42"
+  uploaded: 2026-11-22
+content_sections:
+  - eyebrow: Proizvodi i KPI
+    heading: Registrujte svaki proizvod jednom, sa brzinom koja je odobrena za svaku mašinu
+    paragraphs:
+      - Svaki proizvod se registruje sa šifrom proizvoda, istom onom koju koriste podaci sa linije i ERP, kao i sa pakovanjem i težinom. KPI povezuje proizvod sa mašinom i njenom validiranom brzinom u komadima po minutu, a tabla za planiranje na osnovu nje računa koliko staje u jednu smenu.
+    image: /assets/img/v3/features/06-manufacturing-operations/products.png
+    image_alt: Definicije proizvoda sa šiframa proizvoda
+    caption: Proizvodi sa šiframa koje dele podaci sa linije i ERP.
+  - eyebrow: Radni nalozi i planiranje
+    heading: Pretvorite potražnju u izvodljiv plan smena
+    paragraphs:
+      - Radni nalog nosi proizvod, ciljnu količinu, datume, prioritet i povezani proizvodni kontekst. Tabla za planiranje smena raspoređuje odobreni posao na pravu liniju i smenu, pa poslovođe imaju praktičan plan rada za taj dan.
+      - Validirane brzine proizvoda i planirani zastoji, kao što su promene proizvoda, čišćenje ili pauze, određuju kapacitet sa kojim tabla radi. Poslovođa odobrava plan pre nego što se pokrene.
+    image: /assets/img/v3/features/06-manufacturing-operations/shift-planning-board.png
+    image_alt: Tabla za planiranje smena u proizvodnji u platformi Nova Vector
+    caption: Tabla za planiranje raspoređuje radne naloge po proizvodnim linijama i smenama pre izvršenja.
+  - eyebrow: Izvršenje proizvodnje
+    heading: Brojite proizvodnju sa linije, ne sa papira
+    paragraphs:
+      - Za svaki odobreni plan povezan sa radnim nalogom, platforma sabira očitavanja mašine tokom smene kao dobre komade, škart i doradu. Brojke se ažuriraju kako očitavanja stižu, a edge čvor ili dekoder može da pretvori kumulativni brojač mašine u takva očitavanja.
+      - Radni nalog prikazuje proizvedene količine, škart, doradu i konačne količine, sa napretkom u odnosu na nalog, i sam prelazi u status završenog kada su sve stavke proizvedene. Evidencije proizvodnje koje unose ljudi mogu da dopune ili isprave izbrojane vrednosti.
+    image: /assets/img/v3/features/06-manufacturing-operations/work-order-production.png
+    image_alt: Prikaz proizvodnje po radnom nalogu u platformi Nova Vector
+    caption: Proizvodnja po radnom nalogu povezuje trenutnu proizvodnju sa nalogom i proizvodnim kontekstom kojem pripada.
+  - eyebrow: Izveštaji u realnom vremenu
+    heading: Pratite OEE i najveće gubitke dok smena traje
+    paragraphs:
+      - Izveštaj linije u realnom vremenu prikazuje proizvodnju po minutu po proizvodu, OEE (ukupnu efikasnost opreme) u odnosu na cilj, kao i raspoloživost, učinak i kvalitet. Pareto zastoja rangira vreme zastoja po razlogu, a izveštaj o pouzdanosti opreme prikazuje MTBF i MTTR po stanici.
+      - Ovi izveštaji dolaze kao gotovi šabloni i mogu se prilagoditi svakoj liniji. Ceo skup, uključujući izveštaje za timove održavanja, nalazi se na stranici OEE i zastoji.
+    image: /assets/img/v3/screens/oee-realtime-report.png
+    image_alt: Izveštaj linije u realnom vremenu sa proizvodnjom po minutu i OEE
+    caption: Izveštaj linije u realnom vremenu, sa proizvodnjom po minutu, OEE u odnosu na cilj, i raspoloživošću, učinkom i kvalitetom.
+  - eyebrow: Recepti i tehnološki postupci
+    heading: Definišite šta proizvod treba da troši i kako treba da se napravi
+    paragraphs:
+      - Verzionisani recepti opisuju potrebne materijale, a tehnološki postupci korake procesa i operacije. Alternative se mogu opisati tamo gde proces dozvoljava zamenu ili više od jednog ispravnog puta.
+      - Tokom izvršenja, stvarni utrošak materijala, rada, mašinskog vremena ili energije može se evidentirati na radni nalog. Poređenje standarda i stvarnog utroška zatim pokazuje odstupanje u količini i ceni za konkretan proizvodni nalog.
+    image: /assets/img/v3/features/06-manufacturing-operations/recipe.png
+    image_alt: Proizvodni recept u platformi Nova Vector
+    caption: Verzionisani recepti definišu sastavnicu koja služi kao standard za poređenje proizvodnje i utroška.
+  - eyebrow: Utrošak
+    heading: Neka odstupanje u materijalu bude vidljivo dok je evidencija proizvodnje još potpuna
+    paragraphs:
+      - Evidencije utroška povezuju ulazne lotove i stvarnu potrošnju sa planom i radnim nalogom koji su ih potrošili, pa se očekivana količina iz recepta može uporediti sa onim što je zaista evidentirano u pogonu.
+      - Veze sa vagama, ERP sistemom ili drugim sistemima u pogonu realizuju se za okruženje svakog korisnika, a ne podrazumevaju se kao univerzalni ugrađeni konektori. Radni nalozi, planovi i proizvodne brojke dostupni su kroz API platforme.
+    image: /assets/img/v3/features/06-manufacturing-operations/plan-consumption.png
+    image_alt: Utrošak po planu proizvodnje u platformi Nova Vector
+    caption: Prikazi utroška porede očekivanu i stvarnu potrošnju materijala u okviru plana proizvodnje.
+  - eyebrow: Zastoji, ljudi i prisustvo
+    heading: Objasnite izgubljenu proizvodnju stanjem mašina i ljudskim kontekstom
+    paragraphs:
+      - Izveštaji izvode zastoje iz stanja mašina, a ljudi na planu beleže kategoriju i rešenje zastoja. Svaki zastoj se čuva i kao rešen zadatak, pa se zastoji, OEE, MTTR i MTBF mogu analizirati zajedno sa radom održavanja koji stoji iza njih.
+      - Svaki plan navodi ljude u smeni i vođu smene. Tamo gde su čitači kartica deo projekta, RFID kartice na liniji beleže prijavu i odjavu po planu, a očitavanje kartice na mašini označava kada je tehničar stigao; tok se može prilagoditi procesu održavanja korisnika.
+    image: /assets/img/v3/features/04-alerts-notifications-and-tasks/task-details.png
+    image_alt: Detalji operativnog zadatka u platformi Nova Vector
+    caption: Operativni zadaci čuvaju kontekst opreme i reakcije za problem u proizvodnji.
+  - eyebrow: Montažne linije
+    heading: Pratite montažu sa serijskim brojevima uz podatke sa linije uživo
+    paragraphs:
+      - Isti gradivni blokovi važe i za montažne linije sa proizvodima koji imaju serijske brojeve. Izveštaj linije uživo može da prikaže jedinice kroz svaku stanicu, vremena ciklusa, doradu, signale kolica i stanica, kao i uslove okoline, na primer temperaturu i vlažnost u hali.
+      - AI na edge-u može da doda model pored linije, na primer model koji označava uslove povezane sa rizikom od elektrostatičkog pražnjenja. Svaka verzija modela odobrava se pre nego što se rasporedi na edge čvorove, a njeni rezultati stižu kao obični podaci za izveštaje, alarme i zadatke.
+    image: /assets/img/v3/screens/assembly-line-live-report.png
+    image_alt: Izveštaj montažne linije uživo sa jedinicama po minutu, vremenom ciklusa, nivoima baterija i uslovima u hali
+    caption: Izveštaj montažne linije uživo, sa jedinicama po minutu, vremenom ciklusa, baterijama kolica, kodovima alarma i temperaturom i vlažnošću u hali.
+  - eyebrow: Etikete i sistemi u pogonu
+    heading: Štampajte etikete iz radnog naloga
+    paragraphs:
+      - Šabloni etiketa za Zebra štampače, u formatu ZPL, popunjavaju polja iz radnog naloga i stavke, kao što su proizvod, količina, proizvedena količina i broj naloga. Štampači se registruju po mrežnoj adresi, a broj kopija može biti fiksan, pratiti količinu stavke ili se preuzimati iz radnog naloga. Štampa etiketa se uključuje za svaki projekat posebno.
+related:
+  - label: OEE i zastoji
+    url: /sr/manufacturing-oee-software/
+  - label: Uređaji i povezivanje
+    url: /sr/iot-device-management/
+  - label: AI na platformi i edge-u
+    url: /sr/edge-ai-industrial-iot/
+  - label: Edge računarstvo
+    url: /sr/edge-computing-platform/
+---

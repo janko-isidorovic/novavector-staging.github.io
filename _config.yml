@@ -17,6 +17,8 @@ google_analytics: ""
 # the retention must match GA4 Admin > Data collection and modification > Data retention.
 legal_name: "Nova Vector d.o.o."
 google_analytics_retention: "2 months"
+# The same period in Serbian, for /sr/privacy-policy/; change both together.
+google_analytics_retention_sr: "2 meseca"
 privacy_policy_updated: 2026-11-22
 # Company profiles for the Organization JSON-LD (sameAs).
 same_as:
@@ -121,6 +123,19 @@ feed:
       path: "/index.xml"
 
 # Project documentation is maintained in the repository but not published.
+# Serbian (Latin) pages: under /sr/, from pages/sr/ and sr/index.html (see docs/i18n-sr-glossary.md).
+defaults:
+  - scope:
+      path: "pages/sr"
+    values:
+      lang: sr-Latn
+      locale: sr_RS
+  - scope:
+      path: "sr"
+    values:
+      lang: sr-Latn
+      locale: sr_RS
+
 exclude:
   - docs
   - tools   # release scripts

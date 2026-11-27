@@ -1,6 +1,7 @@
+{% include lang.html %}
 <section class="v3-cta" id="request-demo">
   <div class="v3-shell v3-cta__inner">
-    <div><p class="v3-eyebrow">{{ page.cta_eyebrow | default: 'Discuss your architecture' }}</p><h2>{{ page.cta_heading | default: 'Connect industrial systems without losing operational context.' }}</h2></div>
-    <a class="v3-button v3-button--primary" href="mailto:info@novavector.com?subject=Nova%20Vector%20demo%20request">{{ page.cta_label | default: 'Request a Demo' }}</a>
+    <div><p class="v3-eyebrow">{{ page.cta_eyebrow | default: t.cta_eyebrow }}</p><h2>{{ page.cta_heading | default: t.cta_heading }}</h2></div>
+    <a class="v3-button v3-button--primary" href="mailto:info@novavector.com?subject={{ t.cta_mail_subject }}">{{ page.cta_label | default: t.request_demo }}</a>
   </div>
 </section>

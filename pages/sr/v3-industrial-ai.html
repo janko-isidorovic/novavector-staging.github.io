@@ -1,0 +1,102 @@
+---
+layout: v3
+permalink: /sr/edge-ai-industrial-iot/
+lang: sr-Latn
+title: Industrijski i edge AI, detekcija anomalija
+hero_title: Industrijski AI na platformi i na edge-u
+title_accent: na edge-u
+description: Pokrenite AI modele na serveru platforme ili na edge čvorovima, otkrivajte anomalije bez graničnih vrednosti i pitajte privatnog AI asistenta.
+summary: Jedan registar i jedno odobrenje za svaki model, koji radi tamo gde mu je najbolje, na serveru platforme za mnogo mašina odjednom ili na edge čvoru pored jedne mašine. Detekcija anomalija i privatni AI asistent rade nad istim operativnim podacima.
+eyebrow: AI na platformi i edge-u
+theme: edge
+hero_image: /assets/img/v3/hero/edge-ai-industrial-iot.jpg
+video:
+  src: /assets/video/platform-edge-ai.mp4
+  poster: /assets/video/platform-edge-ai.jpg
+  title: Jedan registar modela, na platformi i na edge-u
+  summary: Snimak skupa podataka linije za punjenje boca, jedan registar u kome se svaka verzija modela jednom odobri i potpiše, isti model raspoređen na platformi i na edge čvorovima pored linije, nova verzija uvedena i vraćena u jednom koraku i pravilo za anomalije koje uči šta je normalno.
+  duration: "2:35"
+  uploaded: 2026-11-22
+content_sections:
+  - eyebrow: Podaci spremni za AI
+    heading: Podaci koji čuvaju kontekst, uz dokaz o tome šta sadrže
+    paragraphs:
+      - Nova Vector svako očitavanje drži vezano za njegov uređaj, opremu, stanje procesa, alarme, zadatke i proizvodne zapise. Model tada može da razlikuje jedan režim rada, proizvod ili smenu od drugog, umesto da nagađa na osnovu izolovanih vrednosti senzora.
+      - Snimci skupa podataka zamrzavaju podatke jedne grupe za izabrani vremenski period kao Parquet fajlove sa manifestom i SHA-256 heševima, pa se model obučen danas može mesecima kasnije proveriti na potpuno istim zapisima. Razlozi koje ljudi navode kada potvrđuju alarme, kao što su stvarni kvar, lažni alarm ili održavanje, mogu se uključiti kao oznake, a svako preuzimanje se beleži.
+    image: /assets/img/v3/screens/ai/dataset-snapshot.webp
+    image_alt: Snimak skupa podataka u platformi Nova Vector za jedan dan proizvodne linije, sa njenih devet uređaja, namenom, periodom čuvanja, brojem redova, veličinom i hešom sadržaja
+    caption: Jedan dan proizvodne linije zamrznut za obuku modela, sa namenom, veličinom i hešom sadržaja koji manifest potvrđuje.
+  - eyebrow: Registar modela
+    heading: Jedan registar i jedno odobrenje za platformu i edge
+    paragraphs:
+      - Modeli koriste standardni format ONNX, koji izvoze PyTorch, TensorFlow, scikit-learn i većina drugih alata za obuku. Svaka verzija je jedan paket sa modelom, manifestom ulaza, izlaza i zahteva, pred- i postobradom i kontrolnim zbirovima za svaki fajl. Platforma proverava paket pri otpremanju i ponovo pre odobrenja.
+      - Verzija prolazi faze nacrt, kandidat i odobrena, a kasnije zastarela i povučena. Samo odobrene verzije mogu da se rasporede, na edge čvorove ili na platformu, a za svako odobrenje se beleži ko ga je dao, kada i uz koju napomenu.
+    image: /assets/img/v3/screens/ai/model-versions.webp
+    image_alt: Registar modela u platformi Nova Vector sa dve odobrene i potpisane verzije modela za anomalije, svaka sa veličinom i SHA-256 kontrolnim zbirom
+    caption: Dve odobrene, potpisane verzije modela, svaka sa veličinom i SHA-256 kontrolnim zbirom.
+  - eyebrow: AI na platformi
+    heading: Pokrenite modele na serveru platforme, bez edge hardvera
+    paragraphs:
+      - Inferencija na serveru pokreće model pored podataka koje platforma već prima, bez obzira na to kojim su protokolom stigli, na primer MQTT, OPC UA, Modbus ili LoRaWAN. Jedno raspoređivanje ocenjuje mnogo mašina jedne grupe, svaku sa sopstvenim prozorom očitavanja.
+      - Modeli rade u pulovima za inferenciju na CPU-u, ili na GPU-u tamo gde je instaliran GPU server. Instance jednog pula dele posao, a kada jedna stane, ostale preuzimaju njene mašine. Čarobnjak za raspoređivanje proverava pul u odnosu na zahteve modela pre nego što bilo šta pokrene, a stranica svakog raspoređivanja prikazuje protok, latenciju, greške, memoriju i preuzimanja.
+    image: /assets/img/v3/screens/ai/platform-deployment-statistics.webp
+    image_alt: Statistika raspoređivanja na platformi Nova Vector za poslednji sat, sa statusom, protokom, latencijom, greškama, vremenom obrade, memorijom, svežinom podataka i preuzimanjima
+    caption: Klasifikator na klimatskom senzoru proizvodne hale, koji radi na CPU pulu, sa protokom, latencijom i memorijom u poslednjem satu.
+  - eyebrow: AI na edge-u
+    heading: Pokrenite modele pored mašine, čak i kada veza padne
+    paragraphs:
+      - Čarobnjak povezuje jednu odobrenu verziju sa skupom edge čvorova i sa po jednom mašinom na svakom čvoru. Pre nego što bilo šta pošalje, platforma proverava arhitekturu, verziju izvršnog okruženja, nivo izvršavanja i slobodnu memoriju i prostor na disku svakog čvora, i odbija čvor koji ne odgovara, uz navedeni razlog.
+      - Svaki čvor pokreće model uz ONNX Runtime na svakom novom očitavanju svoje mašine, bez odlaska do oblaka i nazad, i nastavlja da radi i bez veze. Rezultati mogu da idu na platformu, nazad na čvor kao virtuelni uređaj za lokalnu logiku, ili na oba mesta. Modeli za slike sa kamera idu istim putem.
+    image: /assets/img/v3/screens/ai/edge-deploy-targets.webp
+    image_alt: Čarobnjak za raspoređivanje na edge u platformi Nova Vector, izbor tri edge čvora sa arhitekturom, EdgeX krajnjom tačkom, verzijom izvršnog okruženja i slobodnom memorijom
+    caption: Izbor edge čvorova, svakog sa arhitekturom, EdgeX krajnjom tačkom, verzijom izvršnog okruženja i slobodnom memorijom.
+  - eyebrow: Bezbedno uvođenje i vraćanje
+    heading: Ažurirajte svaki čvor i vratite se u jednom koraku
+    paragraphs:
+      - Svaki čvor preuzima novu verziju, proverava je, prelazi na nju i proverava da li ispravno radi. Ako nova verzija ne proradi ispravno, čvor se vraća na verziju koju je ranije koristio. Raspoređivanja na platformi menjaju verziju i vraćaju se na isti način.
+      - Svaki čvor i svaka mašina prikazuju fazu, aktivnu verziju i stanje, a svaki korak uvođenja se beleži. Raspoređivanje se može vratiti na svim čvorovima odjednom, ili poslati ponovo kako bi čvor koji je bio van mreže sustigao ostale.
+    image: /assets/img/v3/screens/ai/platform-deployment-events.webp
+    image_alt: Događaji raspoređivanja modela u platformi Nova Vector, od zahteva i slanja do učitavanja i rada na instanci za inferenciju
+    caption: Svaki korak uvođenja se beleži, od zahteva do modela koji radi na svojoj instanci.
+  - eyebrow: Detekcija anomalija
+    heading: Modeli koji za svako očitavanje uče šta je normalno
+    paragraphs:
+      - Pravilu za anomalije nisu potrebne granične vrednosti. Model na platformi uči nivo, dnevni ritam i šum svakog očitavanja i svaki novi minut ocenjuje u odnosu na to. Skokove i šum hvata za minut ili dva, zaglavljenu vrednost za desetak minuta, a sporo klizanje (drift) za oko dva sata.
+      - Na evaluacionom skupu platforme, sa simuliranim pogonima i ubačenim kvarovima, pravila sa podrazumevanom osetljivošću otkrila su 85 % kvarova, a na normalnim podacima podigla su otprilike jedan alarm na svakih pet dana. Pre nego što se pravilo sačuva, ono se pokreće nad istorijom poslednjih sedam dana i pokazuje gde bi se aktiviralo.
+    image: /assets/img/v3/screens/ai/anomaly-deployment.webp
+    image_alt: Model za anomalije proizvodne linije u platformi Nova Vector, koji radi na CPU pulu i kojim upravljaju pravila za anomalije grupe
+    caption: Model za anomalije proizvodne linije radi na platformi, a pravila za anomalije grupe ga kreiraju i održavaju usklađenim.
+  - eyebrow: Rezultati
+    heading: Tretirajte izlaz modela kao operativne podatke, a ne kao posebnu AI aplikaciju
+    paragraphs:
+      - Rezultati kao što su klasa, oznaka, ocena ili stepen sigurnosti vraćaju se uobičajenim putem podataka, na sopstvenom kanalu raspoređivanja. Čuvaju se i prikazuju na grafikonima pored merenja iz kojih su nastali, a alarm na rezultatu otvara zadatak održavanja kao i svaki drugi alarm.
+      - Svako raspoređivanje na platformi pojavljuje se i kao instanca modela, zaseban uređaj koji objavljuje stanje modela. Grafikoni, alarmi i API mogu da prate model na isti način kao mašinu.
+    image: /assets/img/v3/screens/ai/inference-results.webp
+    image_alt: Stranica uređaja u platformi Nova Vector za senzor proizvodne hale, sa grafikonom temperature i sigurnosti klasifikatora i tabelom sa klasom, oznakom i sigurnošću pored očitavanja
+    caption: Rezultati klasifikatora stoje pored očitavanja iz kojih su nastali, na stranici samog senzora.
+  - eyebrow: AI asistent
+    heading: Pitajte o svom pogonu običnim jezikom
+    paragraphs:
+      - Asistent odgovara na osnovu podataka platforme uživo, kao što su uređaji i njihova očitavanja, alarmi i njihovo stanje, zadaci, planovi proizvodnje i izveštaji o OEE-u (ukupnoj efikasnosti opreme), zastojima i pouzdanosti. Koristi definicije same platforme, pa je njegov OEE isti kao OEE u izveštaju. Odgovori stižu sa tabelama, grafikonima i linkovima, na engleskom ili srpskom, a razgovor može da počne sa bilo kog uređaja, alarma ili izveštaja.
+      - Radi pod nalogom samog korisnika, pa vidi i menja samo ono što taj korisnik sme. Kreiranje, izmena ili brisanje uređaja, slanje komandi i upravljanje simulacijama uvek čekaju odobrenje korisnika.
+    image: /assets/img/v3/screens/ai/assistant-answer.webp
+    image_alt: AI asistent u platformi Nova Vector odgovara na pitanje o jučerašnjem OEE-u proizvodne linije, sa dostupnošću, učinkom i kvalitetom, proizvodnjom po proizvodu, najboljom i najgorom smenom i panelima izveštaja
+    caption: Na pitanje o jučerašnjem OEE-u asistent čita izveštaj, navodi raspoloživost kao usko grlo i nudi Pareto izveštaj kao sledeći korak.
+  - eyebrow: Privatno i pod kontrolom
+    heading: Jezički modeli na vašim serverima, sa ograničenjima i potpunom evidencijom
+    paragraphs:
+      - Jezički model radi na serveru modela u vašem okruženju, a pitanja i podaci ne odlaze spoljnom AI servisu. Koriste se samo modeli koji prođu kvalifikacioni test od 65 pitanja, uključujući provere da model ignoriše instrukcije skrivene u podacima, a svaki odgovor navodi model koji ga je napisao.
+      - Administratori postavljaju dnevno ograničenje za svaku grupu, vide korišćenje po grupi i modelu i čitaju evidenciju svakog poziva modela, poziva funkcije i promene podešavanja, pri čemu se tekst pitanja ne čuva. Sopstveni AI agenti korisnika, kao što su Claude Code ili VS Code, mogu da se povežu preko MCP-a i čitaju platformu sa pravima tog korisnika, kada to administrator dozvoli.
+    image: /assets/img/v3/screens/ai/language-model-policies.webp
+    image_alt: Politike grupa za jezičke modele u platformi Nova Vector, sa režimom i dnevnim ograničenjem svake grupe i prekidačem instalacije za spoljne agente
+    caption: Svaki poziv ostaje na lokalnim serverima modela, svaka grupa ima sopstvenu politiku, a spoljni agenti su isključeni dok ih administrator ne dozvoli.
+related:
+  - label: Alarmi i zadaci
+    url: /sr/industrial-state-machine/
+  - label: Edge računarstvo
+    url: /sr/edge-computing-platform/
+  - label: Izveštaji i analitika
+    url: /sr/iot-timeseries-analytics/
+  - label: Arhitektura platforme
+    url: /sr/architecture/
+---

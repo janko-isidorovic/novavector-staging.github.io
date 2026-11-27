@@ -1,0 +1,91 @@
+---
+layout: v3
+permalink: /sr/architecture/
+lang: sr-Latn
+title: Arhitektura platforme Nova Vector
+description: "Arhitektura Nova Vector od opreme i edge čvorova: adapteri, poruke, servisi, skladište, identitet, kontrolne table, proizvodnja, automatizacija i AI."
+summary: Pogledajte kako jedna instalacija platforme Nova Vector povezuje opremu na terenu, edge čvorove, servise platforme, korisnike, API-je i operativne aplikacije, i gde su odluke o arhitekturi i dalje stvar konkretnog projekta.
+eyebrow: Tehnička procena
+theme: platform
+hero_image: /assets/img/v3/hero/architecture.jpg
+capability_heading: Arhitektura ukratko
+capabilities:
+  - title: Od terena do platforme
+    text: Oprema se povezuje direktno preko adaptera platforme ili preko Linux edge čvora na kome rade Nova Vector Edge Agent i EdgeX servisi izabrani za tu instalaciju.
+    image: /assets/img/v3/architecture/01-high-level.png
+    image_alt: Pregled arhitekture platforme Nova Vector i edge sloja
+  - title: Modularni servisi platforme
+    text: Upravljanje uređajima, telemetrija, alarmi, zadaci, proizvodnja, simulacija, upravljanje edge čvorovima, AI, API-ji, identitet, skladištenje i alati za rad sistema rade kao servisi platforme u kontejnerima.
+    image: /assets/img/v3/architecture/02-platform.png
+    image_alt: Arhitektura servisa platforme Nova Vector
+  - title: Jasni tokovi podataka i upravljanja
+    text: Telemetrija, događaji o promenama zapisa, alarmi, zakazane komande i komande za upravljanje edge čvorovima idu dokumentovanim putanjama poruka, a nisu skriveni unutar jednog monolitnog servisa.
+    image: /assets/img/v3/architecture/03-telemetry-path.png
+    image_alt: Putanja telemetrije u platformi Nova Vector
+content_sections:
+  - eyebrow: Pregled arhitekture
+    heading: Server platforme, edge čvorovi, oprema na terenu, korisnici i spoljni sistemi
+    paragraphs:
+      - Standardna instalacija platforme radi kao Docker kontejneri na jednom x86-64 Linux serveru, lokalno ili u oblaku, u okruženju pod kontrolom kupca. Na njemu su registar uređaja, sačuvani podaci, alarmi, zadaci, proizvodni zapisi, veb konzola i servisi za upravljanje edge čvorovima.
+      - Na edge čvorovima, obično industrijskom računaru pored opreme, mogu da rade Nova Vector Edge Agent, EdgeX Foundry servisi, izvršno okruženje za AI na edge-u i lokalna konzola za operatere. IoT uređaji mogu sami da šalju podatke platformi, a industrijski adapteri sami uspostavljaju vezu sa kontrolerima, sistemima zgrada i mrežnom opremom.
+    image: /assets/img/v3/architecture/01-high-level.png
+    image_alt: Pregled arhitekture platforme Nova Vector sa platformom, edge čvorovima, opremom na terenu, korisnicima i spoljnim sistemima
+    caption: "Model instalacije u celini: od opreme na terenu i edge čvorova do centralne platforme Nova Vector."
+  - eyebrow: Gradivni blokovi platforme
+    heading: Odvojeni pristup, adapteri, razmena poruka, servisi, skladištenje i alati za rad sistema
+    paragraphs:
+      - Platforma koristi nginx kao ulaznu tačku za veb, Keycloak za identitet korisnika, protokolske adaptere na granici prema uređajima, NATS i Redis za internu razmenu poruka, PostgreSQL i TimescaleDB za operativne podatke i vremenske serije, i objektno skladište za odobrene artefakte.
+      - Operativni moduli, uključujući alarme, zadatke, proizvodnju, izveštaje, simulaciju procesa, upravljanje edge čvorovima, AI, kontrolne table, automatizaciju i API-je, dele istu osnovu za uređaje, kanale, identitet i događaje, a pritom nisu stopljeni u jednu aplikaciju.
+    image: /assets/img/v3/architecture/02-platform.png
+    image_alt: Gradivni blokovi platforme Nova Vector
+    caption: Servisi platforme su razdvojeni po nadležnosti i povezani dokumentovanim interfejsima.
+  - eyebrow: Putanja telemetrije
+    heading: Normalizujte dolazna očitavanja i pratite njihovu putanju
+    paragraphs:
+      - Saobraćaj uređaja i adaptera ulazi kroz podržanu protokolsku putanju, normalizuje se u format očitavanja platforme, prosleđuje servisima kojima je potreban i upisuje u skladište vremenskih serija.
+      - Profili uređaja mogu da dekodiraju poruke proizvođača u normalizovana očitavanja za skladištenje i prikaz. Trenutna dokumentacija arhitekture razlikuje ta dekodirana očitavanja od izvornih očitavanja koja koristi mehanizam alarma.
+    image: /assets/img/v3/architecture/03-telemetry-path.png
+    image_alt: Tok telemetrije u platformi Nova Vector od uređaja preko adaptera i razmene poruka do skladišta i aplikacija
+    caption: Telemetrija ide definisanom putanjom od adaptera za povezivanje preko razmene poruka i obrade do skladištenja.
+  - eyebrow: Događaji i komande
+    heading: Promene zapisa, alarmi, rasporedi i komande uređajima na jasnim putanjama
+    paragraphs:
+      - Promene zapisa se kroz Redis Streams prosleđuju servisima koji održavaju sopstvenu operativnu kopiju. Ishodi alarma i komande uređajima idu kroz NATS, a zakazani poslovi i heartbeat poruke ulaze u istu putanju komandi.
+      - Edge čvorovi koriste svoj MQTT kontrolni kanal za status i potpisane komande za postavljanje softvera. Zahtev za komandu može se pratiti kao softverska operacija; izvršenje kroz mrežu i na fizičkom uređaju su zasebna pitanja.
+    image: /assets/img/v3/architecture/04-events-commands.png
+    image_alt: Arhitektura događaja i komandi u platformi Nova Vector
+    caption: Događaji, alarmi, rasporedi i komande koriste zasebne dokumentovane putanje.
+  - eyebrow: Autentifikacija uređaja
+    heading: Autentifikujte saobraćaj uređaja i edge čvorova na granici povezivanja
+    paragraphs:
+      - Identitet uređaja i provere pri povezivanju zavise od izabranog protokola i adaptera. Edge čvorovi koriste svoj registrovani identitet uređaja za telemetriju i status, a komande za upravljanje edge čvorovima nose potpisane tokene.
+      - Zaštita prenosa konačno se definiše za svaku instalaciju. MQTT preko TLS-a je dostupan, ali ga standardna instalacija podrazumevano ne izlaže.
+    image: /assets/img/v3/architecture/05-device-authentication.png
+    image_alt: Tok autentifikacije uređaja u platformi Nova Vector
+    caption: Autentifikacija uređaja primenjuje se na granici odgovarajućeg protokola i adaptera.
+  - eyebrow: Autentifikacija korisnika
+    heading: Prijava, uloge i grupe preko sistema Keycloak u celoj veb platformi
+    paragraphs:
+      - Korisnici se prijavljuju preko sistema Keycloak. Servisi platforme proveravaju aktivni token i koriste uloge, dozvole i vlasništvo grupe za kontrolu pristupa zapisima i modulima.
+      - Dvofaktorska autentifikacija je dostupna, ali podrazumevano nije obavezna. Integracija sa imenikom kompanije, politika lozinki, zahtevi za reviziju (audit) i ograničenja administratorske konzole konačno se definišu za svaki produkcioni projekat.
+    image: /assets/img/v3/architecture/06-user-authentication.png
+    image_alt: Tok autentifikacije i autorizacije korisnika u platformi Nova Vector
+    caption: Pristup korisnika zasniva se na identitetu u sistemu Keycloak, ulogama, dozvolama i grupama.
+  - eyebrow: Trenutni obim instalacije
+    heading: Otpornost i izbor infrastrukture deo su arhitekture projekta
+    paragraphs:
+      - Standardna Docker Compose instalacija pokreće po jednu instancu svakog servisa na jednom serveru. Industrijski adapteri i servis za grupni upis (batch writer) mogu da se skaliraju nezavisno, ali se potpuno redundantna instalacija projektuje za svaki projekat posebno.
+      - Kubernetes se isporučuje kao projektna usluga; standardni manifesti ili Helm chartovi za celu platformu danas se ne isporučuju. Izolovane mreže pripremaju se za svaki projekat, a ne kroz gotov instalacioni paket za rad bez interneta.
+    points:
+      - Nema ugrađene visoke dostupnosti (HA) za bazu podataka, Redis, NATS, Keycloak ili MQTT broker u standardnoj instalaciji na jednom serveru
+      - NATS se koristi bez trajnog čuvanja poruka; propuštene poruke se ne šalju ponovo automatski
+      - Edge čvorovi nastavljaju da čitaju svoje uređaje tokom prekida veze; EdgeX store and forward, koji šalje zadržana očitavanja kada se veza vrati, uključuje se za svaku instalaciju posebno
+      - Rok čuvanja podataka, rezervne kopije, izlaganje TLS-a, VPN/rutiranje i bezbednosno ojačavanje za produkciju definišu se za svaki projekat
+related:
+  - label: Pregled platforme
+    url: /sr/industrial-iot-platform/
+  - label: Edge računarstvo
+    url: /sr/edge-computing-platform/
+  - label: Implementacija i integracija
+    url: /sr/professional-services/
+---

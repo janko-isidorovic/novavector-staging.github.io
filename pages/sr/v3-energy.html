@@ -1,0 +1,66 @@
+---
+layout: v3
+permalink: /sr/energy/
+lang: sr-Latn
+title: Softver za nadzor BESS i energetike
+hero_title: Energetika i skladištenje energije
+description: "Nadzor energetskih lokacija i baterijskih skladišta (BESS): hijerarhija lokacija, edge povezivanje, radna stanja, alarmi, zadaci i testiranje simulacijom."
+summary: Mogućnosti platforme Nova Vector za uređaje, vremenske serije, stanja procesa, edge i simulaciju iskoristite za nadzor i integraciju distribuiranih energetskih resursa, prema potrebama projekta.
+eyebrow: Industrijsko rešenje
+theme: edge
+hero_image: /assets/img/v3/hero/energy.jpg
+content_sections:
+  - eyebrow: Distribuirani resursi
+    heading: Lokacija, oprema i kontekst merenja ostaju zajedno
+    paragraphs:
+      - Energetski projekti organizuju lokacije, sisteme skladištenja, sisteme za upravljanje baterijama, invertore, brojila, senzore klime i mrežnu opremu u istoj hijerarhiji koja se koristi i drugde u platformi Nova Vector. Trenutna i istorijska merenja ostaju vezana za opremu i lokaciju sa kojih potiču.
+      - Nova Vector ne isporučuje univerzalni aplikativni paket za BESS. Energetske instalacije koriste gradivne blokove platforme i interfejse za konkretan projekat koji odgovaraju opremi i upravljačkom sistemu.
+    image: /assets/img/v3/features/02-devices-and-live-data/devices-tree.png
+    image_alt: Hijerarhija uređaja sa lokacijama, sistemima i uređajima
+    caption: Stablo uređaja drži svaki uređaj pod njegovom lokacijom, sistemom ili linijom, sa trenutnim statusom.
+  - eyebrow: Edge povezivanje
+    heading: Udaljenu opremu očitavajte preko edge čvora na lokaciji
+    paragraphs:
+      - Na udaljenim lokacijama industrijski PC sa sistemom Nova Edge očitava sistem za upravljanje baterijama, invertor i senzore klime kroz EdgeX i izvozi očitavanja na platformu. Grafikoni, alarmi i zadaci ih zatim koriste kao i sve druge podatke.
+      - EdgeX nastavlja da očitava uređaje kada je veza prekinuta, a može i da sačuva i kasnije prosledi očitavanja koja ne može da isporuči, ako projekat uključi tu opciju. Konfiguracije uređaja podešene na jednom edge čvoru mogu se kopirati na čvorove sličnih lokacija.
+    image: /assets/img/v3/features/07-edge-management/edge-device-data.png
+    image_alt: Očitavanja baterijskog sistema sa edge čvora prikazana na grafikonu na platformi
+    caption: Očitavanja baterijskog sistema koja EdgeX prikuplja na edge čvoru, prikazana na grafikonu na platformi za poslednjih sat vremena.
+  - eyebrow: Radno stanje
+    heading: Prikažite energetski resurs kao više od skupa tagova
+    paragraphs:
+      - Modeli stanja procesa tumače izabrana merenja kao jasne režime rada i prelaze, kao što su punjenje, pražnjenje, mirovanje ili kvar. Alarmi, obaveštenja i izveštaji tada rade sa jasnim kontekstom rada, a ne samo sa sirovim vrednostima.
+      - Kada su komande deo integracije, platforma drži traženu akciju odvojeno od stvarnog fizičkog odziva upravljačkog sistema. Ta razlika je važna za udaljenu infrastrukturu i infrastrukturu bitnu za bezbednost.
+    image: /assets/img/v3/features/05-process-simulator/production-line.png
+    image_alt: Model stanja procesa u platformi Nova Vector
+    caption: Isti pristup sa verzionisanim modelima procesa primenjuje se na radna stanja opreme u konkretnom projektu.
+  - eyebrow: Alarmi i odziv
+    heading: Nenormalno očitavanje pretvorite u posao koji neko preuzima
+    paragraphs:
+      - Granice alarma i provere izostanka podataka prate vrednosti kao što su temperatura ćelija, klima u kućištu ili gubitak komunikacije. Alarm može da pošalje e-poštu podešenim primaocima i otvori zadatak koji kroz dodelu i rešavanje zadržava kontekst uređaja i alarma, a zadatak se automatski ažurira kada se stanje normalizuje.
+    image: /assets/img/v3/features/04-alerts-notifications-and-tasks/alert-limits.png
+    image_alt: Granice alarma podešene za vrednost uređaja
+    caption: Granice alarma za vrednost uređaja, sa pragovima upozorenja i greške.
+  - eyebrow: Udaljene lokacije
+    heading: Upravljajte edge čvorovima svih lokacija sa jednog mesta
+    paragraphs:
+      - Edge čvorovi se instaliraju, ažuriraju i nadziru centralno, sa odobrenim softverom po tipu čvora, kontrolisanim uvođenjima i lokalnom konzolom na svakom čvoru. Direktan pristup lokaciji i dalje je potreban za početnu instalaciju preko SSH i podešavanje EdgeX uređaja, pa rutiranje i dizajn VPN mreže ostaju deo arhitekture projekta.
+    image: /assets/img/v3/architecture/01-high-level.png
+    image_alt: Arhitektura sa centralnom platformom Nova Vector i udaljenim edge čvorovima
+    caption: Distribuirane lokacije kombinuju lokalne edge servise sa centralnom operativnom platformom.
+  - eyebrow: Test pre puštanja lokacije u rad
+    heading: Proverite ponašanje integracije na referentnom baterijskom skladištu
+    paragraphs:
+      - Nova Vector Simulators uključuju referentni sistem kućišta za baterijsko skladištenje energije. On reprodukuje vrednosti uređaja, događaje i skriptovane kvarove kroz uobičajenu putanju protokola, što je korisno za testiranje integracije, obuku operatera i pripremu prijema pre nego što stvarna oprema bude dostupna.
+      - Referentni sistem je sredstvo za testiranje. To ne znači da je interfejs svakog proizvođača BESS opreme podržan odmah, bez dodatnog rada.
+    image: /assets/img/v3/features/10-simulators/scenario-results.png
+    image_alt: Rezultati scenarija u simulatorima Nova Vector
+    caption: Skriptovani scenariji čine provere integracije i očekivane odzive ponovljivim pre puštanja u rad.
+related:
+  - label: Edge računarstvo
+    url: /sr/edge-computing-platform/
+  - label: Simulacija i reprodukcija
+    url: /sr/industrial-simulation/
+  - label: Implementacija i integracija
+    url: /sr/professional-services/
+---

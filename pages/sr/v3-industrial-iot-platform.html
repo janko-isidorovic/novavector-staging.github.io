@@ -1,0 +1,55 @@
+---
+layout: v3
+permalink: /sr/industrial-iot-platform/
+lang: sr-Latn
+title: Industrijska IoT platforma za povezane pogone
+description: Nova Vector povezuje savremenu i stariju opremu, digitalizuje tokove proizvodnje i održavanja i upravlja od industrijskog edge-a do nivoa preduzeća.
+summary: Povežite savremenu i stariju opremu, spojite podatke uživo sa tokovima proizvodnje i održavanja i koordinišite akcije od industrijskog edge-a do nivoa preduzeća.
+eyebrow: Platforma Nova Vector
+theme: platform
+hero_image: /assets/img/v3/hero/industrial-iot-platform.jpg
+primary_label: Pogledajte mogućnosti platforme
+primary_url: "#platform-capabilities"
+platform_overview: true
+# SoftwareApplication JSON-LD (_includes/structured_data.html). Features follow the Platform menu.
+software_application:
+  name: Nova Vector
+  category: BusinessApplication
+  subcategory: Industrijska IoT platforma
+  operating_system: Linux (x86-64, Docker)
+  features:
+    - Povezivanje uređaja preko OPC UA, Modbus TCP, BACnet/IP, SNMP, MQTT i LoRaWAN
+    - Podaci u realnom vremenu, izveštaji i analitika vremenskih serija
+    - Alarmi, mašine stanja procesa i zadaci
+    - Edge računarstvo sa EdgeX Foundry
+    - AI na edge-u, detekcija anomalija i AI asistent
+    - Simulatori industrijske opreme
+video:
+  src: /assets/video/platform-overview.mp4
+  poster: /assets/video/platform-overview.jpg
+  title: Od signala do akcije
+  summary: Jedan zastoj na liniji za punjenje boca, praćen kroz platformu. Nove i starije mašine su povezane, svako očitavanje je vezano za svoju liniju i radni nalog, alarm postaje zadatak sa odgovornom osobom, a gubitke objašnjavaju Pareto izveštaj i AI asistent, na vašim serverima ili u vašem oblaku.
+  duration: "2:23"
+  uploaded: 2026-11-21
+faq:
+  - question: Koji modeli instalacije su podržani?
+    answer: Standardna instalacija platforme radi kao Docker kontejneri na jednom x86-64 Linux serveru, lokalno ili u oblaku pod kontrolom korisnika. Hibridne instalacije dodaju upravljane edge čvorove pored opreme. Instalacije na Kubernetes i u izolovanim mrežama pripremaju se za svaki projekat, a ne isporučuju se kao standardni paketi.
+  - question: Koji industrijski protokoli su dostupni?
+    answer: Platforma se povezuje preko OPC UA, Modbus TCP, BACnet/IP, SNMP trap poruka, MQTT, HTTP i WebSocket, kao i preko LoRaWAN za senzore velikog dometa i niske potrošnje, koji se u pametnoj poljoprivredi koristi u produkciji. Edge čvorovi dodaju još protokola uređaja kroz EdgeX Foundry. CoAP je u pilot fazi. Podrška za otkrivanje, upis i komande razlikuje se po protokolu.
+  - question: Šta je sa starijim mašinama bez kontrolera koji može da se očita?
+    answer: Starije mašine mogu se opremiti senzorima koji daju isti skup podataka kao savremena oprema, kao što su stanje, brojač komada i energija, bez velikih ulaganja i bez zastoja u proizvodnji.
+  - question: Možemo li da počnemo sa jednom mašinom ili jednom lokacijom?
+    answer: Da. Instalacija može da počne sa jednom mašinom, proizvodnom linijom, objektom ili udaljenom lokacijom i da se proširuje uz iste modele uređaja, opreme, telemetrije, identiteta i događaja.
+related:
+  - label: Uređaji i povezivanje
+    url: /sr/iot-device-management/
+  - label: Proizvodnja i OEE
+    url: /sr/manufacturing/
+  - label: Edge računarstvo
+    url: /sr/edge-computing-platform/
+  - label: Arhitektura platforme
+    url: /sr/architecture/
+cta_eyebrow: Razgovarajmo o vašoj prvoj instalaciji
+cta_heading: Krenite od jednog operativnog problema i merljivog rezultata.
+cta_label: Razgovarajmo o vašem slučaju
+---

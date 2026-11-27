@@ -1,0 +1,58 @@
+<section class="slider-area">
+    <video class="nv-banner-video" autoplay muted loop playsinline preload="none" poster="{{site.baseurl}}/assets/img/slider/nv-banner-platform-first.webp" data-src="{{site.baseurl}}/assets/img/slider/nv-banner-platform.mp4" aria-hidden="true"></video>
+    <script>
+    // Phones and reduced-motion visitors keep the poster; wider screens get the banner video.
+    (function () {
+      var video = document.querySelector('.nv-banner-video');
+      if (!video || !window.matchMedia('(min-width: 768px)').matches || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      video.preload = 'auto';
+      video.src = video.getAttribute('data-src');
+      var playing = video.play();
+      if (playing && playing.catch) playing.catch(function () {});
+    })();
+    </script>
+    <div class="slider-active" style="background-image:url({{site.baseurl}}/assets/img/slider/nv-banner-platform-first.webp)">
+        <div class="single-slider slider-bg d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="slider-content" data-animation="slideInRight" data-delay="0s">
+                            <h1>Jedna industrijska IoT platforma<br><span>za povezano poslovanje</span></h1>
+                            <p>Nova Vector je platforma za digitalizaciju industrije koja na jednom mestu povezuje vašu opremu, podatke i timove, spremna za AI kada budete spremni i vi.</p>
+                            <a href="{{ '/sr/industrial-iot-platform/' | relative_url }}" class="btn" id="sliderbutton">Upoznajte platformu</a>
+                            <a href="{{ '/sr/contact/#request-demo' | relative_url }}" class="btn nv-hero-secondary">Razgovarajmo o vašem slučaju</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="single-slider slider-bg d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="slider-content" data-animation="slideInRight" data-delay="0s">
+                            <div class="nv-slide-title">Pokrenite AI<br><span>tamo gde su vaši podaci</span></div>
+                            <p>Nova Vector, industrijska IoT platforma za edge računarstvo, priprema vaše poslovanje za budućnost sa AI-jem: digitalizuje vaše operativne podatke i pokreće odobrene AI modele na lokalnim uređajima, a ne na spoljnim serverima u oblaku.</p>
+                            <a href="{{ '/sr/edge-ai-industrial-iot/' | relative_url }}" class="btn">Upoznajte AI na edge-u</a>
+                            <a href="{{ '/sr/contact/#request-demo' | relative_url }}" class="btn nv-hero-secondary">Razgovarajmo o vašem slučaju</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="single-slider slider-bg d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="slider-content" data-animation="slideInRight" data-delay="0s">
+                            <div class="nv-slide-title">Povežite nove i<br><span>starije mašine</span></div>
+                            <p>Digitalizujte odmah. Uvedite AI kada budete spremni.<br><span>Povežite kontrolere direktno, opremite starije mašine senzorima i pretvorite svaki događaj u podatke i zadatke na koje vaš tim reaguje, bez velikih ulaganja i bez zastoja u proizvodnji.</span></p>
+                            <a href="{{ '/sr/iot-device-management/' | relative_url }}" class="btn">Povežite svoju opremu</a>
+                            <a href="{{ '/sr/contact/#request-demo' | relative_url }}" class="btn nv-hero-secondary">Razgovarajmo o vašem slučaju</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

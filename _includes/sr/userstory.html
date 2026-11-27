@@ -1,0 +1,98 @@
+<!-- user-story -->
+<section class="user-story">
+    <script>
+        function setNavLinksHeight() {
+          const navLinks = document.querySelectorAll('.user-story .nav-tabs .nav-link');
+          let maxHeight = 0;
+
+          navLinks.forEach(link => {
+            const linkHeight = link.getBoundingClientRect().height;
+            maxHeight = Math.max(maxHeight, linkHeight);
+          });
+
+          navLinks.forEach(link => {
+            link.style.height = `${maxHeight}px`;
+          });
+        }
+
+        window.addEventListener('DOMContentLoaded', setNavLinksHeight);
+        window.addEventListener('resize', setNavLinksHeight);
+    </script>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="orange-text">Industrije u kojima radimo</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+            <p class="black-text">Platforma Nova Vector za IoT i edge računarstvo namenjena je organizacijama koje žele da svoje podatke prevedu u digitalni oblik i digitalizuju fizičke procese, kako bi radile pametnije, a ne napornije.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Container for the image gallery -->
+    <div class="container-fluid">
+        <div class="container-box">
+            <!-- Tabs navs -->
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="nav-link active" id="nav-industry-tab" data-toggle="tab" href="#nav-industry" role="tab" aria-controls="nav-industry" aria-selected="true">
+                                                Proizvodnja
+                                            </a>
+                    <a class="nav-link" id="nav-automation-tab" data-toggle="tab" href="#nav-automation" role="tab" aria-controls="nav-automation" aria-selected="false">
+                                                Automatizacija procesa
+                                            </a>
+                    <a class="nav-link" id="nav-energy-tab" data-toggle="tab" href="#nav-energy" role="tab" aria-controls="nav-energy" aria-selected="false">
+                                                Energetika i udaljene lokacije
+                                            </a>
+                    <a class="nav-link" id="nav-agriculture-tab" data-toggle="tab" href="#nav-agriculture" role="tab" aria-controls="nav-agriculture" aria-selected="false">
+                                                Poljoprivreda
+                                            </a>
+
+                </div>
+              </nav>
+              <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade" id="nav-agriculture" role="tabpanel" aria-labelledby="nav-agriculture-tab" style="background-image:url({{site.baseurl}}/assets/img/clients/agriculture-resized.webp)">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                    <h3>Daljinski nadzor zemljišta i vazduha 24/7</h3>
+                                    <p>Standardne LoRaWAN meteorološke stanice i sonde za zemljište šalju podatke o vazduhu, padavinama, vlažnosti, temperaturi, EC, pH i NPK sa svake parcele, a pumpe, oprema za navodnjavanje i skladištenje povezuju se preko svojih kontrolera. Nova Vector uči šta je normalno za svako merenje, prijavljuje anomalije, pretvara ih u zadatke sa odgovornom osobom i pokazuje koliko brzo tim reaguje.</p>
+                                    <a href="{{ '/sr/smart-agriculture/' | relative_url }}" class="btn">Više o pametnoj poljoprivredi</a>
+                            </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade show active" id="nav-industry" role="tabpanel" aria-labelledby="nav-industry-tab" style="background-image:url({{site.baseurl}}/assets/img/clients/industry-resized.webp)">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                    <h3>Sva proizvodnja na jednom ekranu</h3>
+                                    <p>Objedinite sve proizvodne operacije na jednom mestu i pratite proizvodnju, kvalitet i potrošnju resursa u realnom vremenu. Pratite radne naloge, recepte i normativnu u odnosu na stvarnu potrošnju u svakom proizvodnom ciklusu. Pratite ispunjenje plana, zastoje i performanse opreme da biste otkrili gubitke i povećali produktivnost. Koristite operativne podatke uživo, izveštaje i lagane MES funkcije da biste koordinisali proizvodnju od planiranja do izvršenja.</p>
+                                    <a href="{{ '/sr/manufacturing/' | relative_url }}" class="btn">Više o proizvodnji</a>
+                            </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="nav-energy" role="tabpanel" aria-labelledby="nav-energy-tab" style="background-image:url({{site.baseurl}}/assets/img/products/nova-edge-computing.webp)">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                    <h3>Potrošnja energije na svim udaljenim lokacijama</h3>
+                                    <p>Učinite vidljivim potrošnju energije i raspored opreme na crpnim stanicama i udaljenim lokacijama, trafostanicama i postrojenjima za skladištenje energije u baterijama. Nadzirite distribuiranu opremu na daljinu preko povezanih senzora, kontrolera i edge uređaja. Zadržite uvid u rad i kod nepouzdanih veza ili izolovanih lokacija, uz lokalnu obradu na edge-u i upravljanje udaljenim lokacijama.</p>
+                                    <a href="{{ '/sr/energy/' | relative_url }}" class="btn">Više o energetici</a>
+                            </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="nav-automation" role="tabpanel" aria-labelledby="nav-automation-tab" style="background-image:url({{site.baseurl}}/assets/img/service/novavector-environment-monitoring.webp)">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                    <h3>Automatizujte procese i reakcije</h3>
+                                    <p>Povežite savremenu i stariju industrijsku opremu preko standarda kao što su OPC UA, Modbus TCP, BACnet/IP, SNMP i MQTT. Objedinite operativne podatke i automatizujte tokove rada, alarme i reakcije u povezanim sistemima. Modelujte procese i stanja opreme za bolji uvid, upravljanje i svakodnevnu koordinaciju rada. Koristite kontrolisani AI na edge-u i prediktivnu analitiku nad lokalnim operativnim podacima za obezbeđenje kvaliteta i održavanje.</p>
+                                    <a href="{{ '/sr/industrial-state-machine/' | relative_url }}" class="btn">Više o automatizaciji procesa</a>
+                            </div>
+                    </div>
+                </div>
+              </div>
+
+        </div>
+    </div>
+
+</section>

@@ -1,10 +1,11 @@
+{% include lang.html %}
 {% if page.capabilities %}
 {% comment %} Continue the white/grey alternation of the content sections above. {% endcomment %}
 {% assign cs_count = page.content_sections | size %}{% if page.video %}{% assign cs_count = cs_count | plus: 1 %}{% endif %}{% assign cs_rem = cs_count | modulo: 2 %}
 <section class="v3-section{% if cs_rem == 1 %} v3-section--muted{% endif %}">
   <div class="v3-shell">
-    <p class="v3-eyebrow">{{ page.capability_eyebrow | default: 'Page structure' }}</p>
-    <h2>{{ page.capability_heading | default: 'Core capabilities' }}</h2>
+    <p class="v3-eyebrow">{{ page.capability_eyebrow | default: t.capability_eyebrow }}</p>
+    <h2>{{ page.capability_heading | default: t.capability_heading }}</h2>
     <div class="v3-card-grid">
       {% for capability in page.capabilities %}
       <article class="v3-card">

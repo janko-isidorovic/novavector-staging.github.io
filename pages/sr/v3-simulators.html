@@ -1,0 +1,120 @@
+---
+layout: v3
+permalink: /sr/industrial-equipment-simulators/
+lang: sr-Latn
+title: Simulatori opreme za Modbus, BACnet i SNMP
+hero_title: Simulatori industrijske opreme
+title_accent: industrijske opreme
+description: "Simulatori opreme za Modbus TCP, BACnet/IP, SNMP i MQTT: testirajte SCADA, BMS ili IoT platformu pre isporuke hardvera, uz ubacivanje kvarova."
+summary: Celi pogoni koji se ponašaju kao pravi, sve do protokola. Konfigurišite sistem koji nadzire vašu opremu, prikažite ga i obavite njegov prijem pre nego što ta oprema stigne u laboratoriju.
+eyebrow: Nova Vector Simulators
+theme: platform
+hero_image: /assets/img/v3/hero/industrial-equipment-simulators.jpg
+video:
+  src: /assets/video/equipment-simulators.mp4
+  poster: /assets/video/equipment-simulators.jpg
+  title: Od jednog uređaja do celog pogona
+  summary: Jedno Modbus brojilo energije, opisano običnim fajlom uređaja, koje standardni klijent čita dok se vrednosti zadržavaju i ubacuju kvarovi. Zatim mehanizam simulatora pokreće baterijski kontejner za skladištenje energije na četiri protokola, kroz otkaz HVAC sistema u vrelom danu koji pregreva bateriju i obara snagu invertora, kvar na proizvodnoj liniji, kvarove u celom sistemu i mrežu sa smetnjama.
+  duration: "4:16"
+  uploaded: 2026-11-22
+content_sections:
+  - eyebrow: Jedan uređaj
+    heading: Počnite od jednog uređaja na liniji
+    paragraphs:
+      - Simulator polazi od običnog fajla uređaja, napisanog prema priručniku proizvođača, sa ID-jem jedinice, adresama registara i kodiranjem i skaliranjem svake vrednosti. Pokreće se jednom komandom i može da ga čita bilo koji Modbus klijent, od alata komandne linije do SCADA drajvera.
+      - Konzola prikazuje mapu registara onako kako je vidi klijent, sve do sirovih reči na liniji, i dnevnik zahteva sa svakim čitanjem, njegovim opsegom adresa i odgovorom. To je najbrži način da proverite da li drajver čita pravu jedinicu i prave adrese. Svaka vrednost može da se postavi jednom ili da se zadrži dok se ne otpusti, a klijent čita tačno tu vrednost.
+    image: /assets/img/v3/screens/simulators/meter-client.webp
+    image_alt: Konzola Nova Vector Simulators sa trofaznim brojilom energije na kojem je napon faze 1 zadržan na 253 V, i Modbus klijent komandne linije koji iz istog registra čita 253
+    caption: Simulirano brojilo energije sa jednim naponom zadržanim na 253 V i standardni Modbus klijent koji čita tačno tu vrednost.
+  - eyebrow: Sistemi, a ne pojedinačni uređaji
+    heading: Uređaji koji dele jedan model pogona
+    paragraphs:
+      - Svaki simulatorski sistem povezuje svoje uređaje kroz jedan model, pa se ponašaju uzročno-posledično. Kada otkaže HVAC jedinica baterijskog kontejnera, kontejner se zagreva, BMS javlja previsoku temperaturu, a invertor smanjuje snagu. Kada se pokvari jedna mašina na proizvodnoj liniji, mašine posle nje ostaju bez materijala, a one pre nje se blokiraju.
+      - Slučajne vrednosti na nezavisnim uređajima ne mogu da ispričaju tu priču. Alarmi koji obuhvataju više uređaja, obrada kvaliteta podataka i funkcije radnih naloga traže uređaje koji reaguju jedni na druge kao prava oprema.
+    image: /assets/img/v3/screens/simulators/system-devices.webp
+    image_alt: Konzola Nova Vector Simulators sa baterijskim kontejnerom za skladištenje energije, njegovim BMS sistemom, senzorima temperature i vlažnosti, kontrolerom kontejnera, HVAC jedinicom, invertorom, mrežnim svičem i UPS uređajem, sve u radu
+    caption: Baterijski kontejner sa deset uređaja, od BMS sistema i invertora do HVAC jedinice i UPS uređaja, koje pokreće jedan model.
+  - eyebrow: Pravi protokoli
+    heading: Na liniji, tamo gde bi bila oprema sa terena
+    paragraphs:
+      - Simulatori govore protokole koje vaš sistem već čita. Može da se poveže svaki klijent koji ih podržava, bilo da je to SCADA, sistem za upravljanje zgradom, istorijska baza (historian), MQTT broker ili IoT platforma. Nijednom od njih nije potreban Nova Vector.
+      - Mape uređaja su obični konfiguracioni fajlovi. Fajl uređaja verno prati priručnik proizvođača, sa svim njegovim posebnostima, pa se pre puštanja u rad mogu testirati gejtveji sa mnogo ID-jeva jedinica, neuobičajena kodiranja registara i oni granični slučajevi protokola na kojima klijenti padaju na terenu.
+    points:
+      - Modbus TCP uređaji i gejtveji, sa svim uobičajenim kodiranjima registara
+      - BACnet/IP uređaji sa otkrivanjem (discovery), nizovima prioriteta i segmentacijom
+      - SNMP v1, v2c i v3 trapovi i inform poruke
+      - MQTT edge čvorovi sa SenML ili Sparkplug B, i OPC UA preko test servera
+    image: /assets/img/v3/screens/simulators/modbus-register-map.webp
+    image_alt: Modbus konzola Nova Vector Simulators sa četiri PLC kontrolera, tri transportera, brojilom i senzorom iza jednog gejtveja, i mapa registara jednog PLC kontrolera sa adresama, kodiranjima, vrednostima i kvalitetom
+    caption: Devet uređaja iza jednog Modbus gejtveja i mapa registara jednog PLC kontrolera, sa stringovima, brojačima, šifrom proizvoda i brojem naloga.
+  - eyebrow: Ponovljivi scenariji
+    heading: Prijemni testovi i demonstracije postaju jedno isto
+    paragraphs:
+      - Scenario menja signale, ubacuje kvarove i korak po korak proverava očekivani ishod, sa rezultatom prošao ili pao. Scenario otkaza HVAC sistema na baterijskom kontejneru, na primer, proverava petnaest ishoda preko BACnet, Modbus i SNMP protokola i izvršava se isto u laboratoriji, na sastanku sa kupcem i u kontinualnoj integraciji.
+      - Svaki referentni sistem izvršava beskonačan scenario po stvarnom vremenu, sa smenama, pauzama, promenama proizvoda, ciklusima punjenja i pražnjenja i nasumičnim zastojima, pa kontrolne table i izveštaji uvek imaju podatke. Za kratku demonstraciju ili probno izvršavanje, sat modela radi brzinom od 0,1 do 600 puta stvarnog vremena, a može da se pauzira i pomera korak po korak.
+    image: /assets/img/v3/screens/simulators/scenarios.webp
+    image_alt: Stranica sistema u Nova Vector Simulators za baterijski kontejner, sa satom modela, brzinom i scenarijima, od gubitka komunikacije i nestanka mrežnog napajanja do otkaza HVAC sistema i smetnji u mreži
+    caption: Scenariji baterijskog kontejnera, od beskonačnog radnog dana do otkaza HVAC sistema, nestanka mrežnog napajanja i razdvajanja mreže.
+  - eyebrow: Kvarovi i kvalitet podataka
+    heading: Namerno izazovite kvarove, pre nego što se dese na terenu
+    paragraphs:
+      - Svaki uređaj ili signal može da se isključi sa mreže, uspori, natera da odbacuje zahteve ili odgovara kodom greške, zamrzne, da mu se doda šum ili klizanje vrednosti (drift), ili da dobije nesiguran ili loš kvalitet, ručno iz konzole ili iz scenarija. Svaki kvar se sam završava posle vremena koje zadate.
+      - Klijent vidi ono što bi video na terenu. Modbus klijentu ističe vreme čitanja kada uređaj odgovara prekasno, gejtvej odgovara izuzetkom 0x0B kada mu je uređaj van mreže, a vrednost lošeg kvaliteta obara svako čitanje koje je obuhvata, sa greškom uređaja. SNMP uređaj van mreže prestaje da šalje trapove, a MQTT čvor van mreže prekida vezu.
+      - Smetnje u mreži dodaju kašnjenje, džiter, gubitak paketa ili potpuno razdvajanje mreže između simulatora i vašeg sistema. Klijentu ističu konekcije dok link ima smetnje, a čitanja ponovo uspevaju kada se link vrati, pa vidite kako se alarmi, trendovi i obrada kvaliteta podataka ponašaju kada je veza loša i kako se oporavljaju.
+    image: /assets/img/v3/screens/simulators/faults.webp
+    image_alt: Stranica kvarova u Nova Vector Simulators sa senzorom sa zastarelom vrednošću, očitavanjem vlažnosti nesigurnog kvaliteta i UPS uređajem van mreže, svaki sa svojim trajanjem
+    caption: Tri aktivna kvara na baterijskom kontejneru, senzor sa zastarelom vrednošću, očitavanje vlažnosti nesigurnog kvaliteta i UPS uređaj van mreže.
+  - eyebrow: Vaši modeli
+    heading: Dovedite svoj inženjerski model do protokola koje operateri vide
+    paragraphs:
+      - Model baterije, procesa ili opreme napravljen u alatu Simulink, Modelica ili nekom drugom alatu za modelovanje može da pokreće simulirane uređaje. Izvezen kao FMU, za ko-simulaciju po FMI 2.0 ili 3.0, on zamenjuje taj deo fizike, a njegovi rezultati se pojavljuju u registrima, objektima i telemetriji koje vaš sistem čita.
+      - Autor modela izvozi model jednom. Da bi ga dodao u sistem, tehničar kopira dva fajla i menja jedan unos. Parametri modela mogu da se menjaju iz konzole ili iz scenarija, na primer da se pokaže kako se ostareli baterijski paket više greje. Licenca alata za modelovanje potrebna je za izvoz modela, ne i za njegovo pokretanje.
+    image: /assets/img/v3/screens/simulators/external-model.webp
+    image_alt: Kartica eksternog modela u Nova Vector Simulators sa FMU modelom baterije u FMI 3.0, vremenom proračuna po koraku, signalima koje čita i pokreće i njegovim parametrima
+    caption: Model baterije u FMI 3.0 pokreće BMS simuliranog kontejnera, sa ulazima, izlazima i parametrima na jednoj kartici.
+  - eyebrow: Skaliranje
+    heading: Otkrijte gde sistem puca pre nego što to otkrije uvođenje
+    paragraphs:
+      - MQTT flote simuliraju stotine ili hiljade edge čvorova, svaki sa sopstvenim pristupnim podacima i temom (topic). Operacije opterećenja postepeno podižu flotu, šalju nalete poruka, izazivaju lavine alarma ili lavine ponovnih povezivanja i menjaju učestanost slanja korak po korak, dok konzola meri kašnjenje objavljivanja, greške i izgubljene poruke.
+    image: /assets/img/v3/screens/simulators/mqtt-fleet.webp
+    image_alt: MQTT konzola Nova Vector Simulators sa rezimeom rada, percentilima kašnjenja objavljivanja, operacijama opterećenja i edge čvorovima sa stanjem veze i brojem poruka
+    caption: Flota MQTT edge čvorova sa kašnjenjem objavljivanja i operacijama opterećenja, od postepenog podizanja do lavine ponovnih povezivanja.
+  - eyebrow: Referentni sistemi
+    heading: Četiri pogona koja se pokreću iz jednog foldera
+    paragraphs:
+      - Četiri referentna sistema dolaze spremna za rad, ukupno sa 57 simuliranih uređaja i 33 scenarija. Baterijski kontejner za skladištenje energije na četiri protokola, isti kontejner koji pokreće eksterni model baterije, proizvodna linija sa PLC kontrolerima, transporterima, brojilom energije i andon tablom, i montažna linija AI servera koja sklapa servere sa serijskim brojevima u rekove i testira ih pod ograničenjem snage lokacije.
+      - Linije proizvode podatke koji su potrebni funkcijama za proizvodnju, kao što su brojači, količine po minutu, šifre proizvoda, brojevi naloga, serijski brojevi, bedževi operatera i otpreme rekova. Izvoz stvarnog toka događaja (ground truth) omogućava vam da uporedite ono što je vaš sistem zabeležio sa onim što se zaista dogodilo.
+    points:
+      - BESS kontejner, sa eksternim modelom baterije i bez njega
+      - Proizvodna linija sa nalozima, promenama proizvoda, pauzama i zastojima
+      - Montažna linija sa serijskim brojevima, lotovima, operaterima, rekovima i zonom za testiranje rekova pod ograničenjem snage
+    image: /assets/img/v3/screens/simulators/assembly-rack-station.webp
+    image_alt: Konzola Nova Vector Simulators sa stanicom za integraciju rekova na montažnoj liniji, sa kodom alarma, bedžom, šifrom proizvoda, serijskim brojem reka, slotovima i završenim rekovima
+    caption: Stanica za integraciju rekova na montažnoj liniji, sa proizvodom, serijskim brojem reka i do sada popunjenim slotovima.
+  - eyebrow: Postavljanje
+    heading: Jedan folder, gde god test treba da se izvrši
+    paragraphs:
+      - Svaki sistem se pokreće jednom komandom, na laptopu pored sistema koji se testira, na posebnoj virtuelnoj mašini sa pravom mrežom između njih ili na edge čvoru. Simulatori su kontejneri objavljeni kao verzionisane slike, pa na lokaciji nisu potrebni izvorni kod ni alati za build.
+      - Simulatori dolaze uz svaku licencu platforme Nova Vector, a licenciraju se i zasebno, za testiranje drugog SCADA sistema, BMS sistema, istorijske baze, brokera ili IoT platforme. Uobičajen prvi projekat prilagođava referentni sistem kupčevom skupu uređaja, scenarijima i modelima.
+    points:
+      - Docker na sistemima Linux, Windows ili macOS
+      - Jedan host, laboratorijska mreža ili edge čvor
+      - Uključeni uz platformu ili licencirani zasebno
+  - eyebrow: Sa platformom Nova Vector
+    heading: Platforma se sama podešava za simulirani pogon
+    paragraphs:
+      - Sa platformom Nova Vector, jedna komanda preko javnih API interfejsa platforme pravi sve što je pogonu potrebno, kao što su uređaji i njihove veze, pravila alarma, table zadataka, procesi, kontrolne table, OEE izveštaji, proizvodi, recepti, operateri sa bedževima, radni nalozi i planovi smena za mesec dana. Druga komanda sve to uklanja.
+      - Upravljanje flotom edge čvorova na platformi može da uvede simulirani sistem na edge čvor, proveri njegovo stanje i vrati ga nazad. Na montažnoj liniji platforma broji proizvodnju, beleži utrošak materijala i gradi genealogiju svakog servera iz događaja sledljivosti sa linije.
+    image: /assets/img/v3/screens/simulators/platform-genealogy.webp
+    image_alt: Genealogija u platformi Nova Vector za jedan server napravljen na simuliranoj montažnoj liniji, sa brojem dela, radnim nalogom, početnom stanicom i operaterom, i ugrađenom šasijom sa serijskim brojem i lotom
+    caption: Genealogija koju je platforma Nova Vector napravila za jedan server sa simulirane montažne linije, od radnog naloga do šasije ugrađene na prvoj stanici.
+related:
+  - label: Simulacija i reprodukcija
+    url: /sr/industrial-simulation/
+  - label: Uređaji i povezivanje
+    url: /sr/iot-device-management/
+  - label: Implementacija i integracija
+    url: /sr/professional-services/
+  - label: Energetika
+    url: /sr/energy/
+---

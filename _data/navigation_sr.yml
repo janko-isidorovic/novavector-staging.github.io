@@ -1,0 +1,47 @@
+# Serbian main menu: same structure and order as navigation.yml, URLs under /sr/.
+- text: Platforma
+  url: /sr/industrial-iot-platform/
+  submenu:
+  - text: Pregled
+    url: /sr/industrial-iot-platform/
+  - text: Uređaji i povezivanje
+    url: /sr/iot-device-management/
+  - text: Izveštaji i analitika
+    url: /sr/iot-timeseries-analytics/
+  - text: Alarmi i zadaci
+    url: /sr/industrial-state-machine/
+  - text: Edge računarstvo
+    url: /sr/edge-computing-platform/
+  - text: AI na platformi i edge-u
+    url: /sr/edge-ai-industrial-iot/
+  - text: Simulatori opreme
+    url: /sr/industrial-equipment-simulators/
+
+- text: Rešenja
+  url: /sr/manufacturing/
+  submenu:
+  - text: Proizvodnja i OEE
+    url: /sr/manufacturing/
+  - text: Energetika
+    url: /sr/energy/
+  - text: Poljoprivreda
+    url: /sr/smart-agriculture/
+  - text: Zgrade i infrastruktura
+    url: /sr/industrial-infrastructure/
+
+- text: Usluge
+  url: /sr/professional-services/
+  submenu:
+  - text: Implementacija i integracija
+    url: /sr/professional-services/
+  - text: Podrška
+    url: /sr/support/
+  - text: Obuka
+    url: /sr/training/
+
+- text: O nama
+  url: /sr/about/
+
+- text: Zatražite demo
+  url: /sr/contact/#request-demo
+  cta: true

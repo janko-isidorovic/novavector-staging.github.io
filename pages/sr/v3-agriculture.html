@@ -1,0 +1,85 @@
+---
+layout: v3
+permalink: /sr/smart-agriculture/
+lang: sr-Latn
+title: Pametna poljoprivreda i nadzor farme
+title_accent: nadzor farme
+description: "Pametna poljoprivreda: LoRaWAN senzori zemljišta i vremenskih uslova, podaci pumpi i mašina, detekcija anomalija i alarmi koji postaju zadaci."
+summary: Gotovi LoRaWAN senzori šalju podatke o zemljištu i vremenskim uslovima sa terena. Mašine se povezuju preko svojih kontrolera. Nova Vector uči šta je normalno, prijavljuje probleme i prati kako tim reaguje.
+eyebrow: Industrijsko rešenje
+theme: edge
+hero_image: /assets/img/v3/hero/smart-agriculture.jpg
+primary_label: Razgovarajmo o vašoj farmi
+primary_url: /sr/contact/#request-demo
+content_sections:
+  - eyebrow: Vremenski uslovi na terenu
+    heading: Meteorološke stanice koje šalju podatke sa svakog dela farme
+    paragraphs:
+      - LoRaWAN meteorološke stanice mere temperaturu i vlažnost vazduha, padavine, vetar i sunčevo zračenje tamo gde rastu usevi, a ne u najbližem gradu. Radio velikog dometa i male potrošnje pokriva velike parcele i udaljene njive sa nekoliko gejtveja, a stanice na baterije šalju podatke bez kablova i mrežnog napajanja.
+      - LoRaWAN mrežni server isporučuje se uz platformu. U produkciji radi više od tri godine u jednoj instalaciji za pametnu poljoprivredu, sa senzorima koji šalju podatke iz zemlje kroz sva godišnja doba.
+    image: /assets/img/v3/agriculture/soil-sensing.webp
+    image_alt: Zemlja sa mladom biljkom i ikonama za kišu, sunce i vetar
+    caption: Vremenski uslovi i stanje zemljišta mere se tamo gde rastu usevi, senzorima na baterije postavljenim na terenu.
+  - eyebrow: Zemljište
+    heading: Vlažnost, temperatura, EC, pH i NPK zemljišta sa standardnih senzora
+    paragraphs:
+      - Sonde u zemljištu šalju vlažnost i temperaturu na jednoj ili više dubina, zajedno sa električnom provodljivošću (EC), pH vrednošću i sadržajem azota, fosfora i kalijuma (NPK). Očitavanja stižu na svakih nekoliko minuta, a ne iz laboratorijskog uzorka uzetog nekoliko puta godišnje.
+      - Izaberite senzore proverenih LoRaWAN proizvođača; namenski hardver nije potreban. Dekoder poruka za svaki model senzora podešava se jednom, u njegovom profilu uređaja, iz šablona ili se piše za format proizvođača i testira na primeru poruke. Svi senzori tog modela ga zatim koriste, a poruke koje ne mogu da se dekodiraju čuvaju se odvojeno, umesto da se pomešaju sa podacima.
+    image: /assets/img/v3/agriculture/agri-dashboard.webp
+    image_alt: Kontrolna tabla za poljoprivredu u platformi Nova Vector sa temperaturom i vlažnošću vazduha, osunčanošću, temperaturom i vlažnošću zemljišta, NPK zemljišta i nivoom baterije senzora
+    caption: "Kontrolna tabla jedne parcele: uslovi u vazduhu i zemljištu, NPK i nivo baterije svakog senzora."
+  - eyebrow: Mašine
+    heading: Pratite pumpe, navodnjavanje, skladišta i drugu opremu na farmi
+    paragraphs:
+      - Pumpe za navodnjavanje, generatori, hladnjače, sušare i druga oprema sa kontrolerom povezuju se preko protokola Modbus TCP ili OPC UA. Mašine bez kontrolera iz kog se mogu čitati podaci mogu se naknadno opremiti senzorima, na primer meračima snage ili LoRaWAN senzorima, pa i one šalju podatke.
+      - Edge čvor na farmi čita lokalne kontrolere pored opreme i nastavlja da čita kada se veza sa platformom prekine. Očitavanja sa kontrolera postaju stanja kao što su rad, zaustavljena ili kvar, pa tim vidi kojoj mašini je potrebna pažnja, a ne samo spisak brojeva.
+    image: /assets/img/v3/agriculture/modbus-connections.webp
+    image_alt: Modbus TCP veze u platformi Nova Vector, svaka za uređaje iza jednog kontrolera
+    caption: Kontroleri se povezuju direktno; svaka vrednost koju izlažu postaje očitavanje odgovarajućeg uređaja.
+  - eyebrow: Detekcija anomalija
+    heading: Pronađite probleme za koje niko nije postavio granicu
+    paragraphs:
+      - Pravilo anomalije uči šta je normalno za jedno očitavanje jednog senzora, njegov nivo, dnevni ritam i šum, i pokreće alarm kada očitavanje izađe iz tih okvira. Otkriva sondu u zemljištu čija se vrednost više ne menja, meteorološku stanicu koja počne da daje šumna očitavanja ili pumpu koja troši više snage nego obično, a da niko pre toga nije morao da izabere prag.
+      - Pre nego što se sačuva, pravilo se pokreće nad poslednjih sedam dana istorije i pokazuje gde bi se aktiviralo. Uz njega su dostupne i fiksne granice i provere izostanka podataka, za uslove koje agronom već poznaje, kao što su opasnost od mraza ili senzor koji je utihnuo.
+    image: /assets/img/v3/screens/ai/anomaly-test-on-history.webp
+    image_alt: Pravilo anomalije testirano na sedam dana istorije temperature, sa naučenom očekivanom vrednošću i opsegom
+    caption: Test na istoriji prikazuje naučenu očekivanu vrednost, njen opseg i epizodu koju bi pravilo prijavilo.
+  - eyebrow: Zadaci
+    heading: Svaki alarm postaje zadatak sa odgovornom osobom
+    paragraphs:
+      - Alarm može automatski da otvori zadatak, sa kategorijom, grupom i senzorom i očitavanjem koji su ga izazvali. Zadatak se sam zatvara kada stanje prestane, a obaveštenja e-poštom stižu do ljudi koji treba da budu obavešteni.
+      - Rutinski poslovi na terenu rade se na isti način. Šabloni i rasporedi prave periodične zadatke, kao što su provera senzora, čišćenje kišomera ili servis pumpe, a table prikazuju otvorene poslove svakog tima.
+    image: /assets/img/v3/agriculture/tasks-from-alerts.webp
+    image_alt: Lista zadataka u platformi Nova Vector sa zadacima koje je napravio servis alarma
+    caption: Zadaci koje su napravili alarmi stoje pored planiranog posla, svaki sa statusom, kategorijom i grupom.
+  - eyebrow: Ljudi
+    heading: Vidite kako tim reaguje, ne samo šta pokazuju senzori
+    paragraphs:
+      - Potvrda alarma beleži ko ga je potvrdio, kada, zašto i sa kojim komentarom. Istorija zadatka pokazuje ko ga je preuzeo, svaku promenu statusa i vreme evidentirano na njemu, pa se svaka reakcija može pratiti od alarma do rešenja.
+      - Izveštaji o timu pokazuju koliko brzo ljudi reaguju i rešavaju probleme, šta je otvoreno ili kasni za svaku osobu i kako je posao raspoređen, pa rukovodioci vide gde farmi treba više ljudi ili bolje rutine.
+  - eyebrow: Integracija
+    heading: Povežite podatke sa farme sa sistemima koje već koristite
+    paragraphs:
+      - Svaki modul ima dokumentovan REST API, a aplikacije mogu da razmenjuju podatke preko protokola MQTT ili HTTPS sa sopstvenim pristupnim podacima. Očitavanja i agregati za bilo koji period dostupni su kroz API za podatke, a izveštaji se izvoze u CSV i PDF.
+      - Integracije sa sistemima za upravljanje farmom, ERP sistemom i meteorološkim servisima pravi za svaki projekat tim koji razvija platformu, prema vašem modelu podataka, kako bi podaci sa terena, radni nalozi i zapisi ostali usklađeni.
+faq_eyebrow: Pitanja
+faq_heading: Pre nego što počnete
+faq:
+  - question: Koje LoRaWAN senzore možemo da koristimo?
+    answer: Gotove senzore bilo kog proizvođača čiji je format poruka dokumentovan. Dekoder za svaki model senzora podešava se jednom u njegovom profilu uređaja i testira na primeru poruke pre nego što senzori odu na teren.
+  - question: Da li je LoRaWAN mreža uključena?
+    answer: LoRaWAN mrežni server isporučuje se uz platformu. Farmi su potrebni LoRaWAN gejtveji koji pokrivaju njene parcele; oni se registruju u mrežnom serveru. Podrazumevano je podešen opseg EU868.
+  - question: Može li Nova Vector da uključuje i isključuje navodnjavanje?
+    answer: Komande se mogu slati kontrolerima i MQTT uređajima, uz podešavanje za svaki projekat. Slanje komandi LoRaWAN uređajima danas nije podržano.
+  - question: Da li moramo da postavimo granice za svaki senzor?
+    answer: Ne. Pravila anomalija uče šta je normalno za svako očitavanje. Fiksne granice i provere izostanka podataka dostupne su za uslove koje već poznajete.
+related:
+  - label: Zgrade i infrastruktura
+    url: /sr/industrial-infrastructure/
+  - label: Alarmi i zadaci
+    url: /sr/industrial-state-machine/
+  - label: Implementacija i integracija
+    url: /sr/professional-services/
+  - label: Uređaji i povezivanje
+    url: /sr/iot-device-management/
+---

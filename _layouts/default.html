@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="{{ page.lang | default: 'en' }}">
 
 <head>
     <!-- meta -->
@@ -8,9 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% if site.noindex or page.noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
     {% seo %}
+    {% include lang.html %}{% if nv_en_page and nv_sr_page %}
+    <link rel="alternate" hreflang="en" href="{{ nv_en_page.url | absolute_url }}">
+    <link rel="alternate" hreflang="sr-Latn" href="{{ nv_sr_page.url | absolute_url }}">
+    <link rel="alternate" hreflang="x-default" href="{{ nv_en_page.url | absolute_url }}">{% endif %}
     {% include structured_data.html %}
     {% comment %} The homepage and the new-design pages load only what they use; legacy pages keep the full theme. {% endcomment %}
-    {% assign nv_home = false %}{% if page.url == '/' %}{% assign nv_home = true %}{% endif %}
+    {% assign nv_home = false %}{% if page.url == '/' or page.url == '/sr/' %}{% assign nv_home = true %}{% endif %}
     {% assign nv_legacy = true %}{% if nv_home or page.layout == 'v3' %}{% assign nv_legacy = false %}{% endif %}
     <link rel="icon" href="{{site.baseurl}}/assets/img/favicon.png">
     <!-- Bootstrap CSS -->

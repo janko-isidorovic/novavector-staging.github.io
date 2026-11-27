@@ -1,0 +1,76 @@
+---
+layout: v3
+permalink: /sr/iot-device-management/
+lang: sr-Latn
+title: Upravljanje industrijskim IoT uređajima
+hero_title: Upravljanje uređajima i opremom
+description: "Upravljanje industrijskim IoT uređajima: veze, profili za višekratnu upotrebu, podaci uživo, hijerarhija, status i konfiguracija na jednom mestu."
+summary: Dajte svakoj povezanoj mašini, gejtveju, brojilu, kontroleru i senzoru trajan identitet, model podataka za višekratnu upotrebu, mesto u hijerarhiji opreme i direktan put do podataka uživo i istorijskih podataka.
+eyebrow: Mogućnost platforme
+theme: platform
+hero_image: /assets/img/v3/hero/iot-device-management.jpg
+video:
+  src: /assets/video/device-management.mp4
+  poster: /assets/video/device-management.jpg
+  title: Svaki uređaj, jedan model
+  summary: Od prvog povezivanja do podataka uživo. Kontroleri, sistemi zgrada i senzori povezani preko svojih protokola, uređaji pronađeni BACnet skeniranjem, svaki tip uređaja opisan jednom u profilu, svaki uređaj na svom mestu u hijerarhiji i svaka vrednost sačuvana zajedno sa svojim uređajem i profilom.
+  duration: "1:57"
+  uploaded: 2026-11-21
+content_sections:
+  - eyebrow: Registar uređaja
+    heading: Napravite model opreme koji odražava stvarno postrojenje
+    paragraphs:
+      - Platforma Nova Vector ne posmatra povezanu opremu kao anonimni tok merenja. Svaki uređaj se registruje sa identitetom, grupom vlasnika, statusom, profilom, metapodacima i nadređenim elementom, pa platforma može da predstavi lokacije, zone, linije, mašine, gejtveje, brojila, senzore i drugu opremu u praktičnoj hijerarhiji.
+      - Ta struktura postaje radni kontekst za sve što sledi. Podaci uživo, alarmi, zadaci, proizvodni zapisi, izveštaji i integraciona logika oslanjaju se na istu registrovanu opremu, umesto da različite aplikacije vode paralelne sisteme naziva.
+    points:
+      - Prikaz u tabeli i stablu sa statusom, filterima i izvozom u CSV
+      - Odnosi lokacija, linija, mašina i senzora u jednoj hijerarhiji
+      - Uređaji napravljeni ručno, preko API-ja ili iz BACnet otkrivanja
+    image: /assets/img/v3/features/02-devices-and-live-data/devices-tree.png
+    image_alt: Stablo uređaja u platformi Nova Vector sa uređajima grupisanim po liniji ili procesu i njihovim statusom
+    caption: Prikaz stabla organizuje opremu po lokaciji i odnosu nadređeni–podređeni, a ne kao ravnu listu.
+  - eyebrow: Industrijsko povezivanje
+    heading: Povežite kontrolere, brojila i sisteme zgrada koje već koristite
+    paragraphs:
+      - Nova Vector direktno čita industrijske kontrolere i sisteme zgrada preko protokola OPC UA, Modbus TCP i BACnet/IP i preko SNMP trap poruka, a podatke od IoT uređaja prima preko protokola MQTT, HTTP i WebSocket. Senzori velikog dometa i male potrošnje povezuju se preko mreže LoRaWAN, koja se u produkciji koristi u pametnoj poljoprivredi. CoAP je u pilot fazi.
+      - Jedna veza opslužuje sve uređaje iza gejtveja ili kontrolera, a svaka veza može se zasebno uključiti ili isključiti. Edge čvorovi dodaju još protokola za uređaje preko EdgeX Foundry servisa tamo gde oprema ne može direktno da dođe do platforme.
+    image: /assets/img/v3/features/01-device-connectivity/modbus-gateway.png
+    image_alt: Modbus veza u platformi Nova Vector koja opslužuje nekoliko uređaja iza jednog gejtveja, svaki sa svojim prekidačem i povezanim tačkama
+    caption: Jedna Modbus veza opslužuje nekoliko uređaja iza istog gejtveja, a svaki se uključuje zasebno.
+  - eyebrow: Starija oprema
+    heading: Uključite starije mašine u isti model podataka
+    paragraphs:
+      - Mašine bez kontrolera iz kog se mogu čitati podaci ne moraju da se menjaju. Mogu se naknadno opremiti senzorima koji daju isti skup podataka kao savremena oprema, na primer stanje mašine, brojače i energiju, bez velikih ulaganja i bez zastoja u proizvodnji.
+      - Kada se poveže, naknadno opremljena mašina koristi iste profile, kontrolne table, alarme i izveštaje kao ostatak linije, pa se starija i novija oprema mogu porediti pod istim uslovima.
+  - eyebrow: Otkrivanje i povezivanje tačaka
+    heading: Pronađite uređaje i tačke podataka umesto da ih ručno unosite
+    paragraphs:
+      - BACnet Who-Is poruka poslata svima na mreži pronalazi uređaje, a platforma čita listu objekata svakog uređaja sa nazivima i vrednostima uživo. Izabrani objekti mogu se povezati grupno, sa učestanošću očitavanja i opcionim slanjem pri promeni. OPC UA serveri mogu se pregledati i na njih se može pretplatiti; mape Modbus registara nalaze se u profilu uređaja.
+      - Slanje samo pri promeni (report by exception) smanjuje saobraćaj i potrebno skladište. Modbus i BACnet vrednosti mogu se slati samo kada se promene više od zadate mrtve zone (deadband), uz maksimalni interval kao heartbeat; OPC UA primenjuje mrtvu zonu na serveru.
+    image: /assets/img/v3/features/01-device-connectivity/bacnet-device-discovery.png
+    image_alt: Otkrivanje BACnet uređaja u platformi Nova Vector sa listom uređaja pronađenih na mreži
+    caption: BACnet otkrivanje prikazuje uređaje pronađene na mreži, spremne za dodavanje u registar.
+  - eyebrow: Profili za višekratnu upotrebu
+    heading: Opišite tip uređaja jednom, a zatim ga primenjujte dosledno
+    paragraphs:
+      - Profili uređaja definišu merenja i svojstva koja sirovim podacima protokola daju značenje. Profil može da opiše nazive metrika, inženjerske jedinice, tipove podataka, opsege, registre ili objekte protokola, podrazumevana podešavanja slanja pri promeni, prilagođena svojstva i logiku dekodiranja poruka.
+      - Profili imaju verzije, prolaze kroz faze životnog ciklusa i mogu se izvoziti i uvoziti. Zato su korisni za ponovljene instalacije istog brojila, PLC interfejsa, porodice mašina ili gejtveja, bez ponovnog pravljenja modela podataka za svaku instancu.
+    image: /assets/img/v3/features/02-devices-and-live-data/profile-catalog.png
+    image_alt: Katalog profila u platformi Nova Vector filtriran po tipu, protokolu, statusu životnog ciklusa i oznaci
+    caption: Katalog profila prikazuje tipove uređaja za višekratnu upotrebu sa verzijom, statusom i oznakama.
+  - eyebrow: Podaci uživo i istorijski podaci
+    heading: Iz zapisa o uređaju pređite direktno na istoriju njegovog rada
+    paragraphs:
+      - Svaki uređaj ima svoju stranicu sa identitetom, konfiguracijom, grafikonom uživo za svaku vrednost koju šalje i svakim očitavanjem čim stigne. Korisnici mogu da filtriraju po metrici, podese vremenski prozor i otvore detaljnije prikaze u alatu Grafana kada je potrebna dublja analiza.
+      - Istorijska očitavanja čuvaju se kao vremenske serije i ostaju dostupna izveštajima, API-ju za podatke, reprodukciji procesa (replay) i izvozu u CSV, bez gubitka konteksta opreme i profila koji objašnjava šta svaki signal predstavlja.
+    image: /assets/img/v3/screens/machine-live-data.png
+    image_alt: Jedna mašina u platformi Nova Vector sa grafikonom uživo njenih vrednosti i tabelom dolaznih očitavanja kao što su nalog, proizvod, brzina i stanje
+    caption: Stranica svake mašine prikazuje grafikon uživo i svako očitavanje čim stigne.
+related:
+  - label: Izveštaji i analitika
+    url: /sr/iot-timeseries-analytics/
+  - label: Arhitektura platforme
+    url: /sr/architecture/
+  - label: Implementacija i integracija
+    url: /sr/professional-services/
+---

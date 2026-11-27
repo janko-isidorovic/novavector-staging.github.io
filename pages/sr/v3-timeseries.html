@@ -1,0 +1,78 @@
+---
+layout: v3
+permalink: /sr/iot-timeseries-analytics/
+lang: sr-Latn
+title: Izveštaji uživo i analitika vremenskih serija
+description: "Analitika industrijskih vremenskih serija: prikupljanje, prikaz, izveštaji i izvoz telemetrije, uz gotove izveštaje za OEE, zastoje, pouzdanost i timove."
+summary: "Trenutna i istorijska merenja ostaju korisna svuda: na stranici uređaja, u izveštajima uživo, na kontrolnim tablama, u reprodukciji (replay), preko API-ja i u operativnoj analizi."
+eyebrow: Mogućnost platforme
+theme: platform
+hero_image: /assets/img/v3/hero/iot-timeseries-analytics.jpg
+video:
+  src: /assets/video/reports-analytics.mp4
+  poster: /assets/video/reports-analytics.jpg
+  title: Od telemetrije do proizvodnje i održavanja
+  summary: Šta linija radi, ko njome upravlja i ko je održava u radu, u izveštajima koji se ažuriraju u realnom vremenu, za pravovremene odluke zasnovane na podacima. Prikaz uživo, OEE izračunat uživo za svaku smenu, vreme zastoja rangirano po razlogu, otvoreni poslovi po osobi, izveštaji o pouzdanosti i održavanju, kao i vaši sopstveni izveštaji, izvozi i ugrađene Grafana kontrolne table nad istim podacima.
+  duration: "2:12"
+  uploaded: 2026-11-21
+content_sections:
+  - eyebrow: Operativni podaci uživo
+    heading: Vidite šta oprema trenutno radi, a da ne izgubite odakle podaci dolaze
+    paragraphs:
+      - Pristigla merenja ostaju vezana za registrovani uređaj, kanal, metriku, vremensku oznaku i hijerarhiju opreme iz kojih potiču. Operateri iz prikaza lokacije ili opreme prelaze na trenutna očitavanja, umesto da rade sa nepovezanim tokom tagova.
+      - Prikaz podataka uređaja omogućava pregled u realnom vremenu i grafikone koji se mogu podešavati, dok početna kontrolna tabla platforme sažeto prikazuje aktivnost poruka, saobraćaj po protokolima, ukupan broj uređaja i kanala, lokacije i najaktivnije kanale u celom povezanom sistemu.
+    image: /assets/img/v3/features/02-devices-and-live-data/device-live-data.png
+    image_alt: Stranica uređaja u platformi Nova Vector sa podacima iz poslednjeg sata, sirovim porukama i alarmima za jedan uređaj
+    caption: Podaci uživo na nivou uređaja povezuju merenja sa opremom i definicijama metrika iz kojih su nastala.
+  - eyebrow: OEE u realnom vremenu
+    heading: Standardni OEE, izračunat uživo iz stanja mašina i brojača
+    paragraphs:
+      - Gotovi izveštaji izračunavaju raspoloživost, učinak i kvalitet, kao i njihov proizvod, OEE (ukupnu efikasnost opreme), po smeni, proizvodu, seriji, liniji, danu ili mesecu. Zasnovani su na definicijama KPI-jeva iz standarda ISO 22400, u odnosu na planirane smene i proverene brzine linije, i sami se osvežavaju kako stižu nova očitavanja.
+      - Smena vidi svoje gubitke dok još može nešto da preduzme, umesto da ih otkrije u tabeli na kraju dana.
+    points:
+      - Proizvodnja i škart po minutu, po proizvodu
+      - OEE u odnosu na cilj, sa trendovima dostupnosti, učinka i kvaliteta
+      - Stanja procesa svih stanica na jednoj vremenskoj liniji
+    image: /assets/img/v3/screens/reports/realtime-report.webp
+    image_alt: Izveštaj linije u realnom vremenu u platformi Nova Vector za poslednji sat, sa proizvodnjom po minutu, pokazivačem OEE-a u odnosu na cilj, dostupnošću, učinkom i kvalitetom, i proizvodnjom, zastojima i brzinom po proizvodu
+    caption: "Izveštaj u realnom vremenu za poslednji sat: proizvodnja po minutu, OEE u odnosu na cilj, njegova tri faktora i brojke po proizvodu i smeni."
+  - eyebrow: Pareto zastoja
+    heading: Svaki minut zastoja, imenovan i izbrojan
+    paragraphs:
+      - Pareto zastoja rangira vreme zastoja po razlogu, sa kumulativnom linijom i brojem zastoja iza svakog razloga. Mikrozastoji, promene proizvoda i kvarovi su razdvojeni, pa poboljšanje počinje od najvećeg gubitka, a ne od najglasnijeg.
+      - Razlozi zastoja dolaze iz preovlađujućeg stanja mašine i iz klasifikacije koju unosi operater tamo gde sami signali ne mogu da otkriju uzrok.
+    image: /assets/img/v3/screens/reports/pareto-report.webp
+    image_alt: Pareto izveštaj u platformi Nova Vector za ovu nedelju, sa vremenom zastoja po razlogu i kumulativnom linijom, brojem zastoja po razlogu, Pareto tabelom, zastojima u odnosu na mikrozastoje i najdužim zastojima
+    caption: "Pareto izveštaj: vreme zastoja po razlogu sa kumulativnom linijom, Pareto tabela i najduži zastoji u nedelji."
+  - eyebrow: Izveštaji o pouzdanosti i timovima
+    heading: Povežite kvarove mašina sa ljudima koji ih otklanjaju
+    paragraphs:
+      - Izveštaji o pouzdanosti opreme prikazuju kvarove, srednje vreme između kvarova (MTBF), srednje vreme popravke (MTTR) i raspoloživost po liniji i stanici, računato u okviru planiranih smena, sa Pareto prikazom vremena kvarova po stanici.
+      - Izveštaji o održavanju i timovima dodaju otvorene i zakasnele poslove po osobi, vreme odziva, planirane naspram neplaniranih poslova i iskorišćenost u odnosu na kalendar smena.
+    image: /assets/img/v3/screens/reports/reliability-report.webp
+    image_alt: Izveštaj o pouzdanosti opreme u platformi Nova Vector za poslednjih 7 dana, sa kvarovima, MTBF, MTTR i dostupnošću, tabelom po stanici, vremenom kvarova po stanici, kvarovima po danu i kvarovima na vremenskoj liniji
+    caption: Izveštaj o pouzdanosti prikazuje kvarove, MTBF, MTTR i raspoloživost za liniju i za svaku stanicu, kao i gde odlazi vreme kvarova.
+  - eyebrow: Vaši izveštaji
+    heading: Počnite od šablona, pa prilagodite izveštaje svom načinu rada
+    paragraphs:
+      - Izveštaji o OEE-u, u realnom vremenu, o zastojima, pouzdanosti i timovima dolaze kao gotovi šabloni. Svaki se može prilagoditi, ili se novi izveštaji mogu dizajnirati u pregledaču iz istih izvora podataka, a svaki panel može da se prikaže i izveze kao tabela.
+      - Ugrađena Grafana i dalje je dostupna za kontrolne table uređaja, infrastrukture i pojedinačnih projekata, sa istim sačuvanim podacima vremenskih serija i jedinstvenom prijavom (SSO) platforme.
+    image: /assets/img/v3/screens/reports/dashboard-templates.webp
+    image_alt: Šabloni kontrolnih tabli u platformi Nova Vector, gotovi izveštaji za OEE, Pareto, zastoje, pouzdanost, održavanje i timove, svaki sa parametrima i dugmetom Use
+    caption: Gotovi šabloni izveštaja, koji se jednim klikom kopiraju u novi izveštaj vaše grupe i zatim prilagođavaju u dizajneru.
+  - eyebrow: Upotreba istorije
+    heading: Koristite sačuvanu istoriju za analizu, reprodukciju i integraciju
+    paragraphs:
+      - Istorijski podaci nisu ograničeni na prikaz u grafikonima. Mogu se čitati preko API-ja platforme, reprodukovati kroz model procesa, izvesti za spoljnu analizu ili proslediti okruženjima za analizu podataka (data science).
+      - Platforma čuva telemetriju u bazi TimescaleDB i kompresuje starije podatke. Period čuvanja i pravila brisanja definišu se za svaki projekat, a ne nameću se kao fiksno pravilo platforme.
+    image: /assets/img/v3/screens/reports/stoppage-report-export.webp
+    image_alt: Izveštaj o zastojima u platformi Nova Vector sa sedam dana zastoja po razlogu i listom zastoja, sa otvorenim menijem za izvoz
+    caption: Sedam dana zastoja, sačuvanih sa razlogom, proizvodom i smenom, izvezenih direktno iz izveštaja.
+related:
+  - label: OEE i zastoji
+    url: /sr/manufacturing-oee-software/
+  - label: Uređaji i povezivanje
+    url: /sr/iot-device-management/
+  - label: Simulacija i reprodukcija
+    url: /sr/industrial-simulation/
+---

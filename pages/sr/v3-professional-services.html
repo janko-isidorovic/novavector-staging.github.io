@@ -1,0 +1,78 @@
+---
+layout: v3
+permalink: /sr/professional-services/
+lang: sr-Latn
+title: Implementacija i integracija
+title_accent: integracija
+description: IIoT implementacija i integracija lokalno, u oblaku ili hibridno, sa vezama ka ERP i MES sistemima, od tima koji razvija platformu.
+summary: Planirajte, instalirajte, podesite i integrišite platformu Nova Vector oko vaše opreme, sistema i timova, sa inženjerima koji je razvijaju.
+eyebrow: Usluge
+theme: platform
+hero_image: /assets/img/v3/hero/professional-services.jpg
+show_capability_cards: true
+primary_label: Razgovarajmo o vašem projektu
+primary_url: /sr/contact/
+capability_eyebrow: Usluge
+capability_heading: Od prve linije do svih lokacija
+capabilities:
+  - title: Arhitektura i analiza zahteva
+    text: Definišite operativne ciljeve, povezanu opremu i sisteme, tokove podataka, ograničenja, odgovornosti i faze implementacije.
+  - title: Implementacija platforme
+    text: Instalirajte platformu lokalno, u oblaku ili hibridno, i podesite uređaje, edge čvorove, izveštaje, alarme, zadatke i pravila procesa za vaš pogon.
+  - title: Integracija i osposobljavanje
+    text: Povežite ERP, MES, SCADA i postojeće alate kroz otvorene API-je i low-code tokove, dokumentujte rešenje i obučite timove koji ga koriste.
+content_sections:
+  - eyebrow: Način isporuke
+    heading: Počnite od operativnog toka rada, a ne od kontrolne table
+    paragraphs:
+      - Svaki projekat počinje utvrđivanjem opreme, sistema, korisnika, odluka i situacija kvara koji su deo ciljnog procesa.
+      - Iz toga nastaje dizajn koji definiše model opreme, tokove podataka, stanje procesa, odgovornosti edge čvorova, integracije, bezbednosne granice i merljive kriterijume prihvatanja.
+  - eyebrow: Povežite ono što imate
+    heading: Moderni kontroleri direktno, starije mašine uz naknadno ugrađene senzore
+    paragraphs:
+      - Kontroleri i sistemi zgrada povezuju se preko protokola OPC UA, Modbus TCP, BACnet/IP, SNMP, MQTT ili LoRaWAN. Starije mašine bez kontrolera iz kog se mogu čitati podaci dobijaju naknadno ugrađene senzore koji daju isti skup podataka kao moderna oprema, bez velikih ulaganja i bez zastoja u proizvodnji.
+      - Edge čvorovi na liniji prikupljaju podatke i održavaju lokalnu logiku u radu, a platforma njima upravlja kao jednom flotom.
+    image: /assets/img/v3/screens/resources/machine-live-data.png
+    image_alt: Stranica mašine u platformi Nova Vector sa grafikonom vrednosti mašine uživo i očitavanjima kako pristižu
+    caption: Jedna stranica po mašini, sa grafikonom uživo za svaku vrednost koju mašina šalje. Snimak ekrana iz demo instalacije.
+  - eyebrow: Gde radi
+    heading: Lokalno, u oblaku ili hibridno
+    paragraphs:
+      - Standardna instalacija je Docker Compose na jednom Linux serveru. Klijenti koji koriste Kubernetes, na primer uz Rancher, dobijaju Kubernetes instalaciju kao projektnu uslugu, a izolovane mreže i mreže izolovane od interneta (air-gapped) pripremaju se za svaku instalaciju posebno.
+      - Visoka dostupnost, rezervne kopije, period čuvanja podataka i termini za ažuriranje projektuju se zajedno sa IT službom klijenta za svaki projekat, a ne podrazumevaju se.
+  - eyebrow: Poslovni sistemi
+    heading: Napravljeno za vaš model podataka, a ne kao generički konektor
+    paragraphs:
+      - "Ne postoje univerzalni ERP ili MES konektori. Svaka integracija se projektuje prema modelu podataka klijenta, načinu autentifikacije i smeru toka podataka: obično ulaze radni nalozi i proizvodi, a izlaze proizvedene, škartirane i utrošene količine, zastoji i zapisi o održavanju."
+      - Integracije se grade na REST API-jima, Node-RED tokovima ili prilagođenim funkcijama, a spoljni sistemi se autentifikuju sopstvenim servisnim nalozima i vide samo zapise svojih grupa.
+    image: /assets/img/v3/features/11-automation-and-integration/open-api.png
+    image_alt: OpenAPI dokumentacija platforme Nova Vector
+    caption: Integracije koriste iste dokumentovane API-je kao i konzola Nova Vector.
+  - eyebrow: Prilagođavanje
+    heading: Izveštaji, procesi i tokovi rada prilagođeni vašem pogonu
+    paragraphs:
+      - Gotovi izveštaji o OEE (ukupnoj efikasnosti opreme), zastojima, pouzdanosti i timovima prilagođavaju se vašim linijama, smenama i proizvodima. Pravila procesa modeluju kako vaše mašine zavise jedna od druge, a tokovi rada zadataka prate vaše procedure održavanja i kvaliteta, uključujući očitavanje RFID kartica na mašini, prilagođeno toku vašeg procesa održavanja.
+    image: /assets/img/v3/screens/resources/maintenance-work-board.png
+    image_alt: Tabla radova održavanja u platformi Nova Vector sa otvorenim poslovima, opterećenjem i kapacitetom svakog tehničara
+    caption: Tabla radova održavanja podešena prema timu i njegovom kapacitetu. Snimak ekrana iz demo instalacije.
+  - eyebrow: Test pre puštanja u rad
+    heading: Proverite integracije na simuliranoj liniji
+    paragraphs:
+      - Veze sa MES i ERP sistemima obično se testiraju kasno, na stvarnoj liniji, a niko ne može da naruči lošu seriju ili kvar kada mu zatreba. Nova Vector Simulators zamenjuju to nagađanje simuliranom montažnom ili proizvodnom linijom koja govori iste protokole kao stvarna oprema.
+      - Za simuliranu liniju tačno se zna šta se dogodilo. Skriptovani scenariji, kao što su loša serija delova koja šalje servere na doradu ili serijski broj upotrebljen dva puta, proveravaju svaki korak prema očekivanim rezultatima, pa su zapisi od kojih zavise vaše MES i ERP integracije provereni pre nego što proizvodnja počne da zavisi od njih.
+    image: /assets/img/v3/features/10-simulators/assembly-line.png
+    image_alt: Montažna linija u Nova Vector Simulators sa stanicama, čitačima kartica i rezultatima testova
+    caption: Simulirana montažna linija na kojoj se integracije testiraju pre puštanja u rad.
+  - eyebrow: Primopredaja i podrška
+    heading: Isporučite sistem kojim odgovorni tim može da upravlja
+    paragraphs:
+      - Implementacija obuhvata podešavanje, integraciju, testiranje, dokumentaciju, obuku po ulogama i dogovoreni način podrške. Odgovornosti su jasno podeljene između platforme Nova Vector, infrastrukture klijenta, opreme i sistema trećih strana.
+      - Posle puštanja u rad, isti tim pruža podršku za platformu, planira nadogradnje i proširuje je na nove linije, lokacije i slučajeve upotrebe.
+related:
+  - label: Obuka
+    url: /sr/training/
+  - label: Podrška
+    url: /sr/support/
+  - label: Pregled platforme
+    url: /sr/industrial-iot-platform/
+---

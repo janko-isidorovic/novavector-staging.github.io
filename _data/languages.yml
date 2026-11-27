@@ -1,0 +1,14 @@
+# Site languages, in menu order. The first is the default (no URL prefix, x-default in hreflang).
+# To add a language:
+#   1. add it here (code = the pages' front matter lang and its key in i18n.yml; prefix = its URL folder);
+#   2. add its labels to i18n.yml, its menus as navigation_<prefix>.yml / footer_links_<prefix>.yml;
+#   3. translate the pages into pages/<prefix>/ and <prefix>/index.html (see docs/i18n-sr-glossary.md for how /sr/ was done);
+#   4. add a _config.yml default for its lang and locale.
+- code: en
+  name: English
+  short: EN
+  prefix: ""
+- code: sr-Latn
+  name: Srpski
+  short: SR
+  prefix: /sr

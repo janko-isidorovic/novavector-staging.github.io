@@ -26,9 +26,7 @@ en:
   search_label: Search the Nova Vector website
   search_placeholder: Search the website
   search_button: Search
-  lang_switch_label: Srpski
-  lang_switch_short: SR
-  lang_switch_title: Ova stranica na srpskom
+  language_label: Language
   find_us: Find us
   address_city: 11041 Belgrade, Serbia
   call_us: Call us
@@ -74,9 +72,7 @@ sr-Latn:
   search_label: Pretraga sajta Nova Vector
   search_placeholder: Pretražite sajt
   search_button: Pretraga
-  lang_switch_label: English
-  lang_switch_short: EN
-  lang_switch_title: This page in English
+  language_label: Jezik
   find_us: Pronađite nas
   address_city: 11041 Beograd, Srbija
   call_us: Pozovite nas

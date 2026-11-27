@@ -1,20 +1,13 @@
 {% comment %}
   Page language helpers, included wherever a template needs them:
-  - nv_lang: the page language (front matter lang, default en; Serbian pages are sr-Latn);
+  - nv_lang: the page language (front matter lang, default en);
   - t: the shared labels for that language (_data/i18n.yml);
-  - nv_alt: the same page in the other language (Serbian pages live at /sr + the English path), nil if there is none;
-  - nv_en_page / nv_sr_page: the English and Serbian page of the pair, for hreflang.
+  - nv_cur: this language's entry in _data/languages.yml;
+  - nv_base: the page path without the language prefix (/sr/energy/ -> /energy/), so the same page in
+    another language is that language's prefix + nv_base (see navigation.html and default.html).
 {% endcomment %}
 {% assign nv_lang = page.lang | default: 'en' %}
 {% assign t = site.data.i18n[nv_lang] | default: site.data.i18n.en %}
-{% if nv_lang == 'sr-Latn' %}
-  {% assign nv_alt_url = page.url | remove_first: '/sr' %}
-{% else %}
-  {% assign nv_alt_url = '/sr' | append: page.url %}
-{% endif %}
-{% assign nv_alt = site.pages | where: 'url', nv_alt_url | first %}
-{% if nv_lang == 'sr-Latn' %}
-  {% assign nv_en_page = nv_alt %}{% assign nv_sr_page = page %}
-{% else %}
-  {% assign nv_en_page = page %}{% assign nv_sr_page = nv_alt %}
-{% endif %}
+{% assign nv_cur = site.data.languages | where: 'code', nv_lang | first %}
+{% assign nv_base = page.url %}
+{% if nv_cur and nv_cur.prefix != '' %}{% assign nv_base = page.url | remove_first: nv_cur.prefix %}{% endif %}

@@ -276,9 +276,13 @@ h1, h2, h3, h4, h5, h6, .v3-page h1, .v3-page h2, .v3-page h3 { color: var(--nv-
 .copyright-area .copyright-text p a { color: #878787; }
 .copyright-area .copyright-text p a:hover { color: #ff5e14; }
 
-/* Language switch (EN / SR), the last item of the main menu */
-.main-menu ul li.nv-lang-switch > a { padding-left: 16px !important; padding-right: 0 !important; font-weight: 600; letter-spacing: .04em; }
-.main-menu ul li.nv-lang-switch > a:hover { color: var(--nv-orange) !important; }
+/* Language menu, the last item of the main menu: globe + current language, a dropdown of the site languages */
+.main-menu ul li.nv-lang-menu > a { padding-left: 16px !important; font-weight: 600; letter-spacing: .04em; display: inline-flex; align-items: center; gap: 6px; }
+.nv-globe { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.2; }
+.main-menu ul li.nv-lang-menu .sub-menu { min-width: 160px; width: auto; left: auto; right: 0; }
+.main-menu ul li.nv-lang-menu .sub-menu a.nv-lang-current { color: var(--nv-orange) !important; }
 
 /* Serbian: Title Case does not exist in Serbian; undo the old theme's capitalize on these elements */
 :lang(sr-Latn) .slider-content a.btn, :lang(sr-Latn) .footer-widget ul li a, :lang(sr-Latn) .user-story h3, :lang(sr-Latn) .single-counter > p, :lang(sr-Latn) .about-info-text h2, :lang(sr-Latn) #results-container li a, :lang(sr-Latn) .capitalize { text-transform: none !important; }
+.mean-container .mean-nav .nv-globe { margin-right: 6px; vertical-align: -2px; }
+.mean-container .mean-nav a.nv-lang-current { color: var(--nv-orange) !important; }

@@ -8,10 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% if site.noindex or page.noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
     {% seo %}
-    {% include lang.html %}{% if nv_en_page and nv_sr_page %}
-    <link rel="alternate" hreflang="en" href="{{ nv_en_page.url | absolute_url }}">
-    <link rel="alternate" hreflang="sr-Latn" href="{{ nv_sr_page.url | absolute_url }}">
-    <link rel="alternate" hreflang="x-default" href="{{ nv_en_page.url | absolute_url }}">{% endif %}
+    {% include lang.html %}{% assign nv_alternates = '' | split: '' %}{% for l in site.data.languages %}{% assign nv_alt_url = l.prefix | append: nv_base %}{% assign nv_alt_page = site.pages | where: 'url', nv_alt_url | first %}{% if nv_alt_page %}{% assign nv_alternates = nv_alternates | push: l %}{% endif %}{% endfor %}{% if nv_alternates.size > 1 %}{% for l in nv_alternates %}
+    <link rel="alternate" hreflang="{{ l.code }}" href="{{ l.prefix | append: nv_base | absolute_url }}">{% endfor %}{% assign nv_default = site.data.languages | first %}
+    <link rel="alternate" hreflang="x-default" href="{{ nv_default.prefix | append: nv_base | absolute_url }}">{% endif %}
     {% include structured_data.html %}
     {% comment %} The homepage and the new-design pages load only what they use; legacy pages keep the full theme. {% endcomment %}
     {% assign nv_home = false %}{% if page.url == '/' or page.url == '/sr/' %}{% assign nv_home = true %}{% endif %}

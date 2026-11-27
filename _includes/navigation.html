@@ -32,7 +32,17 @@
         {% endif %}
     </li>
     {% endfor %}
-    {% if nv_alt %}{% assign nv_switch_url = nv_alt.url %}{% else %}{% assign nv_switch_url = t.home_url | replace: '/sr/', '/' %}{% if nv_lang == 'en' %}{% assign nv_switch_url = '/sr/' %}{% endif %}{% endif %}
-    <li class="nv-lang-switch"><a href="{{ nv_switch_url | relative_url }}" hreflang="{% if nv_lang == 'sr-Latn' %}en{% else %}sr-Latn{% endif %}" lang="{% if nv_lang == 'sr-Latn' %}en{% else %}sr-Latn{% endif %}" title="{{ t.lang_switch_title }}"><span aria-hidden="true">{{ t.lang_switch_short }}</span><span class="sr-only">{{ t.lang_switch_label }}</span></a></li>
+    {% comment %} Language menu: each language links to this page in that language, or to its homepage when the page is not translated. {% endcomment %}
+    <li class="nv-lang-menu">
+        <a href="{{ page.url | relative_url }}" aria-haspopup="true"><svg class="nv-globe" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.5"/><path d="M1.5 8h13M8 1.5c2 2 2.8 4.2 2.8 6.5S10 12.5 8 14.5M8 1.5C6 3.5 5.2 5.7 5.2 8S6 12.5 8 14.5"/></svg>{{ nv_cur.short | default: 'EN' }}<svg class="nv-caret" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 6l4 4 4-4"/></svg><span class="sr-only"> {{ t.language_label }}</span></a>
+        <ul class="sub-menu">
+            {% for l in site.data.languages %}
+            {% assign nv_target = l.prefix | append: nv_base %}
+            {% assign nv_target_page = site.pages | where: 'url', nv_target | first %}
+            {% unless nv_target_page %}{% assign nv_target = l.prefix | append: '/' %}{% endunless %}
+            <li><a href="{{ nv_target | relative_url }}" hreflang="{{ l.code }}" lang="{{ l.code }}"{% if l.code == nv_lang %} aria-current="true" class="nv-lang-current"{% endif %}>{{ l.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </li>
 </ul>
 </nav>
